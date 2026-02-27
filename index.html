@@ -8,7 +8,35 @@
   <meta name="description" content="Inmobiliaria Premiun en Trujillo. Venta de lotes y terrenos en Fundo Malabrigo, Puerto Mar Club y Residencial Monte Verde. Oficina en Av. Mansiche 1595 – Trujillo. Asesoría personalizada.">
 <meta name="keywords" content="lotes en Trujillo, terrenos en Chepén, Fundo Malabrigo, Puerto Mar Club, Residencial Monte Verde, inmobiliaria en Trujillo, venta de terrenos La Libertad">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  /* BOTONES PROYECTOS */
+.menu-proyectos{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn-proyecto{
+  padding:12px 26px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:.5px;
+  transition:all .3s ease;
+  border:2px solid #facc15;
+  color:#facc15;
+  background:transparent;
+}
+
+.btn-proyecto:hover{
+  background:#facc15;
+  color:#000;
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(250,204,21,.3);
+}
 <style>
+  html{scroll-behavior:smooth;}
 body{margin:0;font-family:'Poppins',sans-serif;background:#0f172a;color:#fff}
 header{background:linear-gradient(135deg,#111827,#000);padding:60px 20px;text-align:center}
 h1{margin:0;font-size:40px}
@@ -31,9 +59,19 @@ button{padding:14px 25px;border:none;border-radius:40px;background:#facc15;font-
 <p class="lead">Asesor Inmobiliario en Trujillo</p>
 <p class="lead">Especialista en proyectos residenciales con alto potencial de valorización.</p>
 <a class="btn" href="https://wa.me/51985877256" target="_blank">Contactar por WhatsApp</a>
+  <div class="menu-proyectos">
+  <a href="#fundo" class="btn-proyecto">Fundo Malabrigo</a>
+  <a href="#puertomar" class="btn-proyecto">Puerto Mar Club</a>
+  <a href="#monteverde" class="btn-proyecto">Residencial Monte Verde</a>
+</div>
+  <div style="margin-top:30px;">
+  <a href="#fundo" class="btn">Fundo Malabrigo</a>
+  <a href="#puertomar" class="btn">Puerto Mar Club</a>
+  <a href="#monteverde" class="btn">Residencial Monte Verde</a>
+</div>
 </header>
 
-<section>
+<section id="fundo">
 <div class="card">
 <h2>Fundo Malabrigo</h2>
 <p>Proyecto residencial diseñado para brindar seguridad, tranquilidad y valorización sostenida.</p>
@@ -52,7 +90,19 @@ button{padding:14px 25px;border:none;border-radius:40px;background:#facc15;font-
 </ul>
 </div>
 </section>
+<section id="puertomar">
+<div class="card">
+<h2>Puerto Mar Club</h2>
+<p>Proyecto exclusivo frente al mar, ideal para inversión y descanso.</p>
+</div>
+</section>
 
+<section id="monteverde">
+<div class="card">
+<h2>Residencial Monte Verde</h2>
+<p>Proyecto residencial con excelente proyección y entorno natural.</p>
+</div>
+</section>
 <section>
 <div class="card">
 <h2>Solicita Información</h2>
