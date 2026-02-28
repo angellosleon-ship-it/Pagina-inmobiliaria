@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta name="google-site-verification" content="CgjKFCeEqyPV03v7Zc5ZlPJLd_zJYxyTIQ8Z2aOwUGE" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inmobiliaria Premiun | Venta de Lotes en Trujillo y Chepén | Fundo Malabrigo - Puerto Mar Club - Residencial Monte Verde</title>
-  <meta name="description" content="Inmobiliaria Premiun en Trujillo. Venta de lotes y terrenos en Fundo Malabrigo, Puerto Mar Club y Residencial Monte Verde. Oficina en Av. Mansiche 1595 – Trujillo. Asesoría personalizada.">
-<meta name="keywords" content="lotes en Trujillo, terrenos en Chepén, Fundo Malabrigo, Puerto Mar Club, Residencial Monte Verde, inmobiliaria en Trujillo, venta de terrenos La Libertad">
+
+<title>Inmobiliaria Premium | Venta de Lotes en Trujillo y Chepén</title>
+
+<meta name="description" content="Inmobiliaria Premium en Trujillo. Venta de lotes y terrenos en Fundo Malabrigo, Puerto Mar Club y Residencial Monte Verde. Asesoría personalizada.">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -20,44 +21,14 @@ body{
   color:#fff;
 }
 
+/* HEADER */
 header{
   background:linear-gradient(135deg,#111827,#000);
-  padding:60px 20px;
+  padding:70px 20px;
   text-align:center;
 }
 
-h1{margin:0;font-size:40px}
-
-p.lead{
-  color:#d1d5db;
-  font-size:18px;
-  margin-top:10px;
-}
-
-/* AQUÍ SIGUE TODO TU CSS */
-
-</style>
- 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-html{scroll-behavior:smooth;}
-
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#0f172a;
-  color:#fff;
-}
-
-header{
-  background:linear-gradient(135deg,#111827,#000);
-  padding:60px 20px;
-  text-align:center;
-}
-
-h1{margin:0;font-size:40px}
+h1{margin:0;font-size:42px}
 
 p.lead{
   color:#d1d5db;
@@ -68,16 +39,23 @@ p.lead{
 .btn{
   display:inline-block;
   margin-top:25px;
-  padding:14px 28px;
+  padding:14px 30px;
   background:#facc15;
   color:#000;
   text-decoration:none;
-  border-radius:40px;
+  border-radius:50px;
   font-weight:600;
+  transition:.3s;
 }
 
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(250,204,21,.4);
+}
+
+/* MENU PROYECTOS */
 .menu-proyectos{
-  margin-top:30px;
+  margin-top:40px;
   display:flex;
   justify-content:center;
   gap:20px;
@@ -89,22 +67,19 @@ p.lead{
   border-radius:50px;
   text-decoration:none;
   font-weight:600;
-  letter-spacing:.5px;
-  transition:all .3s ease;
   border:2px solid #facc15;
   color:#facc15;
-  background:transparent;
+  transition:.3s;
 }
 
 .btn-proyecto:hover{
   background:#facc15;
   color:#000;
-  transform:translateY(-3px);
-  box-shadow:0 10px 20px rgba(250,204,21,.3);
 }
 
+/* SECCIONES */
 section{
-  padding:60px 20px;
+  padding:80px 20px;
   max-width:1100px;
   margin:auto;
 }
@@ -115,40 +90,102 @@ section[id]{
 
 .card{
   background:#111827;
-  padding:30px;
+  padding:40px;
   border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
-.grid{display:grid;gap:20px}
-@media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.card h2{
+  margin-top:0;
+  font-size:30px;
+}
 
-.gallery img{width:100%;border-radius:15px}
+.card p{
+  color:#d1d5db;
+}
 
-footer{text-align:center;padding:30px;background:#000;color:#9ca3af}
+/* GALERIA */
+.grid{
+  display:grid;
+  gap:20px;
+  margin-top:25px;
+}
 
-input,textarea{width:100%;padding:12px;border-radius:10px;border:none;margin-bottom:15px}
+@media(min-width:768px){
+  .grid-3{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
 
-button{padding:14px 25px;border:none;border-radius:40px;background:#facc15;font-weight:600}
+.gallery img{
+  width:100%;
+  border-radius:15px;
+  transition:.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* LISTAS */
+ul{
+  margin-top:25px;
+  padding-left:20px;
+}
+
+ul li{
+  margin-bottom:10px;
+}
+
+/* FORMULARIO */
+input,textarea{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:none;
+  margin-bottom:15px;
+  font-family:'Poppins',sans-serif;
+}
+
+button{
+  padding:14px 30px;
+  border:none;
+  border-radius:50px;
+  background:#facc15;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  background:#000;
+  color:#9ca3af;
+  margin-top:50px;
+}
 
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>Humberto León </h1>
+<h1>Humberto León</h1>
 <p class="lead">Asesor Inmobiliario en Trujillo</p>
 <p class="lead">Especialista en proyectos residenciales con alto potencial de valorización.</p>
+
 <a class="btn" href="https://wa.me/51985877256" target="_blank">Contactar por WhatsApp</a>
-  <div class="menu-proyectos">
+
+<div class="menu-proyectos">
   <a href="#fundo" class="btn-proyecto">Fundo Malabrigo</a>
   <a href="#puertomar" class="btn-proyecto">Puerto Mar Club</a>
   <a href="#monteverde" class="btn-proyecto">Residencial Monte Verde</a>
 </div>
-  
 </header>
 
-<!-- FUNDO MALABRIGO -->
+
+<!-- FUNDO -->
 <section id="fundo">
   <div class="card">
     <h2>Fundo Malabrigo</h2>
@@ -170,7 +207,7 @@ button{padding:14px 25px;border:none;border-radius:40px;background:#facc15;font-
 </section>
 
 
-<!-- PUERTO MAR CLUB -->
+<!-- PUERTO MAR -->
 <section id="puertomar">
   <div class="card">
     <h2>Puerto Mar Club</h2>
@@ -192,7 +229,7 @@ button{padding:14px 25px;border:none;border-radius:40px;background:#facc15;font-
 </section>
 
 
-<!-- RESIDENCIAL MONTE VERDE -->
+<!-- MONTE VERDE -->
 <section id="monteverde">
   <div class="card">
     <h2>Residencial Monte Verde</h2>
@@ -213,71 +250,33 @@ button{padding:14px 25px;border:none;border-radius:40px;background:#facc15;font-
   </div>
 </section>
 
-<!-- RESIDENCIAL MONTE VERDE -->
-<section id="monteverde">
+
+<!-- FORMULARIO -->
+<section>
   <div class="card">
-    <h2>Residencial Monte Verde</h2>
-    <p>Proyecto residencial con excelente proyección y entorno natural.</p>
-
-    <div class="grid grid-3 gallery">
-      <img src="monte1.jpg" alt="Residencial Monte Verde">
-      <img src="monte2.jpg" alt="Residencial Monte Verde">
-      <img src="monte3.jpg" alt="Residencial Monte Verde">
-    </div>
-
-    <ul>
-      <li>✔ Zona tranquila y segura</li>
-      <li>✔ Áreas verdes</li>
-      <li>✔ Excelente conectividad</li>
-      <li>✔ Ideal para vivir todo el año</li>
-    </ul>
-
+    <h2>Solicita Información</h2>
+    <form>
+      <input type="text" placeholder="Nombre completo">
+      <input type="tel" placeholder="Número de teléfono">
+      <textarea placeholder="Consulta"></textarea>
+      <button type="submit">Enviar Consulta</button>
+    </form>
   </div>
 </section>
 
-<ul>
-<li>✔ Proyecto residencial planificado</li>
-<li>✔ Excelente ubicación estratégica</li>
-<li>✔ Alta proyección de crecimiento</li>
-<li>✔ Ideal para vivienda o inversión</li>
-</ul>
-</div>
-</section>
-<section id="puertomar">
-<div class="card">
-<h2>Puerto Mar Club</h2>
-<p>Proyecto exclusivo frente al mar, ideal para inversión y descanso.</p>
-</div>
+
+<!-- OFICINA -->
+<section>
+  <div class="card">
+    <h2>Oficina</h2>
+    <p>Av. Mansiche 1595 Urb. La Esmeralda - Trujillo</p>
+    <p>Av. Gonzales Cáceda 660 - Chepén (Timbre 201)</p>
+  </div>
 </section>
 
-<section id="monteverde">
-<div class="card">
-<h2>Residencial Monte Verde</h2>
-<p>Proyecto residencial con excelente proyección y entorno natural.</p>
-</div>
-</section>
-<section>
-<div class="card">
-<h2>Solicita Información</h2>
-<form>
-<input type="text" placeholder="Nombre completo">
-<input type="tel" placeholder="Número de teléfono">
-<textarea placeholder="Consulta"></textarea>
-<button type="submit">Enviar Consulta</button>
-</form>
-</div>
-</section>
-
-<section>
-<div class="card">
-<h2>Oficina</h2>
-<p>Av.Mansiche 1595 Urb. La Esmeralda Trujillo y en Av. Gonzales Caceda 660 Chepen</p>
-<p>Tocar timbre 201 Chepen</p>
-</div>
-</section>
 
 <footer>
-© 2026 Humberto León  - Asesor Inmobiliario
+© 2026 Humberto León - Asesor Inmobiliario
 </footer>
 
 </body>
