@@ -32,7 +32,7 @@ header video{
     position:absolute;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.65);
+    background:rgba(0,0,0,0.7);
 }
 
 .header-content{
@@ -40,16 +40,16 @@ header video{
     text-align:center;
     top:50%;
     transform:translateY(-50%);
-    animation:fadeIn 2s ease-in-out;
+    animation:fadeIn 2s ease;
 }
 
 @keyframes fadeIn{
-    from{opacity:0; transform:translateY(-40%);}
-    to{opacity:1; transform:translateY(-50%);}
+from{opacity:0; transform:translateY(-40%);}
+to{opacity:1; transform:translateY(-50%);}
 }
 
 .header-content img{
-    width:180px;
+    width:200px;
     margin-bottom:20px;
 }
 
@@ -61,7 +61,7 @@ header video{
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:40px;
     max-width:1200px;
     margin:auto;
@@ -71,8 +71,8 @@ header video{
     background:#111827;
     border-radius:25px;
     padding:25px;
-    box-shadow:0 15px 50px rgba(0,0,0,0.6);
-    transition:0.3s;
+    box-shadow:0 20px 60px rgba(0,0,0,0.7);
+    transition:0.4s;
 }
 
 .proyecto-card:hover{
@@ -80,7 +80,7 @@ header video{
 }
 
 .logo-proyecto{
-    width:130px;
+    width:140px;
     margin:0 auto 15px;
     display:block;
 }
@@ -113,9 +113,9 @@ header video{
     background:#25D366;
 }
 
-/* FORMULARIO PREMIUM */
+/* FORMULARIO */
 .cuestionario{
-    background:linear-gradient(135deg,#0b1220,#111827);
+    background:#0b1220;
     padding:100px 20px;
     text-align:center;
 }
@@ -125,55 +125,30 @@ header video{
     font-size:32px;
 }
 
-.form-box{
+form{
     max-width:600px;
     margin:auto;
-    background:#1f2937;
-    padding:40px;
-    border-radius:25px;
-    box-shadow:0 15px 60px rgba(0,0,0,0.7);
-}
-
-form{
     display:flex;
     flex-direction:column;
-    gap:18px;
+    gap:15px;
 }
 
 input, select, textarea{
     padding:14px;
-    border-radius:12px;
+    border-radius:10px;
     border:none;
     font-size:16px;
 }
 
-textarea{
-    resize:none;
-    height:100px;
-}
-
 button{
-    padding:15px;
+    padding:14px;
     background:#bfa046;
     color:white;
     border:none;
     border-radius:30px;
     cursor:pointer;
     font-weight:bold;
-    transition:0.3s;
 }
-
-button:hover{
-    background:#d4b75a;
-}
-
-.mensaje-exito{
-    margin-top:20px;
-    color:#25D366;
-    font-weight:bold;
-    display:none;
-}
-
 footer{
     text-align:center;
     padding:30px;
@@ -186,51 +161,87 @@ footer{
 <body>
 
 <header>
-    <video autoplay muted loop>
-        <source src="header-video.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
+<video autoplay muted loop>
+<source src="header-video.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
 
-    <div class="header-content">
-        <img src="hl_logo.png">
-        <h1>Humberto León</h1>
-        <p>Asesor Inmobiliario</p>
-        <p>Proyectos exclusivos con alta valorización</p>
-    </div>
+<div class="header-content">
+<img src="hl_logo.png">
+<h1>Humberto León</h1>
+<p>Asesor Inmobiliario</p>
+<p>Invierte hoy en tu futuro hogar</p>
+</div>
 </header>
 
 <section class="proyectos">
 <h2>Proyectos Destacados</h2>
+
 <div class="grid">
-    <!-- Mantén aquí tus proyectos igual como los tienes -->
+
+<!-- FUNDO -->
+<div class="proyecto-card">
+<img src="logo-fundo.png" class="logo-proyecto">
+<h3>Fundo Malabrigo</h3>
+<video controls class="video-proyecto">
+<source src="fundo-video.mp4" type="video/mp4">
+</video>
+<div class="botones-proyecto">
+<a href="fundo-video.mp4" target="_blank" class="btn">Ver Video</a>
+<a href="fotos-fundo.html" class="btn">Ver Fotos</a>
+<a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
+</div>
+</div>
+
+<!-- PUERTO -->
+<div class="proyecto-card">
+<img src="logo-puerto.png" class="logo-proyecto">
+<h3>Puerto Mar Club</h3>
+<video controls class="video-proyecto">
+<source src="puerto-video.mp4" type="video/mp4">
+</video>
+<div class="botones-proyecto">
+<a href="puerto-video.mp4" target="_blank" class="btn">Ver Video</a>
+<a href="fotos-puerto.html" class="btn">Ver Fotos</a>
+<a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
+</div>
+</div>
+
+<!-- MONTE -->
+<div class="proyecto-card">
+<img src="logo-monte.png" class="logo-proyecto">
+<h3>Residencial Monte Verde</h3>
+<video controls class="video-proyecto">
+<source src="monte-video.mp4" type="video/mp4">
+</video>
+<div class="botones-proyecto">
+<a href="monte-video.mp4" target="_blank" class="btn">Ver Video</a>
+<a href="fotos-monte.html" class="btn">Ver Fotos</a>
+<a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
+</div>
+</div>
+
 </div>
 </section>
 
 <section class="cuestionario">
-<h2>Agenda tu Visita o Solicita Información</h2>
+<h2>Solicita Información</h2>
 
-<div class="form-box">
 <form id="formulario">
-    <input type="text" id="nombre" placeholder="Nombre completo" required>
-    <input type="tel" id="telefono" placeholder="Número de celular" required>
+<input type="text" id="nombre" placeholder="Nombre completo" required>
+<input type="tel" id="telefono" placeholder="Número de celular" required>
 
-    <select id="proyecto" required>
-        <option value="">Selecciona un proyecto</option>
-        <option>Fundo Malabrigo</option>
-        <option>Puerto Mar Club</option>
-        <option>Residencial Monte Verde</option>
-    </select>
+<select id="proyecto" required>
+<option value="">Selecciona un proyecto</option>
+<option>Fundo Malabrigo</option>
+<option>Puerto Mar Club</option>
+<option>Residencial Monte Verde</option>
+</select>
 
-    <textarea id="mensaje" placeholder="Escribe tu consulta"></textarea>
+<textarea id="mensaje" placeholder="Escribe tu consulta"></textarea>
 
-    <button type="submit">Enviar por WhatsApp</button>
+<button type="submit">Enviar por WhatsApp</button>
 </form>
-
-<div class="mensaje-exito" id="exito">
-Mensaje listo. Redirigiendo a WhatsApp...
-</div>
-
-</div>
 </section>
 
 <footer>
@@ -246,18 +257,13 @@ let telefono = document.getElementById("telefono").value;
 let proyecto = document.getElementById("proyecto").value;
 let mensaje = document.getElementById("mensaje").value;
 
-let texto = `Hola Humberto, quiero información.%0A%0A` +
+let texto = `Hola Humberto, quiero información:%0A%0A` +
 `Nombre: ${nombre}%0A` +
 `Teléfono: ${telefono}%0A` +
 `Proyecto: ${proyecto}%0A` +
 `Mensaje: ${mensaje}`;
 
-document.getElementById("exito").style.display="block";
-
-setTimeout(()=>{
 window.open(`https://wa.me/51985877256?text=${texto}`, "_blank");
-},1000);
-
 });
 </script>
 
