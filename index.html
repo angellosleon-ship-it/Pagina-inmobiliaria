@@ -76,6 +76,11 @@ to{opacity:1; transform:translateY(-50%);}
     width:100%;
     border-radius:15px;
 }
+.subtitulo-proyecto{
+    font-size:16px;
+    color:#d1d5db;
+    margin-bottom:15px;
+}
 .botones-proyecto{
     margin-top:15px;
 }
@@ -133,6 +138,41 @@ footer{
     background:#000;
     color:#aaa;
 }
+
+/* LIGHTBOX */
+#lightbox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.95);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+    flex-direction:column;
+}
+#lightbox-img{
+    max-width:90%;
+    max-height:80%;
+    border-radius:15px;
+}
+#lightbox-controls{
+    margin-top:15px;
+}
+#lightbox-controls button{
+    padding:10px 18px;
+    margin:5px;
+    border:none;
+    border-radius:30px;
+    background:#bfa046;
+    color:white;
+    cursor:pointer;
+}
+#lightbox-controls button:hover{
+    background:#d4b75a;
+}
 </style>
 </head>
 <body>
@@ -161,11 +201,12 @@ footer{
 <div class="proyecto-card">
 <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
 <h3>Fundo Malabrigo</h3>
+<p class="subtitulo-proyecto">Lotes rurales cerca del mar para tu inversión</p>
 <video controls class="video-proyecto">
 <source src="fundo-video.mp4" type="video/mp4">
 </video>
 <div class="botones-proyecto">
-<a href="#" class="btn" onclick="abrirImagen('fundo.jpg')">Ver Fotos</a>
+<a href="#" class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">Ver Fotos</a>
 <a href="fundo-video.mp4" target="_blank" class="btn">Ver Video</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
@@ -175,11 +216,12 @@ footer{
 <div class="proyecto-card">
 <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
 <h3>Puerto Mar Club</h3>
+<p class="subtitulo-proyecto">Departamentos frente al mar con áreas recreativas</p>
 <video controls class="video-proyecto">
 <source src="puerto-video.mp4" type="video/mp4">
 </video>
 <div class="botones-proyecto">
-<a href="#" class="btn" onclick="abrirImagen('puerto.jpg')">Ver Fotos</a>
+<a href="#" class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">Ver Fotos</a>
 <a href="puerto-video.mp4" target="_blank" class="btn">Ver Video</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
@@ -189,11 +231,12 @@ footer{
 <div class="proyecto-card">
 <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
 <h3>Residencial Monte Verde</h3>
+<p class="subtitulo-proyecto">Viviendas modernas en zona tranquila y segura</p>
 <video controls class="video-proyecto">
 <source src="monte-video.mp4" type="video/mp4">
 </video>
 <div class="botones-proyecto">
-<a href="#" class="btn" onclick="abrirImagen('monte.jpg')">Ver Fotos</a>
+<a href="#" class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">Ver Fotos</a>
 <a href="monte-video.mp4" target="_blank" class="btn">Ver Video</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
@@ -202,9 +245,14 @@ footer{
 </div>
 </section>
 
-<!-- CUADRO DE VISUALIZACION DE IMAGEN -->
-<div id="lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:2000;">
-<img id="lightbox-img" style="max-width:90%; max-height:90%; border-radius:15px;">
+<!-- LIGHTBOX -->
+<div id="lightbox">
+<img id="lightbox-img">
+<div id="lightbox-controls">
+<button id="prev">Anterior</button>
+<button id="next">Siguiente</button>
+<button id="close">Cerrar</button>
+</div>
 </div>
 
 <!-- FORMULARIO -->
@@ -229,18 +277,31 @@ footer{
 </footer>
 
 <script>
-// LIGHTBOX PARA VER IMAGENES
-function abrirImagen(ruta){
-    const lightbox = document.getElementById("lightbox");
-    const img = document.getElementById("lightbox-img");
-    img.src = ruta;
-    lightbox.style.display = "flex";
+/* LIGHTBOX MULTIIMAGEN */
+let lightboxImages = [];
+let currentIndex = 0;
+function abrirImagenes(imgArray){
+    lightboxImages = imgArray;
+    currentIndex = 0;
+    document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
+    document.getElementById("lightbox").style.display = "flex";
 }
-document.getElementById("lightbox").addEventListener("click", ()=>{
+
+document.getElementById("prev").addEventListener("click", ()=>{
+    currentIndex = (currentIndex - 1 + lightboxImages.length) % lightboxImages.length;
+    document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
+});
+
+document.getElementById("next").addEventListener("click", ()=>{
+    currentIndex = (currentIndex + 1) % lightboxImages.length;
+    document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
+});
+
+document.getElementById("close").addEventListener("click", ()=>{
     document.getElementById("lightbox").style.display = "none";
 });
 
-// FORMULARIO ENVIO POR WHATSAPP
+/* FORMULARIO ENVIO POR WHATSAPP */
 document.getElementById("formulario").addEventListener("submit", function(e){
     e.preventDefault();
     let nombre = document.getElementById("nombre").value;
