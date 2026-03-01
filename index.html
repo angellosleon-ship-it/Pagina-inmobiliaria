@@ -3,147 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inmobiliaria One</title>
+<title>Humberto León | Asesor Inmobiliario</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
+
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:#0f0f0f;
+    color:white;
 }
 
-header {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 20px;
+/* HEADER VIDEO */
+header{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
 }
 
-header img {
-    width: 150px;
+header video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
 }
 
-section {
-    padding: 40px 20px;
-    text-align: center;
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
 }
 
-.project {
-    background: white;
-    margin: 30px auto;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 900px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+.header-content{
+    position:relative;
+    text-align:center;
+    top:50%;
+    transform:translateY(-50%);
 }
 
-.project-logo {
-    width: 180px;
-    margin-bottom: 15px;
+.header-content img{
+    width:180px;
+    margin-bottom:20px;
 }
 
-.media-preview img,
-.media-preview video {
-    max-width: 100%;
-    margin-top: 15px;
-    border-radius: 8px;
+.header-content h1{
+    font-size:40px;
+    margin:10px 0;
 }
 
-.upload-box {
-    margin-top: 20px;
-    padding: 20px;
-    border: 2px dashed #ccc;
-    border-radius: 10px;
+.header-content p{
+    font-size:18px;
+    color:#ccc;
 }
 
-button {
-    background: #c59d5f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+/* PROYECTOS */
+.proyectos{
+    padding:80px 20px;
+    text-align:center;
 }
 
-button:hover {
-    background: #a87d3d;
+.proyectos h2{
+    font-size:32px;
+    margin-bottom:40px;
 }
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.proyecto-card{
+    background:#1a1a1a;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 0 25px rgba(0,0,0,0.5);
+    transition:0.4s;
+}
+
+.proyecto-card:hover{
+    transform:translateY(-10px);
+}
+
+.logo-proyecto{
+    width:120px;
+    display:block;
+    margin:0 auto 15px;
+}
+
+.video-proyecto{
+    width:100%;
+    border-radius:15px;
+}
+
+/* BOTONES */
+.botones-proyecto{
+    margin-top:15px;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    margin:5px;
+    background:#bfa046;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#d4af37;
+}
+
+.btn-agendar{
+    display:inline-block;
+    padding:10px 18px;
+    margin:5px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#000;
+    color:#aaa;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    <img src="hl_logo.png" alt="Logo Inmobiliaria">
-    <h1>Tu futuro hogar te espera</h1>
+    <video autoplay muted loop>
+        <source src="header-video.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <div class="header-content">
+        <img src="hl_logo.png" alt="Logo Humberto León">
+        <h1>Humberto León</h1>
+        <p>Asesor Inmobiliario Premium</p>
+    </div>
 </header>
 
+<!-- PROYECTOS -->
+<section class="proyectos">
+<h2>Proyectos Destacados</h2>
+
+<div class="grid">
+
 <!-- FUNDO MALABRIGO -->
-<section class="project">
-    <img src="logo-fundo-malabrigo.png" alt="Proyecto Fundo Malabrigo Chepén" class="project-logo">
-    <h2>Fundo Malabrigo</h2>
-    <p>Ubicación estratégica y alta valorización.</p>
+<div class="proyecto-card">
+    <img src="logo-fundo.png" class="logo-proyecto">
+    <h3>Fundo Malabrigo</h3>
 
-    <div class="upload-box">
-        <h3>Subir fotos o videos</h3>
-        <input type="file" accept="image/*,video/*" onchange="previewMedia(event, 'preview1')" multiple>
-        <div id="preview1" class="media-preview"></div>
+    <video controls class="video-proyecto">
+        <source src="fundo-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="botones-proyecto">
+        <a href="fundo-video.mp4" target="_blank" class="btn">Ver Video</a>
+        <a href="fotos-fundo.html" class="btn">Ver Fotos</a>
+        <a href="https://wa.me/51999999999" target="_blank" class="btn-agendar">Agendar Visita</a>
     </div>
-</section>
+</div>
 
-<!-- PUERTO MAR -->
-<section class="project">
-    <img src="logo-puerto-mar.png" alt="Proyecto Puerto Mar Paiján" class="project-logo">
-    <h2>Puerto Mar</h2>
-    <p>Lotes cerca al mar con excelente proyección.</p>
+<!-- PUERTO MALABRIGO -->
+<div class="proyecto-card">
+    <img src="logo-puerto.png" class="logo-proyecto">
+    <h3>Puerto Malabrigo</h3>
 
-    <div class="upload-box">
-        <h3>Subir fotos o videos</h3>
-        <input type="file" accept="image/*,video/*" onchange="previewMedia(event, 'preview2')" multiple>
-        <div id="preview2" class="media-preview"></div>
+    <video controls class="video-proyecto">
+        <source src="puerto-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="botones-proyecto">
+        <a href="puerto-video.mp4" target="_blank" class="btn">Ver Video</a>
+        <a href="fotos-puerto.html" class="btn">Ver Fotos</a>
+        <a href="https://wa.me/51999999999" target="_blank" class="btn-agendar">Agendar Visita</a>
     </div>
-</section>
+</div>
 
 <!-- MONTE VERDE -->
-<section class="project">
-    <img src="logo-monte-verde.png" alt="Proyecto Monte Verde" class="project-logo">
-    <h2>Monte Verde</h2>
-    <p>Conexión con la naturaleza y tranquilidad.</p>
+<div class="proyecto-card">
+    <img src="logo-monte.png" class="logo-proyecto">
+    <h3>Monte Verde</h3>
 
-    <div class="upload-box">
-        <h3>Subir fotos o videos</h3>
-        <input type="file" accept="image/*,video/*" onchange="previewMedia(event, 'preview3')" multiple>
-        <div id="preview3" class="media-preview"></div>
+    <video controls class="video-proyecto">
+        <source src="monte-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="botones-proyecto">
+        <a href="monte-video.mp4" target="_blank" class="btn">Ver Video</a>
+        <a href="fotos-monte.html" class="btn">Ver Fotos</a>
+        <a href="https://wa.me/51999999999" target="_blank" class="btn-agendar">Agendar Visita</a>
     </div>
+</div>
+
+</div>
 </section>
 
-<script>
-function previewMedia(event, previewId) {
-    const files = event.target.files;
-    const preview = document.getElementById(previewId);
-    preview.innerHTML = "";
-
-    for (let file of files) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            if (file.type.startsWith("image")) {
-                const img = document.createElement("img");
-                img.src = e.target.result;
-                preview.appendChild(img);
-            } 
-            else if (file.type.startsWith("video")) {
-                const video = document.createElement("video");
-                video.src = e.target.result;
-                video.controls = true;
-                preview.appendChild(video);
-            }
-        }
-
-        reader.readAsDataURL(file);
-    }
-}
-</script>
+<footer>
+© 2026 Humberto León | Todos los derechos reservados
+</footer>
 
 </body>
 </html>
