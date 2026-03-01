@@ -3,256 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humberto León | Asesor Inmobiliario Premium WOW</title>
-<meta name="description" content="Venta de lotes en Fundo Malabrigo, Puerto Mar Club y Residencial Monte Verde. Humberto León, asesor inmobiliario premium en Trujillo y Chepén.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Inmobiliaria One</title>
 
 <style>
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif;background:#0f172a;color:#fff;overflow-x:hidden;}
-a{text-decoration:none;}
-
-/* HEADER WOW */
-header{
-  position:relative;
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  overflow:hidden;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
 }
-header video{
-  position:absolute;
-  top:0;left:0;
-  width:100%;height:100%;
-  object-fit:cover;
-  z-index:0;
-  opacity:0.6;
-}
-header::after{
-  content:"";
-  position:absolute;top:0;left:0;width:100%;height:100%;
-  background:linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
-  z-index:1;
-}
-header img{
-  width:200px;
-  max-width:80%;
-  z-index:2;
-  animation:fadeInDown 1s ease-out;
-}
-@keyframes fadeInDown{0%{opacity:0;transform:translateY(-30px);}100%{opacity:1;transform:translateY(0);}}
-header p.lead{
-  font-size:22px;
-  margin-top:10px;
-  opacity:0;
-  animation:fadeInUp 1.2s forwards;
-}
-@keyframes fadeInUp{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
-header .btn{
-  margin-top:25px;
-  padding:16px 36px;
-  background:#D4A55D;
-  color:#000;
-  border-radius:50px;
-  font-weight:700;
-  transition:.3s;
-  z-index:2;
-}
-header .btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 15px 35px rgba(212,165,93,.5);}
 
-/* MENU FIJO */
-.menu-proyectos{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-  position:sticky;
-  top:0;
-  background:#0A1F44;
-  padding:10px 0;
-  z-index:1000;
-  border-top:2px solid #D4A55D;
-  border-bottom:2px solid #D4A55D;
+header {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
-.btn-proyecto{
-  padding:12px 26px;
-  border-radius:50px;
-  font-weight:600;
-  border:2px solid #D4A55D;
-  color:#D4A55D;
-  transition:.4s;
+
+header img {
+    width: 150px;
 }
-.btn-proyecto:hover{background:#D4A55D;color:#000;transform:translateY(-2px) scale(1.05);}
 
-/* SECCIONES */
-section{padding:120px 20px;max-width:1200px;margin:auto;scroll-margin-top:120px;position:relative;}
-section.card-wrapper{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;perspective:1500px;}
-
-/* TARJETAS 3D */
-.card{
-  background:#111827;
-  border-radius:25px;
-  overflow:hidden;
-  width:350px;
-  box-shadow:0 20px 60px rgba(0,0,0,.7);
-  transform-style:preserve-3d;
-  transform:translateY(50px) rotateY(0deg);
-  opacity:0;
-  transition:all 0.8s ease-out, transform 0.5s ease;
+section {
+    padding: 40px 20px;
+    text-align: center;
 }
-.card.visible{transform:translateY(0) rotateY(0deg);opacity:1;}
-.card:hover{transform:translateY(-5px) rotateY(8deg);box-shadow:0 25px 70px rgba(0,0,0,.9);}
-.card img, .card video{width:100%;height:220px;object-fit:cover;transition:.5s;}
-.card img:hover, .card video:hover{transform:scale(1.08);}
-.card h2{padding:20px 20px 0;font-size:28px;}
-.card p{padding:0 20px 10px;color:#d1d5db;}
-ul{margin:20px;padding-left:20px;}
-ul li{margin-bottom:10px;}
 
-/* FORMULARIO */
-form input, form textarea{width:100%;padding:14px;border-radius:10px;border:none;margin-bottom:15px;}
-form button{padding:14px 30px;border:none;border-radius:50px;background:#D4A55D;font-weight:700;cursor:pointer;transition:.4s;}
-form button:hover{background:#c39b50;transform:scale(1.05);}
+.project {
+    background: white;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 900px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
 
-/* FOOTER */
-footer{text-align:center;padding:50px 20px;background:#000;color:#9ca3af;font-size:14px;}
+.project-logo {
+    width: 180px;
+    margin-bottom: 15px;
+}
 
-/* BOTON WHATSAPP FLOTANTE */
-#whatsapp-btn{position:fixed;bottom:30px;right:30px;background:#25D366;color:#fff;padding:16px;border-radius:50%;font-size:28px;z-index:1000;display:flex;justify-content:center;align-items:center;box-shadow:0 8px 30px rgba(0,0,0,.5);animation:pulse 2s infinite;}
-@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
-#whatsapp-btn:hover{transform:translateY(-3px) scale(1.1);box-shadow:0 15px 40px rgba(37,211,102,.6);}
+.media-preview img,
+.media-preview video {
+    max-width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
+}
 
-/* LIGHTBOX */
-#lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.95);display:none;justify-content:center;align-items:center;z-index:2000;}
-#lightbox img, #lightbox video{max-width:90%; max-height:90%; border-radius:15px;}
+.upload-box {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+}
 
-/* RESPONSIVE */
-@media(max-width:768px){header{height:auto;padding:100px 20px;}header p.lead{font-size:18px;}.card{width:90%;}}
+button {
+    background: #c59d5f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #a87d3d;
+}
 </style>
 </head>
+
 <body>
 
 <header>
-  <video src="header-video.mp4" autoplay muted loop></video>
-  <img src="hl_logo.png" alt="Humberto León">
-  <p class="lead">Humberto León</p>
-  <p class="lead">Asesor Inmobiliario Premium</p>
-  <p class="lead">Proyectos exclusivos con alta valorización</p>
-  <a class="btn" href="https://wa.me/51985877256" target="_blank">Contactar por WhatsApp</a>
-  <div class="menu-proyectos">
-    <a href="#fundo" class="btn-proyecto">Fundo Malabrigo</a>
-    <a href="#puertomar" class="btn-proyecto">Puerto Mar Club</a>
-    <a href="#monteverde" class="btn-proyecto">Residencial Monte Verde</a>
-  </div>
+    <img src="hl_logo.png" alt="Logo Inmobiliaria">
+    <h1>Tu futuro hogar te espera</h1>
 </header>
 
 <!-- FUNDO MALABRIGO -->
-<section id="fundo" class="card-wrapper">
-  <div class="card">
-    <video src="fundo-video.mp4" autoplay muted loop></video>
+<section class="project">
+    <img src="logo-fundo-malabrigo.png" alt="Proyecto Fundo Malabrigo Chepén" class="project-logo">
     <h2>Fundo Malabrigo</h2>
-    <p>Proyecto ecológico con seguridad, tranquilidad y alta valorización.</p>
-    <ul>
-      <li>✔ Áreas verdes y ecológicas</li>
-      <li>✔ Ubicación estratégica</li>
-      <li>✔ Ideal para inversión o vivienda</li>
-      <li>✔ Seguridad y diseño exclusivo</li>
-    </ul>
-  </div>
+    <p>Ubicación estratégica y alta valorización.</p>
+
+    <div class="upload-box">
+        <h3>Subir fotos o videos</h3>
+        <input type="file" accept="image/*,video/*" onchange="previewMedia(event, 'preview1')" multiple>
+        <div id="preview1" class="media-preview"></div>
+    </div>
 </section>
 
-<!-- PUERTO MAR CLUB -->
-<section id="puertomar" class="card-wrapper">
-  <div class="card">
-    <video src="puerto-video.mp4" autoplay muted loop></video>
-    <h2>Puerto Mar Club</h2>
-    <p>Proyecto frente al mar, ideal para inversión y descanso exclusivos.</p>
-    <ul>
-      <li>✔ Ubicación frente al mar</li>
-      <li>✔ Ideal para casa de playa</li>
-      <li>✔ Alta rentabilidad turística</li>
-      <li>✔ Excelente proyección de valorización</li>
-    </ul>
-  </div>
+<!-- PUERTO MAR -->
+<section class="project">
+    <img src="logo-puerto-mar.png" alt="Proyecto Puerto Mar Paiján" class="project-logo">
+    <h2>Puerto Mar</h2>
+    <p>Lotes cerca al mar con excelente proyección.</p>
+
+    <div class="upload-box">
+        <h3>Subir fotos o videos</h3>
+        <input type="file" accept="image/*,video/*" onchange="previewMedia(event, 'preview2')" multiple>
+        <div id="preview2" class="media-preview"></div>
+    </div>
 </section>
 
-<!-- RESIDENCIAL MONTE VERDE -->
-<section id="monteverde" class="card-wrapper">
-  <div class="card">
-    <video src="monte-video.mp4" autoplay muted loop></video>
-    <h2>Residencial Monte Verde</h2>
-    <p>Proyecto residencial con excelente proyección y entorno natural.</p>
-    <ul>
-      <li>✔ Zona tranquila y segura</li>
-      <li>✔ Áreas verdes</li>
-      <li>✔ Excelente conectividad</li>
-      <li>✔ Ideal para vivir todo el año</li>
-    </ul>
-  </div>
+<!-- MONTE VERDE -->
+<section class="project">
+    <img src="logo-monte-verde.png" alt="Proyecto Monte Verde" class="project-logo">
+    <h2>Monte Verde</h2>
+    <p>Conexión con la naturaleza y tranquilidad.</p>
+
+    <div class="upload-box">
+        <h3>Subir fotos o videos</h3>
+        <input type="file" accept="image/*,video/*" onchange="previewMedia(event, 'preview3')" multiple>
+        <div id="preview3" class="media-preview"></div>
+    </div>
 </section>
-
-<!-- FORMULARIO -->
-<section>
-  <div class="card">
-    <h2>Solicita Información</h2>
-    <form>
-      <input type="text" placeholder="Nombre completo">
-      <input type="tel" placeholder="Número de teléfono">
-      <textarea placeholder="Consulta"></textarea>
-      <button type="submit">Enviar Consulta</button>
-    </form>
-  </div>
-</section>
-
-<!-- OFICINAS -->
-<section>
-  <div class="card">
-    <h2>Oficinas</h2>
-    <p>Av. Mansiche 1595 Urb. La Esmeralda - Trujillo</p>
-    <p>Av. Gonzales Cáceda 660 - Chepén (Timbre 201)</p>
-  </div>
-</section>
-
-<footer>© 2026 Humberto León - Asesor Inmobiliario Premium</footer>
-
-<!-- BOTON WHATSAPP -->
-<a href="https://wa.me/51985877256" target="_blank" id="whatsapp-btn">💬</a>
-
-<!-- LIGHTBOX -->
-<div id="lightbox"></div>
 
 <script>
-// ANIMACIÓN SCROLL TARJETAS
-const cards = document.querySelectorAll('.card');
-function revealCards(){
-  const triggerBottom = window.innerHeight * 0.85;
-  cards.forEach(card=>{
-    const top = card.getBoundingClientRect().top;
-    if(top < triggerBottom) card.classList.add('visible');
-  });
-}
-window.addEventListener('scroll',revealCards);
-revealCards();
+function previewMedia(event, previewId) {
+    const files = event.target.files;
+    const preview = document.getElementById(previewId);
+    preview.innerHTML = "";
 
-// LIGHTBOX PARA VIDEOS Y FOTOS
-const cardMedia = document.querySelectorAll('.card img, .card video');
-const lightbox = document.getElementById('lightbox');
-cardMedia.forEach(media=>{
-  media.addEventListener('click',()=>{
-    lightbox.innerHTML='';
-    let clone = media.cloneNode(true);
-    clone.controls = true;
-    lightbox.appendChild(clone);
-    lightbox.style.display='flex';
-    if(clone.tagName==='VIDEO') clone.play();
-  });
-});
-lightbox.addEventListener('click',()=>{lightbox.style.display='none';});
+    for (let file of files) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            if (file.type.startsWith("image")) {
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                preview.appendChild(img);
+            } 
+            else if (file.type.startsWith("video")) {
+                const video = document.createElement("video");
+                video.src = e.target.result;
+                video.controls = true;
+                preview.appendChild(video);
+            }
+        }
+
+        reader.readAsDataURL(file);
+    }
+}
 </script>
 
 </body>
