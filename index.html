@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Humberto León | Asesor Inmobiliario</title>
-
 <style>
 body{
     margin:0;
@@ -12,14 +11,12 @@ body{
     background:#0f172a;
     color:white;
 }
-
 /* HEADER */
 header{
     position:relative;
     height:100vh;
     overflow:hidden;
 }
-
 header video{
     position:absolute;
     width:100%;
@@ -27,14 +24,12 @@ header video{
     object-fit:cover;
     z-index:-1;
 }
-
 .overlay{
     position:absolute;
     width:100%;
     height:100%;
     background:rgba(0,0,0,0.7);
 }
-
 .header-content{
     position:relative;
     text-align:center;
@@ -42,23 +37,19 @@ header video{
     transform:translateY(-50%);
     animation:fadeIn 2s ease;
 }
-
 @keyframes fadeIn{
 from{opacity:0; transform:translateY(-40%);}
 to{opacity:1; transform:translateY(-50%);}
 }
-
 .header-content img{
     width:200px;
     margin-bottom:20px;
 }
-
 /* PROYECTOS */
 .proyectos{
     padding:100px 20px;
     text-align:center;
 }
-
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -66,7 +57,6 @@ to{opacity:1; transform:translateY(-50%);}
     max-width:1200px;
     margin:auto;
 }
-
 .proyecto-card{
     background:#111827;
     border-radius:25px;
@@ -74,26 +64,21 @@ to{opacity:1; transform:translateY(-50%);}
     box-shadow:0 20px 60px rgba(0,0,0,0.7);
     transition:0.4s;
 }
-
 .proyecto-card:hover{
     transform:translateY(-10px);
 }
-
 .logo-proyecto{
     width:140px;
     margin:0 auto 15px;
     display:block;
 }
-
 .video-proyecto{
     width:100%;
     border-radius:15px;
 }
-
 .botones-proyecto{
     margin-top:15px;
 }
-
 .btn{
     display:inline-block;
     padding:10px 18px;
@@ -104,27 +89,22 @@ to{opacity:1; transform:translateY(-50%);}
     border-radius:30px;
     transition:0.3s;
 }
-
 .btn:hover{
     background:#d4b75a;
 }
-
 .btn-agendar{
     background:#25D366;
 }
-
 /* FORMULARIO */
 .cuestionario{
     background:#0b1220;
     padding:100px 20px;
     text-align:center;
 }
-
 .cuestionario h2{
     margin-bottom:40px;
     font-size:32px;
 }
-
 form{
     max-width:600px;
     margin:auto;
@@ -132,14 +112,12 @@ form{
     flex-direction:column;
     gap:15px;
 }
-
 input, select, textarea{
     padding:14px;
     border-radius:10px;
     border:none;
     font-size:16px;
 }
-
 button{
     padding:14px;
     background:#bfa046;
@@ -157,9 +135,9 @@ footer{
 }
 </style>
 </head>
-
 <body>
 
+<!-- HEADER -->
 <header>
 <video autoplay muted loop>
 <source src="header-video.mp4" type="video/mp4">
@@ -167,56 +145,56 @@ footer{
 <div class="overlay"></div>
 
 <div class="header-content">
-<img src="hl_logo.png">
+<img src="hl_logo.png" alt="Humberto León">
 <h1>Humberto León</h1>
 <p>Asesor Inmobiliario</p>
 <p>Invierte hoy en tu futuro hogar</p>
 </div>
 </header>
 
+<!-- PROYECTOS -->
 <section class="proyectos">
 <h2>Proyectos Destacados</h2>
-
 <div class="grid">
 
-<!-- FUNDO -->
+<!-- FUNDO MALABRIGO -->
 <div class="proyecto-card">
-<img src="logo-fundo.png" class="logo-proyecto">
+<img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
 <h3>Fundo Malabrigo</h3>
 <video controls class="video-proyecto">
 <source src="fundo-video.mp4" type="video/mp4">
 </video>
 <div class="botones-proyecto">
+<a href="#" class="btn" onclick="abrirImagen('fundo.jpg')">Ver Fotos</a>
 <a href="fundo-video.mp4" target="_blank" class="btn">Ver Video</a>
-<a href="fotos-fundo.html" class="btn">Ver Fotos</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
 </div>
 
-<!-- PUERTO -->
+<!-- PUERTO MAR CLUB -->
 <div class="proyecto-card">
-<img src="logo-puerto.png" class="logo-proyecto">
+<img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
 <h3>Puerto Mar Club</h3>
 <video controls class="video-proyecto">
 <source src="puerto-video.mp4" type="video/mp4">
 </video>
 <div class="botones-proyecto">
+<a href="#" class="btn" onclick="abrirImagen('puerto.jpg')">Ver Fotos</a>
 <a href="puerto-video.mp4" target="_blank" class="btn">Ver Video</a>
-<a href="fotos-puerto.html" class="btn">Ver Fotos</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
 </div>
 
-<!-- MONTE -->
+<!-- RESIDENCIAL MONTE VERDE -->
 <div class="proyecto-card">
-<img src="logo-monte.png" class="logo-proyecto">
+<img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
 <h3>Residencial Monte Verde</h3>
 <video controls class="video-proyecto">
 <source src="monte-video.mp4" type="video/mp4">
 </video>
 <div class="botones-proyecto">
+<a href="#" class="btn" onclick="abrirImagen('monte.jpg')">Ver Fotos</a>
 <a href="monte-video.mp4" target="_blank" class="btn">Ver Video</a>
-<a href="fotos-monte.html" class="btn">Ver Fotos</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
 </div>
@@ -224,22 +202,24 @@ footer{
 </div>
 </section>
 
+<!-- CUADRO DE VISUALIZACION DE IMAGEN -->
+<div id="lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:2000;">
+<img id="lightbox-img" style="max-width:90%; max-height:90%; border-radius:15px;">
+</div>
+
+<!-- FORMULARIO -->
 <section class="cuestionario">
 <h2>Solicita Información</h2>
-
 <form id="formulario">
 <input type="text" id="nombre" placeholder="Nombre completo" required>
 <input type="tel" id="telefono" placeholder="Número de celular" required>
-
 <select id="proyecto" required>
 <option value="">Selecciona un proyecto</option>
 <option>Fundo Malabrigo</option>
 <option>Puerto Mar Club</option>
 <option>Residencial Monte Verde</option>
 </select>
-
 <textarea id="mensaje" placeholder="Escribe tu consulta"></textarea>
-
 <button type="submit">Enviar por WhatsApp</button>
 </form>
 </section>
@@ -249,21 +229,32 @@ footer{
 </footer>
 
 <script>
+// LIGHTBOX PARA VER IMAGENES
+function abrirImagen(ruta){
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    img.src = ruta;
+    lightbox.style.display = "flex";
+}
+document.getElementById("lightbox").addEventListener("click", ()=>{
+    document.getElementById("lightbox").style.display = "none";
+});
+
+// FORMULARIO ENVIO POR WHATSAPP
 document.getElementById("formulario").addEventListener("submit", function(e){
-e.preventDefault();
+    e.preventDefault();
+    let nombre = document.getElementById("nombre").value;
+    let telefono = document.getElementById("telefono").value;
+    let proyecto = document.getElementById("proyecto").value;
+    let mensaje = document.getElementById("mensaje").value;
 
-let nombre = document.getElementById("nombre").value;
-let telefono = document.getElementById("telefono").value;
-let proyecto = document.getElementById("proyecto").value;
-let mensaje = document.getElementById("mensaje").value;
+    let texto = `Hola Humberto, quiero información:%0A%0A` +
+    `Nombre: ${nombre}%0A` +
+    `Teléfono: ${telefono}%0A` +
+    `Proyecto: ${proyecto}%0A` +
+    `Mensaje: ${mensaje}`;
 
-let texto = `Hola Humberto, quiero información:%0A%0A` +
-`Nombre: ${nombre}%0A` +
-`Teléfono: ${telefono}%0A` +
-`Proyecto: ${proyecto}%0A` +
-`Mensaje: ${mensaje}`;
-
-window.open(`https://wa.me/51985877256?text=${texto}`, "_blank");
+    window.open(`https://wa.me/51985877256?text=${texto}`, "_blank");
 });
 </script>
 
