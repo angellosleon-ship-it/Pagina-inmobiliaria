@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humberto León | Asesor Inmobiliario </title>
+<title>Humberto León | Asesor Inmobiliario</title>
 
 <style>
 body{
@@ -51,25 +51,10 @@ header video{
     margin-bottom:20px;
 }
 
-.header-content h1{
-    font-size:42px;
-    margin:10px 0;
-}
-
-.header-content p{
-    font-size:18px;
-    color:#d1d5db;
-}
-
 /* PROYECTOS */
 .proyectos{
     padding:100px 20px;
     text-align:center;
-}
-
-.proyectos h2{
-    font-size:36px;
-    margin-bottom:60px;
 }
 
 .grid{
@@ -85,28 +70,12 @@ header video{
     border-radius:25px;
     padding:25px;
     box-shadow:0 15px 50px rgba(0,0,0,0.6);
-    transition:0.4s;
-}
-
-.proyecto-card:hover{
-    transform:translateY(-10px);
 }
 
 .logo-proyecto{
     width:130px;
     margin:0 auto 15px;
     display:block;
-}
-
-.proyecto-card h3{
-    font-size:26px;
-    margin:10px 0;
-}
-
-.subtitulo{
-    font-size:15px;
-    color:#bfa046;
-    margin-bottom:15px;
 }
 
 .video-proyecto{
@@ -127,11 +96,6 @@ header video{
     color:white;
     text-decoration:none;
     border-radius:30px;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#d4af37;
 }
 
 .btn-agendar{
@@ -142,48 +106,6 @@ header video{
     color:white;
     text-decoration:none;
     border-radius:30px;
-}
-
-/* FORMULARIO */
-.cuestionario{
-    background:#0b1220;
-    padding:100px 20px;
-    text-align:center;
-}
-
-.cuestionario h2{
-    margin-bottom:40px;
-    font-size:32px;
-}
-
-form{
-    max-width:600px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-input, select, textarea{
-    padding:14px;
-    border-radius:10px;
-    border:none;
-    font-size:16px;
-}
-
-button{
-    padding:14px;
-    background:#bfa046;
-    color:white;
-    border:none;
-    border-radius:30px;
-    cursor:pointer;
-    font-weight:bold;
-    transition:0.3s;
-}
-
-button:hover{
-    background:#d4af37;
 }
 
 footer{
@@ -197,7 +119,6 @@ footer{
 
 <body>
 
-<!-- HEADER -->
 <header>
     <video autoplay muted loop>
         <source src="header-video.mp4" type="video/mp4">
@@ -205,24 +126,22 @@ footer{
     <div class="overlay"></div>
 
     <div class="header-content">
-        <img src="hl_logo.png" alt="Humberto León">
+        <img src="hl_logo.png">
         <h1>Humberto León</h1>
-        <p>Asesor Inmobiliario </p>
+        <p>Asesor Inmobiliario</p>
         <p>Proyectos exclusivos con alta valorización</p>
     </div>
 </header>
 
-<!-- PROYECTOS -->
 <section class="proyectos">
 <h2>Proyectos Destacados</h2>
 
 <div class="grid">
 
-<!-- FUNDO MALABRIGO -->
+<!-- FUNDO -->
 <div class="proyecto-card">
     <img src="logo-fundo.png" class="logo-proyecto">
     <h3>Fundo Malabrigo</h3>
-    <div class="subtitulo">Proyecto ecológico con alta valorización y entorno natural</div>
 
     <video controls class="video-proyecto">
         <source src="fundo-video.mp4" type="video/mp4">
@@ -235,11 +154,10 @@ footer{
     </div>
 </div>
 
-<!-- PUERTO MALABRIGO -->
+<!-- PUERTO -->
 <div class="proyecto-card">
     <img src="logo-puerto.png" class="logo-proyecto">
     <h3>Puerto Mar Club</h3>
-    <div class="subtitulo">Proyecto frente al mar ideal para inversión turística</div>
 
     <video controls class="video-proyecto">
         <source src="puerto-video.mp4" type="video/mp4">
@@ -252,11 +170,10 @@ footer{
     </div>
 </div>
 
-<!-- MONTE VERDE -->
+<!-- MONTE -->
 <div class="proyecto-card">
     <img src="logo-monte.png" class="logo-proyecto">
     <h3>Residencial Monte Verde</h3>
-    <div class="subtitulo">Proyecto residencial con excelente conectividad y tranquilidad</div>
 
     <video controls class="video-proyecto">
         <source src="monte-video.mp4" type="video/mp4">
@@ -272,26 +189,8 @@ footer{
 </div>
 </section>
 
-<!-- FORMULARIO -->
-<section class="cuestionario">
-<h2>Solicita Información</h2>
-
-<form action="https://formsubmit.co/TU_CORREO_AQUI" method="POST">
-    <input type="text" name="nombre" placeholder="Nombre completo" required>
-    <input type="tel" name="telefono" placeholder="Número de celular" required>
-    <select name="proyecto" required>
-        <option value="">Selecciona un proyecto</option>
-        <option>Fundo Malabrigo</option>
-        <option>Puerto Mar Club</option>
-        <option>Residencial Monte Verde</option>
-    </select>
-    <textarea name="mensaje" placeholder="Escribe tu consulta"></textarea>
-    <button type="submit">Enviar Información</button>
-</form>
-</section>
-
 <footer>
-© 2026 Humberto León | Asesor Inmobiliario 
+© 2026 Humberto León | Asesor Inmobiliario
 </footer>
 
 </body>
