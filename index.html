@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Compra tu lote en Trujillo, Chepén y Puerto Malabrigo | Humberto León</title>
-<meta name="description" content="Compra tu lote o terreno listo para construir en Trujillo, Chepén y Puerto Malabrigo. Proyectos inmobiliarios cerca del mar, con excelente ubicación, inversión segura y financiamiento directo.">
-<meta name="keywords" content="compra lote Trujillo, terreno listo para construir, cerca del mar, proyectos inmobiliarios, venta terrenos La Libertad">
+<title>Lotes y Terrenos en Trujillo, Chepén y Puerto Malabrigo | Humberto León</title>
+<meta name="description" content="Compra tu lote o terreno en Trujillo, Chepén y Puerto Malabrigo. Terrenos listos para construir cerca del mar. Inversión segura y financiamiento directo.">
+<meta name="keywords" content="compra tu lote, terreno listo para construir, lotes en Trujillo, terrenos en Chepén, Puerto Malabrigo, proyectos inmobiliarios">
 
 <style>
 body{
@@ -83,7 +83,7 @@ to{opacity:1; transform:translateY(-50%);}
 /* PROYECTOS DESTACADOS ANIMADOS */
 .proyectos h2{
     font-size:36px;
-    background: linear-gradient(90deg, #ffd700, #ffb347);
+    background: linear-gradient(90deg, #bfa046, #d4b75a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation:entradaProyectos 1.5s ease;
@@ -121,7 +121,7 @@ to{opacity:1; transform:translateY(-50%);}
 }
 .subtitulo-proyecto{
     font-size:16px;
-    color:#ffd700;
+    color:#bfa046;
     margin-bottom:15px;
 }
 .botones-proyecto{
@@ -131,14 +131,14 @@ to{opacity:1; transform:translateY(-50%);}
     display:inline-block;
     padding:10px 18px;
     margin:5px;
-    background:#ffd700;
+    background:#bfa046;
     color:white;
     text-decoration:none;
     border-radius:30px;
     transition:0.3s;
 }
 .btn:hover{
-    background:#ffb347;
+    background:#d4b75a;
 }
 .btn-agendar{
     background:#25D366;
@@ -169,7 +169,7 @@ input, select, textarea{
 }
 button{
     padding:14px;
-    background:#ffd700;
+    background:#bfa046;
     color:white;
     border:none;
     border-radius:30px;
@@ -183,8 +183,8 @@ footer{
     color:#aaa;
 }
 
-/* LIGHTBOX */
-#lightbox, #lightbox-video{
+/* LIGHTBOX VERTICAL */
+#lightbox{
     display:none;
     position:fixed;
     top:0;
@@ -197,10 +197,11 @@ footer{
     z-index:2000;
     flex-direction:column;
 }
-#lightbox-img, #lightbox-video video{
-    max-width:90%;
-    max-height:80%;
+#lightbox-img, #lightbox-video{
+    max-height:90%;
+    max-width:80%;
     border-radius:15px;
+    object-fit:contain;
 }
 #lightbox-controls{
     margin-top:15px;
@@ -210,12 +211,12 @@ footer{
     margin:5px;
     border:none;
     border-radius:30px;
-    background:#ffd700;
+    background:#bfa046;
     color:white;
     cursor:pointer;
 }
 #lightbox-controls button:hover{
-    background:#ffb347;
+    background:#d4b75a;
 }
 </style>
 </head>
@@ -245,12 +246,12 @@ footer{
 <div class="proyecto-card">
 <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
 <h3>Fundo Malabrigo</h3>
-<p class="subtitulo-proyecto">Compra tu lote cerca del mar, terreno listo para construir tu casa de campo e inversión segura</p>
+<p class="subtitulo-proyecto">Compra tu lote cerca del mar, terreno listo para construir y disfruta la tranquilidad que ofrece</p>
 <div class="botones-proyecto">
 <a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">Ver Fotos</a>
 <a href="javascript:void(0)" class="btn" onclick="abrirVideos(['fundo-video1.mp4','fundo-video2.mp4','fundo-video3.mp4'])">Ver Videos</a>
 <a href="https://maps.app.goo.gl/9Ww5FBU6VxPxKAbx9" target="_blank" class="btn">Ubicación</a>
-<a href="javascript:void(0)" class="btn btn-agendar" onclick="enviarWhatsApp('Fundo Malabrigo')">Agendar Visita</a>
+<a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20del%20Fundo%20Malabrigo" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
 </div>
 
@@ -258,12 +259,12 @@ footer{
 <div class="proyecto-card">
 <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
 <h3>Puerto Mar Club</h3>
-<p class="subtitulo-proyecto">Compra tu lote frente al mar, terreno listo para construir tu casa de playa con alta valorización</p>
+<p class="subtitulo-proyecto">Compra tu lote frente al mar, terreno listo para construir y con alta valorización</p>
 <div class="botones-proyecto">
 <a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">Ver Fotos</a>
 <a href="javascript:void(0)" class="btn" onclick="abrirVideos(['puerto-video1.mp4','puerto-video2.mp4','puerto-video3.mp4'])">Ver Videos</a>
 <a href="https://maps.app.goo.gl/sU94PKtPzDNYN7NT9" target="_blank" class="btn">Ubicación</a>
-<a href="javascript:void(0)" class="btn btn-agendar" onclick="enviarWhatsApp('Puerto Mar Club')">Agendar Visita</a>
+<a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20del%20Puerto%20Mar%20Club" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
 </div>
 
@@ -271,35 +272,26 @@ footer{
 <div class="proyecto-card">
 <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
 <h3>Residencial Monte Verde</h3>
-<p class="subtitulo-proyecto">Compra tu lote en entorno seguro y tranquilo, terreno listo para construir tu hogar ideal</p>
+<p class="subtitulo-proyecto">Compra tu lote en un entorno tranquilo, terreno listo para construir y vivir con comodidad</p>
 <div class="botones-proyecto">
 <a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">Ver Fotos</a>
 <a href="javascript:void(0)" class="btn" onclick="abrirVideos(['monte-video1.mp4','monte-video2.mp4','monte-video3.mp4'])">Ver Videos</a>
 <a href="https://maps.app.goo.gl/AA5CUW3xpDayokfH9" target="_blank" class="btn">Ubicación</a>
-<a href="javascript:void(0)" class="btn btn-agendar" onclick="enviarWhatsApp('Residencial Monte Verde')">Agendar Visita</a>
+<a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20del%20Residencial%20Monte%20Verde" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
 </div>
 
 </div>
 </section>
 
-<!-- LIGHTBOX IMAGENES -->
+<!-- LIGHTBOX -->
 <div id="lightbox">
-<img id="lightbox-img">
+<img id="lightbox-img" style="display:none;">
+<video id="lightbox-video" controls style="display:none;"></video>
 <div id="lightbox-controls">
 <button id="prev">Anterior</button>
 <button id="next">Siguiente</button>
 <button id="close">Cerrar</button>
-</div>
-</div>
-
-<!-- LIGHTBOX VIDEOS -->
-<div id="lightbox-video">
-<video controls id="video-player"></video>
-<div id="lightbox-controls-video">
-<button id="prev-video">Anterior</button>
-<button id="next-video">Siguiente</button>
-<button id="close-video">Cerrar</button>
 </div>
 </div>
 
@@ -325,65 +317,53 @@ footer{
 </footer>
 
 <script>
-let lightboxImages = [];
+let lightboxItems = [];
 let currentIndex = 0;
+
 function abrirImagenes(imgArray){
-    lightboxImages = imgArray;
+    lightboxItems = imgArray.map(src => ({type:'img', src}));
     currentIndex = 0;
-    document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
+    mostrarLightbox();
+}
+function abrirVideos(videoArray){
+    lightboxItems = videoArray.map(src => ({type:'video', src}));
+    currentIndex = 0;
+    mostrarLightbox();
+}
+function mostrarLightbox(){
+    const img = document.getElementById("lightbox-img");
+    const vid = document.getElementById("lightbox-video");
+    if(lightboxItems[currentIndex].type === 'img'){
+        img.src = lightboxItems[currentIndex].src;
+        img.style.display = 'block';
+        vid.style.display = 'none';
+    }else{
+        vid.src = lightboxItems[currentIndex].src;
+        vid.style.display = 'block';
+        img.style.display = 'none';
+    }
     document.getElementById("lightbox").style.display = "flex";
 }
+
 document.getElementById("prev").addEventListener("click", ()=>{
-    currentIndex = (currentIndex - 1 + lightboxImages.length) % lightboxImages.length;
-    document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
+    currentIndex = (currentIndex - 1 + lightboxItems.length) % lightboxItems.length;
+    mostrarLightbox();
 });
 document.getElementById("next").addEventListener("click", ()=>{
-    currentIndex = (currentIndex + 1) % lightboxImages.length;
-    document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
+    currentIndex = (currentIndex + 1) % lightboxItems.length;
+    mostrarLightbox();
 });
 document.getElementById("close").addEventListener("click", ()=>{
     document.getElementById("lightbox").style.display = "none";
 });
 
-// Videos
-let lightboxVideos = [];
-let currentVideoIndex = 0;
-function abrirVideos(videoArray){
-    lightboxVideos = videoArray;
-    currentVideoIndex = 0;
-    document.getElementById("video-player").src = lightboxVideos[currentVideoIndex];
-    document.getElementById("lightbox-video").style.display = "flex";
-}
-document.getElementById("prev-video").addEventListener("click", ()=>{
-    currentVideoIndex = (currentVideoIndex - 1 + lightboxVideos.length) % lightboxVideos.length;
-    document.getElementById("video-player").src = lightboxVideos[currentVideoIndex];
-});
-document.getElementById("next-video").addEventListener("click", ()=>{
-    currentVideoIndex = (currentVideoIndex + 1) % lightboxVideos.length;
-    document.getElementById("video-player").src = lightboxVideos[currentVideoIndex];
-});
-document.getElementById("close-video").addEventListener("click", ()=>{
-    document.getElementById("lightbox-video").style.display = "none";
-    document.getElementById("video-player").pause();
-});
-
-// WhatsApp dinámico por proyecto
-function enviarWhatsApp(proyecto){
-    const texto = `Hola Humberto, estoy interesado en ${proyecto} y quiero más información sobre la compra de lote.`;
-    window.open(`https://wa.me/51985877256?text=${encodeURIComponent(texto)}`, "_blank");
-}
-
-// Formulario general
 document.getElementById("formulario").addEventListener("submit", function(e){
     e.preventDefault();
     let nombre = document.getElementById("nombre").value;
     let telefono = document.getElementById("telefono").value;
     let proyecto = document.getElementById("proyecto").value;
     let mensaje = document.getElementById("mensaje").value;
-    let texto = `Hola Humberto, quiero información sobre ${proyecto}:%0A%0A` +
-    `Nombre: ${nombre}%0A` +
-    `Teléfono: ${telefono}%0A` +
-    `Mensaje: ${mensaje}`;
+    let texto = `Hola Humberto, quiero información:%0A%0ANombre: ${nombre}%0ATeléfono: ${telefono}%0A%0AProyecto: ${proyecto}%0AMensaje: ${mensaje}`;
     window.open(`https://wa.me/51985877256?text=${texto}`, "_blank");
 });
 </script>
