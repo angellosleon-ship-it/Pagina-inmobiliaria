@@ -8,7 +8,7 @@
     <changefreq>daily</changefreq>
   </url>
 
-  <!-- Proyectos individuales -->
+  <!-- Proyectos -->
   <url>
     <loc>https://pagina-inmobiliaria-one.vercel.app/fundo-malabrigo</loc>
     <priority>0.9</priority>
@@ -27,23 +27,23 @@
     <changefreq>weekly</changefreq>
   </url>
 
-  <!-- Secciones internas (opcional, si quieres que Google vea anclas) -->
+  <!-- Anclas dentro de la página -->
   <url>
     <loc>https://pagina-inmobiliaria-one.vercel.app/#fundo-malabrigo</loc>
     <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
   </url>
+
   <url>
     <loc>https://pagina-inmobiliaria-one.vercel.app/#puerto-mar-club</loc>
     <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
   </url>
+
   <url>
     <loc>https://pagina-inmobiliaria-one.vercel.app/#residencial-monte-verde</loc>
     <priority>0.8</priority>
-  </url>
-
-</urlset>
-    <loc>https://pagina-inmobiliaria-one.vercel.app/#monte-verde</loc>
-    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
   </url>
 
 </urlset>
