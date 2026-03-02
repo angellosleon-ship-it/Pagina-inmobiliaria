@@ -42,34 +42,39 @@ header video{
     text-align:center;
     top:50%;
     transform:translateY(-50%);
-    animation:fadeIn 2s ease;
 }
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(-40%);}
-to{opacity:1; transform:translateY(-50%);}
+
+/* Animaciones */
+@keyframes slideInName {
+    0% { transform: translateX(-200px); opacity:0; }
+    100% { transform: translateX(0); opacity:1; }
 }
-/* Nombre animado */
+
+@keyframes fadeInText {
+    0% { opacity:0; }
+    100% { opacity:1; }
+}
+
+/* Logo */
+.header-content img{
+    width:200px;
+    margin-bottom:20px;
+}
+
+/* Nombre animado debajo del logo */
 .header-content h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
-    font-size: 70px;
+    font-size: 60px;
     background: linear-gradient(90deg, #bfa046, #f9e39a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     margin: 0;
-    position: relative;
-    display: inline-block;
-    transform: translateX(-100%) rotateY(30deg);
-    opacity: 0;
-    animation: slideIn 1s forwards ease-out;
+    animation: slideInName 1s ease-out forwards;
 }
-@keyframes slideIn {
-    0% { transform: translateX(-100%) rotateY(30deg) scale(1.2); opacity:0; }
-    50% { transform: translateX(20px) rotateY(-10deg) scale(1.1); opacity:1; }
-    100% { transform: translateX(0) rotateY(0deg) scale(1); opacity:1; }
-}
-/* Texto debajo animado */
+
+/* Texto debajo del nombre */
 .header-content p {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -80,11 +85,9 @@ to{opacity:1; transform:translateY(-50%);}
     text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
     animation: fadeInText 2s ease forwards;
     opacity: 0;
-    animation-delay: 1s;
 }
-@keyframes fadeInText {
-    to { opacity: 1; }
-}
+.header-content p:nth-child(3){ animation-delay: 1s; } /* Asesor Inmobiliario */
+.header-content p:nth-child(4){ animation-delay: 1.5s; } /* Invierte hoy... */
 
 /* PROYECTOS */
 .proyectos{
@@ -115,7 +118,7 @@ to{opacity:1; transform:translateY(-50%);}
 }
 .subtitulo-proyecto{
     font-size:16px;
-    color:#f9e39a; /* color acorde al logo */
+    color:#f9e39a;
     margin-bottom:15px;
 }
 .botones-proyecto{
