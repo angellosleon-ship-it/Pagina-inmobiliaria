@@ -5,15 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Lotes y Terrenos en Trujillo, Chepén y Puerto Malabrigo | Humberto León</title>
-
 <meta name="description" content="Venta de lotes y terrenos en Trujillo, Chepén y Puerto Malabrigo. Proyectos inmobiliarios con excelente ubicación, inversión segura y financiamiento directo.">
 <meta name="keywords" content="lotes en Trujillo, terrenos en Chepén, Puerto Malabrigo, proyectos inmobiliarios, venta de terrenos La Libertad">
+
+<!-- Google Fonts para efecto WOW -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&display=swap" rel="stylesheet">
 
 <style>
 body{
     margin:0;
     font-family:'Segoe UI',sans-serif;
-    background:#0f172a; /* color de fondo acorde al logo */
+    background:#0f172a;
     color:white;
 }
 /* HEADER */
@@ -46,10 +48,44 @@ header video{
 from{opacity:0; transform:translateY(-40%);}
 to{opacity:1; transform:translateY(-50%);}
 }
-.header-content img{
-    width:200px;
-    margin-bottom:20px;
+/* Nombre animado */
+.header-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 70px;
+    background: linear-gradient(90deg, #bfa046, #f9e39a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    transform: translateX(-100%) rotateY(30deg);
+    opacity: 0;
+    animation: slideIn 1s forwards ease-out;
 }
+@keyframes slideIn {
+    0% { transform: translateX(-100%) rotateY(30deg) scale(1.2); opacity:0; }
+    50% { transform: translateX(20px) rotateY(-10deg) scale(1.1); opacity:1; }
+    100% { transform: translateX(0) rotateY(0deg) scale(1); opacity:1; }
+}
+/* Texto debajo animado */
+.header-content p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #f9e39a;
+    margin:5px 0;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    animation: fadeInText 2s ease forwards;
+    opacity: 0;
+    animation-delay: 1s;
+}
+@keyframes fadeInText {
+    to { opacity: 1; }
+}
+
 /* PROYECTOS */
 .proyectos{
     padding:100px 20px;
@@ -77,13 +113,9 @@ to{opacity:1; transform:translateY(-50%);}
     margin:0 auto 15px;
     display:block;
 }
-.video-proyecto{
-    width:100%;
-    border-radius:15px;
-}
 .subtitulo-proyecto{
     font-size:16px;
-    color:#bfa046; /* color de subtítulos acorde al logo */
+    color:#f9e39a; /* color acorde al logo */
     margin-bottom:15px;
 }
 .botones-proyecto{
@@ -178,24 +210,6 @@ footer{
 #lightbox-controls button:hover{
     background:#d4b75a;
 }
-
-/* CARRUSEL DE VIDEOS */
-.video-controles{
-    text-align:center;
-    margin-top:10px;
-}
-.video-controles button{
-    padding:8px 15px;
-    margin:0 5px;
-    border:none;
-    border-radius:25px;
-    background:#bfa046;
-    color:white;
-    cursor:pointer;
-}
-.video-controles button:hover{
-    background:#d4b75a;
-}
 </style>
 </head>
 <body>
@@ -225,16 +239,8 @@ footer{
 <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
 <h3>Fundo Malabrigo</h3>
 <p class="subtitulo-proyecto">Vive cerca del mar, respira tranquilidad y construye tu casa de campo en el lugar perfecto para invertir</p>
-<div class="video-carrusel" id="carrusel-fundo">
-  <video controls class="video-proyecto">
-    <source src="fundo1-video.mp4" type="video/mp4">
-  </video>
-</div>
-<div class="video-controles">
-  <button onclick="cambiarVideo('fundo', -1)">Anterior</button>
-  <button onclick="cambiarVideo('fundo', 1)">Siguiente</button>
-</div>
 <div class="botones-proyecto">
+<a href="javascript:void(0)" class="btn" onclick="abrirVideos(['fundo-video1.mp4','fundo-video2.mp4','fundo-video3.mp4'])">Ver Videos</a>
 <a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">Ver Fotos</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
@@ -245,16 +251,8 @@ footer{
 <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
 <h3>Puerto Mar Club</h3>
 <p class="subtitulo-proyecto">Lotes exclusivos frente al mar para construir tu casa de playa e invertir con alta valorización</p>
-<div class="video-carrusel" id="carrusel-puerto">
-  <video controls class="video-proyecto">
-    <source src="puerto1-video.mp4" type="video/mp4">
-  </video>
-</div>
-<div class="video-controles">
-  <button onclick="cambiarVideo('puerto', -1)">Anterior</button>
-  <button onclick="cambiarVideo('puerto', 1)">Siguiente</button>
-</div>
 <div class="botones-proyecto">
+<a href="javascript:void(0)" class="btn" onclick="abrirVideos(['puerto-video1.mp4','puerto-video2.mp4','puerto-video3.mp4'])">Ver Videos</a>
 <a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">Ver Fotos</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
@@ -265,16 +263,8 @@ footer{
 <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
 <h3>Residencial Monte Verde</h3>
 <p class="subtitulo-proyecto">El hogar perfecto en un entorno tranquilo y seguro, ideal para vivir con comodidad y bienestar</p>
-<div class="video-carrusel" id="carrusel-monte">
-  <video controls class="video-proyecto">
-    <source src="monte1-video.mp4" type="video/mp4">
-  </video>
-</div>
-<div class="video-controles">
-  <button onclick="cambiarVideo('monte', -1)">Anterior</button>
-  <button onclick="cambiarVideo('monte', 1)">Siguiente</button>
-</div>
 <div class="botones-proyecto">
+<a href="javascript:void(0)" class="btn" onclick="abrirVideos(['monte-video1.mp4','monte-video2.mp4','monte-video3.mp4'])">Ver Videos</a>
 <a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">Ver Fotos</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
@@ -315,56 +305,63 @@ footer{
 </footer>
 
 <script>
-// LIGHTBOX
 let lightboxImages = [];
+let videoFiles = [];
 let currentIndex = 0;
+
 function abrirImagenes(imgArray){
     lightboxImages = imgArray;
     currentIndex = 0;
     document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
     document.getElementById("lightbox").style.display = "flex";
 }
+
+function abrirVideos(videos){
+    videoFiles = videos;
+    currentIndex = 0;
+    document.getElementById("lightbox-img").src = videoFiles[currentIndex];
+    document.getElementById("lightbox").style.display = "flex";
+}
+
 document.getElementById("prev").addEventListener("click", ()=>{
-    currentIndex = (currentIndex - 1 + lightboxImages.length) % lightboxImages.length;
-    document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
+    if(lightboxImages.length>0){
+        currentIndex = (currentIndex - 1 + lightboxImages.length) % lightboxImages.length;
+        document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
+    } else if(videoFiles.length>0){
+        currentIndex = (currentIndex - 1 + videoFiles.length) % videoFiles.length;
+        document.getElementById("lightbox-img").src = videoFiles[currentIndex];
+    }
 });
+
 document.getElementById("next").addEventListener("click", ()=>{
-    currentIndex = (currentIndex + 1) % lightboxImages.length;
-    document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
+    if(lightboxImages.length>0){
+        currentIndex = (currentIndex + 1) % lightboxImages.length;
+        document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
+    } else if(videoFiles.length>0){
+        currentIndex = (currentIndex + 1) % videoFiles.length;
+        document.getElementById("lightbox-img").src = videoFiles[currentIndex];
+    }
 });
+
 document.getElementById("close").addEventListener("click", ()=>{
     document.getElementById("lightbox").style.display = "none";
 });
 
-// FORMULARIO
 document.getElementById("formulario").addEventListener("submit", function(e){
     e.preventDefault();
     let nombre = document.getElementById("nombre").value;
     let telefono = document.getElementById("telefono").value;
     let proyecto = document.getElementById("proyecto").value;
     let mensaje = document.getElementById("mensaje").value;
+
     let texto = `Hola Humberto, quiero información:%0A%0A` +
     `Nombre: ${nombre}%0A` +
     `Teléfono: ${telefono}%0A` +
     `Proyecto: ${proyecto}%0A` +
     `Mensaje: ${mensaje}`;
+
     window.open(`https://wa.me/51985877256?text=${texto}`, "_blank");
 });
-
-// CARRUSEL DE VIDEOS
-const videosProyecto = {
-  'fundo': ['fundo1-video.mp4','fundo2-video.mp4','fundo3-video.mp4'],
-  'puerto': ['puerto1-video.mp4','puerto2-video.mp4','puerto3-video.mp4'],
-  'monte': ['monte1-video.mp4','monte2-video.mp4','monte3-video.mp4']
-};
-const indicesVideo = { 'fundo': 0, 'puerto': 0, 'monte': 0 };
-function cambiarVideo(proyecto, direccion) {
-  const videos = videosProyecto[proyecto];
-  indicesVideo[proyecto] = (indicesVideo[proyecto] + direccion + videos.length) % videos.length;
-  const videoContenedor = document.getElementById(`carrusel-${proyecto}`).querySelector('video source');
-  videoContenedor.src = videos[indicesVideo[proyecto]];
-  document.getElementById(`carrusel-${proyecto}`).querySelector('video').load();
-}
 </script>
 
 </body>
