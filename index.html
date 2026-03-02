@@ -206,7 +206,7 @@ footer{
 <source src="fundo-video.mp4" type="video/mp4">
 </video>
 <div class="botones-proyecto">
-<a href="#" class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">Ver Fotos</a>
+<a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">Ver Fotos</a>
 <a href="fundo-video.mp4" target="_blank" class="btn">Ver Video</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
@@ -221,7 +221,7 @@ footer{
 <source src="puerto-video.mp4" type="video/mp4">
 </video>
 <div class="botones-proyecto">
-<a href="#" class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">Ver Fotos</a>
+<a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">Ver Fotos</a>
 <a href="puerto-video.mp4" target="_blank" class="btn">Ver Video</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
@@ -236,7 +236,7 @@ footer{
 <source src="monte-video.mp4" type="video/mp4">
 </video>
 <div class="botones-proyecto">
-<a href="#" class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">Ver Fotos</a>
+<a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">Ver Fotos</a>
 <a href="monte-video.mp4" target="_blank" class="btn">Ver Video</a>
 <a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
@@ -277,9 +277,9 @@ footer{
 </footer>
 
 <script>
-/* LIGHTBOX MULTIIMAGEN */
 let lightboxImages = [];
 let currentIndex = 0;
+
 function abrirImagenes(imgArray){
     lightboxImages = imgArray;
     currentIndex = 0;
@@ -301,7 +301,6 @@ document.getElementById("close").addEventListener("click", ()=>{
     document.getElementById("lightbox").style.display = "none";
 });
 
-/* FORMULARIO ENVIO POR WHATSAPP */
 document.getElementById("formulario").addEventListener("submit", function(e){
     e.preventDefault();
     let nombre = document.getElementById("nombre").value;
