@@ -1,189 +1,260 @@
 <!DOCTYPE html>
 <html lang="es" style="scroll-behavior: smooth;">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humberto León | Asesor de Inversiones Inmobiliarias</title>
-    
-    <style>
-        :root {
-            --dorado: #bfa046;
-            --dorado-brillante: #d4b75a;
-            --oscuro-deep: #0f172a;
-            --oscuro-card: #111827;
-            --verde-whatsapp: #25D366;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humberto León | Asesor de Inversiones Inmobiliarias</title>
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: var(--oscuro-deep);
-            color: white;
-            line-height: 1.6;
-        }
+<style>
+:root {
+    --dorado: #bfa046;
+    --dorado-brillante: #d4b75a;
+    --oscuro-deep: #0f172a;
+    --oscuro-card: #111827;
+    --verde-whatsapp: #25D366;
+}
 
-        /* HEADER CENTRADO EN TU MARCA PERSONAL */
-        header {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            text-align: center;
-        }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--oscuro-deep);
+    color: white;
+    line-height: 1.6;
+}
 
-        header video {
-            position: absolute;
-            top: 50%; left: 50%;
-            min-width: 100%; min-height: 100%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            object-fit: cover;
-        }
+header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
 
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle, rgba(15,23,42,0.7) 0%, rgba(15,23,42,1) 90%);
-            z-index: 0;
-        }
+header video {
+    position: absolute;
+    top: 50%; left: 50%;
+    min-width: 100%; min-height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+}
 
-        .header-content {
-            position: relative;
-            z-index: 10;
-            padding: 20px;
-            animation: scaleIn 1.2s ease-out;
-        }
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(15,23,42,0.7) 0%, rgba(15,23,42,1) 90%);
+}
 
-        /* TU LOGO COMO PROTAGONISTA */
-        .header-content .mi-logo-principal {
-            width: 250px; /* Más grande para destacar */
-            filter: drop-shadow(0 0 20px rgba(191, 160, 70, 0.5));
-            margin-bottom: 20px;
-        }
+.header-content {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+    animation: scaleIn 1.2s ease-out;
+}
 
-        .header-content h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin: 0;
-            background: linear-gradient(45deg, var(--dorado), #fff, var(--dorado));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-        }
+.mi-logo-principal {
+    width: 250px;
+    filter: drop-shadow(0 0 20px rgba(191, 160, 70, 0.5));
+    margin-bottom: 20px;
+}
 
-        .header-content .subtitle {
-            font-size: 1.5rem;
-            color: var(--dorado-brillante);
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-top: 10px;
-        }
+.header-content h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin: 0;
+    background: linear-gradient(45deg, var(--dorado), #fff, var(--dorado));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
 
-        /* SECCIÓN DE PROYECTOS COMO PORTAFOLIO */
-        section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--dorado-brillante);
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
 
-        h2.seccion-titulo {
-            text-align: center;
-            font-size: 2rem;
-            color: white;
-            margin-bottom: 10px;
-        }
-        p.seccion-subtitulo {
-            text-align: center;
-            color: #888;
-            margin-bottom: 50px;
-        }
+section { 
+    padding: 80px 20px; 
+    max-width: 1200px; 
+    margin: auto; 
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
+h2.seccion-titulo {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
 
-        .proyecto-card {
-            background: var(--oscuro-card);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.4s;
-            text-align: center;
-        }
+.seccion-subtitulo {
+    text-align: center;
+    color: #888;
+    margin-bottom: 50px;
+}
 
-        .proyecto-card:hover {
-            border-color: var(--dorado);
-            transform: translateY(-5px);
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
 
-        .logo-proyecto { height: 60px; margin-bottom: 20px; opacity: 0.8; }
+.proyecto-card {
+    background: var(--oscuro-card);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.4s;
+    text-align: center;
+}
 
-        .btn {
-            display: block;
-            padding: 15px;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: 0.3s;
-        }
+.proyecto-card:hover {
+    border-color: var(--dorado);
+    transform: translateY(-5px);
+}
 
-        .btn-gold { background: var(--dorado); color: white; }
-        .btn-wa { background: var(--verde-whatsapp); color: white; }
+.logo-proyecto { 
+    height: 60px; 
+    margin-bottom: 20px; 
+    opacity: 0.8; 
+}
 
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-    </style>
+.btn {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-gold { 
+    background: var(--dorado); 
+    color: white; 
+}
+
+.btn-wa { 
+    background: var(--verde-whatsapp); 
+    color: white; 
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <video autoplay muted loop playsinline poster="fundo1.jpg">
-        <source src="header-video.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
-    <div class="header-content">
-        <img src="Logo inmobiliario HL en azul y oro (1).png" class="mi-logo-principal" alt="Humberto León Marca Personal">
-        <h1>Humberto León</h1>
-        <div class="subtitle">Asesoría Inmobiliaria Exclusiva</div>
-        <p style="max-width: 600px; margin: 20px auto; color: #ccc;">Ayudándote a construir un patrimonio sólido con las mejores oportunidades del norte peruano.</p>
-        <a href="#proyectos" class="btn btn-gold" style="display:inline-block; padding: 15px 40px; border-radius: 50px;">Explorar Proyectos</a>
-    </div>
+<video autoplay muted loop playsinline poster="fundo1.jpg">
+    <source src="header-video.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<div class="header-content">
+    <img src="Logo inmobiliario HL en azul y oro (1).png" class="mi-logo-principal" alt="Humberto León Marca Personal">
+    <h1>Humberto León</h1>
+    <div class="subtitle">Asesoría Inmobiliaria Exclusiva</div>
+
+    <p style="margin-top:15px; color:#fff; font-weight:500;">
+    Más de clientes asesorados en el norte peruano respaldan mi trabajo.
+    </p>
+
+    <p style="max-width:600px; margin:20px auto; color:#ccc;">
+    Ayudándote a construir un patrimonio sólido con las mejores oportunidades del norte peruano.
+    </p>
+
+    <a href="#proyectos" class="btn btn-gold" style="display:inline-block; padding:15px 40px; border-radius:50px;">
+    Explorar Proyectos
+    </a>
+</div>
 </header>
 
 <section id="proyectos">
-    <h2 class="seccion-titulo">Oportunidades de Inversión</h2>
-    <p class="seccion-subtitulo">Proyectos seleccionados bajo mi respaldo profesional por su alta plusvalía.</p>
-    
-    <div class="grid">
-        <div class="proyecto-card">
-            <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
-            <h3>Monte Verde</h3>
-            <p>Zona estratégica cerca de El Chaparral. El momento ideal para invertir por su crecimiento proyectado.</p>
-            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20invertir%20en%20Monte%20Verde" class="btn btn-wa">Consultar con Humberto</a>
-        </div>
+<h2 class="seccion-titulo">Oportunidades de Inversión</h2>
+<p class="seccion-subtitulo">Proyectos seleccionados bajo mi respaldo profesional por su alta plusvalía.</p>
 
-        <div class="proyecto-card">
-            <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
-            <h3>Fundo Malabrigo</h3>
-            <p>Lotes exclusivos de campo y mar. Seguridad y tranquilidad para tu próxima casa de descanso.</p>
-            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20dame%20info%20de%20Malabrigo" class="btn btn-wa">Consultar con Humberto</a>
-        </div>
+<div class="grid">
+<div class="proyecto-card">
+    <img src="logo-monte.png" class="logo-proyecto">
+    <h3>Monte Verde</h3>
+    <p>Zona estratégica cerca de El Chaparral. Ideal para inversión por su crecimiento proyectado.</p>
+    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20invertir%20en%20Monte%20Verde" class="btn btn-wa">
+    Consultar con Humberto
+    </a>
+</div>
 
-        <div class="proyecto-card">
-            <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
-            <h3>Puerto Mar Club</h3>
-            <p>Tu lote frente al mar. Proyectos premium listos para construir la casa de playa que soñaste.</p>
-            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20interesado%20en%20Puerto%20Mar" class="btn btn-wa">Consultar con Humberto</a>
-        </div>
-    </div>
+<div class="proyecto-card">
+    <img src="logo-fundo.png" class="logo-proyecto">
+    <h3>Fundo Malabrigo</h3>
+    <p>Lotes exclusivos de campo y mar. Seguridad y tranquilidad para tu próxima casa de descanso.</p>
+    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20dame%20info%20de%20Malabrigo" class="btn btn-wa">
+    Consultar con Humberto
+    </a>
+</div>
+
+<div class="proyecto-card">
+    <img src="logo-puerto.png" class="logo-proyecto">
+    <h3>Puerto Mar Club</h3>
+    <p>Tu lote frente al mar. Proyectos premium listos para construir la casa de playa que soñaste.</p>
+    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20interesado%20en%20Puerto%20Mar" class="btn btn-wa">
+    Consultar con Humberto
+    </a>
+</div>
+</div>
 </section>
 
-<footer style="padding: 50px; text-align: center; background: #000;">
-    <img src="Logo inmobiliario HL en azul y oro (1).png" style="width: 80px; margin-bottom: 15px;" alt="HL Logo">
-    <p style="color: var(--dorado);">Humberto León - Tu aliado en inversiones inmobiliarias.</p>
+<section>
+<h2 class="seccion-titulo">¿Por qué invertir conmigo?</h2>
+<p class="seccion-subtitulo">No solo eliges un lote, eliges respaldo, estrategia y seguridad.</p>
+
+<div class="grid">
+<div class="proyecto-card">
+    <h3>Transparencia Total</h3>
+    <p>Revisión clara de documentación, contratos y proceso legal. Sin letras pequeñas.</p>
+</div>
+
+<div class="proyecto-card">
+    <h3>Acompañamiento Personalizado</h3>
+    <p>Te asesoro desde la primera consulta hasta la entrega de tu propiedad.</p>
+</div>
+
+<div class="proyecto-card">
+    <h3>Enfoque en Plusvalía</h3>
+    <p>Selecciono proyectos con alto potencial de crecimiento para proteger y multiplicar tu inversión.</p>
+</div>
+</div>
+</section>
+
+<section style="text-align:center;">
+<h2 class="seccion-titulo" style="color:var(--dorado);">
+No vendo terrenos. Construyo patrimonio contigo.
+</h2>
+<p style="max-width:700px; margin:20px auto; color:#ccc;">
+Cada inversión es una decisión importante. Mi compromiso es que tomes esa decisión con información clara, respaldo profesional y visión estratégica.
+</p>
+<a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20asesoria%20personalizada" 
+class="btn btn-gold" 
+style="display:inline-block; padding:15px 40px; border-radius:50px;">
+Solicitar Asesoría Personalizada
+</a>
+</section>
+
+<footer style="padding:50px; text-align:center; background:#000;">
+<img src="Logo inmobiliario HL en azul y oro (1).png" style="width:80px; margin-bottom:15px;">
+<p style="color:var(--dorado);">
+Humberto León - Tu aliado en inversiones inmobiliarias.
+</p>
 </footer>
 
 </body>
