@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lotes y Terrenos en Trujillo, Chepén y Puerto Malabrigo | Humberto León</title>
-<meta name="description" content="Compra tu lote o terreno en Trujillo, Chepén y Puerto Malabrigo. Terrenos listos para construir cerca del mar. Proyectos inmobiliarios con excelente ubicación e inversión segura.">
-<meta name="keywords" content="compra lote, terreno listo para construir, lotes Trujillo, terrenos Chepén, Puerto Malabrigo, inversión inmobiliaria">
+<meta name="description" content="Compra tu lote o terreno listo para construir en Trujillo, Chepén y Puerto Malabrigo. Proyectos cerca del mar, inversión segura y financiamiento directo.">
+<meta name="keywords" content="compra tu lote, terreno listo para construir, Trujillo, Chepén, Puerto Malabrigo, proyectos inmobiliarios">
 
 <style>
 body{
@@ -47,9 +47,9 @@ to{opacity:1; transform:translateY(-50%);}
 .header-content img{
     width:200px;
     margin-bottom:20px;
-}
 
 /* NOMBRE ANIMADO */
+}
 .header-content h1{
     font-size:64px;
     font-weight:bold;
@@ -144,16 +144,6 @@ to{opacity:1; transform:translateY(-50%);}
     background:#25D366;
 }
 
-/* VIDEOS DRIVE */
-.video-container{
-    margin-top:15px;
-}
-.video-container iframe{
-    width:100%;
-    height:400px; /* vertical estilo móvil */
-    border-radius:15px;
-}
-
 /* FORMULARIO */
 .cuestionario{
     background:#0b1220;
@@ -227,6 +217,22 @@ footer{
 #lightbox-controls button:hover{
     background:#d4b75a;
 }
+
+/* VIDEO EMBED */
+.video-container {
+    position: relative;
+    padding-bottom: 177.78%; /* 16:9 -> 9/16 = 0.5625, vertical video 9/16? */
+    height: 0;
+    overflow: hidden;
+    border-radius:15px;
+}
+.video-container iframe, .video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 </style>
 </head>
 <body>
@@ -255,42 +261,39 @@ footer{
 <div class="proyecto-card">
 <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
 <h3>Fundo Malabrigo</h3>
-<p class="subtitulo-proyecto">Compra tu lote cerca del mar, terreno listo para construir tu casa de campo en el lugar perfecto para invertir</p>
+<p class="subtitulo-proyecto">Compra tu lote cerca del mar, respira tranquilidad y construye tu casa de campo en el lugar perfecto para invertir</p>
 <div class="botones-proyecto">
 <a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">Ver Fotos</a>
-<a href="javascript:void(0)" class="btn" onclick="mostrarVideos('fundo-videos', ['1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','151mpZHdjUhTozjy3lNordHUvphKtYASr','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">Ver Videos</a>
+<a href="javascript:void(0)" class="btn" onclick="abrirVideos(['https://drive.google.com/uc?export=download&id=1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','https://drive.google.com/uc?export=download&id=151mpZHdjUhTozjy3lNordHUvphKtYASr','https://drive.google.com/uc?export=download&id=1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">Ver Videos</a>
 <a href="https://maps.app.goo.gl/9Ww5FBU6VxPxKAbx9" target="_blank" class="btn">Ubicación</a>
-<a href="https://wa.me/51985877256?text=Hola,%20quiero%20información%20del%20Fundo%20Malabrigo" target="_blank" class="btn btn-agendar">Agendar Visita</a>
+<a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
-<div id="fundo-videos" class="video-container"></div>
 </div>
 
 <!-- PUERTO MAR CLUB -->
 <div class="proyecto-card">
 <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
 <h3>Puerto Mar Club</h3>
-<p class="subtitulo-proyecto">Compra tu lote frente al mar, terreno listo para construir tu casa de playa e invertir con alta valorización</p>
+<p class="subtitulo-proyecto">Compra tu lote frente al mar, listo para construir tu casa de playa e invertir con alta valorización</p>
 <div class="botones-proyecto">
 <a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">Ver Fotos</a>
-<a href="javascript:void(0)" class="btn" onclick="mostrarVideos('puerto-videos', ['1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc','1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi','1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE'])">Ver Videos</a>
+<a href="javascript:void(0)" class="btn" onclick="abrirVideos(['https://drive.google.com/uc?export=download&id=1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc','https://drive.google.com/uc?export=download&id=1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','https://drive.google.com/uc?export=download&id=1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi'])">Ver Videos</a>
 <a href="https://maps.app.goo.gl/sU94PKtPzDNYN7NT9" target="_blank" class="btn">Ubicación</a>
-<a href="https://wa.me/51985877256?text=Hola,%20quiero%20información%20del%20Puerto%20Mar%20Club" target="_blank" class="btn btn-agendar">Agendar Visita</a>
+<a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
-<div id="puerto-videos" class="video-container"></div>
 </div>
 
 <!-- RESIDENCIAL MONTE VERDE -->
 <div class="proyecto-card">
 <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
 <h3>Residencial Monte Verde</h3>
-<p class="subtitulo-proyecto">Compra tu lote en un entorno tranquilo y seguro, terreno listo para construir tu hogar ideal</p>
+<p class="subtitulo-proyecto">Compra tu terreno en un entorno tranquilo y seguro, ideal para vivir con comodidad y bienestar</p>
 <div class="botones-proyecto">
 <a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">Ver Fotos</a>
-<a href="javascript:void(0)" class="btn" onclick="mostrarVideos('monte-videos', ['18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL','1pWa_TJ13AxSP2dpvZ2VyAQqxU2h77HRs'])">Ver Videos</a>
+<a href="javascript:void(0)" class="btn" onclick="abrirVideos(['https://drive.google.com/uc?export=download&id=18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','https://drive.google.com/uc?export=download&id=1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc','https://drive.google.com/uc?export=download&id=1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">Ver Videos</a>
 <a href="https://maps.app.goo.gl/AA5CUW3xpDayokfH9" target="_blank" class="btn">Ubicación</a>
-<a href="https://wa.me/51985877256?text=Hola,%20quiero%20información%20del%20Residencial%20Monte%20Verde" target="_blank" class="btn btn-agendar">Agendar Visita</a>
+<a href="https://wa.me/51985877256" target="_blank" class="btn btn-agendar">Agendar Visita</a>
 </div>
-<div id="monte-videos" class="video-container"></div>
 </div>
 
 </div>
@@ -349,18 +352,43 @@ document.getElementById("close").addEventListener("click", ()=>{
     document.getElementById("lightbox").style.display = "none";
 });
 
-// Función para mostrar videos en la página desde Drive
-function mostrarVideos(containerId, fileIds){
-    const container = document.getElementById(containerId);
-    container.innerHTML = ""; // limpiar antes de agregar
-    fileIds.forEach(id => {
-        const iframe = document.createElement("iframe");
-        iframe.src = `https://drive.google.com/file/d/${id}/preview`;
-        iframe.allow = "autoplay; encrypted-media";
-        iframe.frameBorder = "0";
-        iframe.allowFullscreen = true;
-        container.appendChild(iframe);
+function abrirVideos(videoArray){
+    const container = document.createElement('div');
+    container.className = 'video-container';
+    videoArray.forEach(url=>{
+        const video = document.createElement('video');
+        video.src = url;
+        video.controls = true;
+        video.style.marginBottom = '15px';
+        container.appendChild(video);
     });
+    const overlay = document.createElement('div');
+    overlay.style.position='fixed';
+    overlay.style.top='0';
+    overlay.style.left='0';
+    overlay.style.width='100%';
+    overlay.style.height='100%';
+    overlay.style.background='rgba(0,0,0,0.95)';
+    overlay.style.display='flex';
+    overlay.style.flexDirection='column';
+    overlay.style.justifyContent='center';
+    overlay.style.alignItems='center';
+    overlay.style.zIndex='2000';
+    overlay.appendChild(container);
+
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent='Cerrar';
+    closeBtn.style.padding='10px 18px';
+    closeBtn.style.margin='10px';
+    closeBtn.style.border='none';
+    closeBtn.style.borderRadius='30px';
+    closeBtn.style.background='#bfa046';
+    closeBtn.style.color='white';
+    closeBtn.style.cursor='pointer';
+    closeBtn.addEventListener('click',()=>document.body.removeChild(overlay));
+    overlay.appendChild(closeBtn);
+
+    document.body.appendChild(overlay);
 }
 
 document.getElementById("formulario").addEventListener("submit", function(e){
