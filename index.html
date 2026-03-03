@@ -1,384 +1,190 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" style="scroll-behavior: smooth;">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lotes y Terrenos en Trujillo, Chepén y Puerto Malabrigo | Humberto León</title>
-<meta name="description" content="Compra tu lote o terreno en Trujillo, Chepén y Puerto Malabrigo. Terrenos listos para construir cerca del mar. Proyectos inmobiliarios con excelente ubicación e inversión segura.">
-<meta name="keywords" content="compra lote, terreno listo para construir, lotes Trujillo, terrenos Chepén, Puerto Malabrigo, inversión inmobiliaria">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humberto León | Asesor de Inversiones Inmobiliarias</title>
+    
+    <style>
+        :root {
+            --dorado: #bfa046;
+            --dorado-brillante: #d4b75a;
+            --oscuro-deep: #0f172a;
+            --oscuro-card: #111827;
+            --verde-whatsapp: #25D366;
+        }
 
-<style>
-body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    background:#0f172a;
-    color:white;
-}
-/* HEADER */
-header{
-    position:relative;
-    height:100vh;
-    overflow:hidden;
-}
-header video{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-1;
-}
-.overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
-}
-.header-content{
-    position:relative;
-    text-align:center;
-    top:50%;
-    transform:translateY(-50%);
-    animation:fadeIn 2s ease;
-}
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(-40%);}
-to{opacity:1; transform:translateY(-50%);}
-}
-.header-content img{
-    width:200px;
-    margin-bottom:20px;
-}
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--oscuro-deep);
+            color: white;
+            line-height: 1.6;
+        }
 
-/* NOMBRE ANIMADO */
-.header-content h1{
-    font-size:64px;
-    font-weight:bold;
-    background: linear-gradient(45deg,#bfa046,#d4b75a);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-    animation:nombreAnim 1.5s ease;
-}
-.header-content p{
-    font-size:20px;
-    color:#d4b75a;
-    font-weight:bold;
-    animation:textAnim 2s ease;
-}
-@keyframes nombreAnim{
-    0%{opacity:0; transform:translateX(-50px) rotateY(-30deg);}
-    100%{opacity:1; transform:translateX(0) rotateY(0);}
-}
-@keyframes textAnim{
-    0%{opacity:0; transform:translateY(50px);}
-    100%{opacity:1; transform:translateY(0);}
-}
+        /* HEADER CENTRADO EN TU MARCA PERSONAL */
+        header {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
 
-/* PROYECTOS */
-.proyectos{
-    padding:100px 20px;
-    text-align:center;
-}
+        header video {
+            position: absolute;
+            top: 50%; left: 50%;
+            min-width: 100%; min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            object-fit: cover;
+        }
 
-/* PROYECTOS DESTACADOS ANIMADOS */
-.proyectos h2{
-    font-size:36px;
-    background: linear-gradient(90deg, #bfa046, #d4b75a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation:entradaProyectos 1.5s ease;
-    display:inline-block;
-    margin-bottom:50px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-}
-@keyframes entradaProyectos{
-    0% {opacity:0; transform:translateY(-50px);}
-    60% {opacity:1; transform:translateY(10px);}
-    100% {transform:translateY(0);}
-}
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, rgba(15,23,42,0.7) 0%, rgba(15,23,42,1) 90%);
+            z-index: 0;
+        }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:40px;
-    max-width:1200px;
-    margin:auto;
-}
-.proyecto-card{
-    background:#111827;
-    border-radius:25px;
-    padding:25px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.7);
-    transition:0.4s;
-}
-.proyecto-card:hover{
-    transform:translateY(-10px);
-}
-.logo-proyecto{
-    width:140px;
-    margin:0 auto 15px;
-    display:block;
-}
-.subtitulo-proyecto{
-    font-size:16px;
-    color:#bfa046;
-    margin-bottom:15px;
-}
-.botones-proyecto{
-    margin-top:15px;
-}
-.btn{
-    display:inline-block;
-    padding:10px 18px;
-    margin:5px;
-    background:#bfa046;
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
-    transition:0.3s;
-}
-.btn:hover{
-    background:#d4b75a;
-}
-.btn-agendar{
-    background:#25D366;
-}
+        .header-content {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+            animation: scaleIn 1.2s ease-out;
+        }
 
-/* VIDEOS DRIVE */
-.video-container{
-    margin-top:15px;
-}
-.video-container iframe{
-    width:100%;
-    height:400px; /* vertical estilo móvil */
-    border-radius:15px;
-}
+        /* TU LOGO COMO PROTAGONISTA */
+        .header-content .mi-logo-principal {
+            width: 250px; /* Más grande para destacar */
+            filter: drop-shadow(0 0 20px rgba(191, 160, 70, 0.5));
+            margin-bottom: 20px;
+        }
 
-/* FORMULARIO */
-.cuestionario{
-    background:#0b1220;
-    padding:100px 20px;
-    text-align:center;
-}
-.cuestionario h2{
-    margin-bottom:40px;
-    font-size:32px;
-}
-form{
-    max-width:600px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-input, select, textarea{
-    padding:14px;
-    border-radius:10px;
-    border:none;
-    font-size:16px;
-}
-button{
-    padding:14px;
-    background:#bfa046;
-    color:white;
-    border:none;
-    border-radius:30px;
-    cursor:pointer;
-    font-weight:bold;
-}
-footer{
-    text-align:center;
-    padding:30px;
-    background:#000;
-    color:#aaa;
-}
+        .header-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin: 0;
+            background: linear-gradient(45deg, var(--dorado), #fff, var(--dorado));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
 
-/* LIGHTBOX */
-#lightbox{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.95);
-    justify-content:center;
-    align-items:center;
-    z-index:2000;
-    flex-direction:column;
-}
-#lightbox-img{
-    max-width:90%;
-    max-height:80%;
-    border-radius:15px;
-}
-#lightbox-controls{
-    margin-top:15px;
-}
-#lightbox-controls button{
-    padding:10px 18px;
-    margin:5px;
-    border:none;
-    border-radius:30px;
-    background:#bfa046;
-    color:white;
-    cursor:pointer;
-}
-#lightbox-controls button:hover{
-    background:#d4b75a;
-}
-</style>
+        .header-content .subtitle {
+            font-size: 1.5rem;
+            color: var(--dorado-brillante);
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        /* SECCIÓN DE PROYECTOS COMO PORTAFOLIO */
+        section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+
+        h2.seccion-titulo {
+            text-align: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+        p.seccion-subtitulo {
+            text-align: center;
+            color: #888;
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .proyecto-card {
+            background: var(--oscuro-card);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.4s;
+            text-align: center;
+        }
+
+        .proyecto-card:hover {
+            border-color: var(--dorado);
+            transform: translateY(-5px);
+        }
+
+        .logo-proyecto { height: 60px; margin-bottom: 20px; opacity: 0.8; }
+
+        .btn {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn-gold { background: var(--dorado); color: white; }
+        .btn-wa { background: var(--verde-whatsapp); color: white; }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
-<video autoplay muted loop>
-<source src="header-video.mp4" type="video/mp4">
-</video>
-<div class="overlay"></div>
-
-<div class="header-content">
-<img src="hl_logo.png" alt="Humberto León">
-<h1>Humberto León</h1>
-<p>Asesor Inmobiliario</p>
-<p>Invierte hoy en tu futuro hogar</p>
-</div>
+    <video autoplay muted loop playsinline poster="fundo1.jpg">
+        <source src="header-video.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="header-content">
+        <img src="Logo inmobiliario HL en azul y oro (1).png" class="mi-logo-principal" alt="Humberto León Marca Personal">
+        <h1>Humberto León</h1>
+        <div class="subtitle">Asesoría Inmobiliaria Exclusiva</div>
+        <p style="max-width: 600px; margin: 20px auto; color: #ccc;">Ayudándote a construir un patrimonio sólido con las mejores oportunidades del norte peruano.</p>
+        <a href="#proyectos" class="btn btn-gold" style="display:inline-block; padding: 15px 40px; border-radius: 50px;">Explorar Proyectos</a>
+    </div>
 </header>
 
-<!-- PROYECTOS -->
-<section class="proyectos">
-<h2>Proyectos Destacados</h2>
-<div class="grid">
+<section id="proyectos">
+    <h2 class="seccion-titulo">Oportunidades de Inversión</h2>
+    <p class="seccion-subtitulo">Proyectos seleccionados bajo mi respaldo profesional por su alta plusvalía.</p>
+    
+    <div class="grid">
+        <div class="proyecto-card">
+            <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
+            <h3>Monte Verde</h3>
+            <p>Zona estratégica cerca de El Chaparral. El momento ideal para invertir por su crecimiento proyectado.</p>
+            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20invertir%20en%20Monte%20Verde" class="btn btn-wa">Consultar con Humberto</a>
+        </div>
 
-<!-- FUNDO MALABRIGO -->
-<div class="proyecto-card">
-<img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
-<h3>Fundo Malabrigo</h3>
-<p class="subtitulo-proyecto">Compra tu lote cerca del mar, terreno listo para construir tu casa de campo en el lugar perfecto para invertir</p>
-<div class="botones-proyecto">
-<a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">Ver Fotos</a>
-<a href="javascript:void(0)" class="btn" onclick="mostrarVideos('fundo-videos', ['1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','151mpZHdjUhTozjy3lNordHUvphKtYASr','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">Ver Videos</a>
-<a href="https://maps.app.goo.gl/9Ww5FBU6VxPxKAbx9" target="_blank" class="btn">Ubicación</a>
-<a href="https://wa.me/51985877256?text=Hola,%20quiero%20información%20del%20Fundo%20Malabrigo" target="_blank" class="btn btn-agendar">Agendar Visita</a>
-</div>
-<div id="fundo-videos" class="video-container"></div>
-</div>
+        <div class="proyecto-card">
+            <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
+            <h3>Fundo Malabrigo</h3>
+            <p>Lotes exclusivos de campo y mar. Seguridad y tranquilidad para tu próxima casa de descanso.</p>
+            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20dame%20info%20de%20Malabrigo" class="btn btn-wa">Consultar con Humberto</a>
+        </div>
 
-<!-- PUERTO MAR CLUB -->
-<div class="proyecto-card">
-  <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
-  <h3>Puerto Mar Club</h3>
-  <p class="subtitulo-proyecto">Compra tu lote frente al mar, terreno listo para construir tu casa de playa ideal</p>
-  <div class="botones-proyecto">
-    <a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">Ver Fotos</a>
-    <a href="javascript:void(0)" class="btn" onclick="mostrarVideos('puerto-videos', [
-      '1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE',
-      '1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL',
-      '1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'
-    ])">Ver Videos</a>
-    <a href="https://maps.app.goo.gl/sU94PKtPzDNYN7NT9" target="_blank" class="btn">Ubicación</a>
-    <a href="https://wa.me/51985877256?text=Hola,%20quiero%20información%20del%20Puerto%20Mar%20Club" target="_blank" class="btn btn-agendar">Agendar Visita</a>
-  </div>
-  <div id="puerto-videos" class="video-container"></div>
-</div>
-<!-- RESIDENCIAL MONTE VERDE -->
-<div class="proyecto-card">
-  <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
-  <h3>Residencial Monte Verde</h3>
-  <p class="subtitulo-proyecto">Compra tu lote en un entorno tranquilo y seguro, terreno listo para construir tu hogar ideal</p>
-  <div class="botones-proyecto">
-    <a href="javascript:void(0)" class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">Ver Fotos</a>
-    <a href="javascript:void(0)" class="btn" onclick="mostrarVideos('monte-videos', ['1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">Ver Videos</a>
-    <a href="https://maps.app.goo.gl/AA5CUW3xpDayokfH9" target="_blank" class="btn">Ubicación</a>
-    <a href="https://wa.me/51985877256?text=Hola,%20quiero%20información%20del%20Residencial%20Monte%20Verde" target="_blank" class="btn btn-agendar">Agendar Visita</a>
-  </div>
-  <div id="monte-videos" class="video-container"></div>
-</div>
-</div>
+        <div class="proyecto-card">
+            <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
+            <h3>Puerto Mar Club</h3>
+            <p>Tu lote frente al mar. Proyectos premium listos para construir la casa de playa que soñaste.</p>
+            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20interesado%20en%20Puerto%20Mar" class="btn btn-wa">Consultar con Humberto</a>
+        </div>
+    </div>
 </section>
 
-<!-- LIGHTBOX -->
-<div id="lightbox">
-<img id="lightbox-img">
-<div id="lightbox-controls">
-<button id="prev">Anterior</button>
-<button id="next">Siguiente</button>
-<button id="close">Cerrar</button>
-</div>
-</div>
-
-<!-- FORMULARIO -->
-<section class="cuestionario">
-<h2>Solicita Información</h2>
-<form id="formulario">
-<input type="text" id="nombre" placeholder="Nombre completo" required>
-<input type="tel" id="telefono" placeholder="Número de celular" required>
-<select id="proyecto" required>
-<option value="">Selecciona un proyecto</option>
-<option>Fundo Malabrigo</option>
-<option>Puerto Mar Club</option>
-<option>Residencial Monte Verde</option>
-</select>
-<textarea id="mensaje" placeholder="Escribe tu consulta"></textarea>
-<button type="submit">Enviar por WhatsApp</button>
-</form>
-</section>
-
-<footer>
-© 2026 Humberto León | Asesor Inmobiliario
+<footer style="padding: 50px; text-align: center; background: #000;">
+    <img src="Logo inmobiliario HL en azul y oro (1).png" style="width: 80px; margin-bottom: 15px;" alt="HL Logo">
+    <p style="color: var(--dorado);">Humberto León - Tu aliado en inversiones inmobiliarias.</p>
 </footer>
-
-<script>
-let lightboxImages = [];
-let currentIndex = 0;
-
-function abrirImagenes(imgArray){
-    lightboxImages = imgArray;
-    currentIndex = 0;
-    document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
-    document.getElementById("lightbox").style.display = "flex";
-}
-document.getElementById("prev").addEventListener("click", ()=>{
-    currentIndex = (currentIndex - 1 + lightboxImages.length) % lightboxImages.length;
-    document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
-});
-document.getElementById("next").addEventListener("click", ()=>{
-    currentIndex = (currentIndex + 1) % lightboxImages.length;
-    document.getElementById("lightbox-img").src = lightboxImages[currentIndex];
-});
-document.getElementById("close").addEventListener("click", ()=>{
-    document.getElementById("lightbox").style.display = "none";
-});
-
-// Función para mostrar videos en la página desde Drive
-function mostrarVideos(containerId, fileIds){
-    const container = document.getElementById(containerId);
-    container.innerHTML = ""; // limpiar antes de agregar
-    fileIds.forEach(id => {
-        const iframe = document.createElement("iframe");
-        iframe.src = `https://drive.google.com/file/d/${id}/preview`;
-        iframe.allow = "autoplay; encrypted-media";
-        iframe.frameBorder = "0";
-        iframe.allowFullscreen = true;
-        container.appendChild(iframe);
-    });
-}
-
-document.getElementById("formulario").addEventListener("submit", function(e){
-    e.preventDefault();
-    let nombre = document.getElementById("nombre").value;
-    let telefono = document.getElementById("telefono").value;
-    let proyecto = document.getElementById("proyecto").value;
-    let mensaje = document.getElementById("mensaje").value;
-    let texto = `Hola Humberto, quiero información:%0A%0A` +
-    `Nombre: ${nombre}%0A` +
-    `Teléfono: ${telefono}%0A%0A` +
-    `Proyecto: ${proyecto}%0A` +
-    `Mensaje: ${mensaje}`;
-    window.open(`https://wa.me/51985877256?text=${texto}`, "_blank");
-});
-</script>
 
 </body>
 </html>
