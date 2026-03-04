@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humberto León | Inversiones Inmobiliarias en el Norte</title>
+<title>Humberto León | Inversiones Inmobiliarias de Élite</title>
 
 <style>
 :root {
@@ -12,74 +12,114 @@
     --oscuro-deep: #0f172a;
     --oscuro-card: rgba(17, 24, 39, 0.85);
     --verde-wa: #25D366;
+    --texto-suave: #cbd5e1;
 }
 
-body{
-    margin:0;
-    font-family:'Segoe UI', sans-serif;
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
     background: var(--oscuro-deep);
-    color:white;
+    color: white;
     scroll-behavior: smooth;
 }
 
-/* HEADER CON MARCA PERSONAL */
-header{
-    position:relative;
-    height:100vh;
-    overflow:hidden;
+/* HEADER CON LOGO Y SUBTITULOS COOL */
+header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-header video{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-1;
+header video {
+    position: absolute;
+    width: 100%; height: 100%;
+    object-fit: cover; z-index: -1;
 }
-.overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
+.overlay {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
 }
-.header-content{
-    position:relative;
-    text-align:center;
-    animation:fadeIn 2s ease;
+.header-content {
+    position: relative;
+    text-align: center;
+    animation: fadeIn 2s ease;
 }
-.logo-personal{
-    width: 220px;
+.logo-personal {
+    width: 240px;
     filter: drop-shadow(0 0 15px rgba(191, 160, 70, 0.4));
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
-.header-content h1{
+.header-content h1 {
     font-size: clamp(40px, 8vw, 64px);
     margin: 0;
     background: linear-gradient(45deg,#bfa046,#d4b75a);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* GRID DE PROYECTOS */
-.proyectos{ padding:80px 20px; text-align:center; }
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-    gap:40px;
-    max-width:1250px;
-    margin:auto;
+/* SUBTITULOS DORADOS METÁLICOS COOL */
+.header-content p {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-top: 10px;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 5px rgba(191, 149, 63, 0.4));
+    animation: shine 3s infinite linear;
 }
-.proyecto-card{
+
+@keyframes shine {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.3) drop-shadow(0 0 8px rgba(191, 149, 63, 0.6)); }
+    100% { filter: brightness(1); }
+}
+
+/* PROYECTOS */
+.proyectos { padding: 80px 20px; text-align: center; }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+    max-width: 1250px;
+    margin: auto;
+}
+.proyecto-card {
     background: var(--oscuro-card);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(191, 160, 70, 0.2);
-    border-radius:25px;
-    padding:30px;
+    border-radius: 25px;
+    padding: 30px;
     transition: 0.4s;
 }
-.proyecto-card:hover{ transform:translateY(-10px); border-color: var(--dorado); }
+.proyecto-card:hover { transform: translateY(-10px); border-color: var(--dorado); }
+
+/* TITULOS DE CADA LOTE */
+.proyecto-card h3 {
+    font-size: 24px;
+    background: linear-gradient(to right, #fff, var(--dorado-brillante));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* MENSAJES DE CADA LOTE (COLOR COOL) */
+.proyecto-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--texto-suave); /* Blanco marfil suave */
+    margin-bottom: 20px;
+}
+.proyecto-card p b, .proyecto-card p strong {
+    color: var(--dorado-brillante); /* Resalte en oro */
+    font-weight: 700;
+}
 
 .tag-plusvalia {
     background: var(--dorado);
@@ -92,78 +132,44 @@ header video{
     display: inline-block;
 }
 
-.logo-proyecto{ width:140px; margin:0 auto 15px; display:block; }
+.logo-proyecto { width: 140px; margin: 0 auto 15px; display: block; }
 
 /* BOTONES */
-.btn{
-    display:inline-block;
-    padding:10px 16px;
-    margin:5px;
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 5px;
     background: var(--dorado);
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
-    transition:0.3s;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
     font-weight: bold;
     font-size: 14px;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
 }
-.btn-agendar{ background: var(--verde-wa); }
-.btn:hover{ transform: scale(1.05); background: var(--dorado-brillante); }
+.btn-agendar { background: var(--verde-wa); }
+.btn:hover { transform: scale(1.05); filter: brightness(1.1); }
 
-/* CONTENEDOR DE VIDEOS (COMO EL ORIGINAL) */
-.video-container iframe{
-    width:100%;
-    height:350px;
-    border-radius:15px;
-    margin-top:10px;
-    border: 1px solid #334155;
-}
-
-/* SOBRE MÍ */
-.sobre-mi {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 40px;
-    background: rgba(255,255,255,0.03);
-    border-radius: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 30px;
+/* VIDEOS */
+.video-container iframe {
+    width: 100%; height: 350px;
+    border-radius: 15px; margin-top: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* FAQ */
-.faq-item {
-    max-width: 800px;
-    margin: 0 auto 15px;
-    border-bottom: 1px solid rgba(191,160,70,0.2);
-    padding-bottom: 10px;
-}
-.faq-question { color: var(--dorado); cursor: pointer; font-weight: bold; padding: 10px; }
-
-/* FORMULARIO */
-.cuestionario{ background:#0b1220; padding:80px 20px; text-align:center; }
-form{ max-width:550px; margin:auto; display:flex; flex-direction:column; gap:15px; }
-input, select, textarea{ padding:15px; border-radius:10px; border:none; background: #1e293b; color: white; font-size: 16px; }
-
-/* WA FLOTANTE */
-.wa-float {
-    position: fixed; bottom: 25px; right: 25px; background: var(--verde-wa);
-    width: 60px; height: 60px; border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 1000;
-}
+/* FORMULARIO Y OTROS */
+.cuestionario { background: #0b1220; padding: 80px 20px; text-align: center; }
+form { max-width: 550px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+input, select, textarea { padding: 15px; border-radius: 10px; border: none; background: #1e293b; color: white; }
+.wa-float { position: fixed; bottom: 25px; right: 25px; background: var(--verde-wa); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
 
 /* LIGHTBOX */
-#lightbox{
-    display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95);
-    justify-content:center; align-items:center; z-index:2000; flex-direction:column;
-}
-#lightbox-img{ max-width:90%; max-height:80%; border-radius:15px; }
+#lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; z-index: 2000; flex-direction: column; }
+#lightbox-img { max-width: 90%; max-height: 80%; border-radius: 15px; }
 
-@keyframes fadeIn{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
@@ -180,8 +186,7 @@ input, select, textarea{ padding:15px; border-radius:10px; border:none; backgrou
 <div class="header-content">
 <img src="hl_logo.png" class="logo-personal" alt="Humberto León">
 <h1>Humberto León</h1>
-<p>Asesor Inmobiliario Especialista</p>
-<p>Seguridad y Plusvalía en tus manos</p>
+<p>Inversiones Inmobiliarias de Élite</p>
 </div>
 </header>
 
@@ -193,7 +198,7 @@ input, select, textarea{ padding:15px; border-radius:10px; border:none; backgrou
     <span class="tag-plusvalia">Campo & Mar</span>
     <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
     <h3>Fundo Malabrigo</h3>
-    <p>Lotes listos para construir tu casa de campo cerca del mar.</p>
+    <p>Lotes listos para construir tu <b>casa de campo</b> cerca del mar. Seguridad y <b>tranquilidad familiar</b>.</p>
     <div class="botones-proyecto">
         <button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">Fotos</button>
         <button class="btn" onclick="mostrarVideos('fundo-v', ['1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','151mpZHdjUhTozjy3lNordHUvphKtYASr','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">Ver Videos</button>
@@ -207,7 +212,7 @@ input, select, textarea{ padding:15px; border-radius:10px; border:none; backgrou
     <span class="tag-plusvalia">Exclusividad Playa</span>
     <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
     <h3>Puerto Mar Club</h3>
-    <p>Tu lote soñado frente al mar. Estilo de vida y confort.</p>
+    <p>Tu lote soñado <b>frente al mar</b>. Disfruta de un <b>estilo de vida</b> exclusivo y confort.</p>
     <div class="botones-proyecto">
         <button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">Fotos</button>
         <button class="btn" onclick="mostrarVideos('puerto-v', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL','1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'])">Ver Videos</button>
@@ -221,7 +226,7 @@ input, select, textarea{ padding:15px; border-radius:10px; border:none; backgrou
     <span class="tag-plusvalia">Plusvalía - El Chaparral</span>
     <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
     <h3>Monte Verde</h3>
-    <p>La mejor inversión cerca del nuevo colegio emblemático.</p>
+    <p>La mejor inversión cerca del <b>nuevo colegio emblemático</b>. Máxima proyección de <b>revalorización</b>.</p>
     <div class="botones-proyecto">
         <button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">Fotos</button>
         <button class="btn" onclick="mostrarVideos('monte-v', ['1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">Ver Videos</button>
@@ -232,28 +237,6 @@ input, select, textarea{ padding:15px; border-radius:10px; border:none; backgrou
     </div>
 
 </div>
-</section>
-
-<section class="sobre-mi">
-    <div style="flex: 1; text-align: center; min-width: 250px;">
-        <img src="humberto-leon.png" style="width: 180px; border-radius: 50%; border: 3px solid var(--dorado);" alt="Humberto León">
-    </div>
-    <div style="flex: 2; min-width: 300px;">
-        <h2>Tu Asesor de Confianza</h2>
-        <p>Soy Humberto León. Mi propósito es guiarte hacia la mejor decisión inmobiliaria en el norte peruano. Analizo cada proyecto para ofrecerte solo opciones con respaldo jurídico y alta rentabilidad.</p>
-    </div>
-</section>
-
-<section style="padding: 40px 20px; max-width: 800px; margin: auto;">
-    <h2 style="text-align: center;">Preguntas Frecuentes</h2>
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">¿Es segura mi inversión con estos proyectos? <span>▾</span></div>
-        <p style="display:none; color:#ccc; margin-top:10px;">Totalmente. Filtro cada oportunidad asegurando que tengan documentos en regla y factibilidad de servicios.</p>
-    </div>
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">¿Brindan facilidades de pago? <span>▾</span></div>
-        <p style="display:none; color:#ccc; margin-top:10px;">Sí, manejamos opciones de crédito directo y bonos especiales por pago al contado.</p>
-    </div>
 </section>
 
 <section class="cuestionario">
@@ -268,7 +251,7 @@ input, select, textarea{ padding:15px; border-radius:10px; border:none; backgrou
 <option>Residencial Monte Verde</option>
 </select>
 <textarea id="mensaje" placeholder="Déjame tu consulta"></textarea>
-<button type="submit">Contactar con mi Asesor</button>
+<button type="submit">Contactar con Humberto León</button>
 </form>
 </section>
 
@@ -298,7 +281,6 @@ function mostrarVideos(id, ids){
         c.appendChild(f);
     });
 }
-function toggleFaq(el){ let p = el.nextElementSibling; p.style.display = p.style.display === "none" ? "block" : "none"; }
 document.getElementById("formulario").addEventListener("submit", function(e){
     e.preventDefault();
     let n = document.getElementById("nombre").value;
