@@ -143,11 +143,11 @@ header video {
     border-radius: 20px; margin-top: 15px;
 }
 
-/* FAQ ESTILO ANTERIOR */
+/* FAQ AJUSTADO */
 .faq-section { max-width: 800px; margin: 60px auto; padding: 20px; }
 .faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.3); padding: 15px 0; }
-.faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; }
-.faq-answer { display: none; color: #ccc; margin-top: 10px; line-height: 1.6; }
+.faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; font-size: 1.1rem; }
+.faq-answer { display: none; color: #ccc; margin-top: 10px; line-height: 1.6; font-size: 1rem; }
 
 /* FORMULARIO */
 .cuestionario { background: #0b1220; padding: 80px 20px; text-align: center; }
@@ -213,7 +213,7 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
             <span class="tag-plusvalia">Plusvalía Garantizada</span>
             <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
             <h3>Residencial Monte Verde</h3>
-            <p>Invierte cerca del <b>nuevo colegio emblemático</b>. Máxima proyección de crecimiento.</p>
+            <p>Invierte en zonas de <b>alta proyección</b>. Máximo crecimiento y respaldo profesional.</p>
             <div class="botones-proyecto">
                 <button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">FOTOS</button>
                 <button class="btn" onclick="mostrarVideos('monte-v', ['1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">VIDEOS</button>
@@ -231,17 +231,17 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
     
     <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes cuentan con documentos en regla? <span>▾</span></div>
-        <div class="faq-answer">Absolutamente. Todos nuestros proyectos cuentan con seguridad jurídica y están listos para la transferencia inmediata bajo mi asesoría personal.</div>
+        <div class="faq-answer">Sí. Todos los proyectos que gestiono cuentan con seguridad jurídica y respaldo legal integral bajo mi asesoría personal para garantizar su tranquilidad.</div>
     </div>
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir en estas zonas? <span>▾</span></div>
-        <div class="faq-answer">Son las zonas de mayor crecimiento actual en el norte. Proyectos como el colegio emblemático aseguran que el valor de su lote aumente rápidamente.</div>
+        <div class="faq-answer">Son las áreas con mayor crecimiento proyectado en el norte del país. La expansión urbana asegura que el valor de la propiedad aumente de forma constante.</div>
     </div>
 
     <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">¿Ofrecen facilidades de pago? <span>▾</span></div>
-        <div class="faq-answer">Contamos con planes de financiamiento directo y opciones de pago al contado con descuentos exclusivos para inversores.</div>
+        <div class="faq-answer">Contamos con diversas modalidades de pago y planes de financiamiento directo que se ajustan a las necesidades de cada cliente.</div>
     </div>
 </section>
 
@@ -257,7 +257,7 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
             <option>Residencial Monte Verde</option>
         </select>
         <textarea id="mensaje" placeholder="Escribe tu consulta"></textarea>
-        <button type="submit" class="btn" style="padding:18px;">ENVIAR CONSULTA A HUMBERTO</button>
+        <button type="submit" class="btn" style="padding:18px; width: 100%;">ENVIAR CONSULTA A HUMBERTO</button>
     </form>
 </section>
 
