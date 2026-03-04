@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humberto León | Portafolio Inmobiliario de Lujo</title>
+<title>Humberto León | Inversiones Inmobiliarias de Élite</title>
 
 <style>
 :root {
     --dorado: #bfa046;
-    --dorado-brillante: #ffcc33; /* Oro más encendido */
+    --dorado-brillante: #ffcc33; 
     --oscuro-deep: #020617;
-    --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a); /* Efecto 3D */
+    --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a); 
     --verde-wa: #25D366;
     --texto-suave: #f1f5f9;
 }
@@ -70,16 +70,14 @@ header video {
     animation: shine 3s infinite linear;
 }
 
-/* SECCIÓN DE PROYECTOS VISTOSA */
+/* SECCIÓN DE PROYECTOS */
 .proyectos { padding: 80px 20px; text-align: center; }
-
 .proyectos h2 {
     font-size: 3rem;
     margin-bottom: 50px;
     background: linear-gradient(to bottom, #fff, var(--dorado));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
 .grid {
@@ -95,40 +93,20 @@ header video {
     border: 1px solid rgba(191, 160, 70, 0.3);
     border-radius: 30px;
     padding: 35px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
     transition: 0.5s all ease;
 }
-
 .proyecto-card:hover {
-    transform: translateY(-15px) scale(1.02);
+    transform: translateY(-15px);
     border-color: var(--dorado-brillante);
     box-shadow: 0 20px 50px rgba(191, 160, 70, 0.3);
 }
 
-/* TITULOS DE LOTES MÁS VISTOSOS */
 .proyecto-card h3 {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 800;
-    margin-bottom: 15px;
     color: #fff;
-    text-shadow: 0 0 15px rgba(255,255,255,0.3), 0 0 5px var(--dorado);
+    text-shadow: 0 0 10px var(--dorado);
     text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.proyecto-card p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: var(--texto-suave);
-    margin-bottom: 25px;
-}
-
-.proyecto-card p b {
-    color: var(--dorado-brillante);
-    font-weight: 800;
-    text-shadow: 0 0 8px rgba(255, 204, 51, 0.4);
 }
 
 .tag-plusvalia {
@@ -140,11 +118,9 @@ header video {
     border-radius: 50px;
     margin-bottom: 20px;
     display: inline-block;
-    box-shadow: 0 4px 15px rgba(255, 204, 51, 0.4);
-    text-transform: uppercase;
 }
 
-.logo-proyecto { width: 150px; margin: 0 auto 20px; display: block; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5)); }
+.logo-proyecto { width: 150px; margin: 0 auto 20px; display: block; }
 
 /* BOTONES */
 .btn {
@@ -156,26 +132,31 @@ header video {
     text-decoration: none;
     border-radius: 50px;
     font-weight: 800;
-    font-size: 13px;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    border: none;
 }
 .btn-agendar { background: linear-gradient(to bottom, #25D366, #128C7E); }
-.btn:hover { transform: translateY(-3px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
 
-/* VIDEOS */
+/* VIDEO CONTAINER */
 .video-container iframe {
     width: 100%; height: 350px;
     border-radius: 20px; margin-top: 15px;
-    border: 2px solid rgba(255,255,255,0.05);
 }
 
-/* WA FLOTANTE */
-.wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--verde-wa); width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); transition: 0.3s; }
-.wa-float:hover { transform: scale(1.2); }
+/* FAQ ESTILO ANTERIOR */
+.faq-section { max-width: 800px; margin: 60px auto; padding: 20px; }
+.faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.3); padding: 15px 0; }
+.faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; }
+.faq-answer { display: none; color: #ccc; margin-top: 10px; line-height: 1.6; }
+
+/* FORMULARIO */
+.cuestionario { background: #0b1220; padding: 80px 20px; text-align: center; }
+form { max-width: 550px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+input, select, textarea { padding: 15px; border-radius: 15px; border: none; background: #1e293b; color: white; }
+
+.wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--verde-wa); width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
 
 @keyframes shine { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.4); } }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
@@ -192,7 +173,7 @@ header video {
 <div class="header-content">
 <img src="hl_logo.png" class="logo-personal" alt="Humberto León">
 <h1>Humberto León</h1>
-<p>Asesoría Inmobiliaria</p>
+<p>Asesoría Inmobiliaria de Élite</p>
 </div>
 </header>
 
@@ -201,10 +182,10 @@ header video {
     <div class="grid">
 
         <div class="proyecto-card">
-            <span class="tag-plusvalia">Inversión & Campo</span>
+            <span class="tag-plusvalia">Campo & Mar</span>
             <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
             <h3>Fundo Malabrigo</h3>
-            <p>Lotes exclusivos para tu próxima <b>casa de campo</b>. El refugio perfecto con <b>seguridad jurídica</b> total.</p>
+            <p>Lotes exclusivos para tu próxima <b>casa de campo</b>. Seguridad jurídica y alta rentabilidad.</p>
             <div class="botones-proyecto">
                 <button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">FOTOS</button>
                 <button class="btn" onclick="mostrarVideos('fundo-v', ['1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','151mpZHdjUhTozjy3lNordHUvphKtYASr','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">VIDEOS</button>
@@ -214,10 +195,11 @@ header video {
             <div id="fundo-v" class="video-container"></div>
         </div>
 
-        <div class="proyecto-card" style="border-color: #00e5ff33;"> <span class="tag-plusvalia">Frente al Mar</span>
+        <div class="proyecto-card">
+            <span class="tag-plusvalia">Frente al Mar</span>
             <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
             <h3>Puerto Mar Club</h3>
-            <p>Tu propiedad <b>frente al mar</b>. Exclusividad y un <b>estilo de vida</b> que solo pocos pueden tener.</p>
+            <p>Tu propiedad <b>frente al mar</b>. Exclusividad y confort en la mejor zona de Malabrigo.</p>
             <div class="botones-proyecto">
                 <button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">FOTOS</button>
                 <button class="btn" onclick="mostrarVideos('puerto-v', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL','1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'])">VIDEOS</button>
@@ -231,7 +213,7 @@ header video {
             <span class="tag-plusvalia">Plusvalía Garantizada</span>
             <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
             <h3>Residencial Monte Verde</h3>
-            <p>Invierte cerca del <b>nuevo colegio emblemático</b>. Zona de <b>máximo crecimiento</b> proyectado.</p>
+            <p>Invierte cerca del <b>nuevo colegio emblemático</b>. Máxima proyección de crecimiento.</p>
             <div class="botones-proyecto">
                 <button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">FOTOS</button>
                 <button class="btn" onclick="mostrarVideos('monte-v', ['1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">VIDEOS</button>
@@ -244,28 +226,47 @@ header video {
     </div>
 </section>
 
-<section style="background:#0b1220; padding:80px 20px; text-align:center;">
-    <h2 style="color:var(--dorado);">¿Hablamos de tu inversión?</h2>
-    <form id="formulario" style="max-width:550px; margin:auto; display:flex; flex-direction:column; gap:15px;">
-        <input type="text" id="nombre" placeholder="Nombre completo" required style="padding:15px; border-radius:15px; border:none; background:#1e293b; color:white;">
-        <input type="tel" id="telefono" placeholder="Número de contacto" required style="padding:15px; border-radius:15px; border:none; background:#1e293b; color:white;">
-        <select id="proyecto" required style="padding:15px; border-radius:15px; border:none; background:#1e293b; color:white;">
+<section class="faq-section">
+    <h2 style="text-align: center; color: white; margin-bottom: 30px;">Preguntas Frecuentes</h2>
+    
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes cuentan con documentos en regla? <span>▾</span></div>
+        <div class="faq-answer">Absolutamente. Todos nuestros proyectos cuentan con seguridad jurídica y están listos para la transferencia inmediata bajo mi asesoría personal.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir en estas zonas? <span>▾</span></div>
+        <div class="faq-answer">Son las zonas de mayor crecimiento actual en el norte. Proyectos como el colegio emblemático aseguran que el valor de su lote aumente rápidamente.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">¿Ofrecen facilidades de pago? <span>▾</span></div>
+        <div class="faq-answer">Contamos con planes de financiamiento directo y opciones de pago al contado con descuentos exclusivos para inversores.</div>
+    </div>
+</section>
+
+<section class="cuestionario">
+    <h2>Solicita Información</h2>
+    <form id="formulario">
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
+        <input type="tel" id="telefono" placeholder="Número de contacto" required>
+        <select id="proyecto" required>
             <option value="">¿En qué proyecto estás interesado?</option>
             <option>Fundo Malabrigo</option>
             <option>Puerto Mar Club</option>
             <option>Residencial Monte Verde</option>
         </select>
-        <textarea id="mensaje" placeholder="Escribe tu consulta" style="padding:15px; border-radius:15px; border:none; background:#1e293b; color:white; height:100px;"></textarea>
-        <button type="submit" class="btn" style="padding:18px; font-size:16px;">ENVIAR CONSULTA A HUMBERTO</button>
+        <textarea id="mensaje" placeholder="Escribe tu consulta"></textarea>
+        <button type="submit" class="btn" style="padding:18px;">ENVIAR CONSULTA A HUMBERTO</button>
     </form>
 </section>
 
 <footer style="text-align:center; padding:40px; background:#000; color:#666;">
-    © 2026 Humberto León | Estratega Inmobiliario de Confianza
+    © 2026 Humberto León | Asesor Inmobiliario de Confianza
 </footer>
 
 <div id="lightbox" onclick="if(event.target.id==='lightbox')this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:2000; flex-direction:column;">
-    <img id="lightbox-img" style="max-width:90%; max-height:80%; border-radius:20px; box-shadow:0 0 30px var(--dorado);">
+    <img id="lightbox-img" style="max-width:90%; max-height:80%; border-radius:20px;">
     <div style="margin-top:25px">
         <button class="btn" onclick="cambiarImg(-1)">ANTERIOR</button>
         <button class="btn" onclick="cambiarImg(1)">SIGUIENTE</button>
@@ -277,6 +278,7 @@ header video {
 let lbImgs = []; let cIdx = 0;
 function abrirImagenes(imgs){ lbImgs = imgs; cIdx = 0; document.getElementById("lightbox-img").src = lbImgs[0]; document.getElementById("lightbox").style.display = "flex"; }
 function cambiarImg(d){ cIdx = (cIdx + d + lbImgs.length) % lbImgs.length; document.getElementById("lightbox-img").src = lbImgs[cIdx]; }
+
 function mostrarVideos(id, ids){
     const c = document.getElementById(id); c.innerHTML = "";
     ids.forEach(i => {
@@ -286,6 +288,12 @@ function mostrarVideos(id, ids){
         c.appendChild(f);
     });
 }
+
+function toggleFaq(el) {
+    const answer = el.nextElementSibling;
+    answer.style.display = (answer.style.display === "block") ? "none" : "block";
+}
+
 document.getElementById("formulario").addEventListener("submit", function(e){
     e.preventDefault();
     let n = document.getElementById("nombre").value;
