@@ -23,7 +23,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* HEADER PERSONAL */
 header {
     position: relative;
     height: 100vh;
@@ -70,7 +69,6 @@ header video {
     animation: shine 3s infinite linear;
 }
 
-/* SECCIÓN DE PROYECTOS */
 .proyectos { padding: 80px 20px; text-align: center; }
 .proyectos h2 {
     font-size: 3rem;
@@ -132,7 +130,6 @@ header video {
 
 .logo-proyecto { width: 150px; margin: 0 auto 20px; display: block; }
 
-/* BOTONES */
 .btn {
     display: inline-block;
     padding: 12px 20px;
@@ -149,22 +146,19 @@ header video {
 .btn:hover { filter: brightness(1.2); transform: scale(1.05); }
 .btn-agendar { background: linear-gradient(to bottom, #25D366, #128C7E); }
 
-/* VIDEO CONTAINER */
 .video-container iframe {
     width: 100%; height: 350px;
     border-radius: 20px; margin-top: 15px;
 }
 
-/* FAQ */
 .faq-section { max-width: 800px; margin: 60px auto; padding: 20px; }
 .faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.3); padding: 15px 0; }
 .faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; font-size: 1.1rem; }
 .faq-answer { display: none; color: #ccc; margin-top: 10px; line-height: 1.6; font-size: 1rem; }
 
-/* FORMULARIO */
 .cuestionario { background: #0b1220; padding: 80px 20px; text-align: center; }
 form { max-width: 550px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
-input, select, textarea { padding: 15px; border-radius: 15px; border: none; background: #1e293b; color: white; }
+input, select, textarea { padding: 15px; border-radius: 15px; border: none; background: #1e293b; color: white; width: 100%; box-sizing: border-box; }
 
 .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--verde-wa); width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
 
@@ -202,7 +196,7 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
             <div class="botones-proyecto">
                 <button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">FOTOS</button>
                 <button class="btn" onclick="mostrarVideos('fundo-v', ['1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','151mpZHdjUhTozjy3lNordHUvphKtYASr','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">VIDEOS</button>
-                <a href="https://maps.google.com" target="_blank" class="btn">UBICACIÓN</a>
+                <a href="https://maps.google.com/?q=Puerto+Malabrigo" target="_blank" class="btn">UBICACIÓN</a>
                 <a href="https://wa.me/51985877256?text=Info%20Fundo%20Malabrigo" class="btn btn-agendar">AGENDAR</a>
             </div>
             <div id="fundo-v" class="video-container"></div>
@@ -217,7 +211,7 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
             <div class="botones-proyecto">
                 <button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">FOTOS</button>
                 <button class="btn" onclick="mostrarVideos('puerto-v', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL','1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'])">VIDEOS</button>
-                <a href="https://maps.google.com" target="_blank" class="btn">UBICACIÓN</a>
+                <a href="https://maps.google.com/?q=Puerto+Malabrigo+Club" target="_blank" class="btn">UBICACIÓN</a>
                 <a href="https://wa.me/51985877256?text=Info%20Puerto%20Mar" class="btn btn-agendar">AGENDAR</a>
             </div>
             <div id="puerto-v" class="video-container"></div>
@@ -228,11 +222,11 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
             <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
             <h3>RESIDENCIAL MONTE VERDE</h3>
             <p class="ubicacion-tag">📍 CHEPÉN - NUEVO PARAÍSO</p>
-            <p>Invierte en zonas de <b>alta proyección</b>. Máximo crecimiento y respaldo profesional en Chepén.</p>
+            <p>Invierte en zonas de <b>alta proyección</b>. Máximo crecimiento y respaldo profesional.</p>
             <div class="botones-proyecto">
                 <button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">FOTOS</button>
                 <button class="btn" onclick="mostrarVideos('monte-v', ['1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">VIDEOS</button>
-                <a href="https://maps.google.com" target="_blank" class="btn">UBICACIÓN</a>
+                <a href="https://maps.google.com/?q=Chepen+Nuevo+Paraiso" target="_blank" class="btn">UBICACIÓN</a>
                 <a href="https://wa.me/51985877256?text=Info%20Monte%20Verde" class="btn btn-agendar">AGENDAR</a>
             </div>
             <div id="monte-v" class="video-container"></div>
@@ -241,7 +235,7 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
     </div>
 </section>
 
-<section style="text-align: center; padding: 60px 20px; background: rgba(191, 160, 70, 0.05); border-top: 1px solid rgba(191, 160, 70, 0.1);">
+<section style="text-align: center; padding: 60px 20px; background: rgba(191, 160, 70, 0.05); border-top: 1px solid rgba(191, 160, 70, 0.1); border-bottom: 1px solid rgba(191, 160, 70, 0.1);">
     <h2 style="font-size: 2.5rem; background: linear-gradient(to bottom, #fff, var(--dorado)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; text-transform: uppercase;">Confianza Real</h2>
     <p style="color: #ccc; margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; margin: auto;">La mayor garantía de mi trabajo es la satisfacción de quienes ya invirtieron con nosotros.</p>
     
@@ -254,13 +248,20 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
 
 <section class="faq-section">
     <h2 style="text-align: center; color: white; margin-bottom: 30px;">Preguntas Frecuentes</h2>
+    
     <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes cuentan con documentos en regla? <span>▾</span></div>
-        <div class="faq-answer">Sí. Todos los proyectos que gestiono cuentan con seguridad jurídica y respaldo legal integral.</div>
+        <div class="faq-answer">Sí. Todos los proyectos que gestiono cuentan con seguridad jurídica y respaldo legal integral bajo mi asesoría personal para garantizar su tranquilidad.</div>
     </div>
+
     <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir en estas zonas? <span>▾</span></div>
-        <div class="faq-answer">Son áreas con el mayor crecimiento proyectado en el norte del país, asegurando plusvalía.</div>
+        <div class="faq-answer">Son las áreas con mayor crecimiento proyectado en el norte del país. La expansión urbana asegura que el valor de la propiedad aumente de forma constante.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">¿Ofrecen facilidades de pago? <span>▾</span></div>
+        <div class="faq-answer">Contamos con diversas modalidades de pago y planes de financiamiento directo que se ajustan a las necesidades de cada cliente.</div>
     </div>
 </section>
 
@@ -271,4 +272,14 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
         <input type="tel" id="telefono" placeholder="Número de contacto" required>
         <select id="proyecto" required>
             <option value="">¿En qué proyecto estás interesado?</option>
-            <option>Fundo Malabrigo</
+            <option>Fundo Malabrigo</option>
+            <option>Puerto Mar Club</option>
+            <option>Residencial Monte Verde</option>
+        </select>
+        <textarea id="mensaje" placeholder="Escribe tu consulta o dudas adicionales..."></textarea>
+        <button type="submit" class="btn" style="padding:18px; width: 100%;">ENVIAR CONSULTA A HUMBERTO</button>
+    </form>
+</section>
+
+<footer style="text-align:center; padding:40px; background:#000; color:#666;">
+    © 2026 Humberto León | Asesor Inmobiliario de Conf
