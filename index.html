@@ -55,6 +55,7 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
         <p>Asesoría Inmobiliaria Transparente</p>
     </div>
 </header>
+
 <section class="proyectos" id="proyectos">
     <h2>Proyectos Destacados</h2>
     <div class="grid">
@@ -90,29 +91,43 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
         </div>
     </div>
 </section>
-<section style="text-align: center; padding: 60px 20px; background: rgba(191,160,70,0.1);">
-    <h2>Confianza Real</h2>
-    <button class="btn" style="padding: 20px 40px; font-size: 1.2rem;" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','firma1.jpg'])">🤝 CLIENTES FELICES</button>
+
+<section style="text-align: center; padding: 60px 20px; background: rgba(191,160,70,0.1); border-top: 1px solid var(--dorado);">
+    <h2 style="color: var(--dorado-brillante);">CONFIANZA REAL</h2>
+    <p style="color: #ccc; margin-bottom: 25px;">La satisfacción de nuestros clientes es nuestro mejor respaldo.</p>
+    <button class="btn" style="padding: 22px 45px; font-size: 1.3rem; border: 2px solid var(--dorado-brillante);" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','firma1.jpg'])">🤝 CLIENTES FELICES</button>
+    <p style="margin-top: 15px; font-size: 0.9rem; color: var(--dorado-brillante); font-weight: bold;">(Clic para ver fotos de firmas y entregas)</p>
 </section>
+
 <section class="faq-section">
-    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">¿Documentos en regla? <span>▾</span></div><div class="faq-answer">Sí, todos los lotes cuentan con seguridad jurídica.</div></div>
-    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir aquí? <span>▾</span></div><div class="faq-answer">Por la alta plusvalía y el crecimiento del norte del país.</div></div>
-    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">¿Facilidades de pago? <span>▾</span></div><div class="faq-answer">Sí, contamos con financiamiento directo.</div></div>
+    <h2 style="text-align:center">Preguntas Frecuentes</h2>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">¿Documentos en regla? <span>▾</span></div><div class="faq-answer">Sí, todos los lotes cuentan con seguridad jurídica y respaldo bajo mi asesoría.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir aquí? <span>▾</span></div><div class="faq-answer">Por la alta plusvalía y el crecimiento estratégico del norte peruano.</div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">¿Facilidades de pago? <span>▾</span></div><div class="faq-answer">Sí, contamos con financiamiento directo y planes a medida.</div></div>
 </section>
+
 <section class="cuestionario">
     <h2>Solicita Información</h2>
     <form id="formulario">
         <input type="text" id="nombre" placeholder="Nombre completo" required>
-        <input type="tel" id="telefono" placeholder="Número" required>
+        <input type="tel" id="telefono" placeholder="Número de contacto" required>
         <select id="proyecto"><option value="Fundo Malabrigo">Fundo Malabrigo</option><option value="Puerto Mar Club">Puerto Mar Club</option><option value="Monte Verde">Monte Verde</option></select>
-        <textarea id="mensaje" placeholder="Tu consulta"></textarea>
-        <button type="submit" class="btn" style="width:100%">ENVIAR A HUMBERTO</button>
+        <textarea id="mensaje" placeholder="Tu consulta aquí..."></textarea>
+        <button type="submit" class="btn" style="width:100%; padding: 18px;">ENVIAR A HUMBERTO</button>
     </form>
 </section>
-<div id="lightbox" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:2000; justify-content:center; align-items:center; flex-direction:column;">
-    <img id="lightbox-img" style="max-width:90%; max-height:80%; border-radius:10px;">
-    <div style="margin-top:20px;"><button class="btn" onclick="event.stopPropagation(); cambiarImg(-1)">ANT</button><button class="btn" onclick="event.stopPropagation(); cambiarImg(1)">SIG</button></div>
+
+<footer style="text-align:center; padding:40px; background:#000; color:#666;">© 2026 Humberto León | Asesor Inmobiliario</footer>
+
+<div id="lightbox" onclick="if(event.target.id==='lightbox')this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:2000; justify-content:center; align-items:center; flex-direction:column;">
+    <img id="lightbox-img" style="max-width:90%; max-height:80%; border-radius:15px; border: 2px solid var(--dorado);">
+    <div style="margin-top:25px; display: flex; gap: 10px;">
+        <button class="btn" onclick="event.stopPropagation(); cambiarImg(-1)">ANTERIOR</button>
+        <button class="btn" style="background: #ff4d4d;" onclick="document.getElementById('lightbox').style.display='none'">CERRAR</button>
+        <button class="btn" onclick="event.stopPropagation(); cambiarImg(1)">SIGUIENTE</button>
+    </div>
 </div>
+
 <script>
 let lbImgs = []; let cIdx = 0;
 function abrirImagenes(imgs){ lbImgs = imgs; cIdx = 0; document.getElementById("lightbox-img").src = lbImgs[0]; document.getElementById("lightbox").style.display = "flex"; }
@@ -128,7 +143,9 @@ function toggleFaq(el){ const a = el.nextElementSibling; a.style.display = a.sty
 document.getElementById("formulario").onsubmit = function(e){
     e.preventDefault();
     const n = document.getElementById("nombre").value;
-    window.open(`https://wa.me/51985877256?text=Hola, soy ${n}, me interesa el proyecto ${document.getElementById("proyecto").value}`, "_blank");
+    const t = document.getElementById("telefono").value;
+    const p = document.getElementById("proyecto").value;
+    window.open(`https://wa.me/51985877256?text=Hola Humberto, soy ${n}. Mi número es ${t}. Me interesa el proyecto ${p}.`, "_blank");
 };
 </script>
 </body>
