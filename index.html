@@ -110,7 +110,6 @@ header video {
     margin-bottom: 5px;
 }
 
-/* ESTILO PARA LA UBICACIÓN DORADA */
 .ubicacion-tag {
     color: #ffcc33;
     font-weight: 800;
@@ -145,7 +144,9 @@ header video {
     font-weight: 800;
     cursor: pointer;
     border: none;
+    transition: 0.3s all;
 }
+.btn:hover { filter: brightness(1.2); transform: scale(1.05); }
 .btn-agendar { background: linear-gradient(to bottom, #25D366, #128C7E); }
 
 /* VIDEO CONTAINER */
@@ -201,119 +202,11 @@ input, select, textarea { padding: 15px; border-radius: 15px; border: none; back
             <div class="botones-proyecto">
                 <button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">FOTOS</button>
                 <button class="btn" onclick="mostrarVideos('fundo-v', ['1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','151mpZHdjUhTozjy3lNordHUvphKtYASr','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">VIDEOS</button>
-                <a href="https://maps.app.goo.gl/9Ww5FBU6VxPxKAbx9" target="_blank" class="btn">UBICACIÓN</a>
+                <a href="https://maps.google.com" target="_blank" class="btn">UBICACIÓN</a>
                 <a href="https://wa.me/51985877256?text=Info%20Fundo%20Malabrigo" class="btn btn-agendar">AGENDAR</a>
             </div>
             <div id="fundo-v" class="video-container"></div>
         </div>
 
         <div class="proyecto-card">
-            <span class="tag-plusvalia">Frente al Mar</span>
-            <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
-            <h3>PUERTO MAR CLUB</h3>
-            <p class="ubicacion-tag">📍 PUERTO MALABRIGO</p>
-            <p>Tu propiedad <b>frente al mar</b>. Exclusividad y confort en la mejor zona de Malabrigo.</p>
-            <div class="botones-proyecto">
-                <button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">FOTOS</button>
-                <button class="btn" onclick="mostrarVideos('puerto-v', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL','1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'])">VIDEOS</button>
-                <a href="https://maps.app.goo.gl/sU94PKtPzDNYN7NT9" target="_blank" class="btn">UBICACIÓN</a>
-                <a href="https://wa.me/51985877256?text=Info%20Puerto%20Mar" class="btn btn-agendar">AGENDAR</a>
-            </div>
-            <div id="puerto-v" class="video-container"></div>
-        </div>
-
-        <div class="proyecto-card">
-            <span class="tag-plusvalia">Plusvalía Garantizada</span>
-            <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
-            <h3>RESIDENCIAL MONTE VERDE</h3>
-            <p class="ubicacion-tag" style="font-size: 1rem; line-height: 1.2;">📍 CHEPÉN - NUEVO PARAÍSO<br>"CHAPARRAL"</p>
-            <p>Invierte en zonas de <b>alta proyección</b>. Máximo crecimiento y respaldo profesional.</p>
-            <div class="botones-proyecto">
-                <button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">FOTOS</button>
-                <button class="btn" onclick="mostrarVideos('monte-v', ['1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">VIDEOS</button>
-                <a href="https://maps.app.goo.gl/AA5CUW3xpDayokfH9" target="_blank" class="btn">UBICACIÓN</a>
-                <a href="https://wa.me/51985877256?text=Info%20Monte%20Verde" class="btn btn-agendar">AGENDAR</a>
-            </div>
-            <div id="monte-v" class="video-container"></div>
-        </div>
-
-    </div>
-</section>
-
-<section class="faq-section">
-    <h2 style="text-align: center; color: white; margin-bottom: 30px;">Preguntas Frecuentes</h2>
-    
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes cuentan con documentos en regla? <span>▾</span></div>
-        <div class="faq-answer">Sí. Todos los proyectos que gestiono cuentan con seguridad jurídica y respaldo legal integral bajo mi asesoría personal para garantizar su tranquilidad.</div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir en estas zonas? <span>▾</span></div>
-        <div class="faq-answer">Son las áreas con mayor crecimiento proyectado en el norte del país. La expansión urbana asegura que el valor de la propiedad aumente de forma constante.</div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">¿Ofrecen facilidades de pago? <span>▾</span></div>
-        <div class="faq-answer">Contamos con diversas modalidades de pago y planes de financiamiento directo que se ajustan a las necesidades de cada cliente.</div>
-    </div>
-</section>
-
-<section class="cuestionario">
-    <h2>Solicita Información</h2>
-    <form id="formulario">
-        <input type="text" id="nombre" placeholder="Nombre completo" required>
-        <input type="tel" id="telefono" placeholder="Número de contacto" required>
-        <select id="proyecto" required>
-            <option value="">¿En qué proyecto estás interesado?</option>
-            <option>Fundo Malabrigo</option>
-            <option>Puerto Mar Club</option>
-            <option>Residencial Monte Verde</option>
-        </select>
-        <textarea id="mensaje" placeholder="Escribe tu consulta"></textarea>
-        <button type="submit" class="btn" style="padding:18px; width: 100%;">ENVIAR CONSULTA A HUMBERTO</button>
-    </form>
-</section>
-
-<footer style="text-align:center; padding:40px; background:#000; color:#666;">
-    © 2026 Humberto León | Asesor Inmobiliario de Confianza
-</footer>
-
-<div id="lightbox" onclick="if(event.target.id==='lightbox')this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:2000; flex-direction:column;">
-    <img id="lightbox-img" style="max-width:90%; max-height:80%; border-radius:20px;">
-    <div style="margin-top:25px">
-        <button class="btn" onclick="cambiarImg(-1)">ANTERIOR</button>
-        <button class="btn" onclick="cambiarImg(1)">SIGUIENTE</button>
-        <button class="btn" style="background:#ff4d4d" onclick="document.getElementById('lightbox').style.display='none'">CERRAR</button>
-    </div>
-</div>
-
-<script>
-let lbImgs = []; let cIdx = 0;
-function abrirImagenes(imgs){ lbImgs = imgs; cIdx = 0; document.getElementById("lightbox-img").src = lbImgs[0]; document.getElementById("lightbox").style.display = "flex"; }
-function cambiarImg(d){ cIdx = (cIdx + d + lbImgs.length) % lbImgs.length; document.getElementById("lightbox-img").src = lbImgs[cIdx]; }
-
-function mostrarVideos(id, ids){
-    const c = document.getElementById(id); c.innerHTML = "";
-    ids.forEach(i => {
-        let f = document.createElement("iframe");
-        f.src = `https://drive.google.com/file/d/${i}/preview`;
-        f.allow = "autoplay"; f.frameBorder = "0"; f.allowFullscreen = true;
-        c.appendChild(f);
-    });
-}
-
-function toggleFaq(el) {
-    const answer = el.nextElementSibling;
-    answer.style.display = (answer.style.display === "block") ? "none" : "block";
-}
-
-document.getElementById("formulario").addEventListener("submit", function(e){
-    e.preventDefault();
-    let n = document.getElementById("nombre").value;
-    let p = document.getElementById("proyecto").value;
-    window.open(`https://wa.me/51985877256?text=Hola%20Humberto,%20soy%20${n}.%20Me%20interesa%20invertir%20en%20${p}.`, "_blank");
-});
-</script>
-</body>
-</html>
+            <span class
