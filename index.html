@@ -12,160 +12,138 @@
     --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a); 
     --verde-wa: #25D366;
 }
-body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--oscuro-deep); color: white; scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--oscuro-deep); color: white; scroll-behavior: smooth; }
 
-/* HEADER IMPACTANTE */
 header { position: relative; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 header video { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
 .overlay { position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
-.header-content { position: relative; text-align: center; padding: 20px; }
-.logo-personal { width: 240px; filter: drop-shadow(0 0 15px rgba(191, 160, 70, 0.5)); margin-bottom: 15px; }
-.header-content h1 { font-size: clamp(40px, 8vw, 65px); margin: 0; background: linear-gradient(45deg,#bfa046,#fff,#bfa046); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; }
-.header-content p { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 5px; color: var(--dorado-brillante); font-weight: 700; margin-top: 10px; }
+.header-content { position: relative; text-align: center; }
+.logo-personal { width: 240px; filter: drop-shadow(0 0 15px rgba(191, 160, 70, 0.5)); margin-bottom: 10px; }
+.header-content h1 { font-size: clamp(40px, 8vw, 64px); margin: 0; background: linear-gradient(45deg,#bfa046,#fff,#bfa046); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; }
+.header-content p { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 4px; color: var(--dorado-brillante); font-weight: 700; }
 
-/* SECCIÓN PROYECTOS */
-.proyectos { padding: 100px 20px; text-align: center; }
-.proyectos h2 { font-size: 3.5rem; margin-bottom: 60px; background: linear-gradient(to bottom, #fff, var(--dorado)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1300px; margin: auto; }
-.proyecto-card { background: var(--oscuro-card); border: 1px solid rgba(191, 160, 70, 0.2); border-radius: 35px; padding: 40px; transition: 0.4s all ease; position: relative; }
-.proyecto-card:hover { transform: translateY(-15px); border-color: var(--dorado-brillante); box-shadow: 0 25px 50px rgba(191, 160, 70, 0.2); }
-.tag-plusvalia { background: linear-gradient(45deg, var(--dorado), #ffcc33); color: #000; font-size: 11px; font-weight: 900; padding: 6px 15px; border-radius: 50px; position: absolute; top: 20px; right: 20px; text-transform: uppercase; }
-.logo-proyecto { width: 160px; margin-bottom: 20px; }
-.proyecto-card h3 { font-size: 24px; color: #fff; margin: 10px 0; letter-spacing: 1px; }
-.ubicacion-tag { color: var(--dorado-brillante); font-weight: 800; font-size: 0.95rem; margin-bottom: 20px; display: block; }
+.proyectos { padding: 80px 20px; text-align: center; }
+.proyectos h2 { font-size: 3rem; margin-bottom: 50px; background: linear-gradient(to bottom, #fff, var(--dorado)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; max-width: 1250px; margin: auto; }
+.proyecto-card { background: var(--oscuro-card); border: 1px solid rgba(191, 160, 70, 0.2); border-radius: 30px; padding: 35px; transition: 0.4s; position: relative; }
+.proyecto-card:hover { transform: translateY(-10px); border-color: var(--dorado-brillante); }
+.tag-plusvalia { background: linear-gradient(45deg, var(--dorado), #ffcc33); color: #000; font-size: 11px; font-weight: 900; padding: 5px 12px; border-radius: 50px; position: absolute; top: 15px; right: 15px; }
+.logo-proyecto { width: 150px; margin-bottom: 15px; }
+.ubicacion-tag { color: var(--dorado-brillante); font-weight: 800; font-size: 0.95rem; display: block; margin-bottom: 20px; }
 
-/* BOTONES */
-.btn { display: inline-block; padding: 14px 25px; margin: 5px; background: linear-gradient(180deg, #bfa046 0%, #8a6d1d 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: 800; cursor: pointer; border: none; transition: 0.3s; font-size: 14px; }
-.btn:hover { filter: brightness(1.2); transform: scale(1.05); }
+.btn { display: inline-block; padding: 12px 20px; margin: 4px; background: linear-gradient(180deg, #bfa046 0%, #8a6d1d 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: 800; cursor: pointer; border: none; transition: 0.3s; font-size: 13px; }
+.btn:hover { filter: brightness(1.2); }
 .btn-agendar { background: linear-gradient(180deg, #25D366 0%, #128C7E 100%); }
-.video-container iframe { width: 100%; height: 350px; border-radius: 20px; margin-top: 20px; border: 1px solid var(--dorado); }
+.video-container iframe { width: 100%; height: 350px; border-radius: 15px; margin-top: 15px; border: 1px solid var(--dorado); }
 
-/* CLIENTES FELICES */
-.clientes-section { text-align: center; padding: 80px 20px; background: rgba(191, 160, 70, 0.05); border-top: 1px solid var(--dorado); border-bottom: 1px solid var(--dorado); }
-.clientes-section h2 { color: var(--dorado-brillante); font-size: 2.5rem; margin-bottom: 10px; }
-.clientes-section p { color: #ccc; margin-bottom: 30px; font-size: 1.1rem; }
+.clientes-section { text-align: center; padding: 60px 20px; background: rgba(191, 160, 70, 0.05); border-top: 1px solid var(--dorado); }
+.faq-section { max-width: 800px; margin: 60px auto; padding: 0 20px; }
+.faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.2); padding: 15px 0; }
+.faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: 700; display: flex; justify-content: space-between; }
+.faq-answer { display: none; color: #ccc; margin-top: 10px; line-height: 1.6; }
 
-/* FAQ & CUESTIONARIO */
-.faq-section { max-width: 900px; margin: 80px auto; padding: 0 20px; }
-.faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.2); padding: 20px 0; }
-.faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: 700; font-size: 1.2rem; display: flex; justify-content: space-between; }
-.faq-answer { display: none; color: #cbd5e1; margin-top: 15px; line-height: 1.7; }
-.cuestionario { padding: 80px 20px; background: #0b1220; text-align: center; }
-form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
-input, select, textarea { padding: 18px; border-radius: 15px; border: 1px solid rgba(191,160,70,0.2); background: #1e293b; color: white; width: 100%; box-sizing: border-box; font-size: 1rem; }
+.cuestionario { padding: 60px 20px; background: #0b1220; text-align: center; }
+form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 12px; }
+input, select, textarea { padding: 15px; border-radius: 12px; border: none; background: #1e293b; color: white; width: 100%; box-sizing: border-box; }
 
-/* WHATSAPP FLOAT */
-.wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--verde-wa); width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); }
+.wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--verde-wa); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; }
 
-/* LIGHTBOX */
 #lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:3000; justify-content:center; align-items:center; flex-direction:column; }
-#lightbox-img { max-width:90%; max-height:75%; border-radius:15px; border: 2px solid var(--dorado); }
-.close-btn { background: #ff4d4d !important; margin: 0 15px; }
+#lightbox-img { max-width:90%; max-height:75%; border-radius:10px; border: 2px solid var(--dorado); }
 </style>
 </head>
 <body>
 
-<a href="https://wa.me/51985877256?text=Hola%20Humberto,%20estoy%20en%20tu%20web%20y%20deseo%20asesoría." class="wa-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WhatsApp">
-</a>
+<a href="https://wa.me/51985877256" class="wa-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35"></a>
 
 <header>
     <video autoplay muted loop playsinline><source src="header-video.mp4" type="video/mp4"></video>
     <div class="overlay"></div>
     <div class="header-content">
-        <img src="hl_logo.png" class="logo-personal" alt="Humberto León Logo">
+        <img src="hl_logo.png" class="logo-personal">
         <h1>Humberto León</h1>
-        <p>Inversiones Inmobiliarias</p>
+        <p>Asesoría Inmobiliaria Transparente</p>
     </div>
 </header>
 
 <section class="proyectos" id="proyectos">
-    <h2>Proyectos Disponibles</h2>
+    <h2>Nuestros Proyectos</h2>
     <div class="grid">
-        
         <div class="proyecto-card">
             <span class="tag-plusvalia">Campo & Mar</span>
-            <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
+            <img src="logo-fundo.png" class="logo-proyecto">
             <h3>FUNDO MALABRIGO</h3>
             <span class="ubicacion-tag">📍 PUERTO MALABRIGO</span>
-            <p>Lotes exclusivos para la casa de campo que siempre soñaste.</p>
-            <button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">VER FOTOS</button>
-            <button class="btn" onclick="mostrarVideos('fundo-v', ['1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','151mpZHdjUhTozjy3lNordHUvphKtYASr','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">VER VIDEOS</button>
-            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20sobre%20Fundo%20Malabrigo" class="btn btn-agendar" target="_blank">SOLICITAR INFO</a>
-            <div id="fundo-v" class="video-container"></div>
+            <button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg'])">FOTOS</button>
+            <button class="btn" onclick="mostrarVideos('f-v',['1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','151mpZHdjUhTozjy3lNordHUvphKtYASr'])">VIDEOS</button>
+            <a href="https://maps.app.goo.gl/YourLink1" target="_blank" class="btn">📍 UBICACIÓN</a>
+            <a href="https://wa.me/51985877256?text=Info%20Fundo%20Malabrigo" class="btn btn-agendar">AGENDAR</a>
+            <div id="f-v" class="video-container"></div>
         </div>
-
         <div class="proyecto-card">
-            <span class="tag-plusvalia">Lujo y Playa</span>
-            <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
+            <span class="tag-plusvalia">Frente al Mar</span>
+            <img src="logo-puerto.png" class="logo-proyecto">
             <h3>PUERTO MAR CLUB</h3>
             <span class="ubicacion-tag">📍 PUERTO MALABRIGO</span>
-            <p>Tu propiedad frente al mar con la mejor vista y confort.</p>
-            <button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">VER FOTOS</button>
-            <button class="btn" onclick="mostrarVideos('puerto-v', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL','1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'])">VER VIDEOS</button>
-            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20sobre%20Puerto%20Mar%20Club" class="btn btn-agendar" target="_blank">SOLICITAR INFO</a>
-            <div id="puerto-v" class="video-container"></div>
+            <button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg'])">FOTOS</button>
+            <button class="btn" onclick="mostrarVideos('p-v',['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL'])">VIDEOS</button>
+            <a href="https://maps.app.goo.gl/YourLink2" target="_blank" class="btn">📍 UBICACIÓN</a>
+            <a href="https://wa.me/51985877256?text=Info%20Puerto%20Mar" class="btn btn-agendar">AGENDAR</a>
+            <div id="p-v" class="video-container"></div>
         </div>
-
         <div class="proyecto-card">
-            <span class="tag-plusvalia">Alta Rentabilidad</span>
-            <img src="logo-monte.png" class="logo-proyecto" alt="Monte Verde">
+            <span class="tag-plusvalia">Plusvalía</span>
+            <img src="logo-monte.png" class="logo-proyecto">
             <h3>RESIDENCIAL MONTE VERDE</h3>
             <span class="ubicacion-tag">📍 CHEPÉN - NUEVO PARAÍSO "CHAPARRAL"</span>
-            <p>La mejor oportunidad de inversión con plusvalía asegurada.</p>
-            <button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">VER FOTOS</button>
-            <button class="btn" onclick="mostrarVideos('monte-v', ['1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">VER VIDEOS</button>
-            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20sobre%20Residencial%20Monte%20Verde" class="btn btn-agendar" target="_blank">SOLICITAR INFO</a>
-            <div id="monte-v" class="video-container"></div>
+            <button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg'])">FOTOS</button>
+            <button class="btn" onclick="mostrarVideos('m-v',['1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi'])">VIDEOS</button>
+            <a href="https://maps.app.goo.gl/YourLink3" target="_blank" class="btn">📍 UBICACIÓN</a>
+            <a href="https://wa.me/51985877256?text=Info%20Monte%20Verde" class="btn btn-agendar">AGENDAR</a>
+            <div id="m-v" class="video-container"></div>
         </div>
-
     </div>
 </section>
 
 <section class="clientes-section">
     <h2>CONFIANZA REAL</h2>
-    <p>La mayor garantía es la satisfacción de quienes ya invirtieron conmigo.</p>
-    <button class="btn" style="padding: 22px 50px; font-size: 1.2rem; border: 2px solid #fff;" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','firma1.jpg'])">🤝 CLIENTES FELICES</button>
-    <p style="margin-top: 20px; font-size: 0.9rem; color: var(--dorado-brillante); font-weight: bold;">(Clic para ver testimonios y firmas de contratos)</p>
+    <p>La satisfacción de nuestros clientes es nuestro mejor respaldo.</p>
+    <button class="btn" style="padding: 20px 40px; font-size: 1.1rem;" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg'])">🤝 CLIENTES FELICES</button>
+    <p style="margin-top:15px; color:var(--dorado-brillante); font-weight:bold;">(Fotos de firmas y entregas reales)</p>
 </section>
 
 <section class="faq-section">
-    <h2 style="text-align:center; color: var(--dorado);">Preguntas Frecuentes</h2>
+    <h2 style="text-align:center">Preguntas Frecuentes</h2>
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes tienen documentos en regla? <span>▾</span></div>
-        <div class="faq-answer">Totalmente. Todos los proyectos cuentan con seguridad jurídica y saneamiento legal completo.</div>
+        <div class="faq-question" onclick="toggleFaq(this)">¿Documentos en regla? <span>▾</span></div>
+        <div class="faq-answer">Sí, todos los proyectos cuentan con seguridad jurídica y respaldo legal.</div>
     </div>
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">¿Existe financiamiento directo? <span>▾</span></div>
-        <div class="faq-answer">Sí, ofrecemos planes flexibles de financiamiento para que puedas adquirir tu lote sin complicaciones.</div>
+        <div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir aquí? <span>▾</span></div>
+        <div class="faq-answer">Por la alta plusvalía y el crecimiento estratégico del norte peruano.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">¿Ofrecen facilidades de pago? <span>▾</span></div>
+        <div class="faq-answer">Sí, contamos con planes de financiamiento directo que se ajustan a tu medida.</div>
     </div>
 </section>
 
 <section class="cuestionario">
-    <h2>Déjame tus datos y te contacto</h2>
-    <form id="formularioWeb">
-        <input type="text" id="nom" placeholder="Tu nombre completo" required>
-        <input type="tel" id="tel" placeholder="Tu número de WhatsApp" required>
-        <select id="proy">
-            <option>Fundo Malabrigo</option>
-            <option>Puerto Mar Club</option>
-            <option>Residencial Monte Verde</option>
-        </select>
-        <textarea id="msg" placeholder="¿Tienes alguna consulta específica?"></textarea>
-        <button type="submit" class="btn" style="width:100%; font-size: 1.1rem; padding: 20px;">ENVIAR CONSULTA POR WHATSAPP</button>
+    <h2>Solicita Información</h2>
+    <form id="fw">
+        <input type="text" id="n" placeholder="Nombre" required>
+        <input type="tel" id="t" placeholder="WhatsApp" required>
+        <select id="pr"><option>Fundo Malabrigo</option><option>Puerto Mar Club</option><option>Monte Verde</option></select>
+        <button type="submit" class="btn" style="width:100%; padding:18px;">ENVIAR CONSULTA</button>
     </form>
 </section>
 
-<footer style="padding:50px; text-align:center; background:#000; color:#555; font-size: 0.8rem;">
-    © 2026 HUMBERTO LEÓN | TODOS LOS DERECHOS RESERVADOS
-</footer>
-
 <div id="lightbox" onclick="if(event.target.id==='lightbox')this.style.display='none'">
-    <img id="lightbox-img" src="">
-    <div style="margin-top:25px; display:flex; gap:10px;">
-        <button class="btn" onclick="event.stopPropagation(); cambiarImg(-1)">ANTERIOR</button>
-        <button class="btn close-btn" onclick="document.getElementById('lightbox').style.display='none'">CERRAR (X)</button>
-        <button class="btn" onclick="event.stopPropagation(); cambiarImg(1)">SIGUIENTE</button>
+    <img id="lightbox-img">
+    <div style="margin-top:20px;">
+        <button class="btn" onclick="event.stopPropagation(); cambiarImg(-1)">ANT</button>
+        <button class="btn" style="background:#ff4d4d" onclick="document.getElementById('lightbox').style.display='none'">CERRAR (X)</button>
+        <button class="btn" onclick="event.stopPropagation(); cambiarImg(1)">SIG</button>
     </div>
 </div>
 
@@ -173,30 +151,17 @@ input, select, textarea { padding: 18px; border-radius: 15px; border: 1px solid 
 let lbImgs = []; let cIdx = 0;
 function abrirImagenes(imgs){ lbImgs = imgs; cIdx = 0; document.getElementById("lightbox-img").src = lbImgs[0]; document.getElementById("lightbox").style.display = "flex"; }
 function cambiarImg(d){ cIdx = (cIdx + d + lbImgs.length) % lbImgs.length; document.getElementById("lightbox-img").src = lbImgs[cIdx]; }
-
 function mostrarVideos(id, ids){
-    const container = document.getElementById(id); container.innerHTML = "";
-    ids.forEach(videoId => {
-        let iframe = document.createElement("iframe");
-        iframe.src = `https://drive.google.com/file/d/${videoId}/preview`;
-        iframe.allow = "autoplay"; iframe.allowFullscreen = true;
-        container.appendChild(iframe);
+    const c = document.getElementById(id); c.innerHTML = "";
+    ids.forEach(v => {
+        let f = document.createElement("iframe"); f.src = `https://drive.google.com/file/d/${v}/preview`;
+        f.width="100%"; f.height="350"; f.frameBorder="0"; f.allowFullscreen=true; c.appendChild(f);
     });
 }
-
-function toggleFaq(el){
-    const ans = el.nextElementSibling;
-    ans.style.display = (ans.style.display === "block") ? "none" : "block";
-}
-
-document.getElementById("formularioWeb").onsubmit = function(e){
+function toggleFaq(el){ const a = el.nextElementSibling; a.style.display = (a.style.display === "block") ? "none" : "block"; }
+document.getElementById("fw").onsubmit = function(e){
     e.preventDefault();
-    const n = document.getElementById("nom").value;
-    const t = document.getElementById("tel").value;
-    const p = document.getElementById("proy").value;
-    const m = document.getElementById("msg").value;
-    const url = `https://wa.me/51985877256?text=Hola%20Humberto,%20soy%20${n}.%20Mi%20teléfono%20es%20${t}.%20Me%20interesa%20el%20proyecto%20${p}.%20Mensaje:%20${m}`;
-    window.open(url, "_blank");
+    window.open(`https://wa.me/51985877256?text=Soy%20${document.getElementById("n").value},%20interés%20en%20${document.getElementById("pr").value}`, "_blank");
 };
 </script>
 </body>
