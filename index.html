@@ -12,7 +12,6 @@
     --oscuro-deep: #020617;
     --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a); 
     --verde-wa: #25D366;
-    --texto-suave: #f1f5f9;
 }
 
 body {
@@ -23,7 +22,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* HEADER PERSONAL */
+/* HEADER */
 header {
     position: relative;
     height: 100vh;
@@ -45,7 +44,6 @@ header video {
 .header-content {
     position: relative;
     text-align: center;
-    animation: fadeIn 2s ease;
 }
 .logo-personal {
     width: 240px;
@@ -64,22 +62,11 @@ header video {
     text-transform: uppercase;
     letter-spacing: 4px;
     font-weight: 700;
-    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 3s infinite linear;
+    color: var(--dorado-brillante);
 }
 
-/* SECCIÓN DE PROYECTOS */
+/* SECCIÓN PROYECTOS */
 .proyectos { padding: 80px 20px; text-align: center; }
-.proyectos h2 {
-    font-size: 3rem;
-    margin-bottom: 50px;
-    background: linear-gradient(to bottom, #fff, var(--dorado));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -87,109 +74,141 @@ header video {
     max-width: 1250px;
     margin: auto;
 }
-
 .proyecto-card {
     background: var(--oscuro-card);
     border: 1px solid rgba(191, 160, 70, 0.3);
     border-radius: 30px;
     padding: 35px;
-    transition: 0.5s all ease;
+    transition: 0.5s;
 }
-.proyecto-card:hover {
-    transform: translateY(-15px);
-    border-color: var(--dorado-brillante);
-    box-shadow: 0 20px 50px rgba(191, 160, 70, 0.3);
-}
-
-.proyecto-card h3 {
-    font-size: 26px;
-    font-weight: 800;
-    color: #fff;
-    text-shadow: 0 0 10px var(--dorado);
-    text-transform: uppercase;
-    margin-bottom: 5px;
-}
-
-.ubicacion-tag {
-    color: #ffcc33;
-    font-weight: 800;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.tag-plusvalia {
-    background: linear-gradient(45deg, var(--dorado), #ffcc33);
-    color: #000;
-    font-size: 12px;
-    font-weight: 900;
-    padding: 6px 18px;
-    border-radius: 50px;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
+.proyecto-card:hover { transform: translateY(-15px); border-color: var(--dorado-brillante); }
+.ubicacion-tag { color: #ffcc33; font-weight: 800; font-size: 1.1rem; margin-bottom: 15px; display: block; }
+.tag-plusvalia { background: linear-gradient(45deg, var(--dorado), #ffcc33); color: #000; font-size: 12px; font-weight: 900; padding: 6px 18px; border-radius: 50px; margin-bottom: 20px; display: inline-block; }
 .logo-proyecto { width: 150px; margin: 0 auto 20px; display: block; }
 
 /* SECCIÓN CONFIANZA */
-.clientes-section {
-    text-align: center;
-    padding: 60px 20px;
-    background: rgba(191, 160, 70, 0.05);
-}
-.clientes-section h2 {
-    font-size: 2.2rem;
-    font-weight: 900;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
-.clientes-section p {
-    font-size: 1.1rem;
-    color: #fff;
-    margin-bottom: 30px;
-}
-.btn-clientes {
-    background: linear-gradient(to bottom, #bfa046, #8a6d1d);
-    border: 2px solid #fff;
-    border-radius: 50px;
-    padding: 15px 40px;
-    color: #fff;
-    font-weight: 800;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.btn-clientes:hover { transform: scale(1.05); filter: brightness(1.2); }
+.clientes-section { text-align: center; padding: 60px 20px; background: rgba(191, 160, 70, 0.05); }
+.btn-clientes { background: linear-gradient(to bottom, #bfa046, #8a6d1d); border: 2px solid #fff; border-radius: 50px; padding: 15px 40px; color: #fff; font-weight: 800; font-size: 1.2rem; cursor: pointer; }
 
 /* BOTONES */
-.btn {
-    display: inline-block;
-    padding: 12px 20px;
-    margin: 6px;
-    background: linear-gradient(to bottom, #bfa046, #8a6d1d);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 800;
-    cursor: pointer;
-    border: none;
-}
+.btn { display: inline-block; padding: 12px 20px; margin: 6px; background: linear-gradient(to bottom, #bfa046, #8a6d1d); color: white; text-decoration: none; border-radius: 50px; font-weight: 800; cursor: pointer; border: none; }
 .btn-agendar { background: linear-gradient(to bottom, #25D366, #128C7E); }
 
-/* VIDEO CONTAINER */
-.video-container iframe {
-    width: 100%; height: 350px;
-    border-radius: 20px; margin-top: 15px;
-}
+/* VIDEO DRIVE */
+.video-container iframe { width: 100%; height: 350px; border-radius: 20px; margin-top: 15px; }
 
-/* FAQ */
+/* FAQ & FORM */
 .faq-section { max-width: 800px; margin: 60px auto; padding: 20px; }
 .faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.3); padding: 15px 0; }
-.faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; font-size: 1.1rem; }
-.faq-answer { display: none; color: #ccc; margin-top: 10px; line-height: 1.6; font-size: 1rem; }
-
-/* FORMULARIO */
+.faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; }
+.faq-answer { display: none; color: #ccc; margin-top: 10px; }
 .cuestionario { background: #0b1220; padding: 80px 20px; text-align: center; }
 form { max-width: 550px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
-input, select, textarea { padding: 15px; border-radius: 15px; border: none; background: #1e29
+input, select, textarea { padding: 15px; border-radius: 15px; border: none; background: #1e293b; color: white; width: 100%; box-sizing: border-box; }
+
+.wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--verde-wa); width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; }
+
+/* LIGHTBOX */
+#lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:2000; flex-direction:column; }
+#lightbox-img { max-width:90%; max-height:80%; border-radius:20px; border: 2px solid var(--dorado); }
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/51985877256" class="wa-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38"></a>
+
+<header>
+    <video autoplay muted loop playsinline><source src="header-video.mp4" type="video/mp4"></video>
+    <div class="overlay"></div>
+    <div class="header-content">
+        <img src="hl_logo.png" class="logo-personal">
+        <h1>Humberto León</h1>
+        <p>Asesoría Inmobiliaria Transparente</p>
+    </div>
+</header>
+
+<section class="proyectos">
+    <h2>Proyectos Destacados</h2>
+    <div class="grid">
+        <div class="proyecto-card">
+            <span class="tag-plusvalia">Campo & Mar</span>
+            <img src="logo-fundo.png" class="logo-proyecto">
+            <h3>FUNDO MALABRIGO</h3>
+            <span class="ubicacion-tag">📍 PUERTO MALABRIGO</span>
+            <button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">FOTOS</button>
+            <button class="btn" onclick="mostrarVideos('fundo-v', ['1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','151mpZHdjUhTozjy3lNordHUvphKtYASr','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">VIDEOS</button>
+            <a href="#" target="_blank" class="btn">UBICACIÓN</a>
+            <a href="https://wa.me/51985877256?text=Info%20Fundo%20Malabrigo" class="btn btn-agendar">AGENDAR</a>
+            <div id="fundo-v" class="video-container"></div>
+        </div>
+        <div class="proyecto-card">
+            <span class="tag-plusvalia">Frente al Mar</span>
+            <img src="logo-puerto.png" class="logo-proyecto">
+            <h3>PUERTO MAR CLUB</h3>
+            <span class="ubicacion-tag">📍 PUERTO MALABRIGO</span>
+            <button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">FOTOS</button>
+            <button class="btn" onclick="mostrarVideos('puerto-v', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL','1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'])">VIDEOS</button>
+            <a href="#" target="_blank" class="btn">UBICACIÓN</a>
+            <a href="https://wa.me/51985877256?text=Info%20Puerto%20Mar" class="btn btn-agendar">AGENDAR</a>
+            <div id="puerto-v" class="video-container"></div>
+        </div>
+        <div class="proyecto-card">
+            <span class="tag-plusvalia">Plusvalía Garantizada</span>
+            <img src="logo-monte.png" class="logo-proyecto">
+            <h3>RESIDENCIAL MONTE VERDE</h3>
+            <span class="ubicacion-tag" style="font-size: 1rem;">📍 CHEPÉN - NUEVO PARAÍSO "CHAPARRAL"</span>
+            <button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">FOTOS</button>
+            <button class="btn" onclick="mostrarVideos('monte-v', ['1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">VIDEOS</button>
+            <a href="#" target="_blank" class="btn">UBICACIÓN</a>
+            <a href="https://wa.me/51985877256?text=Info%20Monte%20Verde" class="btn btn-agendar">AGENDAR</a>
+            <div id="monte-v" class="video-container"></div>
+        </div>
+    </div>
+</section>
+
+<section class="clientes-section">
+    <h2>CONFIANZA REAL</h2>
+    <p>La satisfacción de nuestros clientes es nuestro mejor respaldo.</p>
+    <button class="btn-clientes" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">🤝 CLIENTES FELICES</button>
+    <p style="margin-top:20px; color:#ffcc33; font-weight:bold;">(Fotos reales de firmas y entregas)</p>
+</section>
+
+<section class="faq-section">
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes cuentan con documentos en regla? <span>▾</span></div>
+        <div class="faq-answer">Sí. Todos los proyectos cuentan con seguridad jurídica y respaldo legal integral.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir en estas zonas? <span>▾</span></div>
+        <div class="faq-answer">Son las áreas con mayor crecimiento proyectado en el norte del país.</div>
+    </div>
+</section>
+
+<section class="cuestionario">
+    <h2>Solicita Información</h2>
+    <form id="formulario">
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
+        <input type="tel" id="telefono" placeholder="WhatsApp" required>
+        <select id="proyecto">
+            <option>Fundo Malabrigo</option>
+            <option>Puerto Mar Club</option>
+            <option>Residencial Monte Verde</option>
+        </select>
+        <textarea id="mensaje" placeholder="Tu consulta"></textarea>
+        <button type="submit" class="btn" style="width:100%; padding:20px;">ENVIAR CONSULTA</button>
+    </form>
+</section>
+
+<div id="lightbox" onclick="if(event.target.id==='lightbox')this.style.display='none'">
+    <img id="lightbox-img">
+    <div style="margin-top:25px">
+        <button class="btn" onclick="event.stopPropagation(); cambiarImg(-1)">ANTERIOR</button>
+        <button class="btn" onclick="event.stopPropagation(); cambiarImg(1)">SIGUIENTE</button>
+        <button class="btn" style="background:#ff4d4d" onclick="document.getElementById('lightbox').style.display='none'">CERRAR</button>
+    </div>
+</div>
+
+<script>
+let lbImgs = []; let cIdx = 0;
+function abrirImagenes(imgs){ lbImgs = imgs; cIdx = 0; document.getElementById("lightbox-img").src = lbImgs[0]; document.getElementById("lightbox").style.display = "flex"; }
+function cambiarImg(d){ cIdx = (
