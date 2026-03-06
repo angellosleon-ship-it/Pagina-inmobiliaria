@@ -14,48 +14,37 @@
         }
         body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--oscuro-deep); color: white; scroll-behavior: smooth; }
         
-        /* HEADER */
         header { position: relative; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
         header video { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
         .overlay { position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
-        .header-content { position: relative; text-align: center; padding: 20px; }
-        .logo-personal { width: 240px; filter: drop-shadow(0 0 15px rgba(191,160,70,0.5)); margin-bottom: 15px; }
-        .header-content h1 { font-size: clamp(40px, 8vw, 65px); margin: 0; background: linear-gradient(45deg,#bfa046,#fff,#bfa046); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; }
-        .header-content p { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 5px; color: var(--dorado-brillante); font-weight: 700; margin-top: 10px; }
+        .header-content { position: relative; text-align: center; }
+        .logo-personal { width: 220px; filter: drop-shadow(0 0 15px rgba(191,160,70,0.5)); margin-bottom: 15px; }
+        .header-content h1 { font-size: clamp(35px, 7vw, 60px); margin: 0; background: linear-gradient(45deg,#bfa046,#fff,#bfa046); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; }
+        .header-content p { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 4px; color: var(--dorado-brillante); font-weight: 700; }
 
-        /* PROYECTOS */
         .proyectos { padding: 80px 20px; text-align: center; }
-        .proyectos h2 { font-size: 3rem; margin-bottom: 50px; background: linear-gradient(to bottom, #fff, var(--dorado)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1300px; margin: auto; }
-        .proyecto-card { background: var(--oscuro-card); border: 1px solid rgba(191, 160, 70, 0.2); border-radius: 35px; padding: 40px; transition: 0.4s; position: relative; }
-        .proyecto-card:hover { transform: translateY(-10px); border-color: var(--dorado-brillante); box-shadow: 0 20px 40px rgba(191,160,70,0.2); }
-        .tag-plusvalia { background: linear-gradient(45deg, var(--dorado), #ffcc33); color: #000; font-size: 11px; font-weight: 900; padding: 6px 15px; border-radius: 50px; position: absolute; top: 20px; right: 20px; }
-        .logo-proyecto { width: 160px; margin-bottom: 20px; }
-        .ubicacion-tag { color: var(--dorado-brillante); font-weight: 800; font-size: 0.95rem; display: block; margin-bottom: 20px; height: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; max-width: 1200px; margin: auto; }
+        .proyecto-card { background: var(--oscuro-card); border: 1px solid rgba(191, 160, 70, 0.2); border-radius: 30px; padding: 35px; position: relative; transition: 0.3s; }
+        .proyecto-card:hover { transform: translateY(-10px); border-color: var(--dorado-brillante); }
+        .tag-plusvalia { background: linear-gradient(45deg, var(--dorado), #ffcc33); color: #000; font-size: 10px; font-weight: 900; padding: 5px 12px; border-radius: 50px; position: absolute; top: 15px; right: 15px; }
+        .logo-proyecto { width: 150px; margin-bottom: 20px; }
+        .ubicacion-tag { color: var(--dorado-brillante); font-weight: 800; font-size: 0.9rem; display: block; margin-bottom: 20px; min-height: 40px; }
 
-        /* BOTONES */
-        .btn { display: inline-block; padding: 14px 22px; margin: 5px; background: linear-gradient(180deg, #bfa046 0%, #8a6d1d 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: 800; cursor: pointer; border: none; transition: 0.3s; font-size: 13px; }
-        .btn:hover { filter: brightness(1.2); transform: scale(1.05); }
+        .btn { display: inline-block; padding: 12px 20px; margin: 5px; background: linear-gradient(180deg, #bfa046 0%, #8a6d1d 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: 800; cursor: pointer; border: none; font-size: 13px; transition: 0.3s; }
         .btn-agendar { background: linear-gradient(180deg, #25D366 0%, #128C7E 100%); }
-        .video-container iframe { width: 100%; height: 350px; border-radius: 20px; margin-top: 20px; border: 1px solid var(--dorado); }
+        .video-container iframe { width: 100%; height: 320px; border-radius: 20px; margin-top: 15px; border: 1px solid var(--dorado); }
 
-        /* CLIENTES FELICES */
-        .clientes-section { text-align: center; padding: 80px 20px; background: rgba(191,160,70,0.05); border-top: 1px solid var(--dorado); border-bottom: 1px solid var(--dorado); }
-        .clientes-section h2 { color: var(--dorado-brillante); font-size: 2.5rem; margin-bottom: 10px; }
-        .clientes-section p { color: #ccc; margin-bottom: 30px; }
-
-        /* FAQ & FORMULARIO */
+        .clientes-section { text-align: center; padding: 70px 20px; background: rgba(191,160,70,0.05); border-top: 1px solid var(--dorado); }
         .faq-section { max-width: 800px; margin: 60px auto; padding: 0 20px; }
-        .faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.2); padding: 20px 0; }
-        .faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: 700; font-size: 1.1rem; display: flex; justify-content: space-between; }
-        .faq-answer { display: none; color: #cbd5e1; margin-top: 15px; line-height: 1.6; }
-        
-        .cuestionario { padding: 80px 20px; background: #0b1220; text-align: center; }
-        form { max-width: 550px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
-        input, select, textarea { padding: 18px; border-radius: 15px; border: 1px solid rgba(191,160,70,0.2); background: #1e293b; color: white; width: 100%; box-sizing: border-box; font-size: 1rem; }
+        .faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.2); padding: 18px 0; }
+        .faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: 700; display: flex; justify-content: space-between; font-size: 1.1rem; }
+        .faq-answer { display: none; color: #ccc; margin-top: 10px; line-height: 1.6; }
 
-        /* WA FLOAT & LIGHTBOX */
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--verde-wa); width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .cuestionario { padding: 70px 20px; background: #0b1220; text-align: center; }
+        form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 12px; }
+        input, select, textarea { padding: 16px; border-radius: 12px; border: 1px solid rgba(191,160,70,0.3); background: #1e293b; color: white; width: 100%; box-sizing: border-box; font-size: 1rem; }
+
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--verde-wa); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
         #lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:3000; justify-content:center; align-items:center; flex-direction:column; }
         #lightbox-img { max-width:90%; max-height:75%; border-radius:15px; border: 2px solid var(--dorado); }
     </style>
@@ -70,12 +59,11 @@
     <div class="header-content">
         <img src="hl_logo.png" class="logo-personal">
         <h1>Humberto León</h1>
-        <p>Inversiones Inmobiliarias</p>
+        <p>Asesoría Inmobiliaria de Confianza</p>
     </div>
 </header>
 
 <section class="proyectos">
-    <h2>Proyectos Destacados</h2>
     <div class="grid">
         <div class="proyecto-card">
             <span class="tag-plusvalia">Campo & Mar</span>
@@ -85,19 +73,19 @@
             <button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">FOTOS</button>
             <button class="btn" onclick="mostrarVideos('f-v',['1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','151mpZHdjUhTozjy3lNordHUvphKtYASr','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">VIDEOS</button>
             <a href="https://maps.app.goo.gl/Ejemplo1" target="_blank" class="btn">📍 UBICACIÓN</a>
-            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20deseo%20información%20de%20Fundo%20Malabrigo" class="btn btn-agendar">AGENDAR</a>
+            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20info%20de%20Fundo%20Malabrigo" class="btn btn-agendar">AGENDAR</a>
             <div id="f-v" class="video-container"></div>
         </div>
 
         <div class="proyecto-card">
-            <span class="tag-plusvalia">Frente al Mar</span>
+            <span class="tag-plusvalia">Playa</span>
             <img src="logo-puerto.png" class="logo-proyecto">
             <h3>PUERTO MAR CLUB</h3>
             <span class="ubicacion-tag">📍 PUERTO MALABRIGO</span>
             <button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">FOTOS</button>
             <button class="btn" onclick="mostrarVideos('p-v',['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL','1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'])">VIDEOS</button>
             <a href="https://maps.app.goo.gl/Ejemplo2" target="_blank" class="btn">📍 UBICACIÓN</a>
-            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20deseo%20información%20de%20Puerto%20Mar%20Club" class="btn btn-agendar">AGENDAR</a>
+            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20info%20de%20Puerto%20Mar" class="btn btn-agendar">AGENDAR</a>
             <div id="p-v" class="video-container"></div>
         </div>
 
@@ -109,7 +97,7 @@
             <button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">FOTOS</button>
             <button class="btn" onclick="mostrarVideos('m-v',['1-1JAr66zth_2iL0lHtgjpwRXHBRy3wyi','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">VIDEOS</button>
             <a href="https://maps.app.goo.gl/Ejemplo3" target="_blank" class="btn">📍 UBICACIÓN</a>
-            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20deseo%20información%20de%20Monte%20Verde" class="btn btn-agendar">AGENDAR</a>
+            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20info%20de%20Monte%20Verde" class="btn btn-agendar">AGENDAR</a>
             <div id="m-v" class="video-container"></div>
         </div>
     </div>
@@ -118,38 +106,38 @@
 <section class="clientes-section">
     <h2>CONFIANZA REAL</h2>
     <p>La satisfacción de nuestros clientes es nuestro mejor respaldo.</p>
-    <button class="btn" style="padding: 20px 45px; font-size: 1.2rem; border: 2px solid white;" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','firma1.jpg'])">🤝 CLIENTES FELICES</button>
-    <p style="margin-top: 20px; font-size: 0.9rem; color: var(--dorado-brillante); font-weight: bold;">(Fotos reales de firmas y entregas de lotes)</p>
+    <button class="btn" style="padding: 18px 40px; font-size: 1.1rem; border: 2px solid white;" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','firma1.jpg'])">🤝 CLIENTES FELICES</button>
+    <p style="margin-top:15px; color:var(--dorado-brillante); font-weight:bold;">(Fotos reales de firmas y entregas)</p>
 </section>
 
 <section class="faq-section">
-    <h2 style="text-align:center; color: var(--dorado);">Preguntas Frecuentes</h2>
+    <h2 style="text-align:center">Preguntas Frecuentes</h2>
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes cuentan con documentos en regla? <span>▾</span></div>
-        <div class="faq-answer">Sí, todos los proyectos cuentan con seguridad jurídica y saneamiento legal completo.</div>
+        <div class="faq-question" onclick="toggleFaq(this)">¿Documentos en regla? <span>▾</span></div>
+        <div class="faq-answer">Sí, todos los lotes cuentan con seguridad jurídica y respaldo legal completo.</div>
     </div>
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir en estas zonas? <span>▾</span></div>
-        <div class="faq-answer">Por la alta plusvalía y el crecimiento estratégico proyectado en el norte peruano.</div>
+        <div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir aquí? <span>▾</span></div>
+        <div class="faq-answer">Por la alta plusvalía y el crecimiento estratégico del norte peruano.</div>
     </div>
     <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">¿Cuentan con facilidades de pago? <span>▾</span></div>
-        <div class="faq-answer">Efectivamente, ofrecemos financiamiento directo y planes cómodos a tu medida.</div>
+        <div class="faq-question" onclick="toggleFaq(this)">¿Ofrecen financiamiento? <span>▾</span></div>
+        <div class="faq-answer">Sí, contamos con planes de financiamiento directo diseñados a tu medida.</div>
     </div>
 </section>
 
 <section class="cuestionario">
-    <h2>Solicita Asesoría Personalizada</h2>
-    <form id="mainForm">
+    <h2>Solicita Información</h2>
+    <form id="contactForm">
         <input type="text" id="nombre" placeholder="Nombre completo" required>
-        <input type="tel" id="telefono" placeholder="Número de WhatsApp" required>
-        <select id="proyecto">
-            <option>Fundo Malabrigo</option>
-            <option>Puerto Mar Club</option>
-            <option>Residencial Monte Verde</option>
+        <input type="tel" id="telefono" placeholder="WhatsApp de contacto" required>
+        <select id="proy">
+            <option value="Fundo Malabrigo">Fundo Malabrigo</option>
+            <option value="Puerto Mar Club">Puerto Mar Club</option>
+            <option value="Residencial Monte Verde">Residencial Monte Verde</option>
         </select>
-        <textarea id="mensaje" placeholder="Escribe aquí tus dudas o consultas..."></textarea>
-        <button type="submit" class="btn" style="width:100%; padding: 20px; font-size: 1.1rem;">ENVIAR CONSULTA A WHATSAPP</button>
+        <textarea id="mensaje" placeholder="¿En qué puedo ayudarte?"></textarea>
+        <button type="submit" class="btn" style="width:100%; padding:18px; font-size: 1.1rem;">ENVIAR CONSULTA</button>
     </form>
 </section>
 
@@ -157,7 +145,7 @@
     <img id="lightbox-img">
     <div style="margin-top:25px; display:flex; gap:10px;">
         <button class="btn" onclick="event.stopPropagation(); cambiarImg(-1)">ANTERIOR</button>
-        <button class="btn" style="background: #ff4d4d;" onclick="document.getElementById('lightbox').style.display='none'">CERRAR (X)</button>
+        <button class="btn" style="background:#ff4d4d" onclick="document.getElementById('lightbox').style.display='none'">CERRAR (X)</button>
         <button class="btn" onclick="event.stopPropagation(); cambiarImg(1)">SIGUIENTE</button>
     </div>
 </div>
@@ -170,4 +158,17 @@
         const c = document.getElementById(id); c.innerHTML = "";
         ids.forEach(v => {
             let f = document.createElement("iframe"); f.src = `https://drive.google.com/file/d/${v}/preview`;
-            f.width="100%"; f.height="350"; f.frameBorder="
+            f.width="100%"; f.height="320"; f.frameBorder="0"; f.allowFullscreen=true; c.appendChild(f);
+        });
+    }
+    function toggleFaq(el){ const a = el.nextElementSibling; a.style.display = (a.style.display === "block") ? "none" : "block"; }
+    document.getElementById("contactForm").onsubmit = function(e){
+        e.preventDefault();
+        const n = document.getElementById("nombre").value;
+        const p = document.getElementById("proy").value;
+        const m = document.getElementById("mensaje").value;
+        window.open(`https://wa.me/51985877256?text=Hola,%20soy%20${n}.%20Me%20interesa%20${p}.%20Mensaje:%20${m}`, "_blank");
+    };
+</script>
+</body>
+</html>
