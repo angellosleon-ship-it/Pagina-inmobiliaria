@@ -1,268 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Lotes en Trujillo, Chepén y Puerto Malabrigo | Humberto León</title>
-
-<meta name="description" content="Invierte en lotes en Trujillo, Chepén y Puerto Malabrigo. Proyectos inmobiliarios con alta valorización. Asesor Humberto León.">
-
-<meta name="keywords" content="lotes en trujillo, terrenos en chepen, lotes puerto malabrigo, invertir en terrenos la libertad">
+<title>Humberto León | Inversiones Inmobiliarias</title>
 
 <style>
-
-body{
-font-family: Arial;
-background:#f5f5f5;
-margin:0;
-text-align:center;
+:root {
+    --dorado: #bfa046;
+    --dorado-brillante: #ffcc33; 
+    --oscuro-deep: #020617;
+    --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a); 
+    --verde-wa: #25D366;
+    --texto-suave: #f1f5f9;
 }
 
-header{
-background:#0a2540;
-color:white;
-padding:20px;
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--oscuro-deep);
+    color: white;
+    scroll-behavior: smooth;
 }
 
-.logo{
-width:120px;
+header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header video {
+    position: absolute;
+    width: 100%; height: 100%;
+    object-fit: cover; z-index: -1;
+}
+.overlay {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+.header-content {
+    position: relative;
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+.logo-personal {
+    width: 240px;
+    filter: drop-shadow(0 0 20px rgba(191, 160, 70, 0.6));
+    margin-bottom: 10px;
+}
+.header-content h1 {
+    font-size: clamp(40px, 8vw, 64px);
+    margin: 0;
+    background: linear-gradient(45deg,#bfa046,#fff,#bfa046);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.header-content p {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
 }
 
-.proyectos{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-padding:20px;
+.proyectos { padding: 80px 20px; text-align: center; }
+.proyectos h2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    background: linear-gradient(to bottom, #fff, var(--dorado));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.proyecto{
-background:white;
-padding:20px;
-border-radius:10px;
-width:300px;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+    max-width: 1250px;
+    margin: auto;
 }
 
-.proyecto img{
-width:120px;
+.proyecto-card {
+    background: var(--oscuro-card);
+    border: 1px solid rgba(191, 160, 70, 0.3);
+    border-radius: 30px;
+    padding: 35px;
+    transition: 0.5s all ease;
+}
+.proyecto-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--dorado-brillante);
+    box-shadow: 0 20px 50px rgba(191, 160, 70, 0.3);
 }
 
-.btn{
-display:block;
-margin:6px;
-padding:10px;
-background:#0a2540;
-color:white;
-text-decoration:none;
-border-radius:6px;
+.proyecto-card h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 0 10px var(--dorado);
+    text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
-.btn:hover{
-background:#163d6b;
+.ubicacion-tag {
+    color: #ffcc33;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.clientes{
-margin:40px;
+.tag-plusvalia {
+    background: linear-gradient(45deg, var(--dorado), #ffcc33);
+    color: #000;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
 }
 
-.faq{
-background:white;
-padding:30px;
-margin:20px;
-border-radius:10px;
+.logo-proyecto { width: 150px; margin: 0 auto 20px; display: block; }
+
+.clientes-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(191, 160, 70, 0.05);
+}
+.clientes-section h2 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.clientes-section p {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+.btn-clientes {
+    background: linear-gradient(to bottom, #bfa046, #8a6d1d);
+    border: 2px solid #fff;
+    border-radius: 50px;
+    padding: 15px 40px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-clientes:hover { transform: scale(1.05); filter: brightness(1.2); }
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 6px;
+    background: linear-gradient(to bottom, #bfa046, #8a6d1d);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+}
+.btn-agendar { background: linear-gradient(to bottom, #25D366, #128C7E); }
+
+.video-container iframe {
+    width: 100%; height: 350px;
+    border-radius: 20px; margin-top: 15px;
 }
 
-.formulario{
-background:white;
-padding:30px;
-margin:20px;
-border-radius:10px;
-}
+.faq-section { max-width: 800px; margin: 60px auto; padding: 20px; }
+.faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.3); padding: 15px 0; }
+.faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; font-size: 1.1rem; }
+.faq-answer { display: none; color: #ccc; margin-top: 10px; line-height: 1.6; font-size: 1rem; }
 
-input,textarea{
-width:90%;
-padding:10px;
-margin:8px;
-}
+.cuestionario { background: #0b1220; padding: 80px 20px; text-align: center; }
+form { max-width: 550px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+input, select, textarea { padding: 15px; border-radius: 15px; border: none; background: #1e293b; color: white; }
 
-.boton-whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50px;
-font-size:18px;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-}
+.wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--verde-wa); width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
 
+@keyframes shine { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.4); } }
 </style>
 </head>
 
 <body>
 
-<header>
-
-<img src="logo.png" class="logo">
-
-<h1>Lotes en Trujillo, Chepén y Puerto Malabrigo</h1>
-
-<p>Invierte en proyectos con alta valorización en La Libertad</p>
-
-</header>
-
-<section class="proyectos">
-
-<div class="proyecto">
-
-<img src="logo-fundo.png">
-
-<h3>Fundo Malabrigo</h3>
-
-<a class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">📸 Ver Fotos</a>
-
-<a class="btn" href="#">🎥 Ver Videos</a>
-
-<a class="btn" href="https://maps.google.com">📍 Ubicación</a>
-
-<a class="btn" href="https://wa.me/51900000000">📅 Agendar</a>
-
-</div>
-
-<div class="proyecto">
-
-<img src="logo-puerto.png">
-
-<h3>Puerto Mar Club</h3>
-
-<a class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">📸 Ver Fotos</a>
-
-<a class="btn" href="#">🎥 Ver Videos</a>
-
-<a class="btn" href="https://maps.google.com">📍 Ubicación</a>
-
-<a class="btn" href="https://wa.me/51900000000">📅 Agendar</a>
-
-</div>
-
-<div class="proyecto">
-
-<img src="logo-monteverde.png">
-
-<h3>Residencial Monte Verde</h3>
-
-<a class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">📸 Ver Fotos</a>
-
-<a class="btn" href="#">🎥 Ver Videos</a>
-
-<a class="btn" href="https://maps.google.com">📍 Ubicación</a>
-
-<a class="btn" href="https://wa.me/51900000000">📅 Agendar</a>
-
-</div>
-
-</section>
-
-<section class="clientes">
-
-<h2>🤝 Clientes Felices</h2>
-
-<button class="btn" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">
-
-Ver testimonios
-
-</button>
-
-</section>
-
-<section class="faq">
-
-<h2>❓ Preguntas Frecuentes</h2>
-
-<p><b>¿Los terrenos tienen documentos?</b><br>
-Sí, todos cuentan con documentación en regla.</p>
-
-<p><b>¿Puedo comprar financiado?</b><br>
-Sí, contamos con facilidades de pago.</p>
-
-<p><b>¿Los lotes tienen servicios?</b><br>
-Cada proyecto tiene diferentes beneficios que explicamos en oficina.</p>
-
-</section>
-
-<section class="formulario">
-
-<h2>📝 Solicitar Información</h2>
-
-<form onsubmit="enviarWhats(event)">
-
-<input type="text" id="nombre" placeholder="Nombre" required>
-
-<input type="text" id="telefono" placeholder="Teléfono" required>
-
-<textarea id="mensaje" placeholder="Consulta"></textarea>
-
-<br>
-
-<button class="btn">Enviar</button>
-
-</form>
-
-</section>
-
-<a class="boton-whatsapp" href="https://wa.me/51900000000">
-
-💬
-
+<a href="https://wa.me/51985877256" class="wa-float" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38">
 </a>
 
-<script>
+<header>
+<video autoplay muted loop playsinline>
+<source src="header-video.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+<div class="header-content">
+<img src="hl_logo.png" class="logo-personal">
+<h1>Humberto León</h1>
+<p>Asesoría Inmobiliaria Transparente</p>
+</div>
+</header>
 
-let imagenes=[]
-let index=0
+<section class="clientes-section">
+<h2>CONFIANZA REAL</h2>
+<p>La satisfacción de nuestros clientes es nuestro mejor respaldo.</p>
 
-function abrirImagenes(lista){
-imagenes=lista
-index=0
-window.open(imagenes[index])
-}
+<button class="btn-clientes" onclick="abrirImagenes([
+'cliente1.jpg',
+'cliente2.jpg',
+'cliente3.jpg',
+'cliente4.jpg',
+'cliente5.jpg',
+'cliente6.jpg',
+'cliente7.jpg',
+'cliente8.jpg',
+'cliente9.jpg',
+'cliente10.jpg'
+])">🤝 CLIENTES FELICES</button>
 
-function enviarWhats(e){
-
-e.preventDefault()
-
-let nombre=document.getElementById("nombre").value
-let telefono=document.getElementById("telefono").value
-let mensaje=document.getElementById("mensaje").value
-
-let url="https://wa.me/51900000000?text=Hola soy "+nombre+" telefono "+telefono+" consulta: "+mensaje
-
-window.open(url)
-
-}
-
-</script>
-
-<footer>
-
-<p>
-
-Inversión en Lotes en La Libertad<br><br>
-
-Si buscas lotes en Trujillo, terrenos en Chepén o invertir en Puerto Malabrigo, esta es tu oportunidad de asegurar patrimonio en zonas de crecimiento.
-
-<br><br>
-
-© 2026 Humberto León | Asesor Inmobiliario en Trujillo, Chepén y Puerto Malabrigo
-
-</p>
-
-</footer>
-
-</body>
-</html>
+<p style="margin-top:20px;color:#ffcc33;font-weight:bold;">(Fotos reales de firmas y entregas)</p>
+</section>
