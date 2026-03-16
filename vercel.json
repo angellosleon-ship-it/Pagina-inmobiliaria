@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    { "source": "/fundo-malabrigo", "destination": "/", "permanent": true },
+    { "source": "/puerto-mar-club", "destination": "/", "permanent": true },
+    { "source": "/residencial-monte-verde", "destination": "/", "permanent": true },
+    { "source": "/fundo-video1.mp4", "destination": "/", "permanent": true },
+    { "source": "/fundo-video2.mp4", "destination": "/", "permanent": true },
+    { "source": "/fundo-video3.mp4", "destination": "/", "permanent": true },
+    { "source": "/puerto-video1.mp4", "destination": "/", "permanent": true },
+    { "source": "/puerto-video2.mp4", "destination": "/", "permanent": true },
+    { "source": "/puerto-video3.mp4", "destination": "/", "permanent": true },
+    { "source": "/monte-video1.mp4", "destination": "/", "permanent": true },
+    { "source": "/monte-video2.mp4", "destination": "/", "permanent": true },
+    { "source": "/monte-video3.mp4", "destination": "/", "permanent": true }
+  ]
+}
