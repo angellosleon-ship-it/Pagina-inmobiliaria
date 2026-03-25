@@ -134,9 +134,27 @@
     }
     .btn-agendar { background:linear-gradient(to bottom,#25D366,#128C7E); }
     .video-container iframe { width:100%; height:350px; border-radius:20px; margin-top:15px; }
+    
+    /* FAQ ESTILOS */
+    .faq-section { max-width: 800px; margin: 40px auto; }
     .faq-item { border-bottom: 1px solid rgba(191,160,70,0.3); padding: 15px 0; }
     .faq-question { color:var(--dorado-brillante); cursor:pointer; font-weight:bold; display:flex; justify-content:space-between; }
     .faq-answer { display:none; color:#ccc; margin-top:10px; line-height:1.6; }
+
+    /* LIGHTBOX ESTILOS - ESTO ES LO QUE FALTABA */
+    #lightbox {
+        display:none; 
+        position:fixed; 
+        top:0; left:0; 
+        width:100%; height:100%; 
+        background:rgba(0,0,0,0.95); 
+        justify-content:center; 
+        align-items:center; 
+        z-index:2000; 
+        flex-direction:column;
+    }
+    #lightbox-img { max-width:90%; max-height:80%; border-radius:20px; }
+
     .wa-float { 
         position:fixed; bottom:30px; right:30px; background:var(--verde-wa); 
         width:65px; height:65px; border-radius:50%; display:flex; 
@@ -151,6 +169,7 @@
     }
     @keyframes shine { 0%,100% {filter:brightness(1);} 50%{filter:brightness(1.4);} }
     @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+    
     @media (max-width:768px) {
         .grid { grid-template-columns:1fr; gap:30px; }
         .video-container iframe { height:280px; }
@@ -221,49 +240,4 @@
                 <p class="ubicacion-tag" style="font-size:1rem;line-height:1.2;">📍 CHEPÉN - NUEVO PARAÍSO<br>"CHAPARRAL"</p>
                 <p>Invierte en zonas de <b>alta proyección</b>. Máximo crecimiento y respaldo profesional.</p>
                 <div class="botones-proyecto">
-                    <button type="button" class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg'])">FOTOS</button>
-                    <button type="button" class="btn" onclick="mostrarVideos('monte-v', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/AA5CUW3xpDayokfH9" target="_blank" class="btn">UBICACIÓN</a>
-                    <a href="https://wa.me/51985877256?text=Info%20Monte%20Verde" class="btn btn-agendar">AGENDAR</a>
-                </div>
-                <div id="monte-v" class="video-container"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="clientes-section" style="text-align:center; padding:60px 20px; background:rgba(191,160,70,0.05);">
-        <h2>CONFIANZA REAL</h2>
-        <p>La satisfacción de nuestros clientes es nuestro mejor respaldo.</p>
-        <button type="button" class="btn" style="padding: 15px 40px;" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">🤝 CLIENTES FELICES</button>
-        <p style="margin-top:20px; color:#ffcc33; font-weight:bold;">(Fotos reales de firmas y entregas)</p>
-    </section>
-
-    <section style="text-align:center; padding:40px 20px; background:rgba(191,160,70,0.03);">
-        <h2 style="font-size:2rem; margin-bottom:20px; color:var(--dorado-brillante);">¿Por qué confiar en mí?</h2>
-        <ul style="list-style:none; padding:0; max-width:600px; margin:auto; text-align:left; font-size:1.1rem; line-height:1.6;">
-            <li>✅ Más de 100 familias ya invirtieron con seguridad jurídica total</li>
-            <li>✅ Asesoría personalizada – te acompaño en cada paso</li>
-            <li>✅ Documentos 100% en regla – parto de minuta o título</li>
-            <li>✅ Planes de pago flexibles adaptados a tu realidad</li>
-        </ul>
-    </section>
-
-    <section class="faq-section">
-        <h2 style="text-align:center; color:white; margin-bottom:30px;">Preguntas Frecuentes</h2>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes cuentan con documentos en regla? <span>▾</span></div>
-            <div class="faq-answer">Sí. Todos los proyectos que gestiono cuentan con seguridad jurídica y respaldo legal integral bajo mi asesoría personal.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir en estas zonas? <span>▾</span></div>
-            <div class="faq-answer">Son las áreas con mayor crecimiento proyectado en el norte del país. La expansión urbana asegura plusvalía constante.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">¿Ofrecen facilidades de pago? <span>▾</span></div>
-            <div class="faq-answer">Contamos con diversas modalidades de pago y planes de financiamiento directo.</div>
-        </div>
-    </section>
-
-    <section style="padding:40px; text-align:center;">
-        <h2>Últimas publicaciones</h2>
-        <p>Conoce nuestras últimas visitas, avances y novedades.</
+                    <button type="button" class="btn" onclick="
