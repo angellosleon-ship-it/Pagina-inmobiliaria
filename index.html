@@ -6,53 +6,45 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-PPTZF6BG');</script>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Humberto León | Jefe Comercial - Lotes en Malabrigo y Chepén</title>
-    <meta name="description" content="Invierte en Fundo Malabrigo, Puerto Mar Club y Residencial Monte Verde. Lotes con seguridad jurídica en el norte del Perú.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humberto León | Jefe Comercial - Lotes y Terrenos</title>
     
     <style>
         :root {
             --dorado: #bfa046;
-            --dorado-brillante: #ffcc33;
             --oscuro-deep: #020617;
-            --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a);
             --verde-wa: #25D366;
         }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--oscuro-deep); color: white; scroll-behavior: smooth; }
+        body { margin: 0; font-family: Arial, sans-serif; background: var(--oscuro-deep); color: white; }
         
-        /* HEADER */
-        header { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        header video { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-        .overlay { position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
-        .header-content { position: relative; text-align: center; }
-        .logo-personal { width: 220px; filter: drop-shadow(0 0 15px var(--dorado)); margin-bottom: 15px; }
-        .header-content h1 { font-size: clamp(35px, 7vw, 60px); margin: 0; background: linear-gradient(45deg,#bfa046,#fff,#bfa046); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        /* PROYECTOS */
-        .proyectos { padding: 60px 20px; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; }
-        .proyecto-card { background: var(--oscuro-card); border: 1px solid rgba(191,160,70,0.2); border-radius: 25px; padding: 30px; transition: 0.4s; }
-        .proyecto-card:hover { transform: translateY(-10px); border-color: var(--dorado); }
-        .logo-proyecto { width: 140px; margin-bottom: 15px; }
-        .tag-plusvalia { background: var(--dorado); color: black; font-size: 11px; font-weight: 800; padding: 5px 15px; border-radius: 50px; display: inline-block; margin-bottom: 15px; }
-        
-        /* BOTONES */
-        .btn { display: inline-block; padding: 12px 25px; margin: 5px; background: linear-gradient(to bottom, #bfa046, #8a6d1d); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; border: none; cursor: pointer; }
-        .btn-agendar { background: linear-gradient(to bottom, #25D366, #128C7E); }
-        
-        /* VIDEOS Y FAQ */
-        .video-container iframe { width: 100%; height: 250px; border-radius: 15px; margin-top: 15px; border: 1px solid var(--dorado); }
-        .faq-section { max-width: 800px; margin: 40px auto; padding: 20px; }
-        .faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.2); padding: 15px 0; text-align: left; }
-        .faq-question { color: var(--dorado-brillante); cursor: pointer; display: flex; justify-content: space-between; font-weight: bold; }
-        .faq-answer { display: none; color: #ccc; padding-top: 10px; line-height: 1.5; }
+        /* HEADER REFORZADO - Si el video falla, se verá oscuro con el logo */
+        header { 
+            position: relative; 
+            height: 80vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            background: #000; /* Fondo negro de seguridad */
+            overflow: hidden;
+        }
+        header video { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        .overlay { position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2; }
+        .header-content { position: relative; text-align: center; z-index: 3; padding: 20px; }
+        .logo-personal { width: 180px; margin-bottom: 10px; }
 
-        /* SECCIÓN CONFIANZA Y FORMULARIO */
-        .confianza { background: rgba(191,160,70,0.05); padding: 50px 20px; text-align: center; }
-        .cuestionario { padding: 60px 20px; text-align: center; }
-        form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
-        input, select, textarea { padding: 15px; border-radius: 10px; border: none; background: #1e293b; color: white; }
-        
-        /* FLOTANTES */
-        .wa-float { position: fixed; bottom: 25px; right: 25px;
+        /* PROYECTOS */
+        .proyectos { padding: 40px 20px; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: auto; }
+        .card { background: #111827; border: 1px solid #374151; border-radius: 15px; padding: 20px; }
+        .btn { display: inline-block; padding: 10px 20px; margin: 10px 5px; background: var(--dorado); color: black; text-decoration: none; border-radius: 5px; font-weight: bold; border: none; cursor: pointer; }
+        .btn-wa { background: var(--verde-wa); color: white; }
+
+        /* FORMULARIO */
+        .contacto { padding: 50px 20px; background: #0f172a; text-align: center; }
+        form { max-width: 400px; margin: auto; display: flex; flex-direction: column; gap: 10px; }
+        input, select { padding: 12px; border-radius: 5px; border: none; }
+
+        /* FLOTANTE */
+        .wa-link { position: fixed; bottom: 20px; right: 20px; z-index: 1000
