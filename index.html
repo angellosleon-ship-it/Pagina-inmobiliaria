@@ -1,42 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Humberto León | Lotes y Terrenos en Malabrigo, Chepén – Inversión Segura 2026</title>
+
+<style>
+body{margin:0;font-family:'Segoe UI',sans-serif;background:#020617;color:white}
+.proyecto-card{padding:30px}
+.btn{padding:10px 15px;background:#bfa046;color:#fff;border-radius:20px;border:none;cursor:pointer}
+</style>
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Humberto León</h1>
+
+<div class="proyecto-card">
+<h3>FUNDO MALABRIGO</h3>
+<button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg'])">FOTOS</button>
+<button class="btn" onclick="mostrarVideos('v1',['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">VIDEOS</button>
+<div id="v1"></div>
+</div>
+
+<div id="lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;justify-content:center;align-items:center;flex-direction:column">
+<img id="lightbox-img" style="max-width:80%">
+<button onclick="cambiarImg(1)">SIGUIENTE</button>
+</div>
+
+<form id="formulario">
+<input id="nombre" placeholder="Nombre">
+<select id="proyecto">
+<option>Fundo Malabrigo</option>
+</select>
+<button type="submit">Enviar</button>
+</form>
+
 <script>
-let lbImgs = []; let cIdx = 0;
+document.addEventListener("DOMContentLoaded", function(){
+
+let lbImgs=[]; let cIdx=0;
 
 function abrirImagenes(imgs){
-    lbImgs = imgs;
-    cIdx = 0;
-    document.getElementById("lightbox-img").src = lbImgs[0];
-    document.getElementById("lightbox").style.display = "flex";
+lbImgs=imgs; cIdx=0;
+document.getElementById("lightbox-img").src=lbImgs[0];
+document.getElementById("lightbox").style.display="flex";
 }
 
 function cambiarImg(d){
-    cIdx = (cIdx + d + lbImgs.length) % lbImgs.length;
-    document.getElementById("lightbox-img").src = lbImgs[cIdx];
+cIdx=(cIdx+d+lbImgs.length)%lbImgs.length;
+document.getElementById("lightbox-img").src=lbImgs[cIdx];
 }
 
-function mostrarVideos(id, ids){
-    const c = document.getElementById(id);
-    c.innerHTML = "";
-    ids.forEach(i => {
-        let f = document.createElement("iframe");
-        f.src = `https://drive.google.com/file/d/${i}/preview`;
-        f.allow = "autoplay";
-        f.frameBorder = "0";
-        f.allowFullscreen = true;
-        f.loading = "lazy";
-        c.appendChild(f);
-    });
+function mostrarVideos(id,ids){
+const c=document.getElementById(id);
+c.innerHTML="";
+ids.forEach(i=>{
+let f=document.createElement("iframe");
+f.src=`https://drive.google.com/file/d/${i}/preview`;
+f.width="100%"; f.height="300";
+c.appendChild(f);
+});
 }
 
-function toggleFaq(el) {
-    const answer = el.nextElementSibling;
-    answer.style.display = (answer.style.display === "block") ? "none" : "block";
+const form=document.getElementById("formulario");
+if(form){
+form.addEventListener("submit",function(e){
+e.preventDefault();
+let n=document.getElementById("nombre").value;
+let p=document.getElementById("proyecto").value;
+
+window.open(`https://wa.me/51985877256?text=Hola%20soy%20${n}%20interesado%20en%20${p}`,"_blank");
+});
 }
 
-document.getElementById("formulario").addEventListener("submit", function(e){
-    e.preventDefault();
-    let n = document.getElementById("nombre").value;
-    let p = document.getElementById("proyecto").value;
-
-    window.open(`https://wa.me/51985877256?text=Hola%20Humberto,%20soy%20${n}.%20Me%20interesa%20invertir%20en%20${p}.`, "_blank");
 });
 </script>
+
+</body>
+</html>
