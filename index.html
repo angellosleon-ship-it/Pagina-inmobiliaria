@@ -369,7 +369,7 @@ function mostrarVideos(id, ids){
     const c = document.getElementById(id); c.innerHTML = "";
     ids.forEach(i => {
         let f = document.createElement("iframe");
-        f.src = https://drive.google.com/file/d/${i}/preview;
+        f.src = `https://drive.google.com/file/d/${i}/preview`;
         f.allow = "autoplay"; f.frameBorder = "0"; f.allowFullscreen = true; f.loading = "lazy";
         c.appendChild(f);
     });
@@ -382,7 +382,7 @@ document.getElementById("formulario").addEventListener("submit", function(e){
     e.preventDefault();
     let n = document.getElementById("nombre").value;
     let p = document.getElementById("proyecto").value;
-    window.open(https://wa.me/51985877256?text=Hola%20Humberto,%20soy%20${n}.%20Me%20interesa%20invertir%20en%20${p}., "_blank");
+    window.open(`https://wa.me/51985877256?text=Hola%20Humberto,%20soy%20${n}.%20Me%20interesa%20invertir%20en%20${p}.`, "_blank");
 });
 </script>
 </body>
