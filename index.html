@@ -27,7 +27,6 @@
         color: white;
         scroll-behavior: smooth;
     }
-    /* HEADER PERSONAL */
     header {
         position: relative;
         height: 100vh;
@@ -73,11 +72,7 @@
         -webkit-text-fill-color: transparent;
         animation: shine 3s infinite linear;
     }
-    /* SECCIÓN DE PROYECTOS */
-    .proyectos { 
-        padding: 80px 20px; 
-        text-align: center; 
-    }
+    .proyectos { padding: 80px 20px; text-align: center; }
     .proyectos h2 {
         font-size: 3rem;
         margin-bottom: 50px;
@@ -130,11 +125,7 @@
         margin-bottom: 20px;
         display: inline-block;
     }
-    .logo-proyecto { 
-        width: 150px; 
-        margin: 0 auto 20px; 
-        display: block; 
-    }
+    .logo-proyecto { width: 150px; margin: 0 auto 20px; display: block; }
     .botones-proyecto {
         margin: 20px 0;
         display: flex;
@@ -142,17 +133,10 @@
         gap: 10px;
         justify-content: center;
     }
-    /* SECCIÓN CONFIANZA */
     .clientes-section {
         text-align: center;
         padding: 60px 20px;
         background: rgba(191, 160, 70, 0.05);
-    }
-    .clientes-section h2 {
-        font-size: 2.2rem;
-        font-weight: 900;
-        letter-spacing: 1px;
-        margin-bottom: 20px;
     }
     .btn-clientes {
         background: linear-gradient(to bottom, #bfa046, #8a6d1d);
@@ -166,7 +150,6 @@
         transition: 0.3s;
     }
     .btn-clientes:hover { transform: scale(1.05); filter: brightness(1.2); }
-    /* BOTONES GENERALES */
     .btn {
         display: inline-block;
         padding: 12px 20px;
@@ -180,23 +163,12 @@
         border: none;
     }
     .btn-agendar { background: linear-gradient(to bottom, #25D366, #128C7E); }
-    /* VIDEO CONTAINER */
     .video-container iframe {
-        width: 100%; 
-        height: 350px;
-        border-radius: 20px; 
-        margin-top: 15px;
+        width: 100%; height: 350px;
+        border-radius: 20px; margin-top: 15px;
     }
-    /* FAQ */
-    .faq-section { 
-        max-width: 800px; 
-        margin: 60px auto; 
-        padding: 20px; 
-    }
-    .faq-item { 
-        border-bottom: 1px solid rgba(191, 160, 70, 0.3); 
-        padding: 15px 0; 
-    }
+    .faq-section { max-width: 800px; margin: 60px auto; padding: 20px; }
+    .faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.3); padding: 15px 0; }
     .faq-question { 
         color: var(--dorado-brillante); 
         cursor: pointer; 
@@ -212,7 +184,6 @@
         line-height: 1.6; 
         font-size: 1rem; 
     }
-    /* FORMULARIO */
     .cuestionario { 
         background: #0b1220; 
         padding: 80px 20px; 
@@ -232,7 +203,6 @@
         background: #1e293b; 
         color: white; 
     }
-    /* FLOTANTES */
     .wa-float { 
         position: fixed; 
         bottom: 30px; 
@@ -262,26 +232,16 @@
         cursor: pointer; 
         font-size: 1rem; 
     }
-    /* ANIMACIONES */
-    @keyframes shine { 
-        0%, 100% { filter: brightness(1); } 
-        50% { filter: brightness(1.4); } 
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    /* MEDIA QUERIES */
+    @keyframes shine { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.4); } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 768px) {
         header video { display: none; }
         header { background: url('fallback-header.jpg') center/cover no-repeat; }
         .logo-personal { width: 180px; margin-bottom: 5px; }
         .header-content h1 { font-size: clamp(32px, 10vw, 48px); }
-        .header-content p { font-size: 1rem; letter-spacing: 3px; }
         .proyectos { padding: 50px 15px; }
         .proyectos h2 { font-size: 2.4rem; }
         .grid { grid-template-columns: 1fr; gap: 30px; }
-        .proyecto-card { padding: 25px 20px; border-radius: 20px; }
         .video-container iframe { height: 280px; }
     }
     </style>
@@ -290,7 +250,6 @@
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPTZF6BG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Botones flotantes -->
     <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
@@ -315,8 +274,7 @@
     <section class="proyectos">
         <h2>Nuestros Proyectos</h2>
         <div class="grid">
-
-            <!-- FUNDO MALABRIGO -->
+            <!-- Fundo Malabrigo -->
             <div class="proyecto-card">
                 <span class="tag-plusvalia">Campo & Mar</span>
                 <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo" loading="lazy">
@@ -332,7 +290,7 @@
                 <div id="fundo-v" class="video-container"></div>
             </div>
 
-            <!-- PUERTO MAR CLUB -->
+            <!-- Puerto Mar Club -->
             <div class="proyecto-card">
                 <span class="tag-plusvalia">Frente al Mar</span>
                 <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club" loading="lazy">
@@ -348,7 +306,7 @@
                 <div id="puerto-v" class="video-container"></div>
             </div>
 
-            <!-- RESIDENCIAL MONTE VERDE -->
+            <!-- Residencial Monte Verde -->
             <div class="proyecto-card">
                 <span class="tag-plusvalia">Plusvalía Garantizada</span>
                 <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde" loading="lazy">
@@ -363,11 +321,102 @@
                 </div>
                 <div id="monte-v" class="video-container"></div>
             </div>
-
         </div>
     </section>
 
     <section class="clientes-section">
         <h2>CONFIANZA REAL</h2>
         <p>La satisfacción de nuestros clientes es nuestro mejor respaldo.</p>
-        <button class="btn-clientes" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente
+        <button class="btn-clientes" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">🤝 CLIENTES FELICES</button>
+        <p style="margin-top:20px; color:#ffcc33; font-weight:bold;">(Fotos reales de firmas y entregas)</p>
+    </section>
+
+    <!-- Sección ¿Por qué confiar en mí? -->
+    <section class="confianza-extra" style="text-align:center; padding:40px 20px; background:rgba(191,160,70,0.03);">
+        <h2 style="font-size:2rem; margin-bottom:20px; color:var(--dorado-brillante);">¿Por qué confiar en mí?</h2>
+        <ul style="list-style:none; padding:0; max-width:600px; margin:auto; text-align:left; font-size:1.1rem; line-height:1.6;">
+            <li>✅ Más de 100 familias ya invirtieron con seguridad jurídica total</li>
+            <li>✅ Asesoría personalizada – te acompaño en cada paso</li>
+            <li>✅ Documentos 100% en regla – parto de minuta o título</li>
+            <li>✅ Planes de pago flexibles adaptados a tu realidad</li>
+        </ul>
+    </section>
+
+    <section class="faq-section">
+        <h2 style="text-align: center; color: white; margin-bottom: 30px;">Preguntas Frecuentes</h2>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes cuentan con documentos en regla? <span>▾</span></div>
+            <div class="faq-answer">Sí. Todos los proyectos que gestiono cuentan con seguridad jurídica y respaldo legal integral bajo mi asesoría personal para garantizar su tranquilidad.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">¿Por qué invertir en estas zonas? <span>▾</span></div>
+            <div class="faq-answer">Son las áreas con mayor crecimiento proyectado en el norte del país. La expansión urbana asegura que el valor de la propiedad aumente de forma constante.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">¿Ofrecen facilidades de pago? <span>▾</span></div>
+            <div class="faq-answer">Contamos con diversas modalidades de pago y planes de financiamiento directo que se ajustan a las necesidades de cada cliente.</div>
+        </div>
+    </section>
+
+    <!-- Últimas publicaciones -->
+    <section id="redes-sociales" style="padding:40px; text-align:center;">
+        <h2>Últimas publicaciones</h2>
+        <p>Conoce nuestras últimas visitas, avances y novedades de nuestros proyectos.</p>
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-095d96a0-7f8d-40a5-bf75-2c89e708c911" data-elfsight-app-lazy></div>
+    </section>
+
+    <!-- Formulario -->
+    <section class="cuestionario">
+        <h2>Solicita Información</h2>
+        <form id="formulario">
+            <input type="text" id="nombre" placeholder="Nombre completo" required>
+            <input type="tel" id="telefono" placeholder="Número de contacto" required>
+            <select id="proyecto" required>
+                <option value="">¿En qué proyecto estás interesado?</option>
+                <option>Fundo Malabrigo</option>
+                <option>Puerto Mar Club</option>
+                <option>Residencial Monte Verde</option>
+            </select>
+            <textarea id="mensaje" placeholder="Cuéntame: ¿Cuánto deseas invertir? ¿Buscas frente al mar o campo? Te respondo en minutos..."></textarea>
+            <button type="submit" class="btn" style="padding:18px; width: 100%;">ENVIAR CONSULTA A HUMBERTO</button>
+        </form>
+    </section>
+
+    <footer style="text-align:center; padding:40px; background:#000; color:#666;">
+        © 2026 Humberto León | Asesor Inmobiliario de Confianza
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="if(event.target.id==='lightbox')this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:2000; flex-direction:column;">
+        <img id="lightbox-img" style="max-width:90%; max-height:80%; border-radius:20px;" loading="lazy">
+        <div style="margin-top:25px">
+            <button class="btn" onclick="cambiarImg(-1)">ANTERIOR</button>
+            <button class="btn" onclick="cambiarImg(1)">SIGUIENTE</button>
+            <button class="btn" style="background:#ff4d4d" onclick="document.getElementById('lightbox').style.display='none'">CERRAR</button>
+        </div>
+    </div>
+
+    <script>
+    let lbImgs = []; 
+    let cIdx = 0;
+
+    function abrirImagenes(imgs){
+        lbImgs = imgs; 
+        cIdx = 0; 
+        document.getElementById("lightbox-img").src = lbImgs[0]; 
+        document.getElementById("lightbox").style.display = "flex"; 
+    }
+
+    function cambiarImg(d){
+        cIdx = (cIdx + d + lbImgs.length) % lbImgs.length; 
+        document.getElementById("lightbox-img").src = lbImgs[cIdx]; 
+    }
+
+    function mostrarVideos(id, ids){
+        const c = document.getElementById(id); 
+        c.innerHTML = "";
+        ids.forEach(i => {
+            let f = document.createElement("iframe");
+            f.src = `https://drive.google.com/file/d/${i}/preview`;
+            f.allow = "autoplay";
