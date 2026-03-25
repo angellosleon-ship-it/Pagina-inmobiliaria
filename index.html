@@ -49,50 +49,49 @@ let lbImgs = [];
 let cIdx = 0;
 
 function abrirImagenes(imgs){
-    lbImgs = imgs;
-    cIdx = 0;
-    document.getElementById("lightbox-img").src = lbImgs[0];
-    document.getElementById("lightbox").style.display = "flex";
+    lbImgs = imgs;
+    cIdx = 0;
+    document.getElementById("lightbox-img").src = lbImgs[0];
+    document.getElementById("lightbox").style.display = "flex";
 }
 
 function cambiarImg(d){
-    cIdx = (cIdx + d + lbImgs.length) % lbImgs.length;
-    document.getElementById("lightbox-img").src = lbImgs[cIdx];
+    cIdx = (cIdx + d + lbImgs.length) % lbImgs.length;
+    document.getElementById("lightbox-img").src = lbImgs[cIdx];
 }
 
 function mostrarVideos(id, ids){
-    const c = document.getElementById(id);
-    c.innerHTML = "";
-    ids.forEach(i => {
-        let f = document.createElement("iframe");
-        f.src = `https://drive.google.com/file/d/${i}/preview`;
-        f.allow = "autoplay";
-        f.frameBorder = "0";
-        f.allowFullscreen = true;
-        f.loading = "lazy";
-        c.appendChild(f);
-    });
+    const c = document.getElementById(id);
+    c.innerHTML = "";
+    ids.forEach(i => {
+        let f = document.createElement("iframe");
+        f.src = `https://drive.google.com/file/d/${i}/preview`;
+        f.allow = "autoplay";
+        f.frameBorder = "0";
+        f.allowFullscreen = true;
+        f.loading = "lazy";
+        c.appendChild(f);
+    });
 }
 
 function toggleFaq(el) {
-    const answer = el.nextElementSibling;
-    answer.style.display = (answer.style.display === "block") ? "none" : "block";
+    const answer = el.nextElementSibling;
+    answer.style.display = (answer.style.display === "block") ? "none" : "block";
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-    const form = document.getElementById("formulario");
-    if(form){
-        form.addEventListener("submit", function(e){
-            e.preventDefault();
-            let n = document.getElementById("nombre").value;
-            let p = document.getElementById("proyecto").value;
+    const form = document.getElementById("formulario");
+    if(form){
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+            let n = document.getElementById("nombre").value;
+            let p = document.getElementById("proyecto").value;
 
-            window.open(`https://wa.me/51985877256?text=Hola%20Humberto,%20soy%20${n}.%20Me%20interesa%20invertir%20en%20${p}.`, "_blank");
-        });
-    }
+            window.open(`https://wa.me/51985877256?text=Hola%20Humberto,%20soy%20${n}.%20Me%20interesa%20invertir%20en%20${p}.`, "_blank");
+        });
+    }
 });
 </script>
 
 </body>
 </html>
- 
