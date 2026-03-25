@@ -8,8 +8,8 @@
     })(window,document,'script','dataLayer','GTM-PPTZF6BG');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Humberto León | Jefe Comercial - Lotes y Terrenos en Malabrigo y Chepén</title>
-    <meta name="description" content="Invierte con confianza en Fundo Malabrigo, Puerto Mar Club y Residencial Monte Verde. Lotes frente al mar y de alta plusvalía en el norte del Perú.">
+    <title>Humberto León | Jefe Comercial - Lotes en Malabrigo y Chepén</title>
+    <meta name="description" content="Invierte en Fundo Malabrigo, Puerto Mar Club y Residencial Monte Verde. Lotes con seguridad jurídica en el norte del Perú.">
     
     <style>
         :root {
@@ -18,270 +18,41 @@
             --oscuro-deep: #020617;
             --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a);
             --verde-wa: #25D366;
-            --texto-suave: #f1f5f9;
         }
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: var(--oscuro-deep);
-            color: white;
-            scroll-behavior: smooth;
-        }
-        header {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        header video {
-            position: absolute;
-            width: 100%; height: 100%;
-            object-fit: cover; z-index: -1;
-        }
-        .overlay {
-            position: absolute;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.7);
-        }
-        .header-content {
-            position: relative;
-            text-align: center;
-            animation: fadeIn 2s ease;
-        }
-        .logo-personal {
-            width: 240px;
-            filter: drop-shadow(0 0 20px rgba(191, 160, 70, 0.6));
-            margin-bottom: 10px;
-        }
-        .header-content h1 {
-            font-size: clamp(40px, 8vw, 64px);
-            margin: 0;
-            background: linear-gradient(45deg,#bfa046,#fff,#bfa046);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .header-content p {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 700;
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .proyectos { padding: 80px 20px; text-align: center; }
-        .proyectos h2 {
-            font-size: 3rem;
-            margin-bottom: 50px;
-            background: linear-gradient(to bottom, #fff, var(--dorado));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 40px;
-            max-width: 1250px;
-            margin: auto;
-        }
-        .proyecto-card {
-            background: var(--oscuro-card);
-            border: 1px solid rgba(191, 160, 70, 0.3);
-            border-radius: 30px;
-            padding: 35px;
-            transition: 0.5s all ease;
-        }
-        .proyecto-card:hover {
-            transform: translateY(-15px);
-            border-color: var(--dorado-brillante);
-            box-shadow: 0 20px 50px rgba(191, 160, 70, 0.3);
-        }
-        .proyecto-card h3 {
-            font-size: 26px;
-            font-weight: 800;
-            text-shadow: 0 0 10px var(--dorado);
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-        .ubicacion-tag {
-            color: #ffcc33;
-            font-weight: 800;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        .tag-plusvalia {
-            background: linear-gradient(45deg, var(--dorado), #ffcc33);
-            color: #000;
-            font-size: 12px;
-            font-weight: 900;
-            padding: 6px 18px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        .logo-proyecto { width: 150px; margin: 0 auto 20px; display: block; }
-        .clientes-section {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(191, 160, 70, 0.05);
-        }
-        .btn-clientes {
-            background: linear-gradient(to bottom, #bfa046, #8a6d1d);
-            border: 2px solid #fff;
-            border-radius: 50px;
-            padding: 15px 40px;
-            color: #fff;
-            font-weight: 800;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            margin: 6px;
-            background: linear-gradient(to bottom, #bfa046, #8a6d1d);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 800;
-            cursor: pointer;
-            border: none;
-        }
-        .btn-agendar { background: linear-gradient(to bottom, #25D366, #128C7E); }
-        .video-container iframe {
-            width: 100%; height: 350px;
-            border-radius: 20px; margin-top: 15px;
-        }
-        .faq-section { max-width: 800px; margin: 60px auto; padding: 20px; }
-        .faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.3); padding: 15px 0; }
-        .faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; }
-        .faq-answer { display: none; color: #ccc; margin-top: 10px; }
-        .cuestionario { background: #0b1220; padding: 80px 20px; text-align: center; }
-        form { max-width: 550px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
-        input, select, textarea { padding: 15px; border-radius: 15px; border: none; background: #1e293b; color: white; }
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--verde-wa); width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; }
-        .cta-float { position: fixed; bottom: 110px; right: 30px; background: var(--dorado); color: #000; border: none; border-radius: 50px; padding: 12px 20px; font-weight: bold; z-index: 999; cursor: pointer; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--oscuro-deep); color: white; scroll-behavior: smooth; }
         
-        @media (max-width: 768px) {
-            header video { display: none; }
-            header { background: #020617; }
-            .grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPTZF6BG"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38" alt="WhatsApp">
-    </a>
+        /* HEADER */
+        header { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        header video { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+        .overlay { position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+        .header-content { position: relative; text-align: center; }
+        .logo-personal { width: 220px; filter: drop-shadow(0 0 15px var(--dorado)); margin-bottom: 15px; }
+        .header-content h1 { font-size: clamp(35px, 7vw, 60px); margin: 0; background: linear-gradient(45deg,#bfa046,#fff,#bfa046); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* PROYECTOS */
+        .proyectos { padding: 60px 20px; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; }
+        .proyecto-card { background: var(--oscuro-card); border: 1px solid rgba(191,160,70,0.2); border-radius: 25px; padding: 30px; transition: 0.4s; }
+        .proyecto-card:hover { transform: translateY(-10px); border-color: var(--dorado); }
+        .logo-proyecto { width: 140px; margin-bottom: 15px; }
+        .tag-plusvalia { background: var(--dorado); color: black; font-size: 11px; font-weight: 800; padding: 5px 15px; border-radius: 50px; display: inline-block; margin-bottom: 15px; }
+        
+        /* BOTONES */
+        .btn { display: inline-block; padding: 12px 25px; margin: 5px; background: linear-gradient(to bottom, #bfa046, #8a6d1d); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; border: none; cursor: pointer; }
+        .btn-agendar { background: linear-gradient(to bottom, #25D366, #128C7E); }
+        
+        /* VIDEOS Y FAQ */
+        .video-container iframe { width: 100%; height: 250px; border-radius: 15px; margin-top: 15px; border: 1px solid var(--dorado); }
+        .faq-section { max-width: 800px; margin: 40px auto; padding: 20px; }
+        .faq-item { border-bottom: 1px solid rgba(191, 160, 70, 0.2); padding: 15px 0; text-align: left; }
+        .faq-question { color: var(--dorado-brillante); cursor: pointer; display: flex; justify-content: space-between; font-weight: bold; }
+        .faq-answer { display: none; color: #ccc; padding-top: 10px; line-height: 1.5; }
 
-    <button class="cta-float" onclick="window.open('https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20urgente','_blank')">
-        ¡Habla YA conmigo!
-    </button>
-
-    <header>
-        <video autoplay muted loop playsinline>
-            <source src="header-video.mp4" type="video/mp4">
-        </video>
-        <div class="overlay"></div>
-        <div class="header-content">
-            <img src="hl_logo.png" class="logo-personal" alt="Humberto León Logo">
-            <h1>Humberto León</h1>
-            <p>Jefe Comercial | Asesoría Transparente</p>
-        </div>
-    </header>
-
-    <main class="proyectos">
-        <h2>PROYECTOS EXCLUSIVOS</h2>
-        <div class="grid">
-            <div class="proyecto-card">
-                <span class="tag-plusvalia">Campo & Mar</span>
-                <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
-                <h3>FUNDO MALABRIGO</h3>
-                <p class="ubicacion-tag">📍 PUERTO MALABRIGO</p>
-                <p>Lotes para tu <b>casa de campo</b> a solo 7 minutos de la playa. Seguridad jurídica garantizada.</p>
-                <div class="botones-proyecto">
-                    <button class="btn" onclick="alert('Abriendo galería de Fundo Malabrigo...')">FOTOS</button>
-                    <a href="https://wa.me/51985877256?text=Info%20Fundo%20Malabrigo" class="btn btn-agendar">AGENDAR</a>
-                </div>
-            </div>
-
-            <div class="proyecto-card">
-                <span class="tag-plusvalia">Frente al Mar</span>
-                <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
-                <h3>PUERTO MAR CLUB</h3>
-                <p class="ubicacion-tag">📍 PUERTO MALABRIGO</p>
-                <p>Tu propiedad <b>frente al mar</b>. Exclusividad y confort en la mejor zona del norte.</p>
-                <div class="botones-proyecto">
-                    <button class="btn" onclick="alert('Abriendo galería de Puerto Mar...')">FOTOS</button>
-                    <a href="https://wa.me/51985877256?text=Info%20Puerto%20Mar" class="btn btn-agendar">AGENDAR</a>
-                </div>
-            </div>
-
-            <div class="proyecto-card">
-                <span class="tag-plusvalia">Plusvalía</span>
-                <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
-                <h3>MONTE VERDE</h3>
-                <p class="ubicacion-tag">📍 CHEPÉN</p>
-                <p>Invierte en el corazón de Chepén. Proyectos con respaldo y alta rentabilidad.</p>
-                <div class="botones-proyecto">
-                    <button class="btn" onclick="alert('Abriendo galería de Monte Verde...')">FOTOS</button>
-                    <a href="https://wa.me/51985877256?text=Info%20Monte%20Verde" class="btn btn-agendar">AGENDAR</a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <section class="clientes-section">
-        <h2>CONFIANZA Y SEGURIDAD</h2>
-        <p>Como Jefe Comercial, he ayudado a más de 100 familias a asegurar su inversión.</p>
-        <button class="btn-clientes" onclick="window.open('https://wa.me/51985877256?text=Humberto, quiero ver testimonios','_blank')">
-            VER TESTIMONIOS REALES
-        </button>
-    </section>
-
-    <section class="faq-section">
-        <h2 style="text-align: center; color: var(--dorado);">PREGUNTAS FRECUENTES</h2>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes tienen papeles en regla? <span>+</span></div>
-            <div class="faq-answer" style="display:none;">Sí, todos nuestros proyectos cuentan con independencia registral y asesoría legal completa.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">¿Hay financiamiento? <span>+</span></div>
-            <div class="faq-answer" style="display:none;">Contamos con planes de financiamiento directo para que asegures tu lote hoy mismo.</div>
-        </div>
-    </section>
-
-    <section class="cuestionario">
-        <h2 style="color: var(--dorado);">¿BUSCAS INVERTIR?</h2>
-        <p>Déjame tus datos y te enviaré la mejor propuesta del mercado.</p>
-        <form id="contactForm">
-            <input type="text" placeholder="Nombre completo" required>
-            <input type="tel" placeholder="WhatsApp" required>
-            <select required>
-                <option value="">¿Qué proyecto te interesa?</option>
-                <option value="Fundo">Fundo Malabrigo</option>
-                <option value="Puerto">Puerto Mar Club</option>
-                <option value="Monte">Monte Verde</option>
-            </select>
-            <button type="submit" class="btn">ENVIAR INFORMACIÓN</button>
-        </form>
-    </section>
-
-    <footer style="text-align: center; padding: 40px; background: #020617; border-top: 1px solid var(--dorado);">
-        <p>© 2026 Humberto León - Jefe Comercial. Trujillo, Perú.</p>
-    </footer>
-
-    <script>
-        function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            const isVisible = answer.style.display === "block";
-            answer.style.display = isVisible ? "none" : "block";
-            element.querySelector('span').innerText = isVisible ? "+" : "-";
-        }
-    </script>
-</body>
-</html>
+        /* SECCIÓN CONFIANZA Y FORMULARIO */
+        .confianza { background: rgba(191,160,70,0.05); padding: 50px 20px; text-align: center; }
+        .cuestionario { padding: 60px 20px; text-align: center; }
+        form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+        input, select, textarea { padding: 15px; border-radius: 10px; border: none; background: #1e293b; color: white; }
+        
+        /* FLOTANTES */
+        .wa-float { position: fixed; bottom: 25px; right: 25px;
