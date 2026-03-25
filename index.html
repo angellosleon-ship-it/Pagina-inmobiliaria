@@ -6,7 +6,6 @@
     <title>Humberto León | Lotes y Terrenos en Malabrigo, Chepén – Inversión Segura 2026</title>
     <meta name="description" content="Invierte con confianza en Fundo Malabrigo, Puerto Mar Club y Residencial Monte Verde. Lotes frente al mar y de alta plusvalía en el norte del Perú.">
 
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPTZF6BG');</script>
 
     <style>
@@ -89,12 +88,32 @@
         border:1px solid rgba(191,160,70,0.3); 
         border-radius:30px; 
         padding:35px; 
-        transition:0.5s all ease; 
+        transition:0.5s all ease;
+        margin-bottom: 20px;
     }
     .proyecto-card:hover { 
         transform:translateY(-15px); 
         border-color:var(--dorado-brillante); 
         box-shadow:0 20px 50px rgba(191,160,70,0.3); 
+    }
+    .logo-proyecto { width: 150px; margin: 0 auto 20px; display: block; }
+    .tag-plusvalia {
+        background: linear-gradient(45deg, var(--dorado), #ffcc33);
+        color: #000;
+        font-size: 12px;
+        font-weight: 900;
+        padding: 6px 18px;
+        border-radius: 50px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+    .ubicacion-tag {
+        color: #ffcc33;
+        font-weight: 800;
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
     .botones-proyecto { 
         margin:20px 0; 
@@ -115,6 +134,7 @@
     }
     .btn-agendar { background:linear-gradient(to bottom,#25D366,#128C7E); }
     .video-container iframe { width:100%; height:350px; border-radius:20px; margin-top:15px; }
+    .faq-item { border-bottom: 1px solid rgba(191,160,70,0.3); padding: 15px 0; }
     .faq-question { color:var(--dorado-brillante); cursor:pointer; font-weight:bold; display:flex; justify-content:space-between; }
     .faq-answer { display:none; color:#ccc; margin-top:10px; line-height:1.6; }
     .wa-float { 
@@ -139,10 +159,8 @@
 </head>
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPTZF6BG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- Botones flotantes -->
     <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38" alt="WhatsApp">
     </a>
@@ -166,7 +184,6 @@
         <h2>Nuestros Proyectos</h2>
         <div class="grid">
 
-            <!-- FUNDO MALABRIGO -->
             <div class="proyecto-card">
                 <span class="tag-plusvalia">Campo & Mar</span>
                 <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
@@ -182,7 +199,6 @@
                 <div id="fundo-v" class="video-container"></div>
             </div>
 
-            <!-- PUERTO MAR CLUB -->
             <div class="proyecto-card">
                 <span class="tag-plusvalia">Frente al Mar</span>
                 <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
@@ -198,7 +214,6 @@
                 <div id="puerto-v" class="video-container"></div>
             </div>
 
-            <!-- RESIDENCIAL MONTE VERDE -->
             <div class="proyecto-card">
                 <span class="tag-plusvalia">Plusvalía Garantizada</span>
                 <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
@@ -219,7 +234,7 @@
     <section class="clientes-section" style="text-align:center; padding:60px 20px; background:rgba(191,160,70,0.05);">
         <h2>CONFIANZA REAL</h2>
         <p>La satisfacción de nuestros clientes es nuestro mejor respaldo.</p>
-        <button type="button" class="btn-clientes" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">🤝 CLIENTES FELICES</button>
+        <button type="button" class="btn" style="padding: 15px 40px;" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">🤝 CLIENTES FELICES</button>
         <p style="margin-top:20px; color:#ffcc33; font-weight:bold;">(Fotos reales de firmas y entregas)</p>
     </section>
 
@@ -233,7 +248,7 @@
         </ul>
     </section>
 
-    <section class="faq-section" style="max-width:800px; margin:60px auto; padding:20px;">
+    <section class="faq-section">
         <h2 style="text-align:center; color:white; margin-bottom:30px;">Preguntas Frecuentes</h2>
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes cuentan con documentos en regla? <span>▾</span></div>
@@ -251,84 +266,4 @@
 
     <section style="padding:40px; text-align:center;">
         <h2>Últimas publicaciones</h2>
-        <p>Conoce nuestras últimas visitas, avances y novedades.</p>
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-        <div class="elfsight-app-095d96a0-7f8d-40a5-bf75-2c89e708c911" data-elfsight-app-lazy></div>
-    </section>
-
-    <section class="cuestionario" style="background:#0b1220; padding:80px 20px; text-align:center;">
-        <h2>Solicita Información</h2>
-        <form id="formulario" style="max-width:550px; margin:auto; display:flex; flex-direction:column; gap:15px;">
-            <input type="text" id="nombre" placeholder="Nombre completo" required>
-            <input type="tel" id="telefono" placeholder="Número de contacto" required>
-            <select id="proyecto" required>
-                <option value="">¿En qué proyecto estás interesado?</option>
-                <option>Fundo Malabrigo</option>
-                <option>Puerto Mar Club</option>
-                <option>Residencial Monte Verde</option>
-            </select>
-            <textarea id="mensaje" placeholder="Cuéntame: ¿Cuánto deseas invertir? ¿Buscas frente al mar o campo?"></textarea>
-            <button type="submit" class="btn" style="padding:18px; width:100%;">ENVIAR CONSULTA A HUMBERTO</button>
-        </form>
-    </section>
-
-    <footer style="text-align:center; padding:40px; background:#000; color:#666;">
-        © 2026 Humberto León | Asesor Inmobiliario de Confianza
-    </footer>
-
-    <!-- Lightbox -->
-    <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:2000; flex-direction:column;">
-        <img id="lightbox-img" style="max-width:90%; max-height:80%; border-radius:20px;" loading="lazy">
-        <div style="margin-top:25px">
-            <button class="btn" onclick="cambiarImg(-1)">ANTERIOR</button>
-            <button class="btn" onclick="cambiarImg(1)">SIGUIENTE</button>
-            <button class="btn" style="background:#ff4d4d" onclick="document.getElementById('lightbox').style.display='none'">CERRAR</button>
-        </div>
-    </div>
-
-    <script>
-    let lbImgs = []; 
-    let cIdx = 0;
-
-    function abrirImagenes(imgs){
-        lbImgs = imgs; 
-        cIdx = 0; 
-        document.getElementById("lightbox-img").src = lbImgs[0]; 
-        document.getElementById("lightbox").style.display = "flex"; 
-    }
-
-    function cambiarImg(d){
-        cIdx = (cIdx + d + lbImgs.length) % lbImgs.length; 
-        document.getElementById("lightbox-img").src = lbImgs[cIdx]; 
-    }
-
-    function mostrarVideos(id, ids){
-        const c = document.getElementById(id); 
-        c.innerHTML = "";
-        ids.forEach(i => {
-            let f = document.createElement("iframe");
-            f.src = `https://drive.google.com/file/d/${i}/preview`;
-            f.allow = "autoplay"; 
-            f.frameBorder = "0"; 
-            f.allowFullscreen = true; 
-            f.loading = "lazy";
-            c.appendChild(f);
-        });
-    }
-
-    function toggleFaq(el) {
-        const answer = el.nextElementSibling;
-        answer.style.display = (answer.style.display === "block") ? "none" : "block";
-    }
-
-    // Formulario
-    document.getElementById("formulario").addEventListener("submit", function(e){
-        e.preventDefault();
-        let n = document.getElementById("nombre").value || "Cliente";
-        let p = document.getElementById("proyecto").value || "un proyecto";
-        let texto = `Hola Humberto, soy ${n}. Me interesa invertir en ${p}.`;
-        window.open(`https://wa.me/51985877256?text=${encodeURIComponent(texto)}`, "_blank");
-    });
-    </script>
-</body>
-</html>
+        <p>Conoce nuestras últimas visitas, avances y novedades.</
