@@ -254,37 +254,43 @@
             </div>
 
             <!-- PUERTO MAR CLUB -->
-            <div class="proyecto-card">
+           <div class="proyecto-card">
                 <span class="tag-plusvalia">Frente al Mar</span>
-                <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club">
-                <h3>PUERTO MAR CLUB</h3>
-                <p class="ubicacion-tag">📍 PUERTO MALABRIGO</p>
-                <p>Tu propiedad <b>frente al mar</b>. Exclusividad y confort en la mejor zona de Malabrigo.</p>
-                <div class="botones-proyecto">
-                    <button type="button" class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg','puerto4.jpg','puerto5.jpg'])">FOTOS</button>
-                    <button type="button" class="btn" onclick="mostrarVideos('puerto-v', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL','1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'])">VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/sU94PKtPzDNYN7NT9" target="_blank" class="btn">UBICACIÓN</a>
-                    <a href="https://wa.me/51985877256?text=Info%20Puerto%20Mar" class="btn btn-agendar">AGENDAR</a>
+                
+                <img src="logo-puerto.png" class="logo-proyecto" alt="Puerto Mar Club" style="cursor:pointer;" onclick="toggleProyecto('info-puerto')">
+                
+                <div id="info-puerto" style="display: none;">
+                    <h3>PUERTO MAR CLUB</h3>
+                    <p class="ubicacion-tag">📍 PUERTO MALABRIGO</p>
+                    <p>Tu propiedad <b>frente al mar</b>. Exclusividad y confort en la mejor zona de Malabrigo.</p>
+                    <div class="botones-proyecto">
+                        <button type="button" class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg','puerto3.jpg','puerto4.jpg','puerto5.jpg'])">FOTOS</button>
+                        <button type="button" class="btn" onclick="mostrarVideos('puerto-v', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL','1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'])">VIDEOS</button>
+                        <a href="https://maps.app.goo.gl/sU94PKtPzDNYN7NT9" target="_blank" class="btn">UBICACIÓN</a>
+                        <a href="https://wa.me/51985877256?text=Info%20Puerto%20Mar" class="btn btn-agendar">AGENDAR</a>
+                    </div>
+                    <div id="puerto-v" class="video-container"></div>
                 </div>
-                <div id="puerto-v" class="video-container"></div>
             </div>
-
             <!-- RESIDENCIAL MONTE VERDE -->
             <div class="proyecto-card">
                 <span class="tag-plusvalia">Plusvalía Garantizada</span>
-                <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde">
-                <h3>RESIDENCIAL MONTE VERDE</h3>
-                <p class="ubicacion-tag">📍 CHEPÉN - NUEVO PARAÍSO<br>"CHAPARRAL"</p>
-                <p>Invierte en zonas de <b>alta proyección</b>. Máximo crecimiento y respaldo profesional.</p>
-                <div class="botones-proyecto">
-                    <button type="button" class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg','monte4.jpg','monte5.jpg'])">FOTOS</button>
-                    <button type="button" class="btn" onclick="mostrarVideos('monte-v', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/AA5CUW3xpDayokfH9" target="_blank" class="btn">UBICACIÓN</a>
-                    <a href="https://wa.me/51985877256?text=Info%20Monte%20Verde" class="btn btn-agendar">AGENDAR</a>
+                
+                <img src="logo-monte.png" class="logo-proyecto" alt="Residencial Monte Verde" style="cursor:pointer;" onclick="toggleProyecto('info-monte')">
+                
+                <div id="info-monte" style="display: none;">
+                    <h3>RESIDENCIAL MONTE VERDE</h3>
+                    <p class="ubicacion-tag">📍 CHEPÉN - NUEVO PARAÍSO<br>"CHAPARRAL"</p>
+                    <p>Invierte en zonas de <b>alta proyección</b>. Máximo crecimiento y respaldo profesional.</p>
+                    <div class="botones-proyecto">
+                        <button type="button" class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg','monte3.jpg','monte4.jpg','monte5.jpg'])">FOTOS</button>
+                        <button type="button" class="btn" onclick="mostrarVideos('monte-v', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi','1zQXJmkjLuf8ewlh3Xz-MaASPmkim253m'])">VIDEOS</button>
+                        <a href="https://maps.app.goo.gl/AA5CUW3xpDayokfH9" target="_blank" class="btn">UBICACIÓN</a>
+                        <a href="https://wa.me/51985877256?text=Info%20Monte%20Verde" class="btn btn-agendar">AGENDAR</a>
+                    </div>
+                    <div id="monte-v" class="video-container"></div>
                 </div>
-                <div id="monte-v" class="video-container"></div>
             </div>
-        </div>
     </section>
 
     <section class="clientes-section" style="text-align:center; padding:60px 20px; background:rgba(191,160,70,0.05);">
