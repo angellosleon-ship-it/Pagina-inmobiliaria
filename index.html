@@ -207,17 +207,10 @@
         .logo-proyecto { width:130px; height:130px; }
     }
     </style>
-</head>
-<body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPTZF6BG"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
 
-    <!-- Google Tag Manager (noscript) -->
+<body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPTZF6BG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- Botones flotantes -->
     <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38" alt="WhatsApp">
     </a>
@@ -241,20 +234,23 @@
         <h2>Nuestros Proyectos</h2>
         <div class="grid">
 
-            <!-- FUNDO MALABRIGO -->
             <div class="proyecto-card">
                 <span class="tag-plusvalia">Campo & Mar</span>
-                <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
-                <h3>FUNDO MALABRIGO</h3>
-                <p class="ubicacion-tag">📍 PUERTO MALABRIGO</p>
-                <p>Lotes exclusivos para tu próxima <b>casa de campo</b>. Seguridad jurídica y alta rentabilidad.</p>
-                <div class="botones-proyecto">
-                    <button type="button" class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg','fundo4.jpg','fundo5.jpg'])">FOTOS</button>
-                    <button type="button" class="btn" onclick="mostrarVideos('fundo-v', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU','151mpZHdjUhTozjy3lNordHUvphKtYASr','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/9Ww5FBU6VxPxKAbx9" target="_blank" class="btn">UBICACIÓN</a>
-                    <a href="https://wa.me/51985877256?text=Info%20Fundo%20Malabrigo" class="btn btn-agendar">AGENDAR</a>
+                
+                <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo" onclick="toggleProyecto('info-fundo')" style="cursor: pointer;">
+                
+                <div id="info-fundo" style="display: none;">
+                    <h3>FUNDO MALABRIGO</h3>
+                    <p class="ubicacion-tag">📍 PUERTO MALABRIGO</p>
+                    <p>Lotes exclusivos para tu próxima <b>casa de campo</b>. Seguridad jurídica y alta rentabilidad.</p>
+                    <div class="botones-proyecto">
+                        <button type="button" class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg','fundo4.jpg','fundo5.jpg'])">FOTOS</button>
+                        <button type="button" class="btn" onclick="mostrarVideos('fundo-v', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU','151mpZHdjUhTozjy3lNordHUvphKtYASr','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">VIDEOS</button>
+                        <a href="https://maps.app.goo.gl/9Ww5FBU6VxPxKAbx9" target="_blank" class="btn">UBICACIÓN</a>
+                        <a href="https://wa.me/51985877256?text=Info%20Fundo%20Malabrigo" class="btn btn-agendar">AGENDAR</a>
+                    </div>
+                    <div id="fundo-v" class="video-container"></div>
                 </div>
-                <div id="fundo-v" class="video-container"></div>
             </div>
 
             <!-- PUERTO MAR CLUB -->
