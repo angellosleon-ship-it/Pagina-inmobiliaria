@@ -12,6 +12,7 @@ body {
     background: var(--oscuro-deep);
     color: white;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* BOTÓN WHATSAPP FLOTANTE */
@@ -26,18 +27,25 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     z-index: 1000;
+    transition: 0.3s;
 }
 .wa-flotante img { width: 35px; }
+.wa-flotante:hover { transform: scale(1.1); }
 
-/* HEADER REFINADO */
+/* HEADER REDUCIDO PARA SUBIR EL CONTENIDO */
 header {
-    min-height: 35vh;
+    min-height: 40vh; /* Bajamos la altura para que el mensaje suba */
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('fondo.jpg') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('fondo.jpg') center/cover;
+}
+
+#contenedor-principal {
+    text-align: center;
+    width: 100%;
 }
 
 /* CONTENEDOR PROYECTOS */
@@ -63,73 +71,61 @@ header {
     min-width: 350px;
     background: var(--oscuro-card);
     border: 1px solid rgba(191,160,70,0.3);
-    border-radius: 25px;
-    padding: 30px;
-    min-height: 600px;
+    border-radius: 20px;
+    padding: 25px;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea el contenido arriba */
 }
 
-/* MENSAJE DE BIENVENIDA MÁS GRANDE */
+/* BIENVENIDA MÁS ARRIBA */
 #msg-inicio {
     text-align: center;
-    padding: 40px 10px;
+    margin-top: 20px;
 }
-#msg-inicio h2 { 
-    color: var(--dorado-brillante); 
-    font-size: 2.8rem; /* Letra más grande */
-    margin-bottom: 20px;
-}
-#msg-inicio p { 
-    font-size: 1.4rem; /* Letra más grande */
-    line-height: 1.8;
-    color: #efefef;
-}
+#msg-inicio h2 { color: var(--dorado-brillante); margin-bottom: 10px; }
 
-/* BOTONES PRINCIPALES */
+/* BOTONES */
 .btn-palpitar {
     background: linear-gradient(45deg, var(--dorado), var(--dorado-brillante));
     color: #000;
     border: none;
-    padding: 20px;
-    font-size: 1.1rem;
-    font-weight: 900;
-    border-radius: 15px;
+    padding: 18px;
+    font-weight: 800;
+    border-radius: 12px;
     cursor: pointer;
     text-transform: uppercase;
     animation: pulso 2s infinite;
 }
 
 @keyframes pulso {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 204, 51, 0.6); }
-    70% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(255, 204, 51, 0); }
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 204, 51, 0.5); }
+    70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(255, 204, 51, 0); }
     100% { transform: scale(1); }
 }
 
-.proyecto-detalle { display: none; animation: fadeIn 0.5s ease; }
+.proyecto-detalle { display: none; animation: fadeIn 0.4s ease; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* BOTONES DE ACCIÓN */
 .btn-accion {
-    padding: 12px 20px;
+    padding: 10px 15px;
     background: var(--dorado);
     color: white;
-    border-radius: 50px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
     margin: 5px;
     display: inline-block;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
-
-.video-container iframe { width: 100%; height: 350px; border-radius: 15px; margin-top: 20px; border: 2px solid var(--dorado); }
 
 /* LIGHTBOX */
 #lightbox {
     display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.95); z-index: 10000; justify-content: center; align-items: center;
+    background: rgba(0,0,0,0.9); z-index: 10000; justify-content: center; align-items: center;
 }
-#lightbox-img { max-width: 90%; max-height: 80%; border: 3px solid var(--dorado); border-radius: 10px; }
-.btn-nav { position: absolute; background: var(--dorado); color: white; border: none; padding: 20px; cursor: pointer; border-radius: 50%; font-size: 2rem; top: 50%; transform: translateY(-50%); }
-.prev { left: 30px; } .next { right: 30px; }
-.close-btn { position: absolute; top: 30px; right: 30px; background: #ff4444; color: white; border: none; padding: 10px 25px; border-radius: 10px; cursor: pointer; font-weight: bold; }
+#lightbox-img { max-width: 85%; max-height: 80%; border: 2px solid var(--dorado); }
+.btn-nav { position: absolute; background: var(--dorado); color: white; border: none; padding: 15px; cursor: pointer; border-radius: 50%; font-size: 1.5rem; }
+.prev { left: 20px; } .next { right: 20px; }
+.close-btn { position: absolute; top: 20px; right: 20px; background: red; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
