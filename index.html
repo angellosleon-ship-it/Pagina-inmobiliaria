@@ -501,25 +501,18 @@
 </div>
 
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-   <script>
+  <script>
 function toggleProyecto(id) {
     var el = document.getElementById(id);
 
-    if (el.style.display === "block") {
+    if (el.style.opacity == "1") {
         el.style.opacity = "0";
-        el.style.transform = "translateY(20px)";
-        
-        setTimeout(() => {
-            el.style.display = "none";
-        }, 400);
-        
+        el.style.transform = "translateY(30px)";
+        el.style.pointerEvents = "none";
     } else {
-        el.style.display = "block";
-        
-        setTimeout(() => {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
-        }, 10);
+        el.style.opacity = "1";
+        el.style.transform = "translateY(0)";
+        el.style.pointerEvents = "auto";
     }
 }
 </script>
