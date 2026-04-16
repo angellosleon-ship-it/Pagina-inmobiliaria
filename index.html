@@ -500,14 +500,25 @@
 </div>
 
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-    <script>
+   <script>
 function toggleProyecto(id) {
-    var x = document.getElementById(id);
-    if (x.style.display === "none" || x.style.display === "") {
-        x.style.display = "block";
-        x.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    var el = document.getElementById(id);
+
+    if (el.style.display === "block") {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(20px)";
+        
+        setTimeout(() => {
+            el.style.display = "none";
+        }, 400);
+        
     } else {
-        x.style.display = "none";
+        el.style.display = "block";
+        
+        setTimeout(() => {
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+        }, 10);
     }
 }
 </script>
