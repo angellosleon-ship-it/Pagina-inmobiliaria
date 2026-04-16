@@ -21,72 +21,150 @@
             scroll-behavior:smooth; 
         }
 
-        /* CONFIGURACIÓN DEL VIDEO DE FONDO */
+        /* --- HEADER CON VIDEO --- */
         header {
             position: relative;
-            height: 70vh;
+            height: 75vh;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            text-align: center;
         }
 
         header video {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
+            top: 50%; left: 50%;
+            min-width: 100%; min-height: 100%;
             transform: translate(-50%, -50%);
             z-index: -1;
             object-fit: cover;
         }
 
-        .overlay-negro {
+        .overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.65);
+            background: rgba(0,0,0,0.7);
             z-index: 0;
         }
 
-        #contenido-presentacion {
+        /* CONTENEDOR DE PRESENTACIÓN CON MOVIMIENTO */
+        #contenedor-presentacion {
             position: relative;
             z-index: 10;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 15px;
+            justify-content: center;
+            gap: 0;
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 95%;
+            max-width: 1100px;
         }
 
-        /* TU LOGO CUADRADO */
+        .bloque-perfil {
+            text-align: center;
+            transition: all 0.6s ease;
+            flex-shrink: 0;
+        }
+
         .mi-logo {
             cursor: pointer;
-            width: 170px;
+            width: 185px;
             border-radius: 15px;
             border: 3px solid var(--dorado);
-            box-shadow: 0 0 20px rgba(191,160,70,0.5);
+            box-shadow: 0 0 25px rgba(191,160,70,0.4);
+            transition: 0.3s;
         }
 
-        /* MENSAJE QUE APARECE */
-        #caja-info {
-            display: none;
-            background: rgba(2, 6, 23, 0.95);
-            padding: 25px;
+        .mi-logo:hover { transform: scale(1.05); }
+
+        /* MENSAJE LATERAL (Oculto) */
+        #mensaje-humberto {
+            opacity: 0;
+            max-width: 0;
+            overflow: hidden;
+            transition: all 0.6s ease;
+            background: rgba(2, 6, 23, 0.92);
             border-radius: 20px;
             border: 1px solid var(--dorado);
-            max-width: 450px;
-            margin-top: 15px;
+            text-align: left;
         }
 
-        /* ESTILOS DE BOTONES Y GRID (Para que tus proyectos se vean bien) */
-        .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:40px; max-width:1250px; margin:auto; }
-        .proyecto-card { background:var(--oscuro-card); border:1px solid rgba(191,160,70,0.3); border-radius:30px; padding:35px; transition:0.5s; text-align:center; }
-        .logo-proyecto { width: 150px; height: 150px; object-fit: contain; animation: latido 2s infinite ease-in-out; }
-        @keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        .btn { padding:12px 20px; background:linear-gradient(to bottom,#bfa046,#8a6d1d); color:white; border-radius:50px; font-weight:800; text-decoration:none; display:inline-block; margin:5px; border:none; cursor:pointer;}
+        /* ACTIVACIÓN DEL DESPLAZAMIENTO */
+        #contenedor-presentacion.activo { gap: 40px; }
+        #contenedor-presentacion.activo #mensaje-humberto {
+            opacity: 1;
+            max-width: 500px;
+            padding: 30px;
+            margin-left: 10px;
+        }
+
+        /* --- SECCIÓN PROYECTOS --- */
+        .proyectos { padding: 80px 20px; text-align: center; }
+
+        .titulo-seccion-dorado {
+            font-size: clamp(2.5rem, 8vw, 3.8rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #bfa046, #ffcc33, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin: 0 auto 60px auto;
+            text-shadow: 0 0 20px rgba(191,160,70,0.4);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .proyecto-card {
+            background: var(--oscuro-card);
+            border: 1px solid rgba(191,160,70,0.3);
+            border-radius: 30px;
+            padding: 35px;
+            transition: 0.5s;
+        }
+
+        .proyecto-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--dorado-brillante);
+            box-shadow: 0 20px 50px rgba(191,160,70,0.3);
+        }
+
+        /* SUBTÍTULOS DORADOS DEBAJO DE LOS LOGOS */
+        .proyecto-card p {
+            color: var(--dorado-brillante) !important;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        .logo-proyecto {
+            width: 150px; height: 150px;
+            object-fit: contain;
+            animation: latido 2s infinite ease-in-out;
+        }
+
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.06); filter: drop-shadow(0 0 10px var(--dorado-brillante)); }
+        }
+
+        /* BOTONES */
+        .btn { padding:14px 25px; background:linear-gradient(to bottom,#bfa046,#8a6d1d); color:white; text-decoration:none; border-radius:50px; font-weight:800; display:inline-block; margin:10px 5px; border:none; cursor:pointer; }
         .wa-float { position:fixed; bottom:30px; right:30px; background:var(--verde-wa); width:65px; height:65px; border-radius:50%; display:flex; justify-content:center; align-items:center; z-index:1000; }
-        .cta-float { position:fixed; bottom:110px; right:30px; background:var(--dorado); color:#000; border:none; border-radius:50px; padding:12px 20px; font-weight:bold; z-index:999; cursor:pointer; }
+        .cta-float { position:fixed; bottom:110px; right:30px; background:var(--dorado); color:#000; border:none; border-radius:50px; padding:12px 22px; font-weight:900; z-index:999; cursor:pointer; }
+
+        @media (max-width: 768px) {
+            #contenedor-presentacion.activo { flex-direction: column; text-align: center; }
+            #contenedor-presentacion.activo #mensaje-humberto { margin-left: 0; text-align: center; }
+            .titulo-seccion-dorado { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -94,6 +172,7 @@
     <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38">
     </a>
+    
     <button class="cta-float" onclick="window.open('https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20urgente','_blank')">
         ¡Habla YA conmigo!
     </button>
@@ -102,32 +181,60 @@
         <video autoplay muted loop playsinline>
             <source src="https://drive.google.com/uc?export=download&id=1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU" type="video/mp4">
         </video>
-        <div class="overlay-negro"></div>
+        <div class="overlay"></div>
 
-        <div id="contenido-presentacion">
-            <img src="hl_logo.png" class="mi-logo" onclick="mostrarInfo()" alt="Humberto León">
-            <h1 style="font-size:3rem; margin:10px 0; background:linear-gradient(45deg,#bfa046,#ffcc33,#fff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Humberto León</h1>
-            <p style="color:#ffcc33; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Asesor Inmobiliario · Inversión Segura</p>
+        <div id="contenedor-presentacion">
+            <div class="bloque-perfil">
+                <img src="hl_logo.png" class="mi-logo" onclick="toggleInfo()" alt="Humberto León">
+                <h1 style="font-size:3.5rem; margin:15px 0 5px; background:linear-gradient(45deg,#bfa046,#ffcc33,#fff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:900;">Humberto León</h1>
+                <p style="color:var(--dorado-brillante); font-weight:700; text-transform:uppercase; letter-spacing:2.5px;">Asesor Inmobiliario · Inversión Segura</p>
+            </div>
 
-            <div id="caja-info">
-                <h3 style="color:#ffcc33;">Jefe Comercial</h3>
-                <p>Hola, soy <b>Humberto León</b>. Mi compromiso es brindarte una asesoría honesta y con respaldo legal.</p>
+            <div id="mensaje-humberto">
+                <h3 style="color:var(--dorado-brillante); margin-top:0; font-size:1.6rem;">Jefe Comercial</h3>
+                <p style="line-height:1.7; font-size:1.1rem; margin-bottom:0;">
+                    Hola, soy <b>Humberto León</b>. Mi compromiso es brindarte una asesoría clara, honesta y con respaldo legal para que inviertas con total seguridad.
+                </p>
             </div>
         </div>
     </header>
 
-    <script>
-        function mostrarInfo() {
-            var x = document.getElementById("caja-info");
-            x.style.display = (x.style.display === "none") ? "block" : "none";
-        }
+    <section class="proyectos">
+        <h2 class="titulo-seccion-dorado">Nuestros Proyectos</h2>
         
+        <div class="grid">
+            <div class="proyecto-card">
+                <img src="logo_proyecto1.png" class="logo-proyecto" onclick="toggleProyecto('p1')" alt="Proyecto">
+                <p>Alta Plusvalía</p>
+                <h3 style="color:white; margin:10px 0;">Residencial Monte Verde</h3>
+                <div class="botones-proyecto">
+                    <button class="btn" onclick="toggleProyecto('p1')">Ver Detalles</button>
+                    <a href="https://wa.me/51985877256" class="btn" style="background:#25D366;">Consultar</a>
+                </div>
+                
+                <div id="p1" style="display:none; margin-top:20px; text-align:left; border-top:1px solid var(--dorado); padding-top:20px;">
+                    <p style="color:white !important; text-transform:none; font-weight:400;">Aquí va la descripción detallada del proyecto, ubicación y beneficios.</p>
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+    <script>
+        function toggleInfo() {
+            const contenedor = document.getElementById("contenedor-presentacion");
+            contenedor.classList.toggle("activo");
+        }
+
         function toggleProyecto(id) {
-            var x = document.getElementById(id);
+            const x = document.getElementById(id);
             x.style.display = (x.style.display === "block") ? "none" : "block";
             if(x.style.display === "block") x.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     </script>
+
+</body>
+</html>
     <section class="proyectos">
         <h2>Nuestros Proyectos</h2>
         <div class="grid">
