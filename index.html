@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humberto León</title>
+
+<title>Humberto León Inmobiliaria</title>
 
 <style>
 :root {
@@ -21,7 +22,35 @@ body {
     color:white;
 }
 
-/* BOTÓN CLIENTES (CORREGIDO SOLO UNA VEZ) */
+/* HEADER */
+header {
+    position: relative;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo.jpg') center/cover no-repeat;
+}
+
+#contenedor-principal {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:30px;
+    width:100%;
+    max-width:1000px;
+}
+
+#bloque-logo img {
+    width:190px;
+    border-radius:12px;
+    border:3px solid #bfa046;
+    cursor:pointer;
+}
+    /* BOTÓN CLIENTES */
 .btn-clientes {
     background: linear-gradient(45deg, #bfa046, #ffcc33);
     color:#000;
@@ -33,7 +62,6 @@ body {
     cursor:pointer;
     box-shadow:0 8px 25px rgba(191,160,70,0.5);
     animation:pulso 2s infinite;
-    transition:0.3s;
 }
 
 .btn-clientes:hover {
@@ -47,70 +75,83 @@ body {
     50%{transform:scale(1.05);}
     100%{transform:scale(1);}
 }
-</style>
 
+/* PROYECTOS */
+.proyectos {
+    padding:80px 20px;
+    text-align:center;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.proyecto-card {
+    background:var(--oscuro-card);
+    padding:25px;
+    border-radius:20px;
+    border:1px solid rgba(191,160,70,0.3);
+}
+
+.btn {
+    padding:12px 18px;
+    border:none;
+    border-radius:30px;
+    background:#bfa046;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+}
+    </style>
 </head>
 
 <body>
 
-<header style="position: relative; min-height: 65vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo.jpg') center/cover no-repeat;">
+<header>
 
-<div id="contenedor-principal" style="display:flex; align-items:center; justify-content:center; flex-direction:column; gap:30px; text-align:center; width:100%; max-width:1000px; margin:auto;">
+<div id="contenedor-principal">
 
     <div id="bloque-logo">
-
-        <img src="hl_logo.png" onclick="toggleHeader()" 
-        style="cursor:pointer; width:190px; border-radius:12px; border:3px solid #bfa046;">
-
-        <h1 style="margin:10px 0 0; font-size:3rem; font-weight:900;
-        background:linear-gradient(45deg,#bfa046,#ffcc33,#fff);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;">
-            Humberto León
-        </h1>
-
-        <p style="margin:8px 0 0;font-size:1.1rem;">
-            Asesor Inmobiliario
-        </p>
-
+        <img src="hl_logo.png" onclick="toggleHeader()">
+        <h1 style="color:#ffcc33;">Humberto León</h1>
+        <p>Asesor Inmobiliario</p>
     </div>
 
-    <div id="info-humberto" style="display:none; max-width:480px;">
-        <h3 style="color:#ffcc33;">Asesor Inmobiliario</h3>
-        <p>Te acompaño en todo el proceso de inversión segura.</p>
+    <div id="info-humberto" style="display:none; max-width:500px;">
+        <h3 style="color:#ffcc33;">Información</h3>
+        <p>Asesoría inmobiliaria segura y confiable.</p>
     </div>
 
 </div>
+
 </header>
+
 <section class="proyectos">
 
+<h2>Nuestros Proyectos</h2>
+
 <div class="grid">
-
+    
 <div class="proyecto-card">
-    <h3>Fundo Malabrigo</h3>
-    <img src="logo-fundo.png" width="120">
-
-    <div>
-        <button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg'])">FOTOS</button>
-    </div>
+<h3>Fundo Malabrigo</h3>
+<img src="logo-fundo.png" width="120">
+<button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg'])">FOTOS</button>
 </div>
 
 <div class="proyecto-card">
-    <h3>Puerto Mar Club</h3>
-    <img src="logo-puerto.png" width="120">
-
-    <div>
-        <button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg'])">FOTOS</button>
-    </div>
+<h3>Puerto Mar Club</h3>
+<img src="logo-puerto.png" width="120">
+<button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg'])">FOTOS</button>
 </div>
 
 <div class="proyecto-card">
-    <h3>Monte Verde</h3>
-    <img src="logo-monte.png" width="120">
-
-    <div>
-        <button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg'])">FOTOS</button>
-    </div>
+<h3>Monte Verde</h3>
+<img src="logo-monte.png" width="120">
+<button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg'])">FOTOS</button>
 </div>
 
 </div>
@@ -121,47 +162,30 @@ body {
 
 <h2>CONFIANZA REAL</h2>
 
-<button type="button" class="btn-clientes"
+<button class="btn-clientes"
 onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">
 🤝 Ver Clientes Reales
 </button>
 
 <p style="margin-top:20px;color:#ffcc33;font-weight:bold;">
-(Fotos reales de firmas y entregas)
+Fotos reales de entregas
 </p>
 
 </section>
 
-<!-- SCRIPT ÚNICO (CORREGIDO) -->
 <script>
 
 let headerActivo = false;
 
 /* HEADER */
 function toggleHeader() {
-    const contenedor = document.getElementById("contenedor-principal");
     const info = document.getElementById("info-humberto");
-
-    if (!headerActivo) {
-        contenedor.style.flexDirection = "row";
-        info.style.display = "block";
-        headerActivo = true;
-    } else {
-        contenedor.style.flexDirection = "column";
-        info.style.display = "none";
-        headerActivo = false;
-    }
+    info.style.display = (info.style.display === "block") ? "none" : "block";
 }
 
 /* IMÁGENES */
 function abrirImagenes(imgs){
-    alert("Abrir imágenes: " + imgs.join(", "));
-}
-
-/* PROYECTOS */
-function toggleProyecto(id){
-    const el = document.getElementById(id);
-    el.style.display = (el.style.display === "block") ? "none" : "block";
+    alert("Imágenes: " + imgs.join(", "));
 }
 
 </script>
