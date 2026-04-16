@@ -5,237 +5,147 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Humberto León</title>
 
-<style>
-:root {
-    --dorado:#bfa046;
-    --dorado2:#ffcc33;
-    --oscuro:#020617;
-}
-
-body{
-    margin:0;
-    font-family:Segoe UI;
-    background:var(--oscuro);
-    color:white;
-}
-
-/* HEADER */
-header{
-    height:90vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-}
-
-header video{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-1;
-}
-
-.overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
-}
-
-/* CONTENEDOR */
-#contenedor{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    transition:0.5s;
-}
-
-#contenedor.activo{
-    flex-direction:row;
-    gap:40px;
-    text-align:left;
-}
-
-/* LOGO */
-.logo{
-    width:180px;
-    border:3px solid var(--dorado);
-    border-radius:12px;
-    cursor:pointer;
-}
-
-/* MENSAJE */
-#mensaje{
-    opacity:0;
-    transform:translateY(30px);
-    transition:0.5s;
-    max-width:400px;
-}
-
-#contenedor.activo #mensaje{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* MENU IZQUIERDO */
-.menu{
-    position:fixed;
-    left:20px;
-    top:50%;
-    transform:translateY(-50%);
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.menu button{
-    background:linear-gradient(45deg,#bfa046,#ffcc33);
-    border:none;
-    padding:12px;
-    border-radius:50px;
-    font-weight:bold;
-    cursor:pointer;
-    animation:pulso 2s infinite;
-}
-
-@keyframes pulso{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.05);}
-    100%{transform:scale(1);}
-}
-
-/* PANEL */
-.panel{
-    display:none;
-    max-width:800px;
-    margin:60px auto;
-    background:#111827;
-    padding:30px;
-    border-radius:20px;
-    border:1px solid var(--dorado);
-}
-
-/* BOTON */
-.btn{
-    padding:10px 20px;
-    border:none;
-    border-radius:50px;
-    background:linear-gradient(to bottom,#bfa046,#8a6d1d);
-    color:white;
-    cursor:pointer;
-}
-
-/* LIGHTBOX */
-#lightbox{
-    display:none;
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:black;
-    top:0;
-    left:0;
-    justify-content:center;
-    align-items:center;
-}
-
-#lightbox img{
-    max-width:90%;
-}
-</style>
-
+<link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
 
-<header>
+<!-- WHATSAPP -->
+<a href="https://wa.me/51985877256" class="wa-float" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38">
+</a>
 
-<video autoplay muted loop>
+<button class="cta-float" onclick="window.open('https://wa.me/51985877256','_blank')">
+¡Habla YA conmigo!
+</button>
+
+<!-- HEADER -->
+<header>
+<video autoplay muted loop playsinline>
 <source src="https://drive.google.com/uc?export=download&id=1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU">
 </video>
 
 <div class="overlay"></div>
 
-<div id="contenedor">
+<div id="contenedor-principal">
 
 <div>
-<img src="hl_logo.png" class="logo" onclick="toggleHeader()">
+<img src="hl_logo.png" class="mi-logo" onclick="toggleHeader()">
 
-<h1 style="background:linear-gradient(45deg,#bfa046,#ffcc33,#fff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;">
-Humberto León
-</h1>
-
-<p style="color:#ffcc33;">Asesor Inmobiliario</p>
+<h1 class="titulo">Humberto León</h1>
+<p class="subtitulo">Asesor Inmobiliario · Inversión Segura</p>
 </div>
 
-<div id="mensaje">
-<h3 style="color:#ffcc33;">Jefe Comercial</h3>
-<p>Te ayudo a invertir con seguridad.</p>
+<div id="info-humberto">
+<h3>Jefe Comercial</h3>
+<p>
+Hola, soy Humberto León. Te ayudo a invertir con seguridad jurídica y alta rentabilidad.
+</p>
 </div>
 
 </div>
 </header>
 
-<!-- MENU -->
-<div class="menu">
-<button onclick="abrir('fundo')">Fundo</button>
-<button onclick="abrir('puerto')">Puerto</button>
-<button onclick="abrir('monte')">Monte</button>
-<button onclick="abrir('clientes')">Clientes</button>
+<!-- PROYECTOS -->
+<section class="proyectos">
+
+<h2>Nuestros Proyectos</h2>
+
+<!-- FUNDO -->
+<div class="proyecto-card">
+<img src="logo-fundo.png" class="logo-proyecto" onclick="toggleProyecto('info-fundo')">
+
+<div id="info-fundo" class="contenido">
+<h3>Fundo Malabrigo</h3>
+
+<button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">FOTOS</button>
+<button class="btn" onclick="mostrarVideos('fundo-v',['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">VIDEOS</button>
+
+<div id="fundo-v"></div>
+</div>
 </div>
 
-<!-- PANELES -->
-<div id="fundo" class="panel">
-<h2>Fundo Malabrigo</h2>
-<button class="btn" onclick="verImg('fundo1.jpg')">Ver Imagen</button>
+<!-- PUERTO -->
+<div class="proyecto-card">
+<img src="logo-puerto.png" class="logo-proyecto" onclick="toggleProyecto('info-puerto')">
+
+<div id="info-puerto" class="contenido">
+<h3>Puerto Mar Club</h3>
+
+<button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg'])">FOTOS</button>
+<button class="btn" onclick="mostrarVideos('puerto-v',['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">VIDEOS</button>
+
+<div id="puerto-v"></div>
+</div>
 </div>
 
-<div id="puerto" class="panel">
-<h2>Puerto Mar Club</h2>
+<!-- MONTE -->
+<div class="proyecto-card">
+<img src="logo-monte.png" class="logo-proyecto" onclick="toggleProyecto('info-monte')">
+
+<div id="info-monte" class="contenido">
+<h3>Monte Verde</h3>
+
+<button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg'])">FOTOS</button>
+<button class="btn" onclick="mostrarVideos('monte-v',['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">VIDEOS</button>
+
+<div id="monte-v"></div>
+</div>
 </div>
 
-<div id="monte" class="panel">
-<h2>Monte Verde</h2>
-</div>
+</section>
 
-<div id="clientes" class="panel">
+<!-- CLIENTES -->
+<section class="clientes">
 <h2>Clientes Felices</h2>
-</div>
+
+<button class="btn-clientes" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg'])">
+Ver Clientes
+</button>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+<h2>Preguntas Frecuentes</h2>
+
+<div onclick="toggleFaq(this)">¿Los lotes tienen documentos?<span>▼</span></div>
+<p class="faq-respuesta">Sí, todo está en regla.</p>
+
+<div onclick="toggleFaq(this)">¿Hay financiamiento?<span>▼</span></div>
+<p class="faq-respuesta">Sí, con facilidades de pago.</p>
+
+</section>
+
+<!-- FORMULARIO -->
+<section class="formulario">
+<form id="formulario">
+<input type="text" id="nombre" placeholder="Nombre" required>
+<select id="proyecto">
+<option>Fundo Malabrigo</option>
+<option>Puerto Mar Club</option>
+<option>Monte Verde</option>
+</select>
+<button type="submit" class="btn">ENVIAR</button>
+</form>
+</section>
+
+<!-- REDES -->
+<footer>
+<a href="https://www.facebook.com/">Facebook</a>
+<a href="https://www.instagram.com/">Instagram</a>
+<a href="https://www.tiktok.com/">TikTok</a>
+<a href="https://www.youtube.com/">YouTube</a>
+</footer>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" onclick="cerrar()">
-<img id="img">
+<div id="lightbox">
+<img id="lightbox-img">
+<button onclick="cambiarImg(-1)">←</button>
+<button onclick="cambiarImg(1)">→</button>
+<button onclick="cerrar()">X</button>
 </div>
 
-<script>
-
-/* HEADER */
-function toggleHeader(){
-document.getElementById("contenedor").classList.toggle("activo");
-}
-
-/* PROYECTOS */
-function abrir(id){
-let todos=document.querySelectorAll(".panel");
-todos.forEach(p=>p.style.display="none");
-
-document.getElementById(id).style.display="block";
-}
-
-/* IMAGEN */
-function verImg(src){
-document.getElementById("img").src=src;
-document.getElementById("lightbox").style.display="flex";
-}
-
-function cerrar(){
-document.getElementById("lightbox").style.display="none";
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
