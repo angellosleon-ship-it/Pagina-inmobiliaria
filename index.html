@@ -8,8 +8,8 @@
 </head>
 <body>
 
-    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20deseo%20más%20información." class="wa-flotante" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    <a href="https://wa.me/51985877256" class="wa-flotante" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
     </a>
 
     <div id="lightbox">
@@ -21,9 +21,9 @@
 
     <header>
         <div style="text-align: center;">
-            <img src="hl_logo.png" style="width:160px; border-radius:15px; border:3px solid #bfa046;">
-            <h1 style="color:#ffcc33; margin:15px 0 5px; font-size: 2.5rem;">Humberto León</h1>
-            <p style="letter-spacing: 2px; font-weight: bold; color: white;">ASESOR INMOBILIARIO PROFESIONAL</p>
+            <img src="hl_logo.png" style="width:150px; border-radius:15px; border:3px solid #bfa046;">
+            <h1 style="color:#ffcc33; margin:10px 0;">Humberto León</h1>
+            <p style="color:white; font-weight:bold; letter-spacing:2px;">ASESOR INMOBILIARIO PROFESIONAL</p>
         </div>
     </header>
 
@@ -32,97 +32,101 @@
             <button class="btn-palpitar" onclick="mostrarProyecto('fundo-det')">Fundo Malabrigo</button>
             <button class="btn-palpitar" onclick="mostrarProyecto('puerto-det')">Puerto Mar Club</button>
             <button class="btn-palpitar" onclick="mostrarProyecto('monte-det')">Residencial Monte Verde</button>
-            <button class="btn-palpitar" onclick="mostrarProyecto('clientes-det')" style="background: white; color: black; animation: none;">🤝 Clientes Felices</button>
+            <button class="btn-palpitar" onclick="mostrarProyecto('clientes-det')" style="background:white; color:black; animation:none;">🤝 Clientes Felices</button>
         </div>
 
         <div class="ventana-visor">
             <div id="msg-inicio">
-                <h2 style="font-size: 2.8rem; color: #ffcc33;">¡Bienvenido Inversionista!</h2>
-                <p style="font-size: 1.4rem; line-height: 1.8;">Soy <b>Humberto León</b>. Explora mis proyectos exclusivos y encuentra el lugar ideal para tu inversión con seguridad jurídica.</p>
+                <h2>¡Bienvenido Inversionista!</h2>
+                <p>Soy <b>Humberto León</b>. Explora mis proyectos exclusivos y encuentra el lugar ideal para tu inversión.</p>
             </div>
 
-            <div id="fundo-det" class="proyecto-detalle">
-                <img src="logo-fundo.png" style="width:130px; background:white; padding:5px; border-radius:10px;">
+            <div id="fundo-det" class="proyecto-detalle" style="display:none;">
                 <h2 style="color:#ffcc33;">FUNDO MALABRIGO</h2>
-                <button class="btn-accion" onclick="abrirGaleria(['fundo1.jpg','fundo2.jpg','fundo3.jpg','fundo4.jpg','fundo5.jpg'])">📸 VER GALERÍA</button>
-                <button class="btn-accion" onclick="cargarVideos('v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE', '1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m'])">🎥 VER VIDEOS</button>
-                <a href="https://maps.app.goo.gl/56tW2gAuSmQ9LS2v9" target="_blank" class="btn-accion" style="background:#4285F4;">📍 UBICACIÓN</a>
-                <a href="https://wa.me/51985877256?text=Me%20interesa%20Fundo%20Malabrigo" target="_blank" class="btn-accion" style="background:#25D366;">🟢 WHATSAPP</a>
+                <div class="acciones">
+                    <button class="btn-accion" onclick="abrirGaleria(['fundo1.jpg','fundo2.jpg','fundo3.jpg','fundo4.jpg','fundo5.jpg'])">📸 VER GALERÍA</button>
+                    <button class="btn-accion" onclick="cargarVideos('v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE', '1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m'])">🎥 VER VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/56tW2gAuSmQ9LS2v9" target="_blank" class="btn-accion" style="background:#4285F4;">📍 UBICACIÓN</a>
+                </div>
                 <div id="v-fundo" class="video-grid"></div>
             </div>
 
-            <div id="puerto-det" class="proyecto-detalle">
-                <img src="logo-puerto.png" style="width:130px; background:white; padding:5px; border-radius:10px;">
+            <div id="puerto-det" class="proyecto-detalle" style="display:none;">
                 <h2 style="color:#ffcc33;">PUERTO MAR CLUB</h2>
-                <button class="btn-accion" onclick="abrirGaleria(['puerto1.jpg','puerto2.jpg','puerto3.jpg','puerto4.jpg','puerto5.jpg'])">📸 VER GALERÍA</button>
-                <button class="btn-accion" onclick="cargarVideos('v-puerto', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE', '1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m'])">🎥 VER VIDEOS</button>
-                <a href="https://maps.app.goo.gl/BF4uQkbDnVmdNNqz8" target="_blank" class="btn-accion" style="background:#4285F4;">📍 UBICACIÓN</a>
-                <a href="https://wa.me/51985877256?text=Me%20interesa%20Puerto%20Mar%20Club" target="_blank" class="btn-accion" style="background:#25D366;">🟢 WHATSAPP</a>
+                <div class="acciones">
+                    <button class="btn-accion" onclick="abrirGaleria(['puerto1.jpg','puerto2.jpg','puerto3.jpg','puerto4.jpg','puerto5.jpg'])">📸 VER GALERÍA</button>
+                    <button class="btn-accion" onclick="cargarVideos('v-puerto', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE', '1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m'])">🎥 VER VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/BF4uQkbDnVmdNNqz8" target="_blank" class="btn-accion" style="background:#4285F4;">📍 UBICACIÓN</a>
+                </div>
                 <div id="v-puerto" class="video-grid"></div>
             </div>
 
-            <div id="monte-det" class="proyecto-detalle">
-                <img src="logo-monte.png" style="width:130px; background:white; padding:5px; border-radius:10px;">
+            <div id="monte-det" class="proyecto-detalle" style="display:none;">
                 <h2 style="color:#ffcc33;">RESIDENCIAL MONTE VERDE</h2>
-                <button class="btn-accion" onclick="abrirGaleria(['monte1.jpg','monte2.jpg','monte3.jpg','monte4.jpg','monte5.jpg'])">📸 VER GALERÍA</button>
-                <button class="btn-accion" onclick="cargarVideos('v-monte', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m', '1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE'])">🎥 VER VIDEOS</button>
-                <a href="https://maps.app.goo.gl/BabmXFU7NcvDi4Yr8" target="_blank" class="btn-accion" style="background:#4285F4;">📍 UBICACIÓN</a>
-                <a href="https://wa.me/51985877256?text=Me%20interesa%20Residencial%20Monte%20Verde" target="_blank" class="btn-accion" style="background:#25D366;">🟢 WHATSAPP</a>
+                <div class="acciones">
+                    <button class="btn-accion" onclick="abrirGaleria(['monte1.jpg','monte2.jpg','monte3.jpg','monte4.jpg','monte5.jpg'])">📸 VER GALERÍA</button>
+                    <button class="btn-accion" onclick="cargarVideos('v-monte', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m', '1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE'])">🎥 VER VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/BabmXFU7NcvDi4Yr8" target="_blank" class="btn-accion" style="background:#4285F4;">📍 UBICACIÓN</a>
+                </div>
                 <div id="v-monte" class="video-grid"></div>
             </div>
 
-            <div id="clientes-det" class="proyecto-detalle">
-                <h2 style="color:#ffcc33;">🤝 CLIENTES FELICES</h2>
-                <img src="image_1_clean.png" style="width:100%; border-radius:15px;">
-                <button class="btn-accion" style="width:100%; margin-top:10px;" onclick="abrirGaleria(['image_1_clean.png','cliente2.jpg'])">VER ENTREGAS</button>
+            <div id="clientes-det" class="proyecto-detalle" style="display:none;">
+                <h2 style="color:#ffcc33;">🤝 ENTREGAS EXITOSAS</h2>
+                <img src="image_1_clean.png" style="width:100%; border-radius:15px; border:2px solid #bfa046;">
             </div>
         </div>
     </section>
 
-    <section style="max-width: 1000px; margin: 50px auto; padding: 20px;">
-        <h2 style="text-align: center; color: #ffcc33; font-size: 2rem;">Preguntas Frecuentes</h2>
-        <div style="background: #1e293b; padding: 20px; border-radius: 15px; margin-top: 20px;">
-            <p><b>1. ¿Cuentan con títulos de propiedad?</b><br>Sí, todos nuestros proyectos cuentan con seguridad jurídica completa y están inscritos en Registros Públicos.</p>
-            <hr style="opacity: 0.2;">
-            <p><b>2. ¿Cuáles son las modalidades de pago?</b><br>Contamos con facilidades de pago al contado y financiamiento directo sin intereses.</p>
-            <hr style="opacity: 0.2;">
-            <p><b>3. ¿Puedo visitar el terreno antes de comprar?</b><br>¡Claro que sí! Organizamos visitas guiadas todos los fines de semana desde nuestra oficina.</p>
-        </div>
+    <section class="faq-section">
+        <h2 style="color:#ffcc33; text-align:center;">Preguntas Frecuentes</h2>
+        <div class="faq-item"><b>¿Tienen títulos de propiedad?</b><br>Sí, entrega inmediata con seguridad jurídica.</div>
+        <div class="faq-item"><b>¿Hay financiamiento?</b><br>Contamos con crédito directo sin intereses.</div>
+        <div class="faq-item"><b>¿Cómo agendo una visita?</b><br>Escríbeme al WhatsApp para coordinar el traslado.</div>
     </section>
 
-    <footer style="text-align: center; padding: 40px 0; background: #000;">
-        <div class="social-links">
-            <a href="https://www.facebook.com/share/1G7kjoWFoH/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" style="width: 40px; margin: 0 10px;"></a>
-            <a href="https://www.instagram.com/humbertoleondiaz/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" style="width: 40px; margin: 0 10px;"></a>
-            <a href="https://www.tiktok.com/@humberto.bienesraices" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" style="width: 40px; margin: 0 10px;"></a>
-            <a href="https://www.youtube.com/@HumbertoLeon-rx6rx" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width: 40px; margin: 0 10px;"></a>
-            <a href="https://pe.linkedin.com/in/humberto-leon-inmobiliaria" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" style="width: 40px; margin: 0 10px;"></a>
+    <footer>
+        <div class="social-bar">
+            <a href="https://www.facebook.com/share/1G7kjoWFoH/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+            <a href="https://www.instagram.com/humbertoleondiaz/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"></a>
+            <a href="https://www.tiktok.com/@humberto.bienesraices" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
+            <a href="https://www.youtube.com/@HumbertoLeon-rx6rx" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"></a>
+            <a href="https://pe.linkedin.com/in/humberto-leon-inmobiliaria" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
         </div>
-        <p style="color: #666; margin-top: 20px;">© 2026 Humberto León - Asesor Inmobiliario</p>
+        <p>© 2026 Humberto León - Asesoría Inmobiliaria</p>
     </footer>
 
     <script>
         let imgs = []; let i = 0;
-        function abrirGaleria(lista) {
-            imgs = lista; i = 0;
-            document.getElementById("lightbox-img").src = imgs[i];
-            document.getElementById("lightbox").style.display = "flex";
-        }
-        function cambiarFoto(dir) {
-            i += dir; if (i < 0) i = imgs.length - 1; if (i >= imgs.length) i = 0;
-            document.getElementById("lightbox-img").src = imgs[i];
-        }
-        function cerrarGaleria() { document.getElementById("lightbox").style.display = "none"; }
-
+        function abrirGaleria(l) { imgs=l; i=0; document.getElementById("lightbox-img").src=imgs[i]; document.getElementById("lightbox").style.display="flex"; }
+        function cerrarGaleria() { document.getElementById("lightbox").style.display="none"; }
+        function cambiarFoto(d) { i+=d; if(i<0)i=imgs.length-1; if(i>=imgs.length)i=0; document.getElementById("lightbox-img").src=imgs[i]; }
+        
         function mostrarProyecto(id) {
-            document.getElementById('msg-inicio').style.display = 'none';
-            document.querySelectorAll('.proyecto-detalle').forEach(d => d.style.display = 'none');
-            document.querySelectorAll('.video-grid').forEach(v => v.innerHTML = '');
-            document.getElementById(id).style.display = 'block';
+            // Ocultar bienvenida
+            document.getElementById('msg-inicio').style.display='none';
+            // Ocultar todos los detalles
+            const detalles = document.getElementsByClassName('proyecto-detalle');
+            for(let d of detalles) { d.style.display = 'none'; }
+            // Limpiar todos los contenedores de video para que no se escuchen videos de otros proyectos
+            const videos = document.getElementsByClassName('video-grid');
+            for(let v of videos) { v.innerHTML = ''; }
+            // Mostrar el seleccionado
+            document.getElementById(id).style.display='block';
         }
 
         function cargarVideos(contId, ids) {
-            const c = document.getElementById(contId); c.innerHTML = "";
+            const contenedor = document.getElementById(contId);
+            contenedor.innerHTML = ""; // Limpiar
             ids.forEach(id => {
-                let f = document.createElement("iframe");
-                f.src = `https
+                const iframe = document.createElement("iframe");
+                iframe.src = "https://drive.google.com/file/d/" + id + "/preview";
+                iframe.allow = "autoplay";
+                iframe.frameBorder = "0";
+                iframe.allowFullscreen = true;
+                contenedor.appendChild(iframe);
+            });
+        }
+    </script>
+</body>
+</html>
