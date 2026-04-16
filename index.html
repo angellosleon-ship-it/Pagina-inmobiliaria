@@ -75,9 +75,35 @@ function toggleProyecto() {
 
         activo = false;
     }
-}
 </script>
-    <style>
+
+<style>
+.btn-clientes {
+    background: linear-gradient(45deg, #bfa046, #ffcc33);
+    color: #000;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(191,160,70,0.5);
+    transition: all 0.3s ease;
+    animation: pulso 2s infinite;
+}
+
+@keyframes pulso {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,204,51,0.6); }
+    50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255,204,51,0.8); }
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,204,51,0.6); }
+}
+
+.btn-clientes:hover {
+    animation: none;
+    transform: scale(1.08);
+    background: linear-gradient(45deg, #ffcc33, #fff);
+}
+</style>
     :root {
         --dorado: #bfa046;
         --dorado-brillante: #ffcc33;
@@ -386,9 +412,9 @@ function toggleProyecto() {
     <section class="clientes-section" style="text-align:center; padding:60px 20px; background:rgba(191,160,70,0.05);">
         <h2>CONFIANZA REAL</h2>
         <p>La satisfacción de nuestros clientes es nuestro mejor respaldo.</p>
-        <button type="button" class="btn-clientes" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">
-            🤝 CLIENTES FELICES
-        </button>
+       <button type="button" class="btn-clientes" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">
+    🤝 Ver Clientes Reales
+</button>
         <p style="margin-top:20px; color:#ffcc33; font-weight:bold;">(Fotos reales de firmas y entregas)</p>
     </section>
 
