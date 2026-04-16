@@ -8,6 +8,10 @@
 </head>
 <body>
 
+    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20estoy%20viendo%20tu%20página%20web%20y%20deseo%20más%20información." class="wa-flotante" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+
     <div id="lightbox">
         <button class="btn-galeria close" onclick="cerrarGaleria()">CERRAR [X]</button>
         <button class="btn-galeria prev" onclick="cambiarFoto(-1)">❮</button>
@@ -18,13 +22,9 @@
     <header>
         <div id="contenedor-principal">
             <div id="bloque-logo" style="text-align: center;">
-                <img src="hl_logo.png" onclick="toggleHeader()" style="cursor:pointer; width:180px; border-radius:15px; border:3px solid #bfa046;">
+                <img src="hl_logo.png" style="width:180px; border-radius:15px; border:3px solid #bfa046;">
                 <h1 style="color:var(--dorado-brillante); margin-top:10px; font-size: 3rem;">Humberto León</h1>
-                <p style="letter-spacing: 2px;">ASESOR INMOBILIARIO PROFESIONAL</p>
-            </div>
-            <div id="info-humberto">
-                <h3 style="color:#ffcc33;">Jefe Comercial</h3>
-                <p>Brindo seguridad jurídica y alta plusvalía en cada proyecto. Te acompaño desde la elección del lote hasta la firma de tu título.</p>
+                <p>ASESOR INMOBILIARIO PROFESIONAL</p>
             </div>
         </div>
     </header>
@@ -39,18 +39,23 @@
         </div>
 
         <div class="ventana-visor" id="visor">
-            <div id="msg-inicio" style="text-align: center; padding-top: 150px;">
-                <h3 style="color: #666;">Selecciona un proyecto para ver detalles</h3>
+            <div id="msg-inicio">
+                <img src="hl_logo.png" style="width: 100px; opacity: 0.5; margin-bottom: 20px;">
+                <h2>¡Bienvenido, inversionista!</h2>
+                <p>Soy <b>Humberto León</b>, tu aliado en el sector inmobiliario.<br>
+                He seleccionado los mejores proyectos con <b>seguridad jurídica</b> y alta plusvalía para ti.<br><br>
+                👈 <b>Selecciona un proyecto a la izquierda</b> para conocer todos los detalles, fotos y videos.</p>
             </div>
 
             <div id="fundo-det" class="proyecto-detalle">
                 <img src="logo-fundo.png" class="logo-proyecto-view">
                 <h2>FUNDO MALABRIGO</h2>
-                <p>📍 <b>Ubicación:</b> Puerto Malabrigo (Rázuri)</p>
+                <p>📍 Ubicación: Puerto Malabrigo (Rázuri)</p>
                 <div style="margin: 15px 0;">
-                    <button class="btn-accion" onclick="abrirGaleria(['fundo1.jpg','fundo2.jpg','fundo3.jpg','fundo4.jpg','fundo5.jpg'])">VER IMÁGENES</button>
-                    <button class="btn-accion" onclick="cargarVideos('v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU','1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns'])">VER VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/sU94PKtPzDNYN7NT93" target="_blank" class="btn-accion" style="background: #4285F4;">VER UBICACIÓN EXACTA</a>
+                    <button class="btn-accion" onclick="abrirGaleria(['fundo1.jpg','fundo2.jpg'])">VER FOTOS</button>
+                    <button class="btn-accion" onclick="cargarVideos('v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">VER VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/sU94PKtPzDNYN7NT99" target="_blank" class="btn-accion" style="background: #4285F4;">UBICACIÓN EXACTA</a>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20deseo%20agendar%20una%20visita%20para%20Fundo%20Malabrigo" target="_blank" class="btn-accion" style="background: var(--verde-wa);">AGENDAR VISITA</a>
                 </div>
                 <div id="v-fundo" class="video-container"></div>
             </div>
@@ -58,11 +63,12 @@
             <div id="puerto-det" class="proyecto-detalle">
                 <img src="logo-puerto.png" class="logo-proyecto-view">
                 <h2>PUERTO MAR CLUB</h2>
-                <p>📍 <b>Ubicación:</b> Playa Malabrigo - Primera Fila</p>
+                <p>📍 Ubicación: Playa Malabrigo - Primera Fila</p>
                 <div style="margin: 15px 0;">
-                    <button class="btn-accion" onclick="abrirGaleria(['puerto1.jpg','puerto2.jpg','puerto3.jpg','puerto4.jpg'])">VER IMÁGENES</button>
-                    <button class="btn-accion" onclick="cargarVideos('v-puerto', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1mdN62zGQ9znF00pmXG8MWOtGzmXJfhLL'])">VER VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/sU94PKtPzDNYN7NT94" target="_blank" class="btn-accion" style="background: #4285F4;">VER UBICACIÓN EXACTA</a>
+                    <button class="btn-accion" onclick="abrirGaleria(['puerto1.jpg','puerto2.jpg'])">VER FOTOS</button>
+                    <button class="btn-accion" onclick="cargarVideos('v-puerto', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE'])">VER VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/AA5CUW3xpDayokfH90" target="_blank" class="btn-accion" style="background: #4285F4;">UBICACIÓN EXACTA</a>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20deseo%20agendar%20una%20visita%20para%20Puerto%20Mar%20Club" target="_blank" class="btn-accion" style="background: var(--verde-wa);">AGENDAR VISITA</a>
                 </div>
                 <div id="v-puerto" class="video-container"></div>
             </div>
@@ -70,70 +76,48 @@
             <div id="monte-det" class="proyecto-detalle">
                 <img src="logo-monte.png" class="logo-proyecto-view">
                 <h2>RESIDENCIAL MONTE VERDE</h2>
-                <p>📍 <b>Ubicación:</b> Chepén - Sector Chaparral</p>
+                <p>📍 Ubicación: Chepén - Sector Chaparral</p>
                 <div style="margin: 15px 0;">
-                    <button class="btn-accion" onclick="abrirGaleria(['monte1.jpg','monte2.jpg','monte3.jpg','monte4.jpg'])">VER IMÁGENES</button>
-                    <button class="btn-accion" onclick="cargarVideos('v-monte', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m','18iGRvLNsYaMgYo7rGbk0ViNzA-4LFmTi'])">VER VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/sU94PKtPzDNYN7NT95" target="_blank" class="btn-accion" style="background: #4285F4;">VER UBICACIÓN EXACTA</a>
+                    <button class="btn-accion" onclick="abrirGaleria(['monte1.jpg','monte2.jpg'])">VER FOTOS</button>
+                    <button class="btn-accion" onclick="cargarVideos('v-monte', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m'])">VER VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/AA5CUW3xpDayokfH91" target="_blank" class="btn-accion" style="background: #4285F4;">UBICACIÓN EXACTA</a>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20deseo%20agendar%20una%20visita%20para%20Residencial%20Monte%20Verde" target="_blank" class="btn-accion" style="background: var(--verde-wa);">AGENDAR VISITA</a>
                 </div>
                 <div id="v-monte" class="video-container"></div>
             </div>
 
             <div id="clientes-det" class="proyecto-detalle">
-                <h2 style="color: var(--dorado-brillante);">🤝 NUESTROS CLIENTES</h2>
-                <p>Confianza y legalidad. Mira a los nuevos propietarios que ya cuentan con su terreno.</p>
-                <button class="btn-palpitar" onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg'])">VER GALERÍA DE ENTREGAS</button>
+                <h2>🤝 NUESTROS CLIENTES</h2>
+                <p>¡Tú puedes ser el próximo dueño de un terreno en el norte peruano!</p>
+                <img src="image_1_clean.png" style="width: 100%; border-radius: 15px; border: 2px solid var(--dorado);">
+                <button class="btn-palpitar" style="margin-top:20px; animation: none;" onclick="abrirGaleria(['image_1_clean.png','cliente2.jpg'])">VER MÁS ENTREGAS</button>
             </div>
         </div>
     </section>
 
     <div style="text-align: center; padding: 50px 0; background: #000;">
-        <h3 style="color: var(--dorado-brillante);">SÍGUEME EN MIS REDES</h3>
         <div class="social-links">
-            <a href="https://www.facebook.com/share/1G7kjoWFoH/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-            <a href="https://www.instagram.com/humbertoleondiaz/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"></a>
-            <a href="https://www.tiktok.com/@humberto.bienesraices" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
-            <a href="https://www.youtube.com/@HumbertoLeon-rx6rx" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"></a>
-            <a href="https://pe.linkedin.com/in/humberto-leon-inmobiliaria" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
+            <a href="https://www.facebook.com/share/1G7kjoWFoH/"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+            <a href="https://www.instagram.com/humbertoleondiaz/"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"></a>
+            <a href="https://www.tiktok.com/@humberto.bienesraices"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
+            <a href="https://www.youtube.com/@HumbertoLeon-rx6rx"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"></a>
+            <a href="https://pe.linkedin.com/in/humberto-leon-inmobiliaria"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"></a>
         </div>
-        <p style="color: #444; margin-top: 20px;">© 2026 Humberto León | Estrategias Inmobiliarias</p>
     </div>
 
     <script>
-        // GALERÍA PRO
-        let imgs = [];
-        let i = 0;
-
+        let imgs = []; let i = 0;
         function abrirGaleria(lista) {
             imgs = lista; i = 0;
             document.getElementById("lightbox-img").src = imgs[i];
             document.getElementById("lightbox").style.display = "flex";
         }
-
         function cambiarFoto(dir) {
-            i += dir;
-            if (i < 0) i = imgs.length - 1;
-            if (i >= imgs.length) i = 0;
+            i += dir; if (i < 0) i = imgs.length - 1; if (i >= imgs.length) i = 0;
             document.getElementById("lightbox-img").src = imgs[i];
         }
-
         function cerrarGaleria() { document.getElementById("lightbox").style.display = "none"; }
 
-        // HEADER
-        let h = false;
-        function toggleHeader() {
-            const c = document.getElementById("contenedor-principal");
-            const info = document.getElementById("info-humberto");
-            if (!h) {
-                c.style.flexDirection = "row"; info.style.display = "block";
-                setTimeout(() => info.style.opacity = "1", 50); h = true;
-            } else {
-                c.style.flexDirection = "column"; info.style.opacity = "0";
-                setTimeout(() => info.style.display = "none", 500); h = false;
-            }
-        }
-
-        // VISOR PROYECTOS
         function mostrarProyecto(id) {
             document.getElementById('msg-inicio').style.display = 'none';
             document.querySelectorAll('.proyecto-detalle').forEach(d => d.style.display = 'none');
@@ -141,10 +125,8 @@
             document.getElementById(id).style.display = 'block';
         }
 
-        // VIDEOS MULTIPLES
         function cargarVideos(contId, ids) {
-            const c = document.getElementById(contId);
-            c.innerHTML = "";
+            const c = document.getElementById(contId); c.innerHTML = "";
             ids.forEach(id => {
                 let f = document.createElement("iframe");
                 f.src = `https://drive.google.com/file/d/${id}/preview`;
