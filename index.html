@@ -18,7 +18,7 @@
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PPTZF6BG');</script>
 </head>
 </section>
-    <style>
+   <style>
     :root {
         --dorado: #bfa046;
         --dorado-brillante: #ffcc33;
@@ -26,6 +26,27 @@
         --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a);
         --verde-wa: #25D366;
     }
+
+    /* --- COPIA ESTO DESDE AQUÍ --- */
+    /* Efecto de latido para llamar la atención hacia los logos */
+    .logo-proyecto {
+        animation: latido 2s infinite ease-in-out;
+        transition: 0.3s;
+    }
+
+    @keyframes latido {
+        0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(191, 160, 70, 0)); }
+        50% { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(255, 204, 51, 0.6)); }
+        100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(191, 160, 70, 0)); }
+    }
+
+    /* Cuando el mouse está encima, se queda quieto y grande para facilitar el clic */
+    .logo-proyecto:hover {
+        animation: none;
+        transform: scale(1.1);
+        filter: brightness(1.2);
+    }
+    /* --- HASTA AQUÍ --- */
     body { 
         margin:0; 
         font-family:'Segoe UI',sans-serif; 
