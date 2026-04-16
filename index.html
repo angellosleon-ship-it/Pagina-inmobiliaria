@@ -577,7 +577,8 @@ function toggleHeader() {
     }
 }
 
-/* PROYECTOS (NO TOCAR MÁS) */
+<script>
+/* PROYECTOS */
 function toggleProyecto(id) {
     var x = document.getElementById(id);
 
@@ -589,5 +590,33 @@ function toggleProyecto(id) {
     }
 }
 </script>
+
+<style>
+.btn-clientes {
+    background: linear-gradient(45deg, #bfa046, #ffcc33);
+    color: #000;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(191,160,70,0.5);
+    transition: all 0.3s ease;
+    animation: pulso 2s infinite;
+}
+
+@keyframes pulso {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-clientes:hover {
+    animation: none;
+    transform: scale(1.08);
+    background: linear-gradient(45deg, #ffcc33, #fff);
+}
+</style>
 </body>
 </html>
