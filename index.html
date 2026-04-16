@@ -1,376 +1,133 @@
 <!DOCTYPE html>
-<header style="position: relative; min-height: 65vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo.jpg') center/cover no-repeat;">
-        
-    <div id="contenedor-principal" style="display:flex; align-items:center; justify-content:center; flex-direction:column; gap:30px; text-align:center; transition:0.6s; width:100%; max-width:1000px; margin:auto;">
-        
-        <!-- LOGO -->
-        <div id="bloque-logo">
-            
-           <img src="hl_logo.png" onclick="toggleHeader()" 
-     style="cursor:pointer; width:190px; border-radius:12px; border:3px solid #bfa046;">
-            
-            <h1 style="margin:10px 0 0; font-size:3rem; font-weight:900;
-            background:linear-gradient(45deg,#bfa046,#ffcc33,#fff);
-            -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;">
-                Humberto León
-            </h1>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humberto León - Asesor Inmobiliario</title>
+    <style>
+        :root {
+            --dorado: #bfa046;
+            --dorado-brillante: #ffcc33;
+            --oscuro-deep: #020617;
+            --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a);
+            --verde-wa: #25D366;
+        }
 
-            <p style="
-    margin: 8px 0 0;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 700;
-    background: linear-gradient(to right, #bfa046, #ffcc33, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-">
-    Asesor Inmobiliario · Inversión Segura · Alta Plusvalía
-</p>
+        body { 
+            margin:0; 
+            font-family:'Segoe UI',sans-serif; 
+            background:var(--oscuro-deep); 
+            color:white; 
+            scroll-behavior:smooth; 
+        }
 
-        </div>
+        /* CONFIGURACIÓN DEL VIDEO DE FONDO */
+        header {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
 
-        <!-- MENSAJE -->
-        <div id="info-humberto" style="opacity:0; transform:translateY(30px); pointer-events:none;
-        max-width:480px; background:rgba(2,6,23,0.95); padding:25px; border-radius:20px;
-        border:1px solid #bfa046; transition:0.5s;">
-            
-            <h3 style="color:#ffcc33;">Jefe Comercial & Especialista Inmobiliario</h3>
-            
-            <p style="line-height:1.7;">
-                Hola, soy <b>Humberto León</b>. Mi compromiso es brindarte una asesoría clara, honesta y con respaldo legal para que tomes decisiones seguras al invertir.
-                <br><br>
-                Te acompaño en todo el proceso, desde la elección del lote ideal hasta la verificación de documentos.
-            </p>
+        header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            object-fit: cover;
+        }
 
-        </div>
+        .overlay-negro {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.65);
+            z-index: 0;
+        }
 
-    </div>
-</header>
+        #contenido-presentacion {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
 
-<script>
-let activo = false;
+        /* TU LOGO CUADRADO */
+        .mi-logo {
+            cursor: pointer;
+            width: 170px;
+            border-radius: 15px;
+            border: 3px solid var(--dorado);
+            box-shadow: 0 0 20px rgba(191,160,70,0.5);
+        }
 
-function toggleProyecto() {
-    const contenedor = document.getElementById("contenedor-principal");
-    const mensaje = document.getElementById("info-humberto");
+        /* MENSAJE QUE APARECE */
+        #caja-info {
+            display: none;
+            background: rgba(2, 6, 23, 0.95);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid var(--dorado);
+            max-width: 450px;
+            margin-top: 15px;
+        }
 
-    if (!activo) {
-        contenedor.style.flexDirection = "row";
-        contenedor.style.textAlign = "left";
-
-        mensaje.style.opacity = "1";
-        mensaje.style.transform = "translateY(0)";
-        mensaje.style.pointerEvents = "auto";
-
-        activo = true;
-    } else {
-        contenedor.style.flexDirection = "column";
-        contenedor.style.textAlign = "center";
-
-        mensaje.style.opacity = "0";
-        mensaje.style.transform = "translateY(30px)";
-        mensaje.style.pointerEvents = "none";
-
-        activo = false;
-    }
-</script>
-
-<style>
-.btn-clientes {
-    background: linear-gradient(45deg, #bfa046, #ffcc33);
-    color: #000;
-    border: none;
-    padding: 14px 28px;
-    font-size: 1rem;
-    font-weight: 800;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 8px 25px rgba(191,160,70,0.5);
-    transition: all 0.3s ease;
-    animation: pulso 2s infinite;
-}
-
-@keyframes pulso {
-    0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,204,51,0.6); }
-    50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255,204,51,0.8); }
-    100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,204,51,0.6); }
-}
-
-.btn-clientes:hover {
-    animation: none;
-    transform: scale(1.08);
-    background: linear-gradient(45deg, #ffcc33, #fff);
-}
-<style>
-    :root {
-        --dorado: #bfa046;
-        --dorado-brillante: #ffcc33;
-        --oscuro-deep: #020617;
-        --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a);
-        --verde-wa: #25D366;
-    }
-
-    body { 
-        margin:0; 
-        font-family:'Segoe UI',sans-serif; 
-        background:var(--oscuro-deep); 
-        color:white; 
-        scroll-behavior:smooth; 
-    }
-
-    /* Estilo para los logos de los proyectos (estos sí laten) */
-    .logo-proyecto {
-        animation: latido 2s infinite ease-in-out;
-        transition: 0.3s;
-        cursor: pointer;
-    }
-
-    @keyframes latido {
-        0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(191, 160, 70, 0)); }
-        50% { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(255, 204, 51, 0.6)); }
-        100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(191, 160, 70, 0)); }
-    }
-    
-    /* --- COPIA ESTO DESDE AQUÍ --- */
-    /* Efecto de latido para llamar la atención hacia los logos */
-    .logo-proyecto {
-        animation: latido 2s infinite ease-in-out;
-        transition: 0.3s;
-    }
-
-    @keyframes latido {
-        0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(191, 160, 70, 0)); }
-        50% { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(255, 204, 51, 0.6)); }
-        100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(191, 160, 70, 0)); }
-    }
-
-    /* Cuando el mouse está encima, se queda quieto y grande para facilitar el clic */
-    .logo-proyecto:hover {
-        animation: none;
-        transform: scale(1.1);
-        filter: brightness(1.2);
-    }
-    /* --- HASTA AQUÍ --- */
-    body { 
-        margin:0; 
-        font-family:'Segoe UI',sans-serif; 
-        background:var(--oscuro-deep); 
-        color:white; 
-        scroll-behavior:smooth; 
-    }
-    header { 
-        position:relative; 
-        height:100vh; 
-        overflow:hidden; 
-        display:flex; 
-        align-items:center; 
-        justify-content:center; 
-    }
-    header video { 
-        position:absolute; 
-        width:100%; height:100%; 
-        object-fit:cover; z-index:-1; 
-    }
-    .overlay { 
-        position:absolute; 
-        width:100%; height:100%; 
-        background:rgba(0,0,0,0.7); 
-    }
-    .header-content { 
-        position:relative; 
-        text-align:center; 
-        animation:fadeIn 2s ease; 
-    }
-    .logo-personal { 
-        width:240px; 
-        filter:drop-shadow(0 0 20px rgba(191,160,70,0.6)); 
-        margin-bottom:10px; 
-    }
-    .header-content h1 { 
-        font-size:clamp(40px,8vw,64px); 
-        margin:0; 
-        background:linear-gradient(45deg,#bfa046,#fff,#bfa046); 
-        -webkit-background-clip:text; 
-        -webkit-text-fill-color:transparent; 
-    }
-    .header-content p { 
-        font-size:1.2rem; 
-        text-transform:uppercase; 
-        letter-spacing:4px; 
-        font-weight:700; 
-        background:linear-gradient(to right,#bf953f,#fcf6ba,#b38728); 
-        -webkit-background-clip:text; 
-        -webkit-text-fill-color:transparent; 
-        animation:shine 3s infinite linear; 
-    }
-
-    /* LOGOS DE PROYECTOS - Sin distorsión */
-    .logo-proyecto { 
-        width: 150px; 
-        height: 150px; 
-        object-fit: contain; 
-        margin: 0 auto 15px; 
-        display: block; 
-        background: rgba(255,255,255,0.05); 
-        border-radius: 12px; 
-        padding: 8px;
-    }
-
-    /* SUBTÍTULOS DORADOS (encima y debajo de los logos) */
-    .tag-plusvalia {
-        background: linear-gradient(45deg, var(--dorado), #ffcc33);
-        color: #000;
-        font-size: 13px;
-        font-weight: 900;
-        padding: 6px 20px;
-        border-radius: 50px;
-        margin-bottom: 12px;
-        display: inline-block;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    .ubicacion-tag {
-        color: var(--dorado-brillante);
-        font-weight: 800;
-        font-size: 1.15rem;
-        margin: 8px 0 15px 0;
-        text-transform: uppercase;
-    }
-    .proyecto-card h3 {
-        color: var(--dorado-brillante);
-        font-size: 26px;
-        font-weight: 800;
-        margin-bottom: 10px;
-        text-shadow: 0 0 10px rgba(255, 204, 51, 0.4);
-    }
-
-    .logo-proyecto:hover {
-        cursor: pointer;
-        filter: brightness(1.2);
-        transform: scale(1.05);
-        transition: 0.3s ease;
-    }
-
-    /* CLIENTES FELICES - Más vistoso */
-    .clientes-section h2 {
-        font-size: 2.6rem;
-        background: linear-gradient(45deg, #ffcc33, #fff, #bfa046);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 15px;
-        text-shadow: 0 0 15px rgba(191, 160, 70, 0.6);
-    }
-
-    .proyectos { padding:80px 20px; text-align:center; }
-    .proyectos h2 {
-        font-size:3rem;
-        margin-bottom:50px;
-        background:linear-gradient(to bottom,#fff,var(--dorado));
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-    }
-    .grid {
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-        gap:40px;
-        max-width:1250px;
-        margin:auto;
-    }
-    .proyecto-card {
-        background:var(--oscuro-card);
-        border:1px solid rgba(191,160,70,0.3);
-        border-radius:30px;
-        padding:35px;
-        transition:0.5s all ease;
-    }
-    .proyecto-card:hover {
-        transform:translateY(-15px);
-        border-color:var(--dorado-brillante);
-        box-shadow:0 20px 50px rgba(191,160,70,0.3);
-    }
-    .botones-proyecto {
-        margin:20px 0;
-        display:flex;
-        flex-wrap:wrap;
-        gap:10px;
-        justify-content:center;
-    }
-    .btn {
-        padding:12px 20px;
-        background:linear-gradient(to bottom,#bfa046,#8a6d1d);
-        color:white;
-        text-decoration:none;
-        border-radius:50px;
-        font-weight:800;
-        cursor:pointer;
-        border:none;
-    }
-    .btn-agendar { background:linear-gradient(to bottom,#25D366,#128C7E); }
-    .video-container iframe { width:100%; height:350px; border-radius:20px; margin-top:15px; }
-    .faq-question { color:var(--dorado-brillante); cursor:pointer; font-weight:bold; display:flex; justify-content:space-between; }
-    .faq-answer { display:none; color:#ccc; margin-top:10px; line-height:1.6; }
-
-    .wa-float {
-        position:fixed; bottom:30px; right:30px; background:var(--verde-wa);
-        width:65px; height:65px; border-radius:50%; display:flex;
-        justify-content:center; align-items:center; z-index:1000;
-        box-shadow:0 8px 25px rgba(37,211,102,0.5);
-    }
-    .cta-float {
-        position:fixed; bottom:110px; right:30px; background:var(--dorado);
-        color:#000; border:none; border-radius:50px; padding:12px 20px;
-        font-weight:bold; box-shadow:0 4px 15px rgba(191,160,70,0.5);
-        z-index:999; cursor:pointer;
-    }
-
-    @keyframes shine { 0%,100% {filter:brightness(1);} 50%{filter:brightness(1.4);} }
-    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
-
- @media (max-width:768px) {
-    .grid { grid-template-columns:1fr; gap:30px; }
-    .video-container iframe { height:280px; }
-    .logo-proyecto { width:130px; height:130px; }
-}
-
-/* BOTÓN CLIENTES */
-.btn-clientes {
-    background: linear-gradient(45deg, #bfa046, #ffcc33);
-    color: #000;
-    border: none;
-    padding: 14px 28px;
-    font-size: 1rem;
-    font-weight: 800;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 8px 25px rgba(191,160,70,0.5);
-    transition: all 0.3s ease;
-    animation: pulso 2s infinite;
-}
-
-@keyframes pulso {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.btn-clientes:hover {
-    animation: none;
-    transform: scale(1.08);
-    background: linear-gradient(45deg, #ffcc33, #fff);
-}
+        /* ESTILOS DE BOTONES Y GRID (Para que tus proyectos se vean bien) */
+        .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:40px; max-width:1250px; margin:auto; }
+        .proyecto-card { background:var(--oscuro-card); border:1px solid rgba(191,160,70,0.3); border-radius:30px; padding:35px; transition:0.5s; text-align:center; }
+        .logo-proyecto { width: 150px; height: 150px; object-fit: contain; animation: latido 2s infinite ease-in-out; }
+        @keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .btn { padding:12px 20px; background:linear-gradient(to bottom,#bfa046,#8a6d1d); color:white; border-radius:50px; font-weight:800; text-decoration:none; display:inline-block; margin:5px; border:none; cursor:pointer;}
+        .wa-float { position:fixed; bottom:30px; right:30px; background:var(--verde-wa); width:65px; height:65px; border-radius:50%; display:flex; justify-content:center; align-items:center; z-index:1000; }
+        .cta-float { position:fixed; bottom:110px; right:30px; background:var(--dorado); color:#000; border:none; border-radius:50px; padding:12px 20px; font-weight:bold; z-index:999; cursor:pointer; }
+    </style>
+</head>
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPTZF6BG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38" alt="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38">
     </a>
-    <button type="button" class="cta-float" onclick="window.open('https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20urgente','_blank')">
+    <button class="cta-float" onclick="window.open('https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20urgente','_blank')">
         ¡Habla YA conmigo!
     </button>
 
-   
+    <header>
+        <video autoplay muted loop playsinline>
+            <source src="https://drive.google.com/uc?export=download&id=1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU" type="video/mp4">
+        </video>
+        <div class="overlay-negro"></div>
+
+        <div id="contenido-presentacion">
+            <img src="hl_logo.png" class="mi-logo" onclick="mostrarInfo()" alt="Humberto León">
+            <h1 style="font-size:3rem; margin:10px 0; background:linear-gradient(45deg,#bfa046,#ffcc33,#fff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Humberto León</h1>
+            <p style="color:#ffcc33; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Asesor Inmobiliario · Inversión Segura</p>
+
+            <div id="caja-info">
+                <h3 style="color:#ffcc33;">Jefe Comercial</h3>
+                <p>Hola, soy <b>Humberto León</b>. Mi compromiso es brindarte una asesoría honesta y con respaldo legal.</p>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function mostrarInfo() {
+            var x = document.getElementById("caja-info");
+            x.style.display = (x.style.display === "none") ? "block" : "none";
+        }
+        
+        function toggleProyecto(id) {
+            var x = document.getElementById(id);
+            x.style.display = (x.style.display === "block") ? "none" : "block";
+            if(x.style.display === "block") x.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
     <section class="proyectos">
         <h2>Nuestros Proyectos</h2>
         <div class="grid">
