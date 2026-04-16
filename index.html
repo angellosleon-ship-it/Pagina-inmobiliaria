@@ -21,7 +21,7 @@
             scroll-behavior:smooth; 
         }
 
-        /* --- HEADER CON VIDEO --- */
+        /* --- CABECERA CON VIDEO --- */
         header {
             position: relative;
             height: 70vh;
@@ -48,6 +48,7 @@
             z-index: 0;
         }
 
+        /* PERFIL Y LOGO */
         #contenedor-presentacion {
             position: relative;
             z-index: 10;
@@ -55,12 +56,9 @@
             align-items: center;
             justify-content: center;
             gap: 0;
-            transition: all 0.7s ease;
-            width: 95%;
-            max-width: 1100px;
+            transition: 0.7s ease-in-out;
+            width: 90%;
         }
-
-        .bloque-perfil { text-align: center; flex-shrink: 0; }
 
         .mi-logo {
             cursor: pointer;
@@ -80,7 +78,6 @@
             font-weight: 900;
         }
 
-        /* CUADRO DE INFO LATERAL */
         #mensaje-humberto {
             opacity: 0;
             max-width: 0;
@@ -97,11 +94,10 @@
             opacity: 1;
             max-width: 500px;
             padding: 25px;
-            margin-left: 15px;
         }
 
-        /* --- SECCIÓN PROYECTOS --- */
-        .proyectos { padding: 60px 20px; text-align: center; }
+        /* --- SECCIÓN PROYECTOS (SOLO UNA VEZ) --- */
+        .proyectos { padding: 80px 20px; text-align: center; }
 
         .titulo-seccion {
             font-size: clamp(2.2rem, 6vw, 3.5rem);
@@ -110,7 +106,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 50px;
-            text-shadow: 0 0 15px rgba(191,160,70,0.4);
         }
 
         .grid {
@@ -126,75 +121,125 @@
             border: 1px solid rgba(191,160,70,0.2);
             border-radius: 25px;
             padding: 30px;
-            transition: 0.4s;
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: 0.4s;
         }
 
-        .proyecto-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--dorado-brillante);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-        }
+        .proyecto-card:hover { transform: translateY(-10px); border-color: var(--dorado-brillante); }
 
-        /* SUBTÍTULOS DORADOS PRO */
         .sub-dorado {
-            color: var(--dorado-brillante) !important;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin: 15px 0 5px;
-            font-size: 1rem;
             background: linear-gradient(45deg, #bfa046, #ffcc33, #fff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .logo-proyecto {
-            width: 140px; height: 140px;
-            object-fit: contain;
-        }
+        .logo-proyecto { width: 140px; height: 140px; object-fit: contain; }
 
-        /* BOTONES FLEX */
+        /* BOTONES */
         .botones-flex { display: flex; gap: 10px; margin-top: 15px; }
 
         .btn-ver {
-            padding: 12px 20px;
+            padding: 12px 25px;
             background: linear-gradient(to bottom, #bfa046, #8a6d1d);
-            color: white;
-            border-radius: 50px;
-            font-weight: 800;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
+            color: white; border-radius: 50px; font-weight: 800; border: none; cursor: pointer;
         }
 
         .btn-agendar {
-            padding: 12px 20px;
-            background: #25D366;
-            color: white;
-            border-radius: 50px;
-            font-weight: 800;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            padding: 12px 25px;
+            background: #25D366; /* Verde WhatsApp */
+            color: white; border-radius: 50px; font-weight: 800; border: none; cursor: pointer;
+            text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
-        /* WHATSAPP FLOTANTE */
         .wa-float { position:fixed; bottom:20px; right:20px; background:var(--verde-wa); width:60px; height:60px; border-radius:50%; display:flex; justify-content:center; align-items:center; z-index:1000; }
 
         @media (max-width: 768px) {
-            #contenedor-presentacion.activo { flex-direction: column; }
-            #contenedor-presentacion.activo #mensaje-humberto { margin: 15px 0 0 0; max-width: 100%; }
+            #contenedor-presentacion.activo { flex-direction: column; text-align: center; }
+            #contenedor-presentacion.activo #mensaje-humberto { margin-top: 20px; max-width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
-        <img src="
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
+    </a>
+
+    <header>
+        <video autoplay muted loop playsinline>
+            <source src="https://drive.google.com/uc?export=download&id=1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+
+        <div id="contenedor-presentacion">
+            <div class="bloque-perfil">
+                <img src="hl_logo.png" class="mi-logo" onclick="toggleInfo()">
+                <h1 class="titulo-nombre">Humberto León</h1>
+                <p style="color:var(--dorado-brillante); font-weight:700; text-transform:uppercase; letter-spacing:2px;">Asesor Inmobiliario · Inversión Segura</p>
+            </div>
+
+            <div id="mensaje-humberto">
+                <h3 style="color:var(--dorado-brillante); margin: 0 0 10px 0;">Jefe Comercial</h3>
+                <p style="line-height:1.6; margin:0;">Hola, soy Humberto León. Mi compromiso es brindarte una asesoría honesta para que inviertas con total seguridad en el norte.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="proyectos">
+        <h2 class="titulo-seccion">Nuestros Proyectos</h2>
+        <div class="grid">
+            <div class="proyecto-card">
+                <img src="logo_fundo.png" class="logo-proyecto">
+                <p class="sub-dorado">Campo & Mar</p>
+                <h3 style="margin:5px 0 15px;">Fundo Malabrigo</h3>
+                <div class="botones-flex">
+                    <button class="btn-ver" onclick="toggleDetalle('d1')">Ver más</button>
+                    <a href="https://wa.me/51985877256" class="btn-agendar">WhatsApp</a>
+                </div>
+                <div id="d1" style="display:none; margin-top:15px; font-size:0.9rem; border-top:1px solid var(--dorado); padding-top:10px;">Lotes exclusivos con alta rentabilidad.</div>
+            </div>
+
+            <div class="proyecto-card">
+                <img src="logo_puerto.png" class="logo-proyecto">
+                <p class="sub-dorado">Frente al Mar</p>
+                <h3 style="margin:5px 0 15px;">Puerto Mar Club</h3>
+                <div class="botones-flex">
+                    <button class="btn-ver" onclick="toggleDetalle('d2')">Ver más</button>
+                    <a href="https://wa.me/51985877256" class="btn-agendar">WhatsApp</a>
+                </div>
+                <div id="d2" style="display:none; margin-top:15px; font-size:0.9rem; border-top:1px solid var(--dorado); padding-top:10px;">Tu casa de playa con club privado.</div>
+            </div>
+
+            <div class="proyecto-card">
+                <img src="logo_monteverde.png" class="logo-proyecto">
+                <p class="sub-dorado">Alta Plusvalía</p>
+                <h3 style="margin:5px 0 15px;">Residencial Monte Verde</h3>
+                <div class="botones-flex">
+                    <button class="btn-ver" onclick="toggleDetalle('d3')">Ver más</button>
+                    <a href="https://wa.me/51985877256" class="btn-agendar">WhatsApp</a>
+                </div>
+                <div id="d3" style="display:none; margin-top:15px; font-size:0.9rem; border-top:1px solid var(--dorado); padding-top:10px;">Inversión estratégica en zona de crecimiento.</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleInfo() {
+            document.getElementById("contenedor-presentacion").classList.toggle("activo");
+        }
+        function toggleDetalle(id) {
+            let x = document.getElementById(id);
+            x.style.display = (x.style.display === "none") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
     <section class="proyectos">
         <h2>Nuestros Proyectos</h2>
         <div class="grid">
