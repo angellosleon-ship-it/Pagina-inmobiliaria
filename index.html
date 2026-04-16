@@ -1,84 +1,17 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humberto León | Inversión Inmobiliaria</title>
-    <link rel="stylesheet" href="estilos.css">
-</head>
-<body>
-
-    <a href="https://wa.me/51985877256" class="wa-flotante" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-    </a>
-
-    <div id="lightbox">
-        <button class="close-btn" onclick="cerrarGaleria()">CERRAR [X]</button>
-        <button class="btn-nav prev" onclick="cambiarFoto(-1)">❮</button>
-        <img id="lightbox-img" src="" alt="Galería">
-        <button class="btn-nav next" onclick="cambiarFoto(1)">❯</button>
+<div class="visor">
+    <div id="inicio">
+        <h2 style="color:#ffcc33; font-size: 2.2rem;">¡Bienvenido Inversionista!</h2>
+        <p>Selecciona un proyecto a la izquierda para ver los detalles.</p>
     </div>
 
-    <header>
-        <img src="hl_logo.png" class="logo-principal" alt="HL Logo">
-        <h1>Humberto León</h1>
-        <p>ASESOR INMOBILIARIO PROFESIONAL</p>
-    </header>
-
-    <main class="contenedor">
-        <aside class="menu">
-            <button class="btn-menu" onclick="mostrarProyecto('fundo')">Fundo Malabrigo</button>
-            <button class="btn-menu" onclick="mostrarProyecto('puerto')">Puerto Mar Club</button>
-            <button class="btn-menu" onclick="mostrarProyecto('monte')">Monte Verde</button>
-            <button class="btn-menu btn-clientes" onclick="mostrarProyecto('clientes')">🤝 Clientes Felices</button>
-        </aside>
-
-        <section class="visor">
-            <div id="inicio">
-                <h2>¡Bienvenido Inversionista!</h2>
-                <p>Selecciona un proyecto para ver los detalles.</p>
-            </div>
-
-            <div id="fundo" class="detalle" style="display:none;">
-                <img src="logo-fundo.png" class="logo-proyecto" alt="Fundo Malabrigo">
-                <div class="botones-accion">
-                    <button class="btn-accion" onclick="abrirGaleria(['fundo1.jpg','fundo2.jpg'])">📸 GALERÍA</button>
-                    <button class="btn-accion" onclick="cargarVideos('v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU','1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m'])">🎥 VIDEOS</button>
-                    <a href="https://maps.google.com/?q=-7.6961,-79.4355" target="_blank" class="btn-accion btn-mapa">📍 UBICACIÓN</a>
-                    <a href="https://wa.me/51985877256?text=Quiero%20agendar%20visita" target="_blank" class="btn-accion btn-agendar">📅 AGENDAR</a>
-                </div>
-                <div id="v-fundo" class="video-grid"></div>
-            </div>
-            
-            </section>
-    </main>
-
-    <footer class="faq-footer">
-        <h3>Preguntas Frecuentes</h3>
-        <p><b>¿Tienen títulos?</b> Sí, inscritos en registros públicos.</p>
-        <div class="redes">
-            <a href="https://facebook.com/humbertoleon" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
-            <a href="https://instagram.com/humbertoleondiaz" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"></a>
+    <div id="fundo" class="detalle" style="display:none;">
+        <h2 style="color:#ffcc33;">FUNDO MALABRIGO</h2>
+        <div class="botones-accion">
+            <button class="btn-accion btn-galeria" onclick="abrirGaleria(['fundo1.jpg','fundo2.jpg'])">📸 GALERÍA</button>
+            <button class="btn-accion btn-videos" onclick="cargarVideos('v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">🎥 VIDEOS</button>
+            <a href="https://maps.google.com/?q=Paijan" target="_blank" class="btn-accion btn-mapa">📍 UBICACIÓN</a>
+            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20de%20Malabrigo" target="_blank" class="btn-accion btn-agendar">📅 AGENDAR</a>
         </div>
-    </footer>
-
-    <script>
-        let imgs = []; let i = 0;
-        function mostrarProyecto(id) {
-            document.getElementById('inicio').style.display = 'none';
-            document.querySelectorAll('.detalle').forEach(d => d.style.display = 'none');
-            document.querySelectorAll('.video-grid').forEach(v => v.innerHTML = '');
-            document.getElementById(id).style.display = 'block';
-        }
-        function cargarVideos(divId, ids) {
-            const div = document.getElementById(divId); div.innerHTML = '';
-            ids.forEach(id => {
-                div.innerHTML += `<iframe src="https://drive.google.com/file/d/${id}/preview" allow="autoplay"></iframe>`;
-            });
-        }
-        function abrirGaleria(l) { imgs=l; i=0; document.getElementById('lightbox-img').src=imgs[i]; document.getElementById('lightbox').style.display='flex'; }
-        function cerrarGaleria() { document.getElementById('lightbox').style.display='none'; }
-        function cambiarFoto(d) { i+=d; if(i<0)i=imgs.length-1; if(i>=imgs.length)i=0; document.getElementById('lightbox-img').src=imgs[i]; }
-    </script>
-</body>
-</html>
+        <div id="v-fundo" class="video-grid"></div>
+    </div>
+</div>
