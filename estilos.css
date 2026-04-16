@@ -1,190 +1,195 @@
-/* estilos.css - Humberto León Premium */
 :root {
     --dorado: #bfa046;
     --dorado-brillante: #ffcc33;
     --oscuro-deep: #020617;
     --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a);
-    --verde-wa: #25D366;
+    --blanco: #ffffff;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    background: var(--oscuro-deep); 
-    color: white; 
-    scroll-behavior: smooth; 
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--oscuro-deep);
+    color: var(--blanco);
     overflow-x: hidden;
 }
 
-/* --- BARRA DE REDES SOCIALES --- */
-.social-bar {
-    position: absolute;
-    top: 25px;
-    right: 5%;
-    z-index: 100;
-    display: flex;
-    gap: 15px;
-}
-
-.social-bar a {
-    color: white;
-    font-size: 1.4rem;
-    transition: 0.4s;
-    background: rgba(255,255,255,0.05);
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid var(--dorado);
-    text-decoration: none;
-}
-
-.social-bar a:hover {
-    background: var(--dorado);
-    color: #000;
-    transform: translateY(-5px) rotate(360deg);
-    box-shadow: 0 0 20px var(--dorado-brillante);
-}
-
-/* --- HEADER Y VIDEO --- */
+/* HEADER DINÁMICO */
 header {
     position: relative;
-    height: 85vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('fondo.jpg') center/cover no-repeat;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-header video {
-    position: absolute;
-    top: 50%; left: 50%;
-    min-width: 100%; min-height: 100%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    object-fit: cover;
-}
-
-.overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(2,6,23,0.9) 100%);
-    z-index: 0;
-}
-
-/* CONTENEDOR LATERAL DINÁMICO */
-#contenedor-presentacion {
-    position: relative;
-    z-index: 10;
+#contenedor-principal {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 95%;
+    gap: 40px;
+    max-width: 1100px;
+    width: 100%;
+    transition: 0.6s;
 }
 
-.mi-logo {
-    cursor: pointer;
-    width: 190px;
+/* Estado cuando el logo se mueve a la izquierda */
+.header-activo #contenedor-principal {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.header-activo #bloque-logo {
+    text-align: left;
+}
+
+#info-humberto {
+    max-width: 450px;
+    background: rgba(15, 23, 42, 0.9);
+    padding: 30px;
     border-radius: 20px;
-    border: 3px solid var(--dorado);
-    box-shadow: 0 0 35px rgba(191,160,70,0.6);
+    border: 1px solid var(--dorado);
+    opacity: 0;
+    transform: translateX(50px);
+    display: none;
     transition: 0.5s;
 }
 
-.mi-logo:hover { transform: scale(1.08); border-color: white; }
-
-#mensaje-humberto {
-    opacity: 0;
-    max-width: 0;
-    overflow: hidden;
-    transition: all 0.7s ease-in-out;
-    background: rgba(15, 23, 42, 0.95);
-    border-radius: 25px;
-    border-left: 5px solid var(--dorado);
-}
-
-#contenedor-presentacion.activo { gap: 45px; }
-#contenedor-presentacion.activo #mensaje-humberto {
+.header-activo #info-humberto {
+    display: block;
     opacity: 1;
-    max-width: 550px;
-    padding: 35px;
+    transform: translateX(0);
 }
 
-/* --- SECCIÓN PROYECTOS --- */
-.proyectos { padding: 100px 5%; text-align: center; }
-
-.titulo-proyectos {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    font-weight: 900;
-    background: linear-gradient(to right, #bfa046, #fff, #ffcc33);
+/* TEXTOS DORADOS */
+.texto-dorado {
+    background: linear-gradient(45deg, var(--dorado), var(--dorado-brillante), #fff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 80px;
+    margin: 0;
+}
+
+/* SECCIÓN PROYECTOS TIPO DASHBOARD */
+.seccion-proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 5%;
+    gap: 30px;
+    background: #040a1a;
+}
+
+/* Menú Lateral de Botones */
+.menu-botones {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn-nav {
+    background: linear-gradient(45deg, var(--dorado), var(--dorado-brillante));
+    color: #000;
+    border: none;
+    padding: 20px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border-radius: 15px;
+    cursor: pointer;
     text-transform: uppercase;
+    transition: 0.3s;
+    animation: pulso 2s infinite;
+    text-align: center;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 50px;
-    max-width: 1400px;
-    margin: auto;
+@keyframes pulso {
+    0% { box-shadow: 0 0 0 0 rgba(191, 160, 70, 0.7); transform: scale(1); }
+    70% { box-shadow: 0 0 0 15px rgba(191, 160, 70, 0); transform: scale(1.03); }
+    100% { box-shadow: 0 0 0 0 rgba(191, 160, 70, 0); transform: scale(1); }
 }
 
-.proyecto-card {
+.btn-nav:hover {
+    animation: none;
+    background: #fff;
+    transform: translateX(10px);
+}
+
+/* Ventana de Detalle del Proyecto */
+.visor-proyecto {
+    flex: 2;
+    min-width: 350px;
     background: var(--oscuro-card);
-    border: 1px solid rgba(191,160,70,0.15);
-    border-radius: 40px;
-    padding: 50px 30px;
-    transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    position: relative;
+    border-radius: 30px;
+    padding: 40px;
+    border: 1px solid rgba(191, 160, 70, 0.3);
+    min-height: 500px;
 }
 
-.proyecto-card:hover {
-    transform: translateY(-25px);
-    border-color: var(--dorado-brillante);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+.contenido-proyecto {
+    display: none; /* Se activa con JS */
+    animation: fadeIn 0.5s ease-in;
 }
 
-/* LOGOS CON EFECTO LATIDO */
-.logo-proyecto {
-    width: 170px; height: 170px;
+.contenido-proyecto.activo {
+    display: block;
+}
+
+.logo-visor {
+    width: 150px;
+    height: 150px;
     object-fit: contain;
-    margin-bottom: 25px;
-    animation: latido 3s infinite ease-in-out;
+    margin-bottom: 20px;
 }
 
-@keyframes latido {
-    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(255,255,255,0.1)); }
-    50% { transform: scale(1.08); filter: drop-shadow(0 0 20px var(--dorado)); }
+/* Botones secundarios dentro de cada proyecto */
+.grid-botones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 25px;
 }
 
-/* BOTONES */
-.btn { 
-    padding: 16px 35px; 
-    background: linear-gradient(135deg, #bfa046, #8a6d1d); 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 50px; 
-    font-weight: 800; 
-    display: inline-block; 
-    margin: 10px 5px; 
-    transition: 0.4s;
+.btn-accion {
+    padding: 12px;
+    border-radius: 50px;
+    border: 1px solid var(--dorado);
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
-.btn:hover { transform: scale(1.15); box-shadow: 0 10px 20px rgba(191,160,70,0.4); }
 
-.wa-float {
-    position: fixed; bottom: 35px; right: 35px;
-    background: var(--verde-wa); width: 75px; height: 75px;
-    border-radius: 50%; display: flex; justify-content: center; align-items: center;
-    z-index: 1000; box-shadow: 0 10px 35px rgba(37,211,102,0.5);
-    transition: 0.5s;
+.btn-accion:hover {
+    background: var(--dorado);
+    color: black;
 }
-.wa-float:hover { transform: scale(1.2) rotate(15deg); }
 
-footer { padding: 80px 20px; text-align: center; border-top: 1px solid var(--dorado); background: #000; }
+/* Redes Sociales */
+.social-bar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.social-bar img {
+    width: 40px;
+    transition: 0.3s;
+}
+
+.social-bar img:hover {
+    transform: translateY(-5px) scale(1.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .header-activo #contenedor-principal { flex-direction: column; text-align: center; }
+    .seccion-proyectos { flex-direction: column; }
+}
