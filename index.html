@@ -504,16 +504,26 @@
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
  <script>
 function toggleProyecto(id) {
-    var el = document.getElementById(id);
+    var mensaje = document.getElementById(id);
+    var contenedor = document.getElementById("contenedor-principal");
 
-    if (el.style.opacity == "1") {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(30px)";
-        el.style.pointerEvents = "none";
+    if (mensaje.style.opacity == "1") {
+        // VOLVER AL CENTRO
+        mensaje.style.opacity = "0";
+        mensaje.style.transform = "translateY(30px)";
+        mensaje.style.pointerEvents = "none";
+
+        contenedor.style.flexDirection = "column";
+        contenedor.style.textAlign = "center";
+
     } else {
-        el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
-        el.style.pointerEvents = "auto";
+        // MODO PRO (lado a lado)
+        mensaje.style.opacity = "1";
+        mensaje.style.transform = "translateY(0)";
+        mensaje.style.pointerEvents = "auto";
+
+        contenedor.style.flexDirection = "row";
+        contenedor.style.textAlign = "left";
     }
 }
 </script>
