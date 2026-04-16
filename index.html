@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humberto León</title>
+<title>Humberto León Inmobiliaria</title>
 
 <style>
 :root {
@@ -20,31 +19,36 @@ body {
     font-family:'Segoe UI',sans-serif;
     background:var(--oscuro-deep);
     color:white;
-    scroll-behavior:smooth;
 }
 
 /* HEADER */
 header {
-    position: relative;
-    min-height: 65vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo.jpg') center/cover no-repeat;
+    position:relative;
+    min-height:65vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('fondo.jpg') center/cover no-repeat;
 }
 
 #contenedor-principal {
     display:flex;
+    flex-direction:column;
     align-items:center;
     justify-content:center;
-    flex-direction:column;
-    gap:30px;
     text-align:center;
-    transition:0.6s;
+    gap:30px;
     width:100%;
     max-width:1000px;
-    margin:auto;
+}
+
+/* LOGO */
+#bloque-logo img {
+    cursor:pointer;
+    width:190px;
+    border-radius:12px;
+    border:3px solid #bfa046;
 }
 
 /* BOTÓN CLIENTES */
@@ -58,60 +62,63 @@ header {
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 8px 25px rgba(191,160,70,0.5);
-    transition: all 0.3s ease;
     animation: pulso 2s infinite;
+    transition: 0.3s;
 }
 
 .btn-clientes:hover {
-    animation: none;
-    transform: scale(1.08);
-    background: linear-gradient(45deg, #ffcc33, #fff);
+    animation:none;
+    transform:scale(1.08);
+    background:linear-gradient(45deg,#ffcc33,#fff);
 }
 
 @keyframes pulso {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
 }
 
 /* PROYECTOS */
-.proyectos { padding:80px 20px; text-align:center; }
+.proyectos {
+    padding:80px 20px;
+    text-align:center;
+}
 
 .grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-    gap:40px;
-    max-width:1250px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    max-width:1200px;
     margin:auto;
 }
 
 .proyecto-card {
     background:var(--oscuro-card);
+    padding:25px;
+    border-radius:25px;
     border:1px solid rgba(191,160,70,0.3);
+}
+
+/* BOTONES */
+.btn {
+    padding:12px 18px;
+    border:none;
     border-radius:30px;
-    padding:35px;
-    transition:0.5s all ease;
-}
-
-.proyecto-card:hover {
-    transform:translateY(-15px);
-    border-color:var(--dorado-brillante);
-}
-
-/* FAQ */
-.faq-question {
-    color:var(--dorado-brillante);
-    cursor:pointer;
     font-weight:bold;
-    display:flex;
-    justify-content:space-between;
+    cursor:pointer;
+    background:linear-gradient(to bottom,#bfa046,#8a6d1d);
+    color:white;
 }
 
-.faq-answer {
-    display:none;
-    color:#ccc;
-    margin-top:10px;
-    line-height:1.6;
+.btn-agendar {
+    background:linear-gradient(to bottom,#25D366,#128C7E);
+}
+
+/* CLIENTES */
+.clientes-section {
+    text-align:center;
+    padding:60px 20px;
+    background:rgba(191,160,70,0.05);
 }
 
 /* WHATSAPP */
@@ -119,19 +126,13 @@ header {
     position:fixed;
     bottom:30px;
     right:30px;
-    background:var(--verde-wa);
-    width:65px;
-    height:65px;
+    width:60px;
+    height:60px;
+    background:#25D366;
     border-radius:50%;
     display:flex;
-    justify-content:center;
     align-items:center;
-    z-index:1000;
-}
-
-/* RESPONSIVE */
-@media (max-width:768px) {
-    .grid { grid-template-columns:1fr; gap:30px; }
+    justify-content:center;
 }
 </style>
 </head>
@@ -139,95 +140,92 @@ header {
 <body>
 
 <header>
-<div id="contenedor-principal">
+    <div id="contenedor-principal">
 
-    <div>
-        <img src="hl_logo.png" onclick="toggleHeader()" style="width:190px; cursor:pointer;">
-        <h1>Humberto León</h1>
-        <p>Asesor Inmobiliario</p>
+        <div id="bloque-logo">
+            <img src="hl_logo.png" onclick="toggleHeader()">
+            <h1 style="color:#ffcc33;">Humberto León</h1>
+            <p>Asesor Inmobiliario</p>
+        </div>
+
+        <div id="info-humberto" style="display:none; max-width:500px;">
+            <h3 style="color:#ffcc33;">Asesor Inmobiliario</h3>
+            <p>Te acompaño en todo el proceso de inversión segura.</p>
+        </div>
+
     </div>
-
-    <div id="info-humberto" style="opacity:0; transform:translateY(30px); pointer-events:none;">
-        <h3>Jefe Comercial</h3>
-        <p>Asesoría inmobiliaria segura y confiable.</p>
-    </div>
-
-</div>
 </header>
-
-<!-- CLIENTES -->
-<section style="text-align:center; padding:60px 20px;">
-    <h2>CONFIANZA REAL</h2>
-
-    <button class="btn-clientes"
-    onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg'])">
-    🤝 Ver Clientes Reales
-    </button>
-
-    <p style="color:#ffcc33;">Fotos reales de firmas y entregas</p>
-</section>
 
 <!-- PROYECTOS -->
 <section class="proyectos">
 <h2>Nuestros Proyectos</h2>
+
 <div class="grid">
 
-    <div class="proyecto-card">
-        <h3>Fundo Malabrigo</h3>
-        <button onclick="toggleProyecto('info-fundo')">Ver</button>
+<div class="proyecto-card">
+<h3>Fundo Malabrigo</h3>
+<img src="logo-fundo.png" width="120">
+<div>
+<button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg'])">FOTOS</button>
+<a class="btn btn-agendar" href="#">AGENDAR</a>
+</div>
+</div>
 
-        <div id="info-fundo" style="display:none;">
-            <p>Proyecto de campo</p>
-        </div>
-    </div>
+<div class="proyecto-card">
+<h3>Puerto Mar</h3>
+<img src="logo-puerto.png" width="120">
+<div>
+<button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg'])">FOTOS</button>
+<a class="btn btn-agendar" href="#">AGENDAR</a>
+</div>
+</div>
+
+<div class="proyecto-card">
+<h3>Monte Verde</h3>
+<img src="logo-monte.png" width="120">
+<div>
+<button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg'])">FOTOS</button>
+<a class="btn btn-agendar" href="#">AGENDAR</a>
+</div>
+</div>
 
 </div>
 </section>
 
-<!-- FAQ -->
-<section>
-<div class="faq-question" onclick="toggleFaq(this)">Pregunta 1</div>
-<div class="faq-answer">Respuesta 1</div>
+<!-- CLIENTES -->
+<section class="clientes-section">
+<h2>CONFIANZA REAL</h2>
+
+<button class="btn-clientes"
+onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg'])">
+🤝 Ver Clientes Reales
+</button>
+
+<p style="color:#ffcc33;font-weight:bold;">Fotos reales de entregas</p>
 </section>
 
 <!-- WHATSAPP -->
 <a class="wa-float" href="https://wa.me/51985877256" target="_blank">
-    WA
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
 </a>
 
+<!-- SCRIPT ÚNICO (ARREGLADO) -->
 <script>
-let headerActivo = false;
 
 function toggleHeader() {
-    const contenedor = document.getElementById("contenedor-principal");
-    const mensaje = document.getElementById("info-humberto");
-
-    if (!headerActivo) {
-        contenedor.style.flexDirection = "row";
-        mensaje.style.opacity = "1";
-        mensaje.style.pointerEvents = "auto";
-        headerActivo = true;
-    } else {
-        contenedor.style.flexDirection = "column";
-        mensaje.style.opacity = "0";
-        mensaje.style.pointerEvents = "none";
-        headerActivo = false;
-    }
+    const info = document.getElementById("info-humberto");
+    info.style.display = (info.style.display === "block") ? "none" : "block";
 }
 
-function toggleProyecto(id) {
+function abrirImagenes(imgs){
+    alert("Aquí abrirías imágenes: " + imgs.join(", "));
+}
+
+function toggleProyecto(id){
     const el = document.getElementById(id);
     el.style.display = (el.style.display === "block") ? "none" : "block";
 }
 
-function toggleFaq(el) {
-    const answer = el.nextElementSibling;
-    answer.style.display = (answer.style.display === "block") ? "none" : "block";
-}
-
-function abrirImagenes(imgs){
-    alert("Lightbox funcionando con " + imgs.length + " imágenes");
-}
 </script>
 
 </body>
