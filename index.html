@@ -1,276 +1,278 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humberto León - Jefe Comercial</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humberto León - Jefe Comercial</title>
+    <style>
+        :root {
+            --dorado: #bfa046;
+            --dorado-brillante: #ffcc33;
+            --oscuro-deep: #020617;
+            --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a);
+            --verde-wa: #25D366;
+        }
 
-<style>
-:root {
-    --dorado: #bfa046;
-    --dorado-brillante: #ffcc33;
-    --oscuro-deep: #020617;
-    --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a);
-    --verde-wa: #25D366;
-}
+        body { 
+            margin:0; 
+            font-family:'Segoe UI', sans-serif; 
+            background:var(--oscuro-deep); 
+            color:white; 
+            scroll-behavior:smooth; 
+        }
 
-body { 
-    margin:0; 
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    background:var(--oscuro-deep); 
-    color:white; 
-    scroll-behavior:smooth; 
-}
+        /* --- HEADER CON VIDEO --- */
+        header {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
 
-/* HEADER */
-header {
-    position: relative;
-    height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
+        header video {
+            position: absolute;
+            top: 50%; left: 50%;
+            min-width: 100%; min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            object-fit: cover;
+        }
 
-header video {
-    position: absolute;
-    top: 50%; left: 50%;
-    min-width: 100%; min-height: 100%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    object-fit: cover;
-}
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.65);
+            z-index: 0;
+        }
 
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-}
+        #contenedor-presentacion {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            transition: all 0.7s ease;
+            width: 95%;
+            max-width: 1100px;
+        }
 
-/* CONTENEDOR */
-#contenedor-presentacion {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    transition: all 0.7s ease;
-    width: 95%;
-    max-width: 1100px;
-}
+        .bloque-perfil { text-align: center; flex-shrink: 0; }
 
-.bloque-perfil {
-    text-align: center;
-}
+        .mi-logo {
+            cursor: pointer;
+            width: 160px;
+            border-radius: 15px;
+            border: 3px solid var(--dorado);
+            box-shadow: 0 0 20px rgba(191,160,70,0.5);
+            transition: 0.3s;
+        }
 
-.mi-logo {
-    cursor: pointer;
-    width: 180px;
-    border-radius: 15px;
-    border: 3px solid var(--dorado);
-    box-shadow: 0 0 25px rgba(191,160,70,0.4);
-}
+        /* TÍTULOS DE CABECERA */
+        .titulo-nombre {
+            font-size: clamp(2.5rem, 7vw, 3.5rem);
+            margin: 15px 0 5px;
+            background: linear-gradient(45deg, #bfa046, #ffcc33, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
 
-/* MENSAJE */
-#mensaje-humberto {
-    opacity: 0;
-    max-width: 0;
-    overflow: hidden;
-    transition: all 0.6s ease;
-    background: rgba(2,6,23,0.95);
-    border-radius: 20px;
-    border: 1px solid var(--dorado);
-}
+        /* CUADRO DE INFO LATERAL */
+        #mensaje-humberto {
+            opacity: 0;
+            max-width: 0;
+            overflow: hidden;
+            transition: 0.6s ease;
+            background: rgba(2, 6, 23, 0.95);
+            border-radius: 20px;
+            border: 1px solid var(--dorado);
+            text-align: left;
+        }
 
-#contenedor-presentacion.activo #mensaje-humberto {
-    opacity: 1;
-    max-width: 500px;
-    padding: 30px;
-    margin-left: 10px;
-}
+        #contenedor-presentacion.activo { gap: 40px; }
+        #contenedor-presentacion.activo #mensaje-humberto {
+            opacity: 1;
+            max-width: 500px;
+            padding: 25px;
+            margin-left: 15px;
+        }
 
-/* PROYECTOS */
-.proyectos { padding: 80px 20px; text-align:center; }
+        /* --- SECCIÓN PROYECTOS (ÚNICA) --- */
+        .proyectos { padding: 60px 20px; text-align: center; }
 
-.titulo-proyectos {
-    font-size: 3rem;
-    font-weight: 900;
-    background: linear-gradient(45deg,#bfa046,#ffcc33,#fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 50px;
-}
+        .titulo-seccion {
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #bfa046, #ffcc33, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 50px;
+            text-shadow: 0 0 15px rgba(191,160,70,0.4);
+        }
 
-.grid {
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
-    max-width:1200px;
-    margin:auto;
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-.proyecto-card {
-    background: var(--oscuro-card);
-    padding: 30px;
-    border-radius: 25px;
-    border: 1px solid rgba(191,160,70,0.3);
-    transition: 0.4s;
-}
+        .proyecto-card {
+            background: var(--oscuro-card);
+            border: 1px solid rgba(191,160,70,0.2);
+            border-radius: 25px;
+            padding: 30px;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.proyecto-card:hover {
-    transform: translateY(-10px);
-}
+        .proyecto-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--dorado-brillante);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
 
-.logo-proyecto {
-    width: 140px;
-    height: 140px;
-    object-fit: contain;
-    animation: latido 2s infinite;
-}
+        /* SUBTÍTULOS DORADOS PRO */
+        .sub-dorado {
+            color: var(--dorado-brillante) !important;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 15px 0 5px;
+            font-size: 1rem;
+            background: linear-gradient(45deg, #bfa046, #ffcc33, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-@keyframes latido {
-    0%,100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
+        .logo-proyecto {
+            width: 140px; height: 140px;
+            object-fit: contain;
+            animation: latido 2s infinite ease-in-out;
+        }
 
-/* BOTONES */
-.btn {
-    padding: 12px 20px;
-    background: linear-gradient(to bottom,#bfa046,#8a6d1d);
-    color: white;
-    border-radius: 50px;
-    font-weight: 800;
-    border: none;
-    cursor: pointer;
-    margin: 5px;
-    display:inline-block;
-}
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
 
-.btn-wa {
-    background:#25D366;
-}
+        /* BOTONES */
+        .botones-flex { display: flex; gap: 10px; margin-top: 15px; }
 
-/* WHATSAPP */
-.wa-float {
-    position:fixed;
-    bottom:30px;
-    right:30px;
-    background:var(--verde-wa);
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:1000;
-}
+        .btn-ver {
+            padding: 12px 20px;
+            background: linear-gradient(to bottom, #bfa046, #8a6d1d);
+            color: white;
+            border-radius: 50px;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
 
-/* CTA */
-.cta-float {
-    position:fixed;
-    bottom:110px;
-    right:30px;
-    background:var(--dorado);
-    color:#000;
-    border:none;
-    border-radius:50px;
-    padding:12px 20px;
-    font-weight:900;
-    cursor:pointer;
-}
-</style>
+        /* BOTÓN AGENDAR / WHATSAPP VERDE */
+        .btn-agendar {
+            padding: 12px 20px;
+            background: #25D366; /* Verde Pro */
+            color: white;
+            border-radius: 50px;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-agendar:hover { background: #1eb954; transform: scale(1.05); }
+
+        .wa-float { position:fixed; bottom:20px; right:20px; background:var(--verde-wa); width:60px; height:60px; border-radius:50%; display:flex; justify-content:center; align-items:center; z-index:1000; }
+
+        @media (max-width: 768px) {
+            #contenedor-presentacion.activo { flex-direction: column; }
+            #contenedor-presentacion.activo #mensaje-humberto { margin: 15px 0 0 0; max-width: 100%; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/51985877256" class="wa-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
-</a>
+    <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
+    </a>
 
-<button class="cta-float"
-onclick="window.open('https://wa.me/51985877256','_blank')">
-¡Habla YA conmigo!
-</button>
+    <header>
+        <video autoplay muted loop playsinline>
+            <source src="https://drive.google.com/uc?export=download&id=1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
 
-<!-- HEADER -->
-<header>
-<video autoplay muted loop playsinline>
-    <source src="https://drive.google.com/uc?export=download&id=1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU">
-</video>
-<div class="overlay"></div>
+        <div id="contenedor-presentacion">
+            <div class="bloque-perfil">
+                <img src="hl_logo.png" class="mi-logo" onclick="toggleInfo()" alt="Logo">
+                <h1 class="titulo-nombre">Humberto León</h1>
+                <p style="color:var(--dorado-brillante); font-weight:700; text-transform:uppercase; letter-spacing:2px;">Asesor Inmobiliario · Inversión Segura</p>
+            </div>
 
-<div id="contenedor-presentacion">
-    <div class="bloque-perfil">
-        <img src="hl_logo.png" class="mi-logo" onclick="toggleHeader()">
-        <h1>Humberto León</h1>
-        <p>Asesor Inmobiliario</p>
-    </div>
+            <div id="mensaje-humberto">
+                <h3 style="color:var(--dorado-brillante); margin-top:0;">Jefe Comercial</h3>
+                <p style="line-height:1.6; margin-bottom:0;">Hola, soy Humberto León. Mi compromiso es brindarte una asesoría clara y honesta para que inviertas con total seguridad en los mejores proyectos del norte.</p>
+            </div>
+        </div>
+    </header>
 
-    <div id="mensaje-humberto">
-        <h3>Jefe Comercial</h3>
-        <p>Asesoría segura en inversiones inmobiliarias.</p>
-    </div>
-</div>
-</header>
+    <section class="proyectos">
+        <h2 class="titulo-seccion">Nuestros Proyectos</h2>
+        
+        <div class="grid">
+            <div class="proyecto-card">
+                <img src="logo_fundo.png" class="logo-proyecto">
+                <p class="sub-dorado">Campo & Mar</p>
+                <h3 style="margin:5px 0 15px;">Fundo Malabrigo</h3>
+                <div class="botones-flex">
+                    <button class="btn-ver" onclick="toggleDetalle('d1')">Ver</button>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20info%20de%20Fundo%20Malabrigo" class="btn-agendar" target="_blank">WhatsApp</a>
+                </div>
+                <div id="d1" style="display:none; margin-top:15px; font-size:0.9rem;">Lotes exclusivos con vista privilegiada.</div>
+            </div>
 
-<!-- PROYECTOS -->
-<section class="proyectos">
-<h2 class="titulo-proyectos">Nuestros Proyectos</h2>
+            <div class="proyecto-card">
+                <img src="logo_puerto.png" class="logo-proyecto">
+                <p class="sub-dorado">Frente al Mar</p>
+                <h3 style="margin:5px 0 15px;">Puerto Mar Club</h3>
+                <div class="botones-flex">
+                    <button class="btn-ver" onclick="toggleDetalle('d2')">Ver</button>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20info%20de%20Puerto%20Mar" class="btn-agendar" target="_blank">WhatsApp</a>
+                </div>
+                <div id="d2" style="display:none; margin-top:15px; font-size:0.9rem;">Tu casa de playa con club privado.</div>
+            </div>
 
-<div class="grid">
+            <div class="proyecto-card">
+                <img src="logo_monteverde.png" class="logo-proyecto">
+                <p class="sub-dorado">Alta Plusvalía</p>
+                <h3 style="margin:5px 0 15px;">Residencial Monte Verde</h3>
+                <div class="botones-flex">
+                    <button class="btn-ver" onclick="toggleDetalle('d3')">Ver</button>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20info%20de%20Monte%20Verde" class="btn-agendar" target="_blank">WhatsApp</a>
+                </div>
+                <div id="d3" style="display:none; margin-top:15px; font-size:0.9rem;">Inversión estratégica en zona de crecimiento.</div>
+            </div>
+        </div>
+    </section>
 
-<div class="proyecto-card">
-<img src="logo_fundo.png" class="logo-proyecto">
-<h3>Fundo Malabrigo</h3>
-<button class="btn" onclick="toggleProyecto('p1')">Ver</button>
-<a class="btn btn-wa" href="https://wa.me/51985877256">WhatsApp</a>
-<div id="p1" style="display:none;">
-<p>Proyecto de campo exclusivo.</p>
-</div>
-</div>
-
-<div class="proyecto-card">
-<img src="logo_puerto.png" class="logo-proyecto">
-<h3>Puerto Mar Club</h3>
-<button class="btn" onclick="toggleProyecto('p2')">Ver</button>
-<a class="btn btn-wa" href="https://wa.me/51985877256">WhatsApp</a>
-<div id="p2" style="display:none;">
-<p>Frente al mar.</p>
-</div>
-</div>
-
-<div class="proyecto-card">
-<img src="logo_monteverde.png" class="logo-proyecto">
-<h3>Monte Verde</h3>
-<button class="btn" onclick="toggleProyecto('p3')">Ver</button>
-<a class="btn btn-wa" href="https://wa.me/51985877256">WhatsApp</a>
-<div id="p3" style="display:none;">
-<p>Alta plusvalía.</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<script>
-let activo = false;
-
-function toggleHeader(){
-    document.getElementById("contenedor-presentacion")
-    .classList.toggle("activo");
-}
-
-function toggleProyecto(id){
-    let el = document.getElementById(id);
-    el.style.display = (el.style.display === "block") ? "none" : "block";
-}
-</script>
-
-</body>
-</html>
+    <script>
+        function toggleInfo() {
+            document.getElementById("contenedor-presentacion").classList.toggle("activo");
+        }
+        function toggleDetalle(id) {
+            let x = document.getElementById(id);
+            x.style.display = (x.style.display === "
     <section class="proyectos">
         <h2>Nuestros Proyectos</h2>
         <div class="grid">
