@@ -12,16 +12,13 @@
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
 </a>
-
-<button class="cta-float" onclick="window.open('https://wa.me/51985877256','_blank')">
-¡Habla YA conmigo!
-</button>
 
 <!-- HEADER -->
 <header>
-<video autoplay muted loop playsinline>
+
+<video autoplay muted loop>
 <source src="https://drive.google.com/uc?export=download&id=1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU">
 </video>
 
@@ -32,120 +29,94 @@
 <div>
 <img src="hl_logo.png" class="mi-logo" onclick="toggleHeader()">
 
-<h1 class="titulo">Humberto León</h1>
-<p class="subtitulo">Asesor Inmobiliario · Inversión Segura</p>
+<h1 style="background:linear-gradient(45deg,#bfa046,#fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;">
+Humberto León
+</h1>
+
+<p>Asesor Inmobiliario</p>
 </div>
 
 <div id="info-humberto">
 <h3>Jefe Comercial</h3>
-<p>
-Hola, soy Humberto León. Te ayudo a invertir con seguridad jurídica y alta rentabilidad.
-</p>
+<p>Te ayudo a invertir con seguridad y alta rentabilidad.</p>
 </div>
 
 </div>
 </header>
 
-<!-- PROYECTOS -->
-<section class="proyectos">
-
-<h2>Nuestros Proyectos</h2>
-
-<!-- FUNDO -->
-<div class="proyecto-card">
-<img src="logo-fundo.png" class="logo-proyecto" onclick="toggleProyecto('info-fundo')">
-
-<div id="info-fundo" class="contenido">
-<h3>Fundo Malabrigo</h3>
-
-<button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">FOTOS</button>
-<button class="btn" onclick="mostrarVideos('fundo-v',['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">VIDEOS</button>
-
-<div id="fundo-v"></div>
-</div>
+<!-- MENU IZQUIERDO -->
+<div class="menu-proyectos">
+<button class="btn-menu" onclick="mostrarPanel('fundo')">Fundo</button>
+<button class="btn-menu" onclick="mostrarPanel('puerto')">Puerto</button>
+<button class="btn-menu" onclick="mostrarPanel('monte')">Monte Verde</button>
+<button class="btn-menu" onclick="mostrarPanel('clientes')">Clientes</button>
 </div>
 
-<!-- PUERTO -->
-<div class="proyecto-card">
-<img src="logo-puerto.png" class="logo-proyecto" onclick="toggleProyecto('info-puerto')">
-
-<div id="info-puerto" class="contenido">
-<h3>Puerto Mar Club</h3>
-
-<button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg'])">FOTOS</button>
-<button class="btn" onclick="mostrarVideos('puerto-v',['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">VIDEOS</button>
-
-<div id="puerto-v"></div>
-</div>
-</div>
-
-<!-- MONTE -->
-<div class="proyecto-card">
-<img src="logo-monte.png" class="logo-proyecto" onclick="toggleProyecto('info-monte')">
-
-<div id="info-monte" class="contenido">
-<h3>Monte Verde</h3>
-
-<button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg'])">FOTOS</button>
-<button class="btn" onclick="mostrarVideos('monte-v',['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">VIDEOS</button>
-
-<div id="monte-v"></div>
-</div>
-</div>
-
+<!-- PANELES -->
+<section id="fundo" class="panel">
+<h2>Fundo Malabrigo</h2>
+<button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg'])">Fotos</button>
 </section>
 
-<!-- CLIENTES -->
-<section class="clientes">
-<h2>Clientes Felices</h2>
+<section id="puerto" class="panel">
+<h2>Puerto Mar Club</h2>
+<button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg'])">Fotos</button>
+</section>
 
-<button class="btn-clientes" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg'])">
-Ver Clientes
-</button>
+<section id="monte" class="panel">
+<h2>Monte Verde</h2>
+<button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg'])">Fotos</button>
+</section>
+
+<section id="clientes" class="panel">
+<h2>Clientes Felices</h2>
+<button class="btn" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg'])">Ver</button>
 </section>
 
 <!-- FAQ -->
-<section class="faq">
+<section style="padding:40px;">
 <h2>Preguntas Frecuentes</h2>
 
-<div onclick="toggleFaq(this)">¿Los lotes tienen documentos?<span>▼</span></div>
-<p class="faq-respuesta">Sí, todo está en regla.</p>
+<div class="faq-question" onclick="toggleFaq(this)">¿Tiene documentos?</div>
+<div class="faq-answer">Sí, todo en regla.</div>
 
-<div onclick="toggleFaq(this)">¿Hay financiamiento?<span>▼</span></div>
-<p class="faq-respuesta">Sí, con facilidades de pago.</p>
-
+<div class="faq-question" onclick="toggleFaq(this)">¿Hay financiamiento?</div>
+<div class="faq-answer">Sí, directo.</div>
 </section>
-
-<!-- FORMULARIO -->
-<section class="formulario">
-<form id="formulario">
-<input type="text" id="nombre" placeholder="Nombre" required>
-<select id="proyecto">
-<option>Fundo Malabrigo</option>
-<option>Puerto Mar Club</option>
-<option>Monte Verde</option>
-</select>
-<button type="submit" class="btn">ENVIAR</button>
-</form>
-</section>
-
-<!-- REDES -->
-<footer>
-<a href="https://www.facebook.com/">Facebook</a>
-<a href="https://www.instagram.com/">Instagram</a>
-<a href="https://www.tiktok.com/">TikTok</a>
-<a href="https://www.youtube.com/">YouTube</a>
-</footer>
 
 <!-- LIGHTBOX -->
-<div id="lightbox">
-<img id="lightbox-img">
-<button onclick="cambiarImg(-1)">←</button>
-<button onclick="cambiarImg(1)">→</button>
-<button onclick="cerrar()">X</button>
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; justify-content:center; align-items:center;">
+<img id="img-lb" style="max-width:90%;">
 </div>
 
-<script src="script.js"></script>
+<script>
+let activo=false;
+
+function toggleHeader(){
+let c=document.getElementById("contenedor-principal");
+c.classList.toggle("activo");
+}
+
+/* CAMBIAR PROYECTOS */
+function mostrarPanel(id){
+document.querySelectorAll(".panel").forEach(p=>p.classList.remove("activo"));
+document.getElementById(id).classList.add("activo");
+}
+
+/* FAQ */
+function toggleFaq(el){
+let r=el.nextElementSibling;
+r.style.display=r.style.display==="block"?"none":"block";
+}
+
+/* IMAGENES */
+function abrirImagenes(arr){
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("img-lb").src=arr[0];
+}
+</script>
 
 </body>
 </html>
