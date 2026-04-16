@@ -2,20 +2,20 @@
     --dorado: #bfa046;
     --dorado-brillante: #ffcc33;
     --oscuro: #020617;
-    --verde: #25D366;
+    --verde-wa: #25D366;
 }
 
 body {
     margin:0;
-    font-family:'Segoe UI', sans-serif;
-    background: var(--oscuro);
+    font-family:'Segoe UI',sans-serif;
+    background:var(--oscuro);
     color:white;
 }
 
 /* HEADER */
 header {
-    position: relative;
-    height: 90vh;
+    position:relative;
+    height:90vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -37,43 +37,43 @@ header video {
     background:rgba(0,0,0,0.7);
 }
 
+/* CONTENEDOR */
 #contenedor-principal {
     display:flex;
     flex-direction:column;
     align-items:center;
     text-align:center;
-    transition:0.6s;
+    transition:0.5s;
 }
 
 #contenedor-principal.activo {
     flex-direction:row;
-    gap:40px;
     text-align:left;
+    gap:40px;
 }
 
+/* LOGO */
 .mi-logo {
-    width:190px;
-    border-radius:12px;
+    width:200px;
+    border-radius:15px;
     border:3px solid var(--dorado);
     cursor:pointer;
 }
 
+/* MENSAJE */
 #info-humberto {
     opacity:0;
-    transform:translateY(30px);
-    pointer-events:none;
-    max-width:480px;
-    background:rgba(2,6,23,0.95);
-    padding:25px;
-    border-radius:20px;
-    border:1px solid var(--dorado);
+    max-width:0;
+    overflow:hidden;
     transition:0.5s;
+    background:rgba(0,0,0,0.9);
+    padding:20px;
+    border-radius:15px;
 }
 
 #contenedor-principal.activo #info-humberto {
     opacity:1;
-    transform:translateY(0);
-    pointer-events:auto;
+    max-width:400px;
 }
 
 /* BOTONES LATERALES */
@@ -85,14 +85,14 @@ header video {
     display:flex;
     flex-direction:column;
     gap:15px;
-    z-index:1000;
 }
 
-.menu-proyectos button {
+.btn-menu {
     background:linear-gradient(45deg,#bfa046,#ffcc33);
+    color:#000;
+    padding:12px 18px;
     border:none;
-    padding:12px 20px;
-    border-radius:50px;
+    border-radius:30px;
     font-weight:800;
     cursor:pointer;
     animation:pulso 2s infinite;
@@ -106,37 +106,49 @@ header video {
 
 /* PANEL PROYECTO */
 .panel {
-    max-width:900px;
-    margin:60px auto;
     display:none;
-    background:#0f172a;
-    padding:30px;
-    border-radius:20px;
-    border:1px solid var(--dorado);
+    padding:40px;
+    text-align:center;
+}
+
+.panel.activo {
+    display:block;
 }
 
 /* BOTONES */
 .btn {
+    background:var(--dorado);
     padding:12px 20px;
-    border:none;
-    border-radius:50px;
-    font-weight:800;
-    cursor:pointer;
+    border-radius:30px;
+    text-decoration:none;
+    color:#000;
+    font-weight:bold;
     margin:5px;
-    background:linear-gradient(to bottom,#bfa046,#8a6d1d);
-    color:white;
+    display:inline-block;
+}
+
+/* FAQ */
+.faq-question {
+    cursor:pointer;
+    color:var(--dorado-brillante);
+    margin-top:15px;
+}
+
+.faq-answer {
+    display:none;
+    color:#ccc;
 }
 
 /* WHATSAPP */
 .wa-float {
     position:fixed;
-    bottom:30px;
-    right:30px;
-    background:var(--verde);
+    bottom:25px;
+    right:25px;
+    background:var(--verde-wa);
     width:65px;
     height:65px;
     border-radius:50%;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 }
