@@ -1,42 +1,38 @@
-/* BASE */
-body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #020617; color: white; }
-header { padding: 20px; text-align: center; background: rgba(0,0,0,0.8); border-bottom: 2px solid #bfa046; }
+/* RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #020617; color: white; font-family: sans-serif; }
 
-/* CONTENEDOR DE PROYECTOS */
-.proyectos-container { display: flex; flex-wrap: wrap; padding: 20px; max-width: 1200px; margin: auto; gap: 20px; }
-.menu-proyectos { flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 15px; }
-.ventana-visor { flex: 2; min-width: 300px; background: #0f172a; padding: 25px; border-radius: 20px; border: 1px solid #bfa046; min-height: 500px; }
+/* HEADER */
+header { text-align: center; padding: 20px; border-bottom: 2px solid #bfa046; }
+.logo-principal { width: 120px; border-radius: 10px; border: 2px solid #bfa046; }
 
-/* BOTONES PRINCIPALES */
-.btn-palpitar { background: #bfa046; color: black; padding: 18px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; animation: pulso 2s infinite; font-size: 1rem; }
-@keyframes pulso { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
+/* LAYOUT */
+.contenedor { display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; max-width: 1200px; margin: auto; }
+.menu { flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 10px; }
+.visor { flex: 3; min-width: 300px; background: #0f172a; padding: 25px; border-radius: 15px; border: 1px solid #334155; min-height: 500px; }
 
-/* ACCIONES DENTRO DEL PROYECTO */
-.acciones { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; align-items: center; }
-.btn-accion { padding: 12px 20px; color: white; background: #bfa046; border-radius: 50px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+/* BOTONES */
+.btn-menu { background: #bfa046; color: black; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.btn-menu:hover { transform: scale(1.05); background: #ffcc33; }
+.btn-accion { background: #334155; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; font-size: 0.8rem; border: none; cursor: pointer; }
+.btn-agendar { background: #25D366; }
 
-/* LOGOS DE PROYECTOS */
-.logo-proyecto { width: 120px; height: auto; background: white; padding: 5px; border-radius: 10px; margin-bottom: 15px; display: block; }
+/* LOGOS PROYECTOS */
+.logo-proyecto { width: 100px; background: white; padding: 5px; border-radius: 8px; margin-bottom: 15px; }
 
-/* VIDEOS */
-.video-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 20px; }
-@media(min-width: 768px) { .video-grid { grid-template-columns: 1fr 1fr; } }
-iframe { width: 100%; height: 250px; border-radius: 12px; border: 1px solid #bfa046; }
+/* VIDEOS EN CUADRÍCULA */
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+iframe { width: 100%; height: 200px; border-radius: 10px; border: 1px solid #bfa046; }
 
-/* SOLUCIÓN AL ERROR DE IMAGEN GIGANTE (LIGHTBOX) */
+/* REDES SOCIALES (LOGOS PEQUEÑOS) */
+.redes img { width: 30px; margin: 0 10px; }
+
+/* ARREGLO DE IMAGEN GIGANTE (LIGHTBOX) */
 #lightbox { 
-    display: none; /* ESTO OCULTA LA IMAGEN GIGANTE AL INICIO */
+    display: none; 
     position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
     background: rgba(0,0,0,0.95); z-index: 9999; justify-content: center; align-items: center; 
 }
-#lightbox-img { max-width: 90%; max-height: 80%; border: 2px solid #ffcc33; }
-.close-btn { position: absolute; top: 20px; right: 20px; background: red; color: white; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; border-radius: 5px; }
-
-/* REDES SOCIALES */
-footer { text-align: center; padding: 30px; background: #000; border-top: 1px solid #333; }
-.social-bar img { width: 30px; margin: 0 10px; transition: 0.3s; }
-.social-bar img:hover { transform: scale(1.2); }
-
-/* WHATSAPP FLOTANTE */
-.wa-flotante { position: fixed; bottom: 20px; right: 20px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-.wa-flotante img { width: 35px; }
+#lightbox-img { max-width: 80%; max-height: 70%; border: 2px solid #ffcc33; }
+.wa-flotante { position: fixed; bottom: 20px; right: 20px; width: 50px; z-index: 100; }
+.wa-flotante img { width: 100%; }
