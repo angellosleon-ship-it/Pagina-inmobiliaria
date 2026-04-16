@@ -6,13 +6,13 @@
 <title>Humberto León</title>
 
 <link rel="stylesheet" href="estilos.css">
-
 </head>
+
 <body>
 
 <!-- BOTÓN WHATSAPP -->
 <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
 </a>
 
 <!-- HEADER -->
@@ -28,29 +28,26 @@
 <div>
 <img src="hl_logo.png" class="mi-logo" onclick="toggleHeader()">
 
-<h1 style="font-size:3rem;
-background:linear-gradient(45deg,#bfa046,#ffcc33,#fff);
+<h1 style="background:linear-gradient(45deg,#bfa046,#ffcc33,#fff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;">
 Humberto León
 </h1>
 
-<p style="color:#ffcc33; font-weight:700;">
-Asesor Inmobiliario · Inversión Segura
-</p>
+<p style="color:#ffcc33;">Asesor Inmobiliario</p>
 </div>
 
 <div id="info-humberto">
 <h3 style="color:#ffcc33;">Jefe Comercial</h3>
 <p>
-Hola, soy Humberto León. Te ayudo a invertir seguro con respaldo legal.
+Hola, soy Humberto León. Te ayudo a invertir con seguridad.
 </p>
 </div>
 
 </div>
 </header>
 
-<!-- BOTONES IZQUIERDA -->
+<!-- MENU IZQUIERDO -->
 <div class="menu-proyectos">
 <button onclick="abrirProyecto('fundo')">Fundo Malabrigo</button>
 <button onclick="abrirProyecto('puerto')">Puerto Mar Club</button>
@@ -58,24 +55,34 @@ Hola, soy Humberto León. Te ayudo a invertir seguro con respaldo legal.
 <button onclick="abrirProyecto('clientes')">Clientes</button>
 </div>
 
-<!-- PANEL DERECHO -->
-<div id="panel" class="panel-proyecto"></div>
-
-<!-- FAQ -->
-<section style="padding:60px 20px;">
-<h2 style="text-align:center;">Preguntas Frecuentes</h2>
-
-<div>
-<div class="faq-question" onclick="toggleFaq(this)">¿Es seguro?</div>
-<div class="faq-answer">Sí, todo está en regla.</div>
+<!-- PROYECTOS -->
+<div id="fundo" class="panel">
+<h2>Fundo Malabrigo</h2>
+<button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg'])">Fotos</button>
+<button class="btn">Videos</button>
 </div>
 
-<div>
-<div class="faq-question" onclick="toggleFaq(this)">¿Hay financiamiento?</div>
-<div class="faq-answer">Sí, directo.</div>
+<div id="puerto" class="panel">
+<h2>Puerto Mar Club</h2>
+<button class="btn">Fotos</button>
+<button class="btn">Videos</button>
 </div>
 
-</section>
+<div id="monte" class="panel">
+<h2>Monte Verde</h2>
+<button class="btn">Fotos</button>
+<button class="btn">Videos</button>
+</div>
+
+<div id="clientes" class="panel">
+<h2>Clientes Felices</h2>
+<button class="btn" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg'])">Ver</button>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" style="display:none;position:fixed;width:100%;height:100%;background:black;top:0;left:0;justify-content:center;align-items:center;">
+<img id="imgbox" style="max-width:90%;">
+</div>
 
 <script>
 
@@ -84,60 +91,24 @@ function toggleHeader(){
 document.getElementById("contenedor-principal").classList.toggle("activo");
 }
 
-/* PANEL PROYECTOS */
-function abrirProyecto(tipo){
-const panel = document.getElementById("panel");
+/* PROYECTOS (SOLO UNO ABIERTO) */
+function abrirProyecto(id){
+let paneles = document.querySelectorAll(".panel");
 
-let contenido = "";
+paneles.forEach(p => p.style.display="none");
 
-if(tipo === "fundo"){
-contenido = `
-<h2>Fundo Malabrigo</h2>
-<p>Lotes de campo y playa</p>
-<button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg'])">Fotos</button>
-`;
-}
-
-if(tipo === "puerto"){
-contenido = `
-<h2>Puerto Mar Club</h2>
-<p>Frente al mar</p>
-<button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg'])">Fotos</button>
-`;
-}
-
-if(tipo === "monte"){
-contenido = `
-<h2>Monte Verde</h2>
-<p>Alta plusvalía</p>
-<button class="btn" onclick="abrirImagenes(['monte1.jpg'])">Fotos</button>
-`;
-}
-
-if(tipo === "clientes"){
-contenido = `
-<h2>Clientes Felices</h2>
-<button class="btn" onclick="abrirImagenes(['cliente1.jpg'])">Ver</button>
-`;
-}
-
-panel.innerHTML = contenido;
-panel.classList.add("activo");
-}
-
-/* FAQ */
-function toggleFaq(el){
-let a = el.nextElementSibling;
-a.style.display = a.style.display === "block" ? "none" : "block";
+document.getElementById(id).style.display="block";
 }
 
 /* IMÁGENES */
-let imgs = [];
-let idx = 0;
-
 function abrirImagenes(arr){
-imgs = arr;
-alert("Aquí se abrirían tus imágenes reales");
+let box = document.getElementById("lightbox");
+let img = document.getElementById("imgbox");
+
+img.src = arr[0];
+box.style.display="flex";
+
+box.onclick = ()=> box.style.display="none";
 }
 
 </script>
