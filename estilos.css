@@ -20,22 +20,20 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo.jpg') center/cover no-repeat;
-    overflow: hidden;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('fondo.jpg') center/cover no-repeat;
 }
 
 #contenedor-principal {
     display: flex;
-    flex-direction: column; /* Empieza centrado */
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 30px;
     transition: 0.6s ease;
     width: 100%;
     max-width: 1100px;
+    text-align: center;
 }
 
-/* MENSAJE DERECHA */
 #info-humberto {
     opacity: 0;
     display: none;
@@ -43,52 +41,52 @@ header {
     background: rgba(2,6,23,0.95);
     padding: 25px;
     border-radius: 20px;
-    border: 1px solid var(--dorado);
+    border: 2px solid var(--dorado);
     transition: 0.5s;
+    text-align: left;
 }
 
-/* SECCIÓN PROYECTOS (BOTONES IZQUIERDA - VENTANA DERECHA) */
+/* CONTENEDOR DE PROYECTOS */
 .proyectos-container {
     display: flex;
     flex-wrap: wrap;
     padding: 60px 20px;
     max-width: 1300px;
     margin: auto;
-    gap: 20px;
+    gap: 30px;
 }
 
 .menu-proyectos {
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .ventana-visor {
     flex: 2;
     min-width: 350px;
     background: var(--oscuro-card);
-    border: 1px solid rgba(191,160,70,0.3);
+    border: 1px solid rgba(191,160,70,0.4);
     border-radius: 30px;
-    padding: 30px;
-    min-height: 600px;
-    position: relative;
+    padding: 35px;
+    min-height: 650px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
-/* BOTONES DORADOS PALPITANTES */
+/* BOTONES PALPITANTES */
 .btn-palpitar {
     background: linear-gradient(45deg, var(--dorado), var(--dorado-brillante));
     color: #000;
     border: none;
-    padding: 18px;
-    font-size: 1.1rem;
+    padding: 20px;
+    font-size: 1rem;
     font-weight: 800;
     border-radius: 15px;
     cursor: pointer;
     text-transform: uppercase;
     animation: pulso 2s infinite;
-    transition: 0.3s;
 }
 
 @keyframes pulso {
@@ -97,35 +95,16 @@ header {
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 204, 51, 0); }
 }
 
-.btn-palpitar:hover {
-    animation: none;
-    background: white;
-}
+.btn-palpitar:hover { background: #fff; animation: none; transform: scale(1.02); }
 
-/* ESTILOS INTERNOS DEL VISOR */
-.proyecto-detalle {
-    display: none; /* Se ocultan todos por defecto */
-    animation: aparecer 0.5s ease;
-}
+/* DETALLES PROYECTO */
+.proyecto-detalle { display: none; animation: fadeIn 0.6s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-@keyframes aparecer {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.logo-proyecto-view {
-    width: 140px;
-    height: 140px;
-    object-fit: contain;
-    background: rgba(255,255,255,0.05);
-    border-radius: 15px;
-    padding: 10px;
-    display: block;
-    margin-bottom: 20px;
-}
+.logo-proyecto-view { width: 150px; margin-bottom: 20px; border-radius: 10px; background: #fff; padding: 5px; }
 
 .btn-accion {
-    padding: 10px 20px;
+    padding: 12px 18px;
     background: linear-gradient(to bottom, #bfa046, #8a6d1d);
     color: white;
     border-radius: 50px;
@@ -134,16 +113,23 @@ header {
     border: none;
     cursor: pointer;
     margin: 5px;
-    display: inline-block;
+    font-size: 0.9rem;
 }
 
-.video-container iframe { width: 100%; height: 300px; border-radius: 15px; margin-top: 15px; }
+.video-container iframe { width: 100%; height: 320px; border-radius: 15px; margin-top: 15px; border: 2px solid var(--dorado); }
+
+/* LIGHTBOX FOTOS */
+#lightbox {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); z-index: 9999; justify-content: center; align-items: center; flex-direction: column;
+}
+#lightbox img { max-width: 85%; max-height: 75%; border: 3px solid var(--dorado); border-radius: 10px; }
 
 /* FAQ */
-.faq-section { max-width: 800px; margin: 40px auto; padding: 20px; }
-.faq-question { color: var(--dorado-brillante); cursor: pointer; font-weight: bold; padding: 10px; border-bottom: 1px solid #333; }
-.faq-answer { display: none; padding: 10px; color: #ccc; }
+.faq-question { color: var(--dorado-brillante); cursor: pointer; padding: 15px; border-bottom: 1px solid #222; font-weight: bold; }
+.faq-answer { display: none; padding: 15px; color: #bbb; line-height: 1.6; }
 
-/* REDES */
-.social-links img { width: 45px; margin: 0 10px; transition: 0.3s; }
-.social-links img:hover { transform: scale(1.2); }
+/* SOCIAL */
+.social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px; }
+.social-links img { width: 45px; height: 45px; transition: 0.3s; }
+.social-links img:hover { transform: scale(1.2); filter: brightness(1.2); }
