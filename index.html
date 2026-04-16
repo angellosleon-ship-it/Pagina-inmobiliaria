@@ -1,105 +1,69 @@
 <!DOCTYPE html>
-<!-- HEADER -->
 <header style="position: relative; min-height: 75vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo.jpg') center/cover no-repeat;">
         
-    <div id="contenedor-principal">
+    <div id="contenedor-principal" style="display:flex; align-items:center; justify-content:center; flex-direction:column; gap:30px; text-align:center; transition:0.6s; width:100%; max-width:1000px; margin:auto;">
         
-        <!-- BLOQUE LOGO -->
+        <!-- LOGO -->
         <div id="bloque-logo">
             
-            <img src="hl_logo.png" onclick="toggleProyecto('info-humberto')" 
-                 style="cursor: pointer; width: 190px; border-radius: 12px; border: 3px solid #bfa046; position: relative; z-index: 5;">
+            <img src="hl_logo.png" onclick="toggleProyecto()" 
+                 style="cursor:pointer; width:190px; border-radius:12px; border:3px solid #bfa046;">
             
-            <h1>Humberto León</h1>
+            <h1 style="margin:10px 0 0; font-size:3rem; font-weight:900;
+            background:linear-gradient(45deg,#bfa046,#ffcc33,#fff);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;">
+                Humberto León
+            </h1>
+
             <p>Asesoría Inmobiliaria Transparente</p>
 
         </div>
 
         <!-- MENSAJE -->
-        <div id="info-humberto">
-            <h3>Jefe Comercial & Especialista Inmobiliario</h3>
-            <p>
+        <div id="info-humberto" style="opacity:0; transform:translateY(30px); pointer-events:none;
+        max-width:480px; background:rgba(2,6,23,0.95); padding:25px; border-radius:20px;
+        border:1px solid #bfa046; transition:0.5s;">
+            
+            <h3 style="color:#ffcc33;">Jefe Comercial & Especialista Inmobiliario</h3>
+            
+            <p style="line-height:1.7;">
                 Hola, soy <b>Humberto León</b>. Mi compromiso es brindarte una asesoría clara, honesta y con respaldo legal para que tomes decisiones seguras al invertir.
                 <br><br>
                 Te acompaño en todo el proceso, desde la elección del lote ideal hasta la verificación de documentos.
             </p>
+
         </div>
 
     </div>
 </header>
 
-<!-- ESTILOS -->
-<style>
-#contenedor-principal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    flex-direction: column;
-    text-align: center;
-    transition: all 0.6s ease;
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-}
-
-/* CUANDO HACES CLICK */
-.modo-activo {
-    flex-direction: row;
-    text-align: left;
-}
-
-/* TEXTO */
-#bloque-logo h1 {
-    margin: 10px 0 0;
-    font-size: 3rem;
-    font-weight: 900;
-    background: linear-gradient(45deg, #bfa046, #ffcc33, #fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(191,160,70,0.8);
-}
-
-#bloque-logo p {
-    margin: 5px 0 0;
-}
-
-/* MENSAJE */
-#info-humberto {
-    opacity: 0;
-    transform: translateY(30px);
-    pointer-events: none;
-    max-width: 480px;
-    background: rgba(2, 6, 23, 0.95);
-    padding: 25px;
-    border-radius: 20px;
-    border: 1px solid #bfa046;
-    transition: all 0.5s ease;
-}
-
-/* CUANDO APARECE */
-.mostrar {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .modo-activo {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-</style>
-
 <script>
-function toggleProyecto(id) {
-    var mensaje = document.getElementById(id);
-    var contenedor = document.getElementById("contenedor-principal");
+let activo = false;
 
-    contenedor.classList.toggle("modo-activo");
-    mensaje.classList.toggle("mostrar");
+function toggleProyecto() {
+    const contenedor = document.getElementById("contenedor-principal");
+    const mensaje = document.getElementById("info-humberto");
+
+    if (!activo) {
+        contenedor.style.flexDirection = "row";
+        contenedor.style.textAlign = "left";
+
+        mensaje.style.opacity = "1";
+        mensaje.style.transform = "translateY(0)";
+        mensaje.style.pointerEvents = "auto";
+
+        activo = true;
+    } else {
+        contenedor.style.flexDirection = "column";
+        contenedor.style.textAlign = "center";
+
+        mensaje.style.opacity = "0";
+        mensaje.style.transform = "translateY(30px)";
+        mensaje.style.pointerEvents = "none";
+
+        activo = false;
+    }
 }
 </script>
     <style>
