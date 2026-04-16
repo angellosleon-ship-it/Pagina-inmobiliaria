@@ -3,175 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humberto León - Jefe Comercial</title>
-    <style>
-        :root {
-            --dorado: #bfa046;
-            --dorado-brillante: #ffcc33;
-            --oscuro-deep: #020617;
-            --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a);
-            --verde-wa: #25D366;
-        }
-
-        body { 
-            margin:0; 
-            font-family:'Segoe UI', sans-serif; 
-            background:var(--oscuro-deep); 
-            color:white; 
-            scroll-behavior:smooth; 
-        }
-
-        /* --- CABECERA CON VIDEO --- */
-        header {
-            position: relative;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        header video {
-            position: absolute;
-            top: 50%; left: 50%;
-            min-width: 100%; min-height: 100%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            object-fit: cover;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.65);
-            z-index: 0;
-        }
-
-        /* PERFIL Y LOGO */
-        #contenedor-presentacion {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0;
-            transition: 0.7s ease-in-out;
-            width: 90%;
-        }
-
-        .mi-logo {
-            cursor: pointer;
-            width: 160px;
-            border-radius: 15px;
-            border: 3px solid var(--dorado);
-            box-shadow: 0 0 20px rgba(191,160,70,0.5);
-            transition: 0.3s;
-        }
-
-        .titulo-nombre {
-            font-size: clamp(2.5rem, 7vw, 3.5rem);
-            margin: 15px 0 5px;
-            background: linear-gradient(45deg, #bfa046, #ffcc33, #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-        }
-
-        #mensaje-humberto {
-            opacity: 0;
-            max-width: 0;
-            overflow: hidden;
-            transition: 0.6s ease;
-            background: rgba(2, 6, 23, 0.95);
-            border-radius: 20px;
-            border: 1px solid var(--dorado);
-            text-align: left;
-        }
-
-        #contenedor-presentacion.activo { gap: 40px; }
-        #contenedor-presentacion.activo #mensaje-humberto {
-            opacity: 1;
-            max-width: 500px;
-            padding: 25px;
-        }
-
-        /* --- SECCIÓN PROYECTOS (SOLO UNA VEZ) --- */
-        .proyectos { padding: 80px 20px; text-align: center; }
-
-        .titulo-seccion {
-            font-size: clamp(2.2rem, 6vw, 3.5rem);
-            font-weight: 900;
-            background: linear-gradient(45deg, #bfa046, #ffcc33, #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 50px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .proyecto-card {
-            background: var(--oscuro-card);
-            border: 1px solid rgba(191,160,70,0.2);
-            border-radius: 25px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: 0.4s;
-        }
-
-        .proyecto-card:hover { transform: translateY(-10px); border-color: var(--dorado-brillante); }
-
-        .sub-dorado {
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin: 15px 0 5px;
-            background: linear-gradient(45deg, #bfa046, #ffcc33, #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .logo-proyecto { width: 140px; height: 140px; object-fit: contain; }
-
-        /* BOTONES */
-        .botones-flex { display: flex; gap: 10px; margin-top: 15px; }
-
-        .btn-ver {
-            padding: 12px 25px;
-            background: linear-gradient(to bottom, #bfa046, #8a6d1d);
-            color: white; border-radius: 50px; font-weight: 800; border: none; cursor: pointer;
-        }
-
-        .btn-agendar {
-            padding: 12px 25px;
-            background: #25D366; /* Verde WhatsApp */
-            color: white; border-radius: 50px; font-weight: 800; border: none; cursor: pointer;
-            text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        .wa-float { position:fixed; bottom:20px; right:20px; background:var(--verde-wa); width:60px; height:60px; border-radius:50%; display:flex; justify-content:center; align-items:center; z-index:1000; }
-
-        @media (max-width: 768px) {
-            #contenedor-presentacion.activo { flex-direction: column; text-align: center; }
-            #contenedor-presentacion.activo #mensaje-humberto { margin-top: 20px; max-width: 100%; }
-        }
-    </style>
+    <title>Humberto León | Gestión Inmobiliaria de Lujo</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
+    <nav>
+        <div class="logo-texto" style="color:var(--dorado); font-weight:900; font-size:1.5rem;">HL</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
     <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="40">
     </a>
 
-    <header>
+    <header id="inicio">
         <video autoplay muted loop playsinline>
             <source src="https://drive.google.com/uc?export=download&id=1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU" type="video/mp4">
         </video>
@@ -181,61 +32,95 @@
             <div class="bloque-perfil">
                 <img src="hl_logo.png" class="mi-logo" onclick="toggleInfo()">
                 <h1 class="titulo-nombre">Humberto León</h1>
-                <p style="color:var(--dorado-brillante); font-weight:700; text-transform:uppercase; letter-spacing:2px;">Asesor Inmobiliario · Inversión Segura</p>
+                <p style="color:var(--dorado-brillante); font-size:1.2rem; font-weight:700; letter-spacing:4px; text-transform:uppercase;">Asesoría · Inversión · Confianza</p>
             </div>
 
             <div id="mensaje-humberto">
-                <h3 style="color:var(--dorado-brillante); margin: 0 0 10px 0;">Jefe Comercial</h3>
-                <p style="line-height:1.6; margin:0;">Hola, soy Humberto León. Mi compromiso es brindarte una asesoría honesta para que inviertas con total seguridad en el norte.</p>
+                <h2 style="color:var(--dorado-brillante); margin-bottom:15px;">Jefe Comercial</h2>
+                <p style="font-size:1.1rem; color:#cbd5e1;">Con años de experiencia en el sector inmobiliario del norte peruano, mi misión es asegurar que cada familia e inversionista encuentre el terreno ideal con respaldo legal y alta plusvalía.</p>
+                <div style="margin-top:20px;">
+                    <strong style="color:var(--dorado);">Especialista en:</strong> Condominios Ecológicos y Proyectos de Playa.
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="proyectos">
-        <h2 class="titulo-seccion">Nuestros Proyectos</h2>
-        <div class="grid">
+    <section id="proyectos">
+        <h2 class="titulo-seccion">Proyectos Destacados</h2>
+        <div class="grid-proyectos">
             <div class="proyecto-card">
-                <img src="logo_fundo.png" class="logo-proyecto">
-                <p class="sub-dorado">Campo & Mar</p>
-                <h3 style="margin:5px 0 15px;">Fundo Malabrigo</h3>
-                <div class="botones-flex">
-                    <button class="btn-ver" onclick="toggleDetalle('d1')">Ver más</button>
-                    <a href="https://wa.me/51985877256" class="btn-agendar">WhatsApp</a>
+                <img src="logo_fundo.png" style="width:100px; margin-bottom:20px;">
+                <h3 style="font-size:1.8rem; margin-bottom:10px;">Fundo Malabrigo</h3>
+                <p>El primer condominio ecológico de campo y mar en la zona. Lotes desde 500m2 con vistas impresionantes al Pacífico.</p>
+                <div class="botones">
+                    <a href="#" class="btn-primario">Ver Plano</a>
+                    <a href="https://wa.me/51985877256" class="btn-whatsapp">WhatsApp</a>
                 </div>
-                <div id="d1" style="display:none; margin-top:15px; font-size:0.9rem; border-top:1px solid var(--dorado); padding-top:10px;">Lotes exclusivos con alta rentabilidad.</div>
             </div>
 
             <div class="proyecto-card">
-                <img src="logo_puerto.png" class="logo-proyecto">
-                <p class="sub-dorado">Frente al Mar</p>
-                <h3 style="margin:5px 0 15px;">Puerto Mar Club</h3>
-                <div class="botones-flex">
-                    <button class="btn-ver" onclick="toggleDetalle('d2')">Ver más</button>
-                    <a href="https://wa.me/51985877256" class="btn-agendar">WhatsApp</a>
+                <img src="logo_puerto.png" style="width:100px; margin-bottom:20px;">
+                <h3 style="font-size:1.8rem; margin-bottom:10px;">Puerto Mar Club</h3>
+                <p>Exclusividad frente al mar. Club house, piscinas y pórtico de seguridad las 24 horas del día.</p>
+                <div class="botones">
+                    <a href="#" class="btn-primario">Ver Galería</a>
+                    <a href="https://wa.me/51985877256" class="btn-whatsapp">WhatsApp</a>
                 </div>
-                <div id="d2" style="display:none; margin-top:15px; font-size:0.9rem; border-top:1px solid var(--dorado); padding-top:10px;">Tu casa de playa con club privado.</div>
             </div>
-
+            
             <div class="proyecto-card">
-                <img src="logo_monteverde.png" class="logo-proyecto">
-                <p class="sub-dorado">Alta Plusvalía</p>
-                <h3 style="margin:5px 0 15px;">Residencial Monte Verde</h3>
-                <div class="botones-flex">
-                    <button class="btn-ver" onclick="toggleDetalle('d3')">Ver más</button>
-                    <a href="https://wa.me/51985877256" class="btn-agendar">WhatsApp</a>
+                <img src="logo_monteverde.png" style="width:100px; margin-bottom:20px;">
+                <h3 style="font-size:1.8rem; margin-bottom:10px;">Residencial Monte Verde</h3>
+                <p>Inversión inteligente en Chepén. Lotes urbanizados con todos los servicios y alta proyección de crecimiento.</p>
+                <div class="botones">
+                    <a href="#" class="btn-primario">Más Info</a>
+                    <a href="https://wa.me/51985877256" class="btn-whatsapp">WhatsApp</a>
                 </div>
-                <div id="d3" style="display:none; margin-top:15px; font-size:0.9rem; border-top:1px solid var(--dorado); padding-top:10px;">Inversión estratégica en zona de crecimiento.</div>
             </div>
         </div>
     </section>
 
+    <section id="servicios" style="background: rgba(15, 23, 42, 0.5);">
+        <h2 class="titulo-seccion">¿Por qué invertir conmigo?</h2>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
+            <div style="text-align:center;">
+                <div style="font-size:3rem; color:var(--dorado);">⚖️</div>
+                <h3>Seguridad Jurídica</h3>
+                <p>Todos nuestros proyectos cuentan con registros públicos y saneamiento legal completo.</p>
+            </div>
+            <div style="text-align:center;">
+                <div style="font-size:3rem; color:var(--dorado);">📈</div>
+                <h3>Alta Plusvalía</h3>
+                <p>Seleccionamos terrenos en zonas de expansión con crecimiento garantizado anual.</p>
+            </div>
+            <div style="text-align:center;">
+                <div style="font-size:3rem; color:var(--dorado);">🤝</div>
+                <h3>Acompañamiento</h3>
+                <p>Te guío desde la primera visita hasta la firma de la escritura y entrega de tu lote.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3 style="color:var(--dorado);">Humberto León</h3>
+                <p>Tu socio estratégico en el sector inmobiliario.</p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p>📍 Trujillo - Chepén, Perú</p>
+                <p>📞 +51 985 877 256</p>
+            </div>
+        </div>
+        <div style="text-align:center; padding-top:30px; border-top:1px solid rgba(255,255,255,0.1); font-size:0.8rem;">
+            © 2026 Humberto León - Todos los derechos reservados.
+        </div>
+    </footer>
+
     <script>
         function toggleInfo() {
             document.getElementById("contenedor-presentacion").classList.toggle("activo");
-        }
-        function toggleDetalle(id) {
-            let x = document.getElementById(id);
-            x.style.display = (x.style.display === "none") ? "block" : "none";
         }
     </script>
 </body>
