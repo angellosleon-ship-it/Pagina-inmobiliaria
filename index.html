@@ -1,17 +1,144 @@
-<div class="visor">
-    <div id="inicio">
-        <h2 style="color:#ffcc33; font-size: 2.2rem;">¡Bienvenido Inversionista!</h2>
-        <p>Selecciona un proyecto a la izquierda para ver los detalles.</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humberto León | Asesor Inmobiliario</title>
+    <style>
+        /* CSS BLINDADO - TODO EN UN SOLO ARCHIVO PARA EVITAR ERRORES */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #020617; color: white; font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; }
+
+        /* HEADER */
+        header { text-align: center; padding: 40px 20px; background: #000; border-bottom: 2px solid #bfa046; }
+        .logo-principal { width: 130px; border-radius: 15px; border: 2px solid #bfa046; margin-bottom: 15px; }
+        header h1 { color: #ffcc33; font-size: 2.2rem; }
+
+        /* CONTENEDOR PRINCIPAL */
+        .main-container { display: flex; flex-wrap: wrap; max-width: 1200px; margin: 30px auto; gap: 20px; padding: 0 15px; }
+        
+        /* MENÚ IZQUIERDA */
+        .menu-lateral { flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 12px; }
+        .btn-menu { 
+            background: #bfa046; color: black; border: none; padding: 18px; 
+            border-radius: 12px; font-weight: bold; cursor: pointer; 
+            font-size: 1rem; text-transform: uppercase; transition: 0.3s;
+            animation: pulso 2s infinite;
+        }
+        @keyframes pulso { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        .btn-menu:hover { background: #ffcc33; }
+
+        /* VISOR DERECHA */
+        .visor { 
+            flex: 2; min-width: 320px; background: #0f172a; padding: 30px; 
+            border-radius: 20px; border: 1px solid #334155; min-height: 550px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* DETALLES PROYECTO */
+        .proyecto-detalle { display: none; }
+        .logo-proyecto { width: 100px; background: white; padding: 5px; border-radius: 8px; margin-bottom: 20px; }
+        
+        /* BOTONES ACCIÓN */
+        .acciones { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+        .btn-accion { 
+            padding: 12px 20px; border-radius: 30px; border: none; 
+            color: white; font-weight: bold; cursor: pointer; text-decoration: none;
+            font-size: 0.85rem; display: inline-block;
+        }
+        .bg-dorado { background: #bfa046; }
+        .bg-azul { background: #4285F4; }
+        .bg-verde { background: #25D366; }
+
+        /* VIDEOS CUADRÍCULA */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; margin-top: 20px; }
+        iframe { width: 100%; height: 220px; border-radius: 12px; border: 1px solid #bfa046; }
+
+        /* PREGUNTAS FRECUENTES */
+        .faq { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+        .faq-card { background: #1e293b; padding: 20px; border-radius: 15px; margin-bottom: 10px; border-left: 5px solid #ffcc33; }
+
+        /* REDES SOCIALES (ICONOS PEQUEÑOS) */
+        footer { text-align: center; padding: 40px; background: #000; border-top: 1px solid #222; }
+        .redes img { width: 30px; height: 30px; margin: 0 12px; transition: 0.3s; }
+        .redes img:hover { transform: translateY(-5px); }
+
+        /* WHATSAPP FLOTANTE */
+        .wa-flotante { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; z-index: 100; }
+        .wa-flotante img { width: 100%; }
+
+        /* GALERÍA (LIGHTBOX) - OCULTA SIEMPRE AL INICIO */
+        #lightbox { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.95); z-index: 9999; justify-content: center; align-items: center; 
+        }
+        #lightbox img { max-width: 85%; max-height: 75%; border: 2px solid #ffcc33; }
+        .close-btn { position: absolute; top: 20px; right: 20px; background: red; color: white; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/51985877256" class="wa-flotante" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+
+    <div id="lightbox">
+        <button class="close-btn" onclick="cerrarGaleria()">CERRAR [X]</button>
+        <img id="lightbox-img" src="">
     </div>
 
-    <div id="fundo" class="detalle" style="display:none;">
-        <h2 style="color:#ffcc33;">FUNDO MALABRIGO</h2>
-        <div class="botones-accion">
-            <button class="btn-accion btn-galeria" onclick="abrirGaleria(['fundo1.jpg','fundo2.jpg'])">📸 GALERÍA</button>
-            <button class="btn-accion btn-videos" onclick="cargarVideos('v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">🎥 VIDEOS</button>
-            <a href="https://maps.google.com/?q=Paijan" target="_blank" class="btn-accion btn-mapa">📍 UBICACIÓN</a>
-            <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20de%20Malabrigo" target="_blank" class="btn-accion btn-agendar">📅 AGENDAR</a>
-        </div>
-        <div id="v-fundo" class="video-grid"></div>
-    </div>
-</div>
+    <header>
+        <img src="hl_logo.png" class="logo-principal" alt="Humberto León">
+        <h1>Humberto León</h1>
+        <p style="letter-spacing: 2px;">ASESOR INMOBILIARIO PROFESIONAL</p>
+    </header>
+
+    <div class="main-container">
+        <aside class="menu-lateral">
+            <button class="btn-menu" onclick="mostrarProyecto('fundo')">Fundo Malabrigo</button>
+            <button class="btn-menu" onclick="mostrarProyecto('puerto')">Puerto Mar Club</button>
+            <button class="btn-menu" onclick="mostrarProyecto('monte')">Residencial Monte Verde</button>
+            <button class="btn-menu" onclick="mostrarProyecto('clientes')" style="background:white; color:black; animation:none;">🤝 Clientes Felices</button>
+        </aside>
+
+        <section class="visor">
+            <div id="inicio-msg" style="text-align: center; padding-top: 50px;">
+                <h2 style="color: #ffcc33; font-size: 2.5rem;">¡Bienvenido!</h2>
+                <p>Selecciona uno de mis proyectos para conocer los detalles, videos y ubicaciones exactas.</p>
+            </div>
+
+            <div id="fundo" class="proyecto-detalle">
+                <img src="logo-fundo.png" class="logo-proyecto">
+                <h2>FUNDO MALABRIGO</h2>
+                <div class="acciones">
+                    <button class="btn-accion bg-dorado" onclick="abrirGaleria(['fundo1.jpg','fundo2.jpg','fundo3.jpg'])">📸 VER GALERÍA</button>
+                    <button class="btn-accion bg-dorado" onclick="cargarVideos('v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE', '1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m'])">🎥 VER VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/AA5CUW3xpDayokfH90" target="_blank" class="btn-accion bg-azul">📍 UBICACIÓN</a>
+                    <a href="https://wa.me/51985877256?text=Hola,%20deseo%20agendar%20una%20visita" target="_blank" class="btn-accion bg-verde">📅 AGENDAR VISITA</a>
+                </div>
+                <div id="v-fundo" class="video-grid"></div>
+            </div>
+
+            <div id="puerto" class="proyecto-detalle">
+                <img src="logo-puerto.png" class="logo-proyecto">
+                <h2>PUERTO MAR CLUB</h2>
+                <div class="acciones">
+                    <button class="btn-accion bg-dorado" onclick="abrirGaleria(['puerto1.jpg'])">📸 VER GALERÍA</button>
+                    <button class="btn-accion bg-dorado" onclick="cargarVideos('v-puerto', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE', '1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m', '1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">🎥 VER VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/AA5CUW3xpDayokfH91" target="_blank" class="btn-accion bg-azul">📍 UBICACIÓN</a>
+                    <a href="https://wa.me/51985877256?text=Deseo%20visitar%20Puerto%20Mar" target="_blank" class="btn-accion bg-verde">📅 AGENDAR VISITA</a>
+                </div>
+                <div id="v-puerto" class="video-grid"></div>
+            </div>
+
+            <div id="monte" class="proyecto-detalle">
+                <img src="logo-monte.png" class="logo-proyecto">
+                <h2>RESIDENCIAL MONTE VERDE</h2>
+                <div class="acciones">
+                    <button class="btn-accion bg-dorado" onclick="abrirGaleria(['monte1.jpg'])">📸 VER GALERÍA</button>
+                    <button class="btn-accion bg-dorado" onclick="cargarVideos('v-monte', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m', '1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE'])">🎥 VER VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/rdWiFigRFWGn9AMJ79" target="_blank" class="btn-accion bg-azul">📍 UBICACIÓN</a>
+                    <a href="https://wa.me/51985877256?text=Visita%20Monte%20Verde" target="_blank" class="btn-accion bg-verde">📅 AGENDAR VISITA</a>
+                </div>
+                <div id="v-monte" class="video-grid"></div>
+            </div>
