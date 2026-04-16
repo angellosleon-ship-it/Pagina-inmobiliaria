@@ -6,8 +6,8 @@
         <!-- LOGO -->
         <div id="bloque-logo">
             
-            <img src="hl_logo.png" onclick="toggleProyecto()" 
-                 style="cursor:pointer; width:190px; border-radius:12px; border:3px solid #bfa046;">
+           <img src="hl_logo.png" onclick="toggleHeader()" 
+     style="cursor:pointer; width:190px; border-radius:12px; border:3px solid #bfa046;">
             
             <h1 style="margin:10px 0 0; font-size:3rem; font-weight:900;
             background:linear-gradient(45deg,#bfa046,#ffcc33,#fff);
@@ -522,14 +522,15 @@ function toggleProyecto() {
 
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
  <script>
-<script>
-let activo = false;
+
+/* HEADER (logo) */
+let headerActivo = false;
 
 function toggleHeader() {
     const contenedor = document.getElementById("contenedor-principal");
     const mensaje = document.getElementById("info-humberto");
 
-    if (!activo) {
+    if (!headerActivo) {
         contenedor.style.flexDirection = "row";
         contenedor.style.textAlign = "left";
 
@@ -537,7 +538,7 @@ function toggleHeader() {
         mensaje.style.transform = "translateY(0)";
         mensaje.style.pointerEvents = "auto";
 
-        activo = true;
+        headerActivo = true;
     } else {
         contenedor.style.flexDirection = "column";
         contenedor.style.textAlign = "center";
@@ -546,7 +547,19 @@ function toggleHeader() {
         mensaje.style.transform = "translateY(30px)";
         mensaje.style.pointerEvents = "none";
 
-        activo = false;
+        headerActivo = false;
+    }
+}
+
+/* PROYECTOS (NO TOCAR MÁS) */
+function toggleProyecto(id) {
+    var x = document.getElementById(id);
+
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+        x.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
 </script>
