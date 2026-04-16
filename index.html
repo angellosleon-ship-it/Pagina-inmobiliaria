@@ -5,28 +5,162 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Humberto León</title>
 
-<link rel="stylesheet" href="estilos.css">
+<style>
+:root {
+    --dorado:#bfa046;
+    --dorado2:#ffcc33;
+    --oscuro:#020617;
+}
+
+body{
+    margin:0;
+    font-family:Segoe UI;
+    background:var(--oscuro);
+    color:white;
+}
+
+/* HEADER */
+header{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+header video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+}
+
+/* CONTENEDOR */
+#contenedor{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    transition:0.5s;
+}
+
+#contenedor.activo{
+    flex-direction:row;
+    gap:40px;
+    text-align:left;
+}
+
+/* LOGO */
+.logo{
+    width:180px;
+    border:3px solid var(--dorado);
+    border-radius:12px;
+    cursor:pointer;
+}
+
+/* MENSAJE */
+#mensaje{
+    opacity:0;
+    transform:translateY(30px);
+    transition:0.5s;
+    max-width:400px;
+}
+
+#contenedor.activo #mensaje{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MENU IZQUIERDO */
+.menu{
+    position:fixed;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.menu button{
+    background:linear-gradient(45deg,#bfa046,#ffcc33);
+    border:none;
+    padding:12px;
+    border-radius:50px;
+    font-weight:bold;
+    cursor:pointer;
+    animation:pulso 2s infinite;
+}
+
+@keyframes pulso{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
+
+/* PANEL */
+.panel{
+    display:none;
+    max-width:800px;
+    margin:60px auto;
+    background:#111827;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid var(--dorado);
+}
+
+/* BOTON */
+.btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(to bottom,#bfa046,#8a6d1d);
+    color:white;
+    cursor:pointer;
+}
+
+/* LIGHTBOX */
+#lightbox{
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:black;
+    top:0;
+    left:0;
+    justify-content:center;
+    align-items:center;
+}
+
+#lightbox img{
+    max-width:90%;
+}
+</style>
+
 </head>
 
 <body>
 
-<!-- BOTÓN WHATSAPP -->
-<a href="https://wa.me/51985877256" class="wa-float" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
-</a>
-
-<!-- HEADER -->
 <header>
+
 <video autoplay muted loop>
 <source src="https://drive.google.com/uc?export=download&id=1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU">
 </video>
 
 <div class="overlay"></div>
 
-<div id="contenedor-principal">
+<div id="contenedor">
 
 <div>
-<img src="hl_logo.png" class="mi-logo" onclick="toggleHeader()">
+<img src="hl_logo.png" class="logo" onclick="toggleHeader()">
 
 <h1 style="background:linear-gradient(45deg,#bfa046,#ffcc33,#fff);
 -webkit-background-clip:text;
@@ -37,78 +171,68 @@ Humberto León
 <p style="color:#ffcc33;">Asesor Inmobiliario</p>
 </div>
 
-<div id="info-humberto">
+<div id="mensaje">
 <h3 style="color:#ffcc33;">Jefe Comercial</h3>
-<p>
-Hola, soy Humberto León. Te ayudo a invertir con seguridad.
-</p>
+<p>Te ayudo a invertir con seguridad.</p>
 </div>
 
 </div>
 </header>
 
-<!-- MENU IZQUIERDO -->
-<div class="menu-proyectos">
-<button onclick="abrirProyecto('fundo')">Fundo Malabrigo</button>
-<button onclick="abrirProyecto('puerto')">Puerto Mar Club</button>
-<button onclick="abrirProyecto('monte')">Monte Verde</button>
-<button onclick="abrirProyecto('clientes')">Clientes</button>
+<!-- MENU -->
+<div class="menu">
+<button onclick="abrir('fundo')">Fundo</button>
+<button onclick="abrir('puerto')">Puerto</button>
+<button onclick="abrir('monte')">Monte</button>
+<button onclick="abrir('clientes')">Clientes</button>
 </div>
 
-<!-- PROYECTOS -->
+<!-- PANELES -->
 <div id="fundo" class="panel">
 <h2>Fundo Malabrigo</h2>
-<button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg'])">Fotos</button>
-<button class="btn">Videos</button>
+<button class="btn" onclick="verImg('fundo1.jpg')">Ver Imagen</button>
 </div>
 
 <div id="puerto" class="panel">
 <h2>Puerto Mar Club</h2>
-<button class="btn">Fotos</button>
-<button class="btn">Videos</button>
 </div>
 
 <div id="monte" class="panel">
 <h2>Monte Verde</h2>
-<button class="btn">Fotos</button>
-<button class="btn">Videos</button>
 </div>
 
 <div id="clientes" class="panel">
 <h2>Clientes Felices</h2>
-<button class="btn" onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg'])">Ver</button>
 </div>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" style="display:none;position:fixed;width:100%;height:100%;background:black;top:0;left:0;justify-content:center;align-items:center;">
-<img id="imgbox" style="max-width:90%;">
+<div id="lightbox" onclick="cerrar()">
+<img id="img">
 </div>
 
 <script>
 
 /* HEADER */
 function toggleHeader(){
-document.getElementById("contenedor-principal").classList.toggle("activo");
+document.getElementById("contenedor").classList.toggle("activo");
 }
 
-/* PROYECTOS (SOLO UNO ABIERTO) */
-function abrirProyecto(id){
-let paneles = document.querySelectorAll(".panel");
-
-paneles.forEach(p => p.style.display="none");
+/* PROYECTOS */
+function abrir(id){
+let todos=document.querySelectorAll(".panel");
+todos.forEach(p=>p.style.display="none");
 
 document.getElementById(id).style.display="block";
 }
 
-/* IMÁGENES */
-function abrirImagenes(arr){
-let box = document.getElementById("lightbox");
-let img = document.getElementById("imgbox");
+/* IMAGEN */
+function verImg(src){
+document.getElementById("img").src=src;
+document.getElementById("lightbox").style.display="flex";
+}
 
-img.src = arr[0];
-box.style.display="flex";
-
-box.onclick = ()=> box.style.display="none";
+function cerrar(){
+document.getElementById("lightbox").style.display="none";
 }
 
 </script>
