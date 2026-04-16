@@ -577,7 +577,36 @@ function toggleHeader() {
     }
 }
 
+<!-- FUNCIONES -->
 <script>
+/* HEADER */
+let headerActivo = false;
+
+function toggleHeader() {
+    const contenedor = document.getElementById("contenedor-principal");
+    const mensaje = document.getElementById("info-humberto");
+
+    if (!headerActivo) {
+        contenedor.style.flexDirection = "row";
+        contenedor.style.textAlign = "left";
+
+        mensaje.style.opacity = "1";
+        mensaje.style.transform = "translateY(0)";
+        mensaje.style.pointerEvents = "auto";
+
+        headerActivo = true;
+    } else {
+        contenedor.style.flexDirection = "column";
+        contenedor.style.textAlign = "center";
+
+        mensaje.style.opacity = "0";
+        mensaje.style.transform = "translateY(30px)";
+        mensaje.style.pointerEvents = "none";
+
+        headerActivo = false;
+    }
+}
+
 /* PROYECTOS */
 function toggleProyecto(id) {
     var x = document.getElementById(id);
@@ -591,6 +620,7 @@ function toggleProyecto(id) {
 }
 </script>
 
+<!-- ESTILO BOTÓN CLIENTES -->
 <style>
 .btn-clientes {
     background: linear-gradient(45deg, #bfa046, #ffcc33);
