@@ -71,7 +71,6 @@
             transition: 0.3s;
         }
 
-        /* TÍTULOS DE CABECERA */
         .titulo-nombre {
             font-size: clamp(2.5rem, 7vw, 3.5rem);
             margin: 15px 0 5px;
@@ -101,7 +100,7 @@
             margin-left: 15px;
         }
 
-        /* --- SECCIÓN PROYECTOS (ÚNICA) --- */
+        /* --- SECCIÓN PROYECTOS --- */
         .proyectos { padding: 60px 20px; text-align: center; }
 
         .titulo-seccion {
@@ -155,15 +154,9 @@
         .logo-proyecto {
             width: 140px; height: 140px;
             object-fit: contain;
-            animation: latido 2s infinite ease-in-out;
         }
 
-        @keyframes latido {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        /* BOTONES */
+        /* BOTONES FLEX */
         .botones-flex { display: flex; gap: 10px; margin-top: 15px; }
 
         .btn-ver {
@@ -177,10 +170,9 @@
             text-decoration: none;
         }
 
-        /* BOTÓN AGENDAR / WHATSAPP VERDE */
         .btn-agendar {
             padding: 12px 20px;
-            background: #25D366; /* Verde Pro */
+            background: #25D366;
             color: white;
             border-radius: 50px;
             font-weight: 800;
@@ -188,11 +180,9 @@
             cursor: pointer;
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            transition: 0.3s;
         }
 
-        .btn-agendar:hover { background: #1eb954; transform: scale(1.05); }
-
+        /* WHATSAPP FLOTANTE */
         .wa-float { position:fixed; bottom:20px; right:20px; background:var(--verde-wa); width:60px; height:60px; border-radius:50%; display:flex; justify-content:center; align-items:center; z-index:1000; }
 
         @media (max-width: 768px) {
@@ -204,75 +194,7 @@
 <body>
 
     <a href="https://wa.me/51985877256" class="wa-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
-    </a>
-
-    <header>
-        <video autoplay muted loop playsinline>
-            <source src="https://drive.google.com/uc?export=download&id=1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU" type="video/mp4">
-        </video>
-        <div class="overlay"></div>
-
-        <div id="contenedor-presentacion">
-            <div class="bloque-perfil">
-                <img src="hl_logo.png" class="mi-logo" onclick="toggleInfo()" alt="Logo">
-                <h1 class="titulo-nombre">Humberto León</h1>
-                <p style="color:var(--dorado-brillante); font-weight:700; text-transform:uppercase; letter-spacing:2px;">Asesor Inmobiliario · Inversión Segura</p>
-            </div>
-
-            <div id="mensaje-humberto">
-                <h3 style="color:var(--dorado-brillante); margin-top:0;">Jefe Comercial</h3>
-                <p style="line-height:1.6; margin-bottom:0;">Hola, soy Humberto León. Mi compromiso es brindarte una asesoría clara y honesta para que inviertas con total seguridad en los mejores proyectos del norte.</p>
-            </div>
-        </div>
-    </header>
-
-    <section class="proyectos">
-        <h2 class="titulo-seccion">Nuestros Proyectos</h2>
-        
-        <div class="grid">
-            <div class="proyecto-card">
-                <img src="logo_fundo.png" class="logo-proyecto">
-                <p class="sub-dorado">Campo & Mar</p>
-                <h3 style="margin:5px 0 15px;">Fundo Malabrigo</h3>
-                <div class="botones-flex">
-                    <button class="btn-ver" onclick="toggleDetalle('d1')">Ver</button>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20info%20de%20Fundo%20Malabrigo" class="btn-agendar" target="_blank">WhatsApp</a>
-                </div>
-                <div id="d1" style="display:none; margin-top:15px; font-size:0.9rem;">Lotes exclusivos con vista privilegiada.</div>
-            </div>
-
-            <div class="proyecto-card">
-                <img src="logo_puerto.png" class="logo-proyecto">
-                <p class="sub-dorado">Frente al Mar</p>
-                <h3 style="margin:5px 0 15px;">Puerto Mar Club</h3>
-                <div class="botones-flex">
-                    <button class="btn-ver" onclick="toggleDetalle('d2')">Ver</button>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20info%20de%20Puerto%20Mar" class="btn-agendar" target="_blank">WhatsApp</a>
-                </div>
-                <div id="d2" style="display:none; margin-top:15px; font-size:0.9rem;">Tu casa de playa con club privado.</div>
-            </div>
-
-            <div class="proyecto-card">
-                <img src="logo_monteverde.png" class="logo-proyecto">
-                <p class="sub-dorado">Alta Plusvalía</p>
-                <h3 style="margin:5px 0 15px;">Residencial Monte Verde</h3>
-                <div class="botones-flex">
-                    <button class="btn-ver" onclick="toggleDetalle('d3')">Ver</button>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20info%20de%20Monte%20Verde" class="btn-agendar" target="_blank">WhatsApp</a>
-                </div>
-                <div id="d3" style="display:none; margin-top:15px; font-size:0.9rem;">Inversión estratégica en zona de crecimiento.</div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        function toggleInfo() {
-            document.getElementById("contenedor-presentacion").classList.toggle("activo");
-        }
-        function toggleDetalle(id) {
-            let x = document.getElementById(id);
-            x.style.display = (x.style.display === "
+        <img src="
     <section class="proyectos">
         <h2>Nuestros Proyectos</h2>
         <div class="grid">
