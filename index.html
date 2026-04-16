@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humberto León Inmobiliaria</title>
+<title>Humberto León</title>
 
 <style>
 :root {
-    --dorado: #bfa046;
-    --dorado-brillante: #ffcc33;
-    --oscuro-deep: #020617;
-    --oscuro-card: linear-gradient(145deg, #1e293b, #0f172a);
-    --verde-wa: #25D366;
+    --dorado:#bfa046;
+    --dorado-brillante:#ffcc33;
+    --oscuro-deep:#020617;
+    --oscuro-card:#1e293b;
+    --verde-wa:#25D366;
 }
 
 body {
@@ -21,49 +21,19 @@ body {
     color:white;
 }
 
-/* HEADER */
-header {
-    position:relative;
-    min-height:65vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('fondo.jpg') center/cover no-repeat;
-}
-
-#contenedor-principal {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    gap:30px;
-    width:100%;
-    max-width:1000px;
-}
-
-/* LOGO */
-#bloque-logo img {
-    cursor:pointer;
-    width:190px;
-    border-radius:12px;
-    border:3px solid #bfa046;
-}
-
-/* BOTÓN CLIENTES */
+/* BOTÓN CLIENTES (CORREGIDO SOLO UNA VEZ) */
 .btn-clientes {
     background: linear-gradient(45deg, #bfa046, #ffcc33);
-    color: #000;
-    border: none;
-    padding: 14px 28px;
-    font-size: 1rem;
-    font-weight: 800;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 8px 25px rgba(191,160,70,0.5);
-    animation: pulso 2s infinite;
-    transition: 0.3s;
+    color:#000;
+    border:none;
+    padding:14px 28px;
+    font-size:1rem;
+    font-weight:800;
+    border-radius:50px;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(191,160,70,0.5);
+    animation:pulso 2s infinite;
+    transition:0.3s;
 }
 
 .btn-clientes:hover {
@@ -77,150 +47,118 @@ header {
     50%{transform:scale(1.05);}
     100%{transform:scale(1);}
 }
-
-/* PROYECTOS */
-.proyectos {
-    padding:80px 20px;
-    text-align:center;
-}
-
-.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.proyecto-card {
-    background:var(--oscuro-card);
-    padding:25px;
-    border-radius:25px;
-    border:1px solid rgba(191,160,70,0.3);
-}
-
-/* BOTONES */
-.btn {
-    padding:12px 18px;
-    border:none;
-    border-radius:30px;
-    font-weight:bold;
-    cursor:pointer;
-    background:linear-gradient(to bottom,#bfa046,#8a6d1d);
-    color:white;
-}
-
-.btn-agendar {
-    background:linear-gradient(to bottom,#25D366,#128C7E);
-}
-
-/* CLIENTES */
-.clientes-section {
-    text-align:center;
-    padding:60px 20px;
-    background:rgba(191,160,70,0.05);
-}
-
-/* WHATSAPP */
-.wa-float {
-    position:fixed;
-    bottom:30px;
-    right:30px;
-    width:60px;
-    height:60px;
-    background:#25D366;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
 </style>
+
 </head>
 
 <body>
 
-<header>
-    <div id="contenedor-principal">
+<header style="position: relative; min-height: 65vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo.jpg') center/cover no-repeat;">
 
-        <div id="bloque-logo">
-            <img src="hl_logo.png" onclick="toggleHeader()">
-            <h1 style="color:#ffcc33;">Humberto León</h1>
-            <p>Asesor Inmobiliario</p>
-        </div>
+<div id="contenedor-principal" style="display:flex; align-items:center; justify-content:center; flex-direction:column; gap:30px; text-align:center; width:100%; max-width:1000px; margin:auto;">
 
-        <div id="info-humberto" style="display:none; max-width:500px;">
-            <h3 style="color:#ffcc33;">Asesor Inmobiliario</h3>
-            <p>Te acompaño en todo el proceso de inversión segura.</p>
-        </div>
+    <div id="bloque-logo">
+
+        <img src="hl_logo.png" onclick="toggleHeader()" 
+        style="cursor:pointer; width:190px; border-radius:12px; border:3px solid #bfa046;">
+
+        <h1 style="margin:10px 0 0; font-size:3rem; font-weight:900;
+        background:linear-gradient(45deg,#bfa046,#ffcc33,#fff);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;">
+            Humberto León
+        </h1>
+
+        <p style="margin:8px 0 0;font-size:1.1rem;">
+            Asesor Inmobiliario
+        </p>
 
     </div>
-</header>
 
-<!-- PROYECTOS -->
+    <div id="info-humberto" style="display:none; max-width:480px;">
+        <h3 style="color:#ffcc33;">Asesor Inmobiliario</h3>
+        <p>Te acompaño en todo el proceso de inversión segura.</p>
+    </div>
+
+</div>
+</header>
 <section class="proyectos">
-<h2>Nuestros Proyectos</h2>
 
 <div class="grid">
 
 <div class="proyecto-card">
-<h3>Fundo Malabrigo</h3>
-<img src="logo-fundo.png" width="120">
-<div>
-<button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg'])">FOTOS</button>
-<a class="btn btn-agendar" href="#">AGENDAR</a>
-</div>
+    <h3>Fundo Malabrigo</h3>
+    <img src="logo-fundo.png" width="120">
+
+    <div>
+        <button class="btn" onclick="abrirImagenes(['fundo1.jpg','fundo2.jpg'])">FOTOS</button>
+    </div>
 </div>
 
 <div class="proyecto-card">
-<h3>Puerto Mar</h3>
-<img src="logo-puerto.png" width="120">
-<div>
-<button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg'])">FOTOS</button>
-<a class="btn btn-agendar" href="#">AGENDAR</a>
-</div>
+    <h3>Puerto Mar Club</h3>
+    <img src="logo-puerto.png" width="120">
+
+    <div>
+        <button class="btn" onclick="abrirImagenes(['puerto1.jpg','puerto2.jpg'])">FOTOS</button>
+    </div>
 </div>
 
 <div class="proyecto-card">
-<h3>Monte Verde</h3>
-<img src="logo-monte.png" width="120">
-<div>
-<button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg'])">FOTOS</button>
-<a class="btn btn-agendar" href="#">AGENDAR</a>
-</div>
+    <h3>Monte Verde</h3>
+    <img src="logo-monte.png" width="120">
+
+    <div>
+        <button class="btn" onclick="abrirImagenes(['monte1.jpg','monte2.jpg'])">FOTOS</button>
+    </div>
 </div>
 
 </div>
 </section>
 
 <!-- CLIENTES -->
-<section class="clientes-section">
+<section class="clientes-section" style="text-align:center; padding:60px 20px;">
+
 <h2>CONFIANZA REAL</h2>
 
-<button class="btn-clientes"
-onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg'])">
+<button type="button" class="btn-clientes"
+onclick="abrirImagenes(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">
 🤝 Ver Clientes Reales
 </button>
 
-<p style="color:#ffcc33;font-weight:bold;">Fotos reales de entregas</p>
+<p style="margin-top:20px;color:#ffcc33;font-weight:bold;">
+(Fotos reales de firmas y entregas)
+</p>
+
 </section>
 
-<!-- WHATSAPP -->
-<a class="wa-float" href="https://wa.me/51985877256" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35">
-</a>
-
-<!-- SCRIPT ÚNICO (ARREGLADO) -->
+<!-- SCRIPT ÚNICO (CORREGIDO) -->
 <script>
 
+let headerActivo = false;
+
+/* HEADER */
 function toggleHeader() {
+    const contenedor = document.getElementById("contenedor-principal");
     const info = document.getElementById("info-humberto");
-    info.style.display = (info.style.display === "block") ? "none" : "block";
+
+    if (!headerActivo) {
+        contenedor.style.flexDirection = "row";
+        info.style.display = "block";
+        headerActivo = true;
+    } else {
+        contenedor.style.flexDirection = "column";
+        info.style.display = "none";
+        headerActivo = false;
+    }
 }
 
+/* IMÁGENES */
 function abrirImagenes(imgs){
-    alert("Aquí abrirías imágenes: " + imgs.join(", "));
+    alert("Abrir imágenes: " + imgs.join(", "));
 }
 
+/* PROYECTOS */
 function toggleProyecto(id){
     const el = document.getElementById(id);
     el.style.display = (el.style.display === "block") ? "none" : "block";
