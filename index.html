@@ -1,33 +1,38 @@
 <!DOCTYPE html>
-<header style="position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo.jpg') center/cover no-repeat;">
+<header style="position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo.jpg') center/cover no-repeat;">
         
-    <div style="position: relative; z-index: 10; width: 100%; max-width: 700px; margin: auto;">
+    <div id="contenedor-principal" style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        width: 100%;
+        max-width: 1100px;
+        padding: 20px;
+        transition: all 0.6s ease;
+        flex-direction: column;
+        text-align: center;
+    ">
         
-        <!-- BLOQUE CENTRADO -->
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+        <!-- BLOQUE LOGO -->
+        <div id="bloque-logo" style="transition: all 0.6s ease;">
             
-            <!-- LOGO -->
-            <img src="hl_logo.png" alt="Humberto León" onclick="toggleProyecto('info-humberto')" 
-                 style="cursor: pointer; width: 200px; height: auto; border-radius: 12px; border: 3px solid #bfa046;">
+            <img src="hl_logo.png" onclick="toggleProyecto('info-humberto')" 
+                 style="cursor: pointer; width: 200px; border-radius: 12px; border: 3px solid #bfa046;">
             
-            <!-- NOMBRE -->
             <h1 style="
-                margin: 0;
-                font-family: sans-serif;
-                font-size: 3.2rem;
+                margin: 10px 0 0;
+                font-size: 3rem;
                 font-weight: 900;
-                background: linear-gradient(45deg, #bfa046, #ffcc33, #fff, #bfa046);
+                background: linear-gradient(45deg, #bfa046, #ffcc33, #fff);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 text-shadow: 0 0 20px rgba(191,160,70,0.8);
             ">
                 Humberto León
             </h1>
-            
-            <!-- SUBTEXTO -->
-            <p style="margin: 0; color: white; font-size: 1.2rem;">
-                Asesoría Inmobiliaria Transparente
-            </p>
+
+            <p>Asesoría Inmobiliaria Transparente</p>
 
         </div>
 
@@ -36,27 +41,19 @@
             opacity: 0;
             transform: translateY(30px);
             pointer-events: none;
+            max-width: 500px;
             background: rgba(2, 6, 23, 0.95);
             padding: 30px;
             border-radius: 20px;
             border: 1px solid #bfa046;
-            max-width: 550px;
-            margin: 50px auto 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             transition: all 0.5s ease;
-            text-align: center;
         ">
-            
-            <h3 style="color: #ffcc33; margin-top: 0;">
-                Jefe Comercial & Especialista Inmobiliario
-            </h3>
-            
-            <p style="color: #eee; line-height: 1.7;">
-                Hola, soy <b>Humberto León</b>. Mi compromiso es brindarte una asesoría clara, honesta y con respaldo legal para que tomes decisiones seguras al momento de invertir.
+            <h3 style="color:#ffcc33;">Jefe Comercial & Especialista Inmobiliario</h3>
+            <p style="line-height:1.7;">
+                Hola, soy <b>Humberto León</b>. Mi compromiso es brindarte una asesoría clara, honesta y con respaldo legal para que tomes decisiones seguras al invertir.
                 <br><br>
-                Te acompaño en todo el proceso, desde la elección del lote ideal hasta la verificación de documentos, asegurando que tu inversión sea rentable y segura.
+                Te acompaño en todo el proceso, desde la elección del lote ideal hasta la verificación de documentos.
             </p>
-
         </div>
 
     </div>
