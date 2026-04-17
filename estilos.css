@@ -35,7 +35,22 @@ h1 { font-size: 3.0rem; color: var(--dorado-brillante); text-transform: uppercas
     border-radius: 35px; border: 2px solid rgba(191,160,70,0.4);
     padding: 40px; min-height: 750px;
 }
+/* --- AQUÍ CONTROLAS EL BIENVENIDO --- */
+#msg-inicio h2 {
+    font-size: 1.8rem;    /* Redúcelo a 1.5rem si lo quieres aún más pequeño */
+    color: var(--dorado-brillante);
+    text-align: center;   /* Esto asegura que esté centrado */
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
 
+#msg-inicio p {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;       /* Esto centra el párrafo de abajo */
+}
+/* ------------------------------------ */
 /* MENSAJE DORADO */
 .instruccion-dorada {
     font-size: 1.2rem;
