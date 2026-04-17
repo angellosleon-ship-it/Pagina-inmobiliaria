@@ -16,7 +16,6 @@ header {
 }
 .logo-top { width: 140px; border-radius: 20px; border: 3px solid var(--dorado); margin-bottom: 15px; }
 
-/* NOMBRE AJUSTADO PARA PC Y MÓVIL */
 h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercase; letter-spacing: 3px; line-height: 1.1; }
 .tagline { font-size: 1.1rem; color: #cbd5e1; letter-spacing: 4px; margin-top: 10px; }
 
@@ -24,22 +23,20 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
     display: flex; flex-wrap: wrap; max-width: 1350px; margin: 30px auto; gap: 20px; padding: 10px;
 }
 .menu-proyectos { flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 15px; }
-.menu-titulo { color: var(--dorado); text-align: center; margin-bottom: 10px; font-size: 1.8rem; }
+.menu-titulo { color: var(--dorado); text-align: center; margin-bottom: 15px; font-size: 1.8rem; text-transform: uppercase; }
 
 .ventana-visor {
     flex: 2.5; width: 100%; background: var(--oscuro-card); border-radius: 30px; 
     border: 2px solid rgba(191,160,70,0.4); padding: 30px; min-height: 600px;
 }
 
-/* MENSAJE DE BIENVENIDA CENTRADO Y ESCALABLE */
 #msg-inicio { text-align: center; padding-top: 50px; width: 100%; }
 #msg-inicio h2 { font-size: 2.2rem; color: var(--dorado-brillante); margin-bottom: 10px; }
 .divisor { width: 80px; height: 3px; background: var(--dorado); margin: 15px auto; }
 
-/* MENSAJE DORADO PALPITANTE */
 .instruccion-dorada {
     font-size: 1.2rem; font-weight: 800; color: var(--dorado-brillante); margin-top: 30px;
-    text-shadow: 0 0 10px rgba(255, 204, 51, 0.5); animation: palpitar-dorado 2s infinite;
+    text-shadow: 0 0 10px rgba(255, 204, 51, 0.5); animation: palpitar-dorado 2s infinite; text-align: center;
 }
 
 @keyframes palpitar-dorado {
@@ -48,13 +45,11 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
     100% { transform: scale(1); opacity: 0.8; }
 }
 
-/* BOTONES DE PROYECTOS CON DORADO LATENTE */
 .btn-palpitar {
     background: linear-gradient(45deg, #bfa046, #ffcc33);
     color: black; border: none; padding: 20px; border-radius: 15px;
     font-weight: 900; font-size: 1.2rem; text-transform: uppercase; cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 204, 51, 0.3);
-    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255, 204, 51, 0.3); transition: 0.3s;
 }
 .btn-palpitar:hover { background: white; transform: scale(1.05); box-shadow: 0 0 25px var(--dorado-brillante); }
 .btn-white { background: white !important; box-shadow: none; }
@@ -64,27 +59,30 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
     background: var(--dorado); font-weight: 800; margin: 5px; cursor: pointer; display: inline-block; text-decoration: none;
 }
 .bg-mapa { background: #4285F4 !important; }
+
 .btn-agendar {
     padding: 12px 22px; border-radius: 50px; border: 2px solid var(--dorado-brillante); color: black;
     background: white; font-weight: 800; margin: 5px; cursor: pointer; display: inline-block; text-decoration: none;
 }
 
-.sub-ubicacion { color: #cbd5e1; font-size: 1.1rem; font-weight: bold; margin-bottom: 20px; letter-spacing: 2px; }
-.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 25px; }
-iframe { width: 100%; height: 200px; border-radius: 15px; border: 2px solid var(--dorado); }
-.img-preview { width: 100%; max-width: 500px; border-radius: 15px; border: 3px solid var(--dorado); }
+.faq-section { max-width: 900px; margin: 60px auto; padding: 20px; }
+.faq-item { background: #1e293b; margin-bottom: 10px; border-radius: 10px; overflow: hidden; border-left: 4px solid var(--dorado); }
+.faq-question { padding: 20px; cursor: pointer; font-weight: bold; background: #263349; display: flex; justify-content: space-between; }
+.faq-answer { padding: 20px; display: none; background: #1e293b; color: #cbd5e1; line-height: 1.6; }
 
-.wa-flotante { position: fixed; bottom: 25px; right: 25px; width: 60px; z-index: 9999; }
+.sub-ubicacion { color: #cbd5e1; font-size: 1.1rem; font-weight: bold; margin-bottom: 20px; letter-spacing: 2px; }
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 25px; }
+iframe { width: 100%; height: 200px; border-radius: 15px; border: 2px solid var(--dorado); }
+.img-preview { width: 100%; max-width: 500px; border-radius: 15px; border: 3px solid var(--dorado); cursor: pointer; }
+
+.wa-flotante { position: fixed; bottom: 25px; right: 25px; width: 65px; z-index: 9999; }
 .wa-flotante img { width: 100%; }
 
-/* MEDIA QUERY PARA CELULARES */
 @media (max-width: 600px) {
     h1 { font-size: 1.9rem; }
     .tagline { font-size: 0.9rem; }
     #msg-inicio h2 { font-size: 1.7rem; }
     .ventana-visor { padding: 20px; min-height: 500px; }
-    .menu-proyectos { order: 1; }
-    .ventana-visor { order: 2; }
 }
 
 #lightbox {
@@ -96,7 +94,10 @@ iframe { width: 100%; height: 200px; border-radius: 15px; border: 2px solid var(
 .prev { left: 5%; } .next { right: 5%; } .close { top: 5%; right: 5%; background: #ff4444; }
 
 footer { text-align: center; padding: 40px; background: #000; }
-.social-links img { width: 40px; margin: 0 10px; }
+.social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.social-links img { width: 45px; transition: 0.3s; }
+.social-links img:hover { transform: scale(1.2); }
+
 .proyecto-detalle { display: none; text-align: center; }
 .logo-v { width: 130px; background: white; padding: 8px; border-radius: 10px; margin-bottom: 10px; }
 .titulo-p { font-size: 2.2rem; color: var(--dorado-brillante); }
