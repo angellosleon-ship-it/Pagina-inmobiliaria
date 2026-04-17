@@ -27,7 +27,7 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
 
 .ventana-visor {
     flex: 2.5; width: 100%; background: var(--oscuro-card); border-radius: 30px; 
-    border: 2px solid rgba(191,160,70,0.4); padding: 30px; min-height: 700px;
+    border: 2px solid rgba(191,160,70,0.4); padding: 30px; min-height: 700px; position: relative;
 }
 
 #msg-inicio { text-align: center; padding-top: 50px; width: 100%; }
@@ -67,6 +67,15 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
 }
 .btn-agendar:hover { background: var(--dorado-brillante); }
 
+/* CAJA DE DESCRIPCIÓN ACTUALIZADA */
+.desc-proyecto {
+    margin: 20px auto; max-width: 650px; color: #cbd5e1; line-height: 1.6; font-size: 1.05rem;
+    background: rgba(15, 23, 42, 0.6); padding: 25px; border-radius: 15px; border: 1px solid var(--dorado);
+    text-align: left;
+}
+.desc-proyecto ul { margin-left: 20px; margin-top: 10px; }
+.desc-proyecto li { margin-bottom: 5px; }
+
 .faq-section { max-width: 900px; margin: 60px auto; padding: 20px; }
 .faq-item { background: #1e293b; margin-bottom: 10px; border-radius: 10px; overflow: hidden; border-left: 4px solid var(--dorado); }
 .faq-question { padding: 20px; cursor: pointer; font-weight: bold; background: #263349; display: flex; justify-content: space-between; align-items: center; }
@@ -85,8 +94,6 @@ iframe { width: 100%; height: 220px; border-radius: 15px; border: 2px solid var(
     .tagline { font-size: 0.9rem; }
     #msg-inicio h2 { font-size: 1.7rem; }
     .ventana-visor { padding: 20px; min-height: 500px; }
-    .menu-proyectos { order: 1; }
-    .ventana-visor { order: 2; }
 }
 
 #lightbox {
