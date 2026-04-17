@@ -7,95 +7,80 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: var(--oscuro-deep); color: white; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 
-/* HEADER AJUSTADO */
+/* HEADER */
 header {
-    min-height: 40vh;
+    min-height: 35vh;
     display: flex; align-items: center; justify-content: center;
     background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('fondo.jpg') center/cover;
     border-bottom: 4px solid var(--dorado); text-align: center; padding: 20px;
 }
-.logo-top { width: 140px; border-radius: 20px; border: 2px solid var(--dorado); margin-bottom: 15px; }
+.logo-top { width: 120px; border-radius: 20px; border: 2px solid var(--dorado); margin-bottom: 15px; }
+h1 { font-size: 3.5rem; color: var(--dorado-brillante); text-transform: uppercase; letter-spacing: 2px; line-height: 1; }
+.tagline { font-size: 1.1rem; color: #cbd5e1; letter-spacing: 3px; margin-top: 10px; }
 
-/* TAMAÑO DE NOMBRE DINÁMICO */
-h1 { font-size: 3.5rem; color: var(--dorado-brillante); text-transform: uppercase; letter-spacing: 2px; }
-.tagline { font-size: 1.2rem; color: #cbd5e1; letter-spacing: 3px; }
-
-/* CONTENEDOR PRINCIPAL */
+/* CONTENEDOR */
 .proyectos-container {
     display: flex; flex-wrap: wrap; max-width: 1200px; margin: 20px auto; gap: 20px; padding: 10px;
 }
 
-.menu-proyectos { flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 15px; }
+.menu-proyectos { 
+    flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 15px; 
+    z-index: 10; /* Asegura que el menú esté al frente para poder dar clic */
+}
 
-/* VISOR CENTRADO */
 .ventana-visor {
-    flex: 2.5; 
-    width: 100%; /* Asegura que ocupe todo el ancho disponible */
-    background: #0f172a; 
-    border-radius: 25px; 
-    border: 1px solid var(--dorado); 
-    padding: 20px; 
-    min-height: 500px;
-    box-sizing: border-box;
+    flex: 2.5; width: 100%; background: #0f172a; border-radius: 25px; 
+    border: 1px solid var(--dorado); padding: 25px; min-height: 500px;
 }
 
-/* MENSAJE DE BIENVENIDA CENTRADO */
-#msg-inicio { 
-    text-align: center; 
-    width: 100%;
-    padding-top: 50px; 
-}
-#msg-inicio h2 { font-size: 2.5rem; color: var(--dorado-brillante); }
-.divisor { width: 60px; height: 3px; background: var(--dorado); margin: 15px auto; }
-
+/* MENSAJES */
+#msg-inicio { text-align: center; padding-top: 50px; }
 .instruccion-dorada {
-    font-size: 1.2rem; color: var(--dorado-brillante); margin-top: 30px; font-weight: bold;
-    text-align: center; animation: pulse 2s infinite; padding: 0 10px;
+    font-size: 1.3rem; color: var(--dorado-brillante); margin-top: 30px; font-weight: bold;
+    animation: pulse 2s infinite;
 }
+@keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% { opacity: 0.6; } }
 
 /* BOTONES */
 .btn-palpitar {
     background: var(--dorado); color: black; border: none; padding: 18px; border-radius: 12px;
-    font-weight: bold; font-size: 1.1rem; cursor: pointer; width: 100%;
+    font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s;
 }
+.btn-palpitar:hover { background: white; }
+.btn-white { background: white !important; }
+
 .btn-accion, .btn-agendar {
-    padding: 12px 18px; border-radius: 30px; border: none; font-weight: bold; 
-    margin: 5px; cursor: pointer; text-decoration: none; display: inline-block; font-size: 0.9rem;
+    padding: 12px 20px; border-radius: 30px; border: none; font-weight: bold; 
+    margin: 5px; cursor: pointer; text-decoration: none; display: inline-block;
 }
 .btn-accion { background: var(--dorado); color: white; }
 .btn-agendar { background: white; color: black; border: 2px solid var(--dorado); }
 
-/* RESPONSIVE PARA CELULARES (Aquí está la magia) */
+/* RESPONSIVE CELULAR */
 @media (max-width: 600px) {
-    h1 { font-size: 2.2rem; } /* Reduce el nombre para que no se corte */
+    h1 { font-size: 2.1rem; }
     .tagline { font-size: 0.9rem; }
-    header { min-height: 30vh; }
-    
-    .ventana-visor {
-        padding: 15px;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    
-    #msg-inicio h2 { font-size: 1.8rem; }
-    #msg-inicio p { font-size: 1.1rem !important; }
-
-    .titulo-p { font-size: 1.8rem !important; }
-    .video-grid iframe { height: 180px; }
+    .menu-proyectos { order: 1; } /* Menú primero */
+    .ventana-visor { order: 2; margin-top: 20px; } /* Visor después */
 }
 
-/* WHATSAPP Y OTROS */
-.wa-flotante { position: fixed; bottom: 20px; right: 20px; width: 55px; z-index: 1000; }
-.wa-flotante img { width: 100%; }
-.proyecto-detalle { display: none; text-align: center; width: 100%; }
-.img-preview { width: 100%; border-radius: 15px; border: 2px solid var(--dorado); }
-footer { text-align: center; padding: 30px; background: #000; }
-.social-links img { width: 35px; margin: 0 8px; }
+/* OTROS */
+.wa-flotante { position: fixed; bottom: 20px; right: 20px; width: 60px; z-index: 999; }
+.proyecto-detalle { display: none; text-align: center; }
+.sub-ubicacion { color: #94a3b8; font-weight: bold; margin-bottom: 20px; }
+.titulo-p { font-size: 2.2rem; color: var(--dorado-brillante); }
+.logo-v { width: 120px; background: white; padding: 5px; border-radius: 8px; margin-bottom: 10px; }
+.video-grid iframe { width: 100%; height: 200px; border-radius: 15px; margin-top: 15px; }
 
+/* LIGHTBOX */
 #lightbox {
     display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center;
+    background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center;
 }
-#lightbox-img { max-width: 95%; max-height: 70%; border: 2px solid var(--dorado); }
-.btn-galeria { position: absolute; background: var(--dorado); color: white; border: none; padding: 10px; cursor: pointer; }
-.prev { left: 2%; } .next { right: 2%; } .close { top: 2%; right: 2%; background: red; }
+#lightbox-img { max-width: 90%; max-height: 80%; border: 2px solid var(--dorado); }
+.btn-galeria { position: absolute; background: var(--dorado); color: white; border: none; padding: 15px; cursor: pointer; z-index: 2100; }
+.close { top: 5%; right: 5%; background: #ff4444; }
+.prev { left: 2%; } .next { right: 2%; }
+
+footer { text-align: center; padding: 40px; background: #000; margin-top: 40px; }
+.social-links img { width: 40px; margin: 0 10px; }
