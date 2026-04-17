@@ -9,7 +9,7 @@
 body { background: var(--oscuro-deep); color: white; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
 
 header {
-    min-height: 40vh;
+    min-height: 45vh;
     display: flex; align-items: center; justify-content: center;
     background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('fondo.jpg') center/cover;
     border-bottom: 5px solid var(--dorado); text-align: center; padding: 20px;
@@ -27,7 +27,7 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
 
 .ventana-visor {
     flex: 2.5; width: 100%; background: var(--oscuro-card); border-radius: 30px; 
-    border: 2px solid rgba(191,160,70,0.4); padding: 30px; min-height: 600px;
+    border: 2px solid rgba(191,160,70,0.4); padding: 30px; min-height: 700px;
 }
 
 #msg-inicio { text-align: center; padding-top: 50px; width: 100%; }
@@ -45,11 +45,12 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
     100% { transform: scale(1); opacity: 0.8; }
 }
 
+/* BOTONES DORADO BRILLANTE LATENTE */
 .btn-palpitar {
     background: linear-gradient(45deg, #bfa046, #ffcc33);
     color: black; border: none; padding: 20px; border-radius: 15px;
     font-weight: 900; font-size: 1.2rem; text-transform: uppercase; cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 204, 51, 0.3); transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255, 204, 51, 0.4); transition: 0.3s;
 }
 .btn-palpitar:hover { background: white; transform: scale(1.05); box-shadow: 0 0 25px var(--dorado-brillante); }
 .btn-white { background: white !important; box-shadow: none; }
@@ -58,24 +59,29 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
     padding: 12px 22px; border-radius: 50px; border: none; color: white;
     background: var(--dorado); font-weight: 800; margin: 5px; cursor: pointer; display: inline-block; text-decoration: none;
 }
-.bg-mapa { background: #4285F4 !important; }
+.bg-mapa { background: #4285F4 !important; box-shadow: 0 4px 10px rgba(66, 133, 244, 0.3); }
 
 .btn-agendar {
     padding: 12px 22px; border-radius: 50px; border: 2px solid var(--dorado-brillante); color: black;
     background: white; font-weight: 800; margin: 5px; cursor: pointer; display: inline-block; text-decoration: none;
+    transition: 0.3s;
 }
+.btn-agendar:hover { background: var(--dorado-brillante); }
 
+/* FAQ */
 .faq-section { max-width: 900px; margin: 60px auto; padding: 20px; }
 .faq-item { background: #1e293b; margin-bottom: 10px; border-radius: 10px; overflow: hidden; border-left: 4px solid var(--dorado); }
-.faq-question { padding: 20px; cursor: pointer; font-weight: bold; background: #263349; display: flex; justify-content: space-between; }
+.faq-question { padding: 20px; cursor: pointer; font-weight: bold; background: #263349; display: flex; justify-content: space-between; align-items: center; }
 .faq-answer { padding: 20px; display: none; background: #1e293b; color: #cbd5e1; line-height: 1.6; }
 
 .sub-ubicacion { color: #cbd5e1; font-size: 1.1rem; font-weight: bold; margin-bottom: 20px; letter-spacing: 2px; }
 .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 25px; }
-iframe { width: 100%; height: 200px; border-radius: 15px; border: 2px solid var(--dorado); }
-.img-preview { width: 100%; max-width: 500px; border-radius: 15px; border: 3px solid var(--dorado); cursor: pointer; }
+iframe { width: 100%; height: 220px; border-radius: 15px; border: 2px solid var(--dorado); }
+.img-preview { width: 100%; max-width: 500px; border-radius: 15px; border: 3px solid var(--dorado); cursor: pointer; transition: 0.3s; }
+.img-preview:hover { transform: scale(1.02); }
 
-.wa-flotante { position: fixed; bottom: 25px; right: 25px; width: 65px; z-index: 9999; }
+.wa-flotante { position: fixed; bottom: 25px; right: 25px; width: 65px; z-index: 9999; transition: 0.3s; }
+.wa-flotante:hover { transform: scale(1.1); }
 .wa-flotante img { width: 100%; }
 
 @media (max-width: 600px) {
@@ -83,6 +89,8 @@ iframe { width: 100%; height: 200px; border-radius: 15px; border: 2px solid var(
     .tagline { font-size: 0.9rem; }
     #msg-inicio h2 { font-size: 1.7rem; }
     .ventana-visor { padding: 20px; min-height: 500px; }
+    .menu-proyectos { order: 1; }
+    .ventana-visor { order: 2; }
 }
 
 #lightbox {
@@ -90,14 +98,16 @@ iframe { width: 100%; height: 200px; border-radius: 15px; border: 2px solid var(
     background: rgba(0,0,0,0.95); z-index: 10000; justify-content: center; align-items: center;
 }
 #lightbox-img { max-width: 90%; max-height: 80%; border: 3px solid var(--dorado); }
-.btn-galeria { position: absolute; background: var(--dorado); color: white; border: none; padding: 10px; cursor: pointer; }
-.prev { left: 5%; } .next { right: 5%; } .close { top: 5%; right: 5%; background: #ff4444; }
+.btn-galeria { position: absolute; background: var(--dorado); color: white; border: none; padding: 12px 20px; cursor: pointer; font-weight: bold; }
+.prev { left: 5%; } .next { right: 5%; } .close { top: 5%; right: 5%; background: #ff4444; border-radius: 5px; }
 
-footer { text-align: center; padding: 40px; background: #000; }
-.social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+footer { text-align: center; padding: 50px 20px; background: #000; border-top: 2px solid #111; }
+.social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
 .social-links img { width: 45px; transition: 0.3s; }
-.social-links img:hover { transform: scale(1.2); }
+.social-links img:hover { transform: scale(1.2); filter: brightness(1.2); }
 
-.proyecto-detalle { display: none; text-align: center; }
-.logo-v { width: 130px; background: white; padding: 8px; border-radius: 10px; margin-bottom: 10px; }
-.titulo-p { font-size: 2.2rem; color: var(--dorado-brillante); }
+.proyecto-detalle { display: none; text-align: center; animation: fadeIn 0.5s; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.logo-v { width: 130px; background: white; padding: 8px; border-radius: 10px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+.titulo-p { font-size: 2.2rem; color: var(--dorado-brillante); text-transform: uppercase; }
