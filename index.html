@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humberto León | Asesor Inmobiliario Profesional</title>
+    <title>Humberto León | Asesor Inmobiliario | Proyectos en el Norte</title>
+    <meta name="description" content="Invierte en terrenos con seguridad jurídica en Fundo Malabrigo, Puerto Mar Club y Residencial Monte Verde.">
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -13,7 +14,7 @@
     </a>
 
     <div id="lightbox">
-        <button class="btn-galeria close" onclick="cerrarGaleria()">[X]</button>
+        <button class="btn-galeria close" onclick="cerrarGaleria()">CERRAR [X]</button>
         <button class="btn-galeria prev" onclick="cambiarFoto(-1)">❮</button>
         <img id="lightbox-img" src="">
         <button class="btn-galeria next" onclick="cambiarFoto(1)">❯</button>
@@ -21,7 +22,7 @@
 
     <header>
         <div id="contenedor-principal">
-            <img src="hl_logo.png" class="logo-top" alt="Humberto León">
+            <img src="hl_logo.png" class="logo-top" alt="Humberto León Logo">
             <h1>Humberto León</h1>
             <p class="tagline">ASESOR INMOBILIARIO PROFESIONAL</p>
         </div>
@@ -37,15 +38,14 @@
         </div>
 
         <div class="ventana-visor" id="visor">
-            
             <div id="msg-inicio">
                 <h2>¡BIENVENIDO!</h2>
                 <div class="divisor"></div>
-                <p style="line-height: 1.6; font-size: 1.3rem;">
+                <p style="max-width: 800px; margin: 0 auto; line-height: 1.6; font-size: 1.4rem;">
                     Construye un <strong>legado de valor</strong>. <br> 
-                    Propiedades exclusivas con respaldo legal absoluto.
+                    Propiedades exclusivas con respaldo legal absoluto y el mayor potencial de revalorización.
                 </p>
-                <p class="instruccion-dorada">✨ ELIGE UN PROYECTO PARA EMPEZAR ✨</p>
+                <p class="instruccion-dorada">✨ ELIGE UN PROYECTO PARA INICIAR TU INVERSIÓN ✨</p>
             </div>
 
             <div id="fundo-det" class="proyecto-detalle">
@@ -54,8 +54,9 @@
                 <p class="sub-ubicacion">📍 PUERTO MALABRIGO</p>
                 <div class="acciones">
                     <button class="btn-accion" onclick="abrirGaleria(['fundo1.jpg','fundo2.jpg','fundo3.jpg','fundo4.jpg','fundo5.jpg'])">📸 FOTOS</button>
-                    <button class="btn-accion" onclick="cargarVideos('v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE'])">🎥 VIDEOS</button>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20FUNDO%20MALABRIGO" target="_blank" class="btn-agendar">📅 AGENDAR</a>
+                    <button class="btn-accion" onclick="cargarVideos('v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE', '1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m'])">🎥 VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/56tW2gAuSmQ9LS2v9" target="_blank" class="btn-accion bg-mapa">📍 MAPA</a>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20estoy%20interesado%20en%20el%20proyecto%20FUNDO%20MALABRIGO.%20Deseo%20agendar%20una%20visita." target="_blank" class="btn-agendar">📅 AGENDAR CITA</a>
                 </div>
                 <div id="v-fundo" class="video-grid"></div>
             </div>
@@ -66,8 +67,9 @@
                 <p class="sub-ubicacion">📍 PUERTO MALABRIGO</p>
                 <div class="acciones">
                     <button class="btn-accion" onclick="abrirGaleria(['puerto1.jpg','puerto2.jpg','puerto3.jpg','puerto4.jpg','puerto5.jpg'])">📸 FOTOS</button>
-                    <button class="btn-accion" onclick="cargarVideos('v-puerto', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE', '1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">🎥 VIDEOS</button>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20PUERTO%20MAR%20CLUB" target="_blank" class="btn-agendar">📅 AGENDAR</a>
+                    <button class="btn-accion" onclick="cargarVideos('v-puerto', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE', '1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m'])">🎥 VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/BF4uQkbDnVmdNNqz8" target="_blank" class="btn-accion bg-mapa">📍 MAPA</a>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20estoy%20interesado%20en%20el%20proyecto%20PUERTO%20MAR%20CLUB.%20Deseo%20agendar%20una%20visita." target="_blank" class="btn-agendar">📅 AGENDAR CITA</a>
                 </div>
                 <div id="v-puerto" class="video-grid"></div>
             </div>
@@ -78,8 +80,9 @@
                 <p class="sub-ubicacion">📍 CHEPÉN (CHAPARRAL)</p>
                 <div class="acciones">
                     <button class="btn-accion" onclick="abrirGaleria(['monte1.jpg','monte2.jpg','monte3.jpg','monte4.jpg','monte5.jpg'])">📸 FOTOS</button>
-                    <button class="btn-accion" onclick="cargarVideos('v-monte', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m', '1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">🎥 VIDEOS</button>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20MONTE%20VERDE" target="_blank" class="btn-agendar">📅 AGENDAR</a>
+                    <button class="btn-accion" onclick="cargarVideos('v-monte', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m', '1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU', '1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE'])">🎥 VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/XKH9hEA7vSJVfigd6" target="_blank" class="btn-accion bg-mapa">📍 MAPA</a>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20estoy%20interesado%20en%20el%20proyecto%20RESIDENCIAL%20MONTE%20VERDE.%20Deseo%20agendar%20una%20visita." target="_blank" class="btn-agendar">📅 AGENDAR CITA</a>
                 </div>
                 <div id="v-monte" class="video-grid"></div>
             </div>
@@ -88,9 +91,8 @@
                 <h2 class="titulo-p">🤝 CLIENTES FELICES</h2>
                 <img src="cliente1.jpg" class="img-preview" onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">
                 <br>
-                <button class="btn-palpitar" style="margin-top:20px; width:auto;" onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">VER GALERÍA</button>
+                <button class="btn-palpitar" style="margin-top:20px;" onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg','cliente6.jpg','cliente7.jpg','cliente8.jpg','cliente9.jpg','cliente10.jpg'])">VER 10 ENTREGAS</button>
             </div>
-
         </div>
     </section>
 
@@ -119,13 +121,12 @@
             document.getElementById("lightbox-img").src = imgs[i];
         }
         function cerrarGaleria() { document.getElementById("lightbox").style.display = "none"; }
-        
         function mostrarProyecto(id) {
             document.getElementById('msg-inicio').style.display = 'none';
             document.querySelectorAll('.proyecto-detalle').forEach(d => d.style.display = 'none');
+            document.querySelectorAll('.video-grid').forEach(v => v.innerHTML = '');
             document.getElementById(id).style.display = 'block';
         }
-
         function cargarVideos(contId, ids) {
             const c = document.getElementById(contId);
             c.innerHTML = "";
