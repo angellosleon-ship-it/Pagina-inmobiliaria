@@ -232,7 +232,7 @@
        
     </script>
     <!-- ===== CHATBOT PRO INMOBILIARIO ===== -->
-<div id="chatbot-btn">💬</div>
+<div id="chatbot-btn">💬 Haz clic aquí</div>
 
 <div id="chatbot">
   <div class="chat-header">
@@ -254,17 +254,18 @@
 <style>
 #chatbot-btn {
   position: fixed;
-  bottom: 30px;
-  left: 30px;
+  bottom: 20px;   /* más abajo */
+  left: auto;
+  right: 20px;    /* a la derecha */
   background: linear-gradient(45deg,#16a34a,#4ade80);
   color: #fff;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+  padding: 12px 18px;
+  border-radius: 40px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 30px;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
   z-index: 2000;
   box-shadow: 0 0 20px rgba(74,222,128,0.6);
@@ -273,8 +274,9 @@
 
 @keyframes pulso {
   0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  50% { transform: scale(1.05); }
   100% { transform: scale(1); }
+
 
 }
 
