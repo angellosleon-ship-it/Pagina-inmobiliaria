@@ -46,6 +46,13 @@
                     Propiedades exclusivas con respaldo legal absoluto.
                 </p>
                 <p class="instruccion-dorada">✨ ELIGE UN PROYECTO PARA COMENZAR ✨</p>
+
+
+<!-- 🔥 AQUÍ VA TU MENSAJE -->
+    <div id="chatbot-texto">
+        💬 ¡Te ayudo a elegir tu lote!
+    </div>
+
             </div>
 
             <div id="fundo-det" class="proyecto-detalle">
@@ -279,18 +286,19 @@
 
 }
 
-#chatbot-texto {
-  position: relative;   /* 🔥 ESTE ES EL CAMBIO IMPORTANTE */
-  margin: 20px auto;
-  width: fit-content;
-  background: #25d366;
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+#chatbot {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  background: #020617;
+  border-radius: 18px;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 2000;
+  border: 1px solid #bfa046;
 }
 /* efecto entrada */
 @keyframes aparecer {
