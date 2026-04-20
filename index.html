@@ -38,17 +38,36 @@
 
         <div class="ventana-visor" id="visor">
             
-            <div id="msg-inicio">
-                <h2>¡BIENVENIDO!</h2>
-                <div class="divisor"></div>
-                <p style="line-height: 1.6; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
-                    Construye un <strong>legado de valor</strong>. <br> 
-                    Propiedades exclusivas con respaldo legal absoluto.
-                </p>
-                <p class="instruccion-dorada">✨ ELIGE UN PROYECTO PARA COMENZAR ✨</p>
-            
+           <div id="msg-inicio">
+    <h2>¡BIENVENIDO!</h2>
+    <div class="divisor"></div>
+    <p style="line-height: 1.6; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+        Construye un <strong>legado de valor</strong>. <br> 
+        Propiedades exclusivas con respaldo legal absoluto.
+    </p>
+    <p class="instruccion-dorada">✨ ELIGE UN PROYECTO PARA COMENZAR ✨</p>
 
-          </div>
+    <button class="btn-palpitar" style="margin-top:25px; background: #25d366; color: white;" onclick="mostrarProyecto('asistente-det')">
+        💬 ASISTENTE VIRTUAL: ELIGE TU LOTE
+    </button>
+</div>
+
+<div id="asistente-det" class="proyecto-detalle">
+    <h2 class="titulo-p">ASISTENTE VIRTUAL</h2>
+    <p class="sub-ubicacion">FILTRO DE INVERSIÓN INTELIGENTE</p>
+    
+    <div id="chat-flujo" class="desc-proyecto" style="min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
+        <div id="chat-texto">
+            <p style="text-align: center; font-size: 1.2rem;"><strong>Hola 👋 Soy el asistente de Humberto León.</strong><br>Para ayudarte mejor, cuéntame:</p>
+            <br>
+            <p style="text-align: center;"><strong>¿Cuál es tu objetivo principal?</strong></p>
+            <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
+                <button class="btn-accion" onclick="paso2('Inversión (Rentabilidad)')">💰 Invertir para ganar valor</button>
+                <button class="btn-accion" onclick="paso2('Vivienda (Hogar)')">🏡 Construir mi casa propia</button>
+            </div>
+        </div>
+    </div>
+</div>
             <div id="fundo-det" class="proyecto-detalle">
                 <img src="logo-fundo.png" class="logo-v">
                 <h2 class="titulo-p">FUNDO MALABRIGO</h2>
