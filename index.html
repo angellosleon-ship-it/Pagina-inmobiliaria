@@ -258,6 +258,30 @@
 </div>
 
 <style>
+<!-- ===== BOTÓN PRINCIPAL ===== -->
+<div id="chatbot-btn">
+  💬 <span>Te ayudo a elegir tu lote</span>
+</div>
+
+<!-- ===== CHATBOT ===== -->
+<div id="chatbot">
+  <div class="chat-header">
+    Asesor Virtual Inmobiliario
+    <span onclick="cerrarChat()">✖</span>
+  </div>
+
+  <div id="chat-body">
+    <div class="msg bot">Hola 👋 soy el asistente de Humberto León</div>
+    <div class="msg bot">¿Buscas invertir o comprar para vivir?</div>
+
+    <div class="opciones">
+      <button onclick="tipoCliente('invertir')">💰 Inversión</button>
+      <button onclick="tipoCliente('vivir')">🏡 Vivienda</button>
+    </div>
+  </div>
+</div>
+
+<style>
 /* ===== BOTÓN CENTRAL ===== */
 #chatbot-btn {
   position: fixed;
@@ -285,6 +309,7 @@
   font-size: 13px;
 }
 
+/* ANIMACIÓN */
 @keyframes pulso {
   0% { transform: translate(-50%, -50%) scale(1); }
   50% { transform: translate(-50%, -60%) scale(1.05); }
@@ -335,6 +360,7 @@
   color: #fff;
 }
 
+/* BOTONES */
 .opciones button {
   width: 100%;
   margin: 6px 0;
@@ -354,7 +380,6 @@
 </style>
 
 <script>
-let tipo = "";
 let numero = "51TU_NUMERO_AQUI"; // 👈 CAMBIA TU WHATSAPP
 
 /* ABRIR CHAT */
@@ -364,15 +389,17 @@ window.onload = function () {
 
   btn.onclick = () => {
     chat.style.display = "flex";
+    btn.style.display = "none"; // 👈 OCULTA BOTÓN AL ABRIR
   };
 };
 
-/* CERRAR */
+/* CERRAR CHAT */
 function cerrarChat() {
   document.getElementById("chatbot").style.display = "none";
+  document.getElementById("chatbot-btn").style.display = "flex"; // 👈 VUELVE A APARECER
 }
 
-/* LIMPIAR */
+/* LIMPIAR CHAT */
 function limpiarChat() {
   document.getElementById("chat-body").innerHTML = `
     <div class="msg bot">Hola 👋 soy el asistente de Humberto León</div>
@@ -385,7 +412,7 @@ function limpiarChat() {
   `;
 }
 
-/* MENSAJE */
+/* MENSAJES */
 function agregar(texto) {
   const chat = document.getElementById("chat-body");
   const div = document.createElement("div");
@@ -414,7 +441,6 @@ function enviarWhatsApp(mensaje) {
 /* PASO 1 */
 function tipoCliente(t) {
   limpiarChat();
-  tipo = t;
 
   agregar(t === "invertir"
     ? "Excelente 👌 Invertir es una gran decisión 📈"
@@ -426,24 +452,6 @@ function tipoCliente(t) {
       { txt: "🌿 Fundo Malabrigo", msg: "Hola Humberto, quiero info de Fundo Malabrigo" },
       { txt: "🌊 Puerto Mar Club", msg: "Hola Humberto, quiero info de Puerto Mar Club" },
       { txt: "🏡 Monte Verde", msg: "Hola Humberto, quiero info de Monte Verde" }
-    ]);
-  }, 700);
-}
-
-/* PASO 2 */
-function proyecto(p) {
-  limpiarChat();
-
-  if (p === "fundo") agregar("🌿 Fundo Malabrigo: naturaleza + valorización");
-  if (p === "puerto") agregar("🌊 Puerto Mar Club: frente al mar");
-  if (p === "monte") agregar("🏡 Monte Verde: zona tranquila y segura");
-
-  setTimeout(() => {
-    agregar("¿Qué deseas ahora?");
-    document.getElementById("chat-body").innerHTML += opcionesHTML([
-      { txt: "📸 Ver fotos", msg: `Hola Humberto, quiero fotos de ${p}` },
-      { txt: "📍 Ubicación", msg: `Hola Humberto, quiero ubicación de ${p}` },
-      { txt: "📅 Agendar visita", msg: `Hola Humberto, quiero agendar visita de ${p}` }
     ]);
   }, 700);
 }
