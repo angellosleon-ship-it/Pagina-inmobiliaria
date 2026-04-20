@@ -46,11 +46,9 @@
                     Propiedades exclusivas con respaldo legal absoluto.
                 </p>
                 <p class="instruccion-dorada">✨ ELIGE UN PROYECTO PARA COMENZAR ✨</p>
-
-    </div>
-
             </div>
 
+          </div>
             <div id="fundo-det" class="proyecto-detalle">
                 <img src="logo-fundo.png" class="logo-v">
                 <h2 class="titulo-p">FUNDO MALABRIGO</h2>
@@ -258,26 +256,25 @@
 </div>
 
 <style>
-/* 🔥 RESET DE SEGURIDAD (EVITA QUE OTRO CSS LO ESCONDA) */
+/* ===== BOTÓN ===== */
 #chatbot-btn {
-  all: unset;
-  position: fixed !important;
-  bottom: calc(50% - 3cm) !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  width: 270px !important;
-  height: 80px !important;
-  background: linear-gradient(45deg,#25d366,#128c7e) !important;
-  color: white !important;
-  border-radius: 50px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+  position: fixed;
+  bottom: calc(50% - 3cm);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 270px;
+  height: 80px;
+  background: linear-gradient(45deg,#25d366,#128c7e);
+  color: white;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 999999 !important;
+  z-index: 99999;
   animation: pulso 1.2s infinite;
   box-shadow: 0 0 25px rgba(37,211,102,0.8);
 }
@@ -292,7 +289,7 @@
   100% { transform: translate(-50%, -50%) scale(1); }
 }
 
-/* CHAT */
+/* ===== CHAT ===== */
 #chatbot {
   position: fixed;
   top: 50%;
@@ -303,7 +300,7 @@
   border-radius: 18px;
   display: none;
   flex-direction: column;
-  z-index: 2000;
+  z-index: 9999;
   border: 1px solid #bfa046;
 }
 
@@ -344,37 +341,33 @@
 <script>
 let numero = "51TU_NUMERO_AQUI";
 
-/* 🔥 GARANTIZA CARGA TOTAL */
+/* ===== INICIO SEGURO ===== */
 document.addEventListener("DOMContentLoaded", function () {
 
   const btn = document.getElementById("chatbot-btn");
   const chat = document.getElementById("chatbot");
 
-  if (!btn) {
-    console.error("NO EXISTE BOTÓN EN EL DOM");
-    return;
-  }
+  if (!btn) return;
 
-  btn.style.display = "flex";
-
-  btn.onclick = () => {
+  btn.addEventListener("click", function () {
     chat.style.display = "flex";
-    btn.style.display = "none";
-  };
+    btn.style.display = "none"; // 🔥 DESAPARECE CORRECTO
+  });
+
 });
 
-/* CERRAR CHAT */
+/* ===== CERRAR CHAT ===== */
 function cerrarChat() {
   document.getElementById("chatbot").style.display = "none";
 }
 
-/* WHATSAPP */
+/* ===== WHATSAPP ===== */
 function enviarWhatsApp(msg) {
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
   window.open(url, "_blank");
 }
 
-/* BOTONES */
+/* ===== BOTONES ===== */
 function opcionesHTML(lista) {
   let html = '<div class="opciones">';
   lista.forEach(o => {
@@ -384,7 +377,7 @@ function opcionesHTML(lista) {
   return html;
 }
 
-/* PASO 1 */
+/* ===== PASO 1 ===== */
 function tipoCliente(t) {
   const chat = document.getElementById("chat-body");
   chat.innerHTML = "";
