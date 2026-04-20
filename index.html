@@ -229,6 +229,209 @@
             const answer = element.nextElementSibling;
             answer.style.display = answer.style.display === "block" ? "none" : "block";
         }
+       
     </script>
+    <!-- ===== CHATBOT PRO INMOBILIARIO ===== -->
+<div id="chatbot-btn">💬</div>
+
+<div id="chatbot">
+  <div class="chat-header">
+    Asesor Virtual
+    <span onclick="cerrarChat()">✖</span>
+  </div>
+
+  <div id="chat-body">
+    <div class="msg bot">Hola 👋 soy el asistente de Humberto León</div>
+    <div class="msg bot">¿Buscas invertir o comprar para vivir?</div>
+
+    <div class="opciones">
+      <button onclick="tipoCliente('invertir')">💰 Inversión</button>
+      <button onclick="tipoCliente('vivir')">🏡 Vivienda</button>
+    </div>
+  </div>
+</div>
+
+<style>
+#chatbot-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background: linear-gradient(45deg,#bfa046,#ffcc33);
+  color: #000;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 2000;
+  box-shadow: 0 0 15px rgba(255,204,51,0.6);
+}
+
+#chatbot {
+  position: fixed;
+  bottom: 110px;
+  left: 30px;
+  width: 320px;
+  background: #020617;
+  border-radius: 18px;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 2000;
+  border: 1px solid #bfa046;
+}
+
+.chat-header {
+  background: linear-gradient(45deg,#bfa046,#ffcc33);
+  color: #000;
+  padding: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+#chat-body {
+  padding: 15px;
+  font-size: 14px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.msg {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.bot { color: #fff; }
+
+.opciones button {
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #bfa046;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.opciones button:hover {
+  transform: scale(1.05);
+}
+</style>
+
+<script>
+let tipo = "";
+
+/* Espera a que cargue todo */
+window.onload = function() {
+  const btn = document.getElementById("chatbot-btn");
+  const chat = document.getElementById("chatbot");
+
+  if (btn && chat) {
+    btn.onclick = () => {
+      chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+    };
+  }
+};
+
+function cerrarChat() {
+  document.getElementById("chatbot").style.display = "none";
+}
+
+function agregar(texto) {
+  const chat = document.getElementById("chat-body");
+  const div = document.createElement("div");
+  div.className = "msg bot";
+  div.innerHTML = texto;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function opcionesHTML(lista) {
+  let html = '<div class="opciones">';
+  lista.forEach(o => {
+    html += `<button onclick="${o.fn}">${o.txt}</button>`;
+  });
+  html += '</div>';
+  return html;
+}
+
+/* PASO 1 */
+function tipoCliente(t) {
+  tipo = t;
+
+  agregar(t === "invertir"
+    ? "Excelente 👌 invertir ahora es una gran decisión 📈"
+    : "Perfecto 🏡 te ayudaré a encontrar tu hogar ideal");
+
+  setTimeout(() => {
+    agregar("¿En qué proyecto estás interesado?");
+    document.getElementById("chat-body").innerHTML += opcionesHTML([
+      {txt:"🌿 Fundo Malabrigo", fn:"proyecto('fundo')"},
+      {txt:"🌊 Puerto Mar Club", fn:"proyecto('puerto')"},
+      {txt:"🏡 Monte Verde", fn:"proyecto('monte')"}
+    ]);
+  }, 800);
+}
+
+/* PASO 2 */
+function proyecto(p) {
+  let mensaje = "";
+
+  if (p === "fundo") {
+    agregar("🌿 Fundo Malabrigo: alta valorización + naturaleza");
+    mensaje = "Fundo Malabrigo";
+  }
+
+  if (p === "puerto") {
+    agregar("🌊 Puerto Mar Club: vive frente al mar");
+    mensaje = "Puerto Mar Club";
+  }
+
+  if (p === "monte") {
+    agregar("🏡 Monte Verde: tranquilidad y crecimiento");
+    mensaje = "Monte Verde";
+  }
+
+  setTimeout(() => {
+    agregar("¿Qué deseas ahora?");
+    document.getElementById("chat-body").innerHTML += opcionesHTML([
+      {txt:"📸 Ver fotos", fn:`accion('fotos','${mensaje}')`},
+      {txt:"📍 Ubicación", fn:`accion('ubicacion','${mensaje}')`},
+      {txt:"📅 Agendar visita", fn:`accion('cita','${mensaje}')`}
+    ]);
+  }, 800);
+}
+
+/* PASO 3 */
+function accion(a, proyecto) {
+  let texto = "";
+
+  if (a === "fotos") {
+    agregar("Te envío fotos 📸");
+    texto = `Hola Humberto, quiero ver fotos de ${proyecto}`;
+  }
+
+  if (a === "ubicacion") {
+    agregar("Te envío ubicación 📍");
+    texto = `Hola Humberto, quiero la ubicación de ${proyecto}`;
+  }
+
+  if (a === "cita") {
+    agregar("Agendemos tu visita 👌");
+    texto = `Hola Humberto, quiero agendar visita para ${proyecto}`;
+  }
+
+  setTimeout(() => {
+    window.open("https://wa.me/51985877256?text=" + encodeURIComponent(texto), "_blank");
+  }, 1200);
+}
+</script>
 </body>
 </html>
