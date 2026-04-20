@@ -282,159 +282,126 @@ function paso3(proyecto) {
         }
        
     </script>
-<div id="asistente-det" class="proyecto-detalle" style="display: none; background: #0b1220; border: 1px solid #bfa046; border-radius: 15px; overflow: hidden; max-width: 550px; margin: 20px auto; font-family: 'Segoe UI', sans-serif; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+<div id="contenedor-principal" style="max-width: 600px; margin: 20px auto; font-family: 'Segoe UI', sans-serif;">
     
-    <div style="background: linear-gradient(45deg,#bfa046,#ffcc33); color: #000; padding: 15px; font-weight: bold; text-align: center; font-size: 1.1rem; position: relative;">
-        Asesor Virtual: Humberto León
+    <div id="bienvenida-seccion" style="background: #0b1220; border: 1px solid #bfa046; border-radius: 15px; padding: 25px; text-align: center; color: white;">
+        <h2 style="color: #bfa046;">¡Bienvenido, soy Humberto León!</h2>
+        <p>Tu asesor inmobiliario de confianza en La Libertad.</p>
+        <button onclick="activarAsistente()" style="background: linear-gradient(45deg,#bfa046,#ffcc33); color: black; border: none; padding: 15px 25px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1rem; width: 100%; margin-top: 15px;">
+            💬 ASISTENTE VIRTUAL: ELIGE TU LOTE
+        </button>
     </div>
 
-    <div id="chat-body" style="padding: 20px; min-height: 380px; display: flex; flex-direction: column;">
-        <div id="chat-contenido">
-            </div>
+    <div id="asistente-det" style="display: none; background: #0b1220; border: 2px solid #bfa046; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <div style="background: linear-gradient(45deg,#bfa046,#ffcc33); color: #000; padding: 15px; font-weight: bold; text-align: center;">
+            Asesor Virtual: Humberto León
+        </div>
+        <div id="chat-body" style="padding: 20px; min-height: 380px;">
+            <div id="chat-contenido"></div>
+        </div>
     </div>
 </div>
 
 <script>
-    // 1. VARIABLES DE CONTROL
     let filtroUsuario = { objetivo: "", proyecto: "", pago: "", inicial: "" };
     const MiWhatsapp = "51985877256";
 
-    // 2. FUNCIÓN PRINCIPAL PARA MOSTRAR EL ASISTENTE
-    function mostrarProyecto(id) {
-        // Oculta otros detalles
-        const detalles = document.querySelectorAll('.proyecto-detalle');
-        detalles.forEach(d => d.style.display = 'none');
-
-        // Muestra el seleccionado
-        const elemento = document.getElementById(id);
-        if (elemento) {
-            elemento.style.display = 'block';
-            if(id === 'asistente-det') { reiniciarAsistente(); }
-        }
+    // FUNCIÓN PARA CAMBIAR DE BIENVENIDA A ASISTENTE
+    function activarAsistente() {
+        document.getElementById('bienvenida-seccion').style.display = 'none';
+        document.getElementById('asistente-det').style.display = 'block';
+        reiniciarAsistente();
     }
 
-    // 3. REINICIAR EL CHAT (PASO 1)
     function reiniciarAsistente() {
         const pantalla = document.getElementById("chat-contenido");
         pantalla.innerHTML = `
             <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                Hola 👋 Soy tu asistente virtual. Te ayudaré a calificar para tu lote ideal hoy mismo.
+                Hola 👋 Te ayudaré a calificar para tu lote ideal hoy mismo.
             </div>
             <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                ¿Cuál es tu objetivo principal?
+                ¿Cuál es tu objetivo?
             </div>
             <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-                <button onclick="paso2('Inversión')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💰 Inversión y Rentabilidad</button>
-                <button onclick="paso2('Vivienda')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">🏡 Vivienda o Casa de Campo</button>
+                <button onclick="paso2('Inversión')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💰 Inversión</button>
+                <button onclick="paso2('Vivienda')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">🏡 Vivienda</button>
             </div>
         `;
     }
 
-    // 4. SELECCIÓN DE PROYECTO (PASO 2)
     function paso2(obj) {
         filtroUsuario.objetivo = obj;
-        const pantalla = document.getElementById("chat-contenido");
-        pantalla.innerHTML = `<div style="color: #bfa046; font-style: italic; padding: 10px; text-align:center;">Analizando opciones de ${obj}...</div>`;
-        
-        setTimeout(() => {
-            pantalla.innerHTML = `
-                <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                    Excelente. ¿En qué proyecto te gustaría recibir información detallada?
-                </div>
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <button onclick="paso3('Fundo Malabrigo')" style="background: #bfa046; color: black; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;">🌿 Fundo Malabrigo</button>
-                    <button onclick="paso3('Puerto Mar Club')" style="background: #bfa046; color: black; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;">🌊 Puerto Mar Club</button>
-                    <button onclick="paso3('Residencial Monte Verde')" style="background: #bfa046; color: black; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;">🏡 Residencial Monte Verde</button>
-                </div>
-            `;
-        }, 700);
-    }
-
-    // 5. MÉTODO DE PAGO (PASO 3)
-    function paso3(proy) {
-        filtroUsuario.proyecto = proy;
-        const pantalla = document.getElementById("chat-contenido");
-        pantalla.innerHTML = `
+        document.getElementById("chat-contenido").innerHTML = `
             <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                ¡Perfecto! <strong>${proy}</strong> es una gran elección. ¿Cómo piensas adquirirlo?
+                ¿En qué proyecto estás interesado?
             </div>
             <div style="display: flex; flex-direction: column; gap: 10px;">
-                <button onclick="pagoContado()" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💵 Al Contado (Con Descuento)</button>
-                <button onclick="pagoFinanciado()" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💳 Financiado (En Cuotas)</button>
+                <button onclick="paso3('Fundo Malabrigo')" style="background: #bfa046; color: black; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;">🌿 Fundo Malabrigo</button>
+                <button onclick="paso3('Puerto Mar Club')" style="background: #bfa046; color: black; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;">🌊 Puerto Mar Club</button>
+                <button onclick="paso3('Residencial Monte Verde')" style="background: #bfa046; color: black; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;">🏡 Monte Verde</button>
+            </div>
+        `;
+    }
+
+    function paso3(proy) {
+        filtroUsuario.proyecto = proy;
+        document.getElementById("chat-contenido").innerHTML = `
+            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                ¿Cómo piensas adquirir tu lote en <strong>${proy}</strong>?
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <button onclick="pagoContado()" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💵 Contado</button>
+                <button onclick="pagoFinanciado()" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💳 Financiado</button>
             </div>
         `;
     }
 
     function pagoContado() {
-        const msg = `Hola Humberto León, usé tu Asesor Virtual. Me interesa *${filtroUsuario.proyecto}* para *${filtroUsuario.objetivo}*. Mi forma de pago es *CONTADO*. ¿Qué descuento tengo?`;
-        window.open(`https://wa.me/${MiWhatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
+        const msg = `Hola Humberto León, usé tu Asistente. Proyecto: *${filtroUsuario.proyecto}*. Pago: *CONTADO*.`;
+        window.open(\`https://wa.me/\${MiWhatsapp}?text=\${encodeURIComponent(msg)}\`, '_blank');
     }
 
-    // 6. INICIAL DINÁMICA (PASO 4)
     function pagoFinanciado() {
         let opcionesIni = "";
         const p = filtroUsuario.proyecto;
-
         if (p === 'Fundo Malabrigo') {
-            opcionesIni = `<button onclick="pasoInicial('5,000 a más')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 5,000 a más</button>
-                           <button onclick="pasoInicial('10,000 a más')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 10,000 a más</button>`;
+            opcionesIni = \`<button onclick="pasoInicial('5,000+')">S/ 5,000 a más</button><button onclick="pasoInicial('10,000+')">S/ 10,000 a más</button>\`;
         } else if (p === 'Puerto Mar Club') {
-            opcionesIni = `<button onclick="pasoInicial('3,000 a 4,000')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 3,000 a 4,000</button>
-                           <button onclick="pasoInicial('4,000 a más')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 4,000 a más</button>`;
+            opcionesIni = \`<button onclick="pasoInicial('3,000-4,000')">S/ 3,000 a 4,000</button><button onclick="pasoInicial('4,000+')">S/ 4,000 a más</button>\`;
         } else {
-            opcionesIni = `<button onclick="pasoInicial('2,500 a 4,000')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 2,500 a 4,000</button>
-                           <button onclick="pasoInicial('4,000 a más')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 4,000 a más</button>`;
+            opcionesIni = \`<button onclick="pasoInicial('2,500-4,000')">S/ 2,500 a 4,000</button><button onclick="pasoInicial('4,000+')">S/ 4,000 a más</button>\`;
         }
-
-        document.getElementById("chat-contenido").innerHTML = `
-            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                Financiamiento directo disponible. ¿De cuánto dispones para tu <strong>Inicial</strong>?
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 10px;">${opcionesIni}</div>
-        `;
+        document.getElementById("chat-contenido").innerHTML = \`
+            <div style="color:white; margin-bottom:10px;">¿De cuánto dispones para tu <strong>Inicial</strong>?</div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">\${opcionesIni}</div>
+        \`.replace(/button/g, 'button style="background:#bfa046; border:none; padding:10px; border-radius:8px; font-weight:bold; cursor:pointer;"');
     }
 
-    // 7. CUOTAS DINÁMICAS (PASO 5)
     function pasoInicial(ini) {
         filtroUsuario.inicial = ini;
         let opcionesCuo = "";
         const p = filtroUsuario.proyecto;
-
         if (p === 'Fundo Malabrigo') {
-            opcionesCuo = `<button onclick="finalizar('700 a más')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 700 a más</button>
-                           <button onclick="finalizar('1,000 a más')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 1,000 a más</button>`;
+            opcionesCuo = \`<button onclick="finalizar('700+')">S/ 700+</button><button onclick="finalizar('1,000+')">S/ 1,000+</button>\`;
         } else if (p === 'Puerto Mar Club') {
-            opcionesCuo = `<button onclick="finalizar('500 a 700')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 500 a 700</button>
-                           <button onclick="finalizar('700 a más')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 700 a más</button>`;
+            opcionesCuo = \`<button onclick="finalizar('500-700')">S/ 500-700</button><button onclick="finalizar('700+')">S/ 700+</button>\`;
         } else {
-            opcionesCuo = `<button onclick="finalizar('350 a 500')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 350 a 500</button>
-                           <button onclick="finalizar('500 a más')" style="background:#bfa046; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">S/ 500 a más</button>`;
+            opcionesCuo = \`<button onclick="finalizar('350-500')">S/ 350-500</button><button onclick="finalizar('500+')">S/ 500+</button>\`;
         }
-
-        document.getElementById("chat-contenido").innerHTML = `
-            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                ¿Cuál sería tu cuota mensual ideal?
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 10px;">${opcionesCuo}</div>
-        `;
+        document.getElementById("chat-contenido").innerHTML = \`
+            <div style="color:white; margin-bottom:10px;">¿Cuota mensual ideal?</div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">\${opcionesCuo}</div>
+        \`.replace(/button/g, 'button style="background:#bfa046; border:none; padding:10px; border-radius:8px; font-weight:bold; cursor:pointer;"');
     }
 
-    // 8. FINALIZAR (WHATSAPP)
     function finalizar(cuota) {
-        const msg = `Hola Humberto León, usé tu Asistente. Proyecto: *${filtroUsuario.proyecto}*. Perfil: *${filtroUsuario.objetivo}*. Pago: *Financiado*. Inicial: *S/ ${filtroUsuario.inicial}*. Cuotas: *S/ ${cuota}*.`;
-        
-        document.getElementById("chat-contenido").innerHTML = `
-            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                ¡Excelente! Tengo un plan listo en <strong>${filtroUsuario.proyecto}</strong> para ti.
-            </div>
-            <button onclick="window.open('https://wa.me/${MiWhatsapp}?text=${encodeURIComponent(msg)}', '_blank')" 
-                style="background: #25d366; color: white; border: none; padding: 18px; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; margin-top: 15px;">
-                📅 AGENDAR MI VISITA Y VER PLAN
-            </button>
-        `;
+        const msg = \`Hola Humberto León. Proyecto: *\${filtroUsuario.proyecto}*. Inicial: *\${filtroUsuario.inicial}*. Cuota: *\${cuota}*.\`;
+        document.getElementById("chat-contenido").innerHTML = \`
+            <div style="color:white; margin-bottom:15px;">¡Perfecto! Tengo tu plan listo.</div>
+            <button onclick="window.open('https://wa.me/\${MiWhatsapp}?text=\${encodeURIComponent(msg)}', '_blank')" style="background:#25d366; color:white; border:none; padding:18px; border-radius:12px; font-weight:bold; width:100%; cursor:pointer;">📅 AGENDAR VISITA</button>
+        \`;
     }
 </script>
-
 </body>
 </html>
 
