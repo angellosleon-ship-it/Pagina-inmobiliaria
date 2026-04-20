@@ -258,72 +258,26 @@
 </div>
 
 <style>
-<!-- ===== BOTÓN PRINCIPAL ===== -->
-<div id="chatbot-btn">
-  💬 <span>Te ayudo a elegir tu lote</span>
-</div>
-
-<!-- ===== CHATBOT ===== -->
-<div id="chatbot">
-  <div class="chat-header">
-    Asesor Virtual Inmobiliario
-    <span onclick="cerrarChat()">✖</span>
-  </div>
-
-  <div id="chat-body">
-    <div class="msg bot">Hola 👋 soy el asistente de Humberto León</div>
-    <div class="msg bot">¿Buscas invertir o comprar para vivir?</div>
-
-    <div class="opciones">
-      <button onclick="tipoCliente('invertir')">💰 Inversión</button>
-      <button onclick="tipoCliente('vivir')">🏡 Vivienda</button>
-    </div>
-  </div>
-</div>
-
-<style>
-<!-- ===== BOTÓN PRINCIPAL ===== -->
-<div id="chatbot-btn">
-  💬 <span>Te ayudo a elegir tu lote</span>
-</div>
-
-<!-- ===== CHATBOT ===== -->
-<div id="chatbot">
-  <div class="chat-header">
-    Asesor Virtual Inmobiliario
-    <span onclick="cerrarChat()">✖</span>
-  </div>
-
-  <div id="chat-body">
-    <div class="msg bot">Hola 👋 soy el asistente de Humberto León</div>
-    <div class="msg bot">¿Buscas invertir o comprar para vivir?</div>
-
-    <div class="opciones">
-      <button onclick="tipoCliente('invertir')">💰 Inversión</button>
-      <button onclick="tipoCliente('vivir')">🏡 Vivienda</button>
-    </div>
-  </div>
-</div>
-
-<style>
+/* 🔥 RESET DE SEGURIDAD (EVITA QUE OTRO CSS LO ESCONDA) */
 #chatbot-btn {
-  position: fixed;
-  bottom: calc(50% - 3cm);
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 270px;
-  height: 80px;
-  background: linear-gradient(45deg,#25d366,#128c7e);
-  color: white;
-  border-radius: 50px;
-  display: flex !important; /* 🔥 FORZADO */
-  justify-content: center;
-  align-items: center;
+  all: unset;
+  position: fixed !important;
+  bottom: calc(50% - 3cm) !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 270px !important;
+  height: 80px !important;
+  background: linear-gradient(45deg,#25d366,#128c7e) !important;
+  color: white !important;
+  border-radius: 50px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   gap: 10px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 99999; /* 🔥 encima de todo */
+  z-index: 999999 !important;
   animation: pulso 1.2s infinite;
   box-shadow: 0 0 25px rgba(37,211,102,0.8);
 }
@@ -338,6 +292,7 @@
   100% { transform: translate(-50%, -50%) scale(1); }
 }
 
+/* CHAT */
 #chatbot {
   position: fixed;
   top: 50%;
@@ -389,29 +344,37 @@
 <script>
 let numero = "51TU_NUMERO_AQUI";
 
-window.onload = function () {
+/* 🔥 GARANTIZA CARGA TOTAL */
+document.addEventListener("DOMContentLoaded", function () {
+
   const btn = document.getElementById("chatbot-btn");
   const chat = document.getElementById("chatbot");
 
-  // 🔥 FORZAR VISIBILIDAD (CLAVE)
+  if (!btn) {
+    console.error("NO EXISTE BOTÓN EN EL DOM");
+    return;
+  }
+
   btn.style.display = "flex";
 
   btn.onclick = () => {
     chat.style.display = "flex";
-    btn.style.display = "none"; // desaparece al abrir
+    btn.style.display = "none";
   };
-};
+});
 
+/* CERRAR CHAT */
 function cerrarChat() {
   document.getElementById("chatbot").style.display = "none";
-  // ❌ NO regresamos el botón
 }
 
+/* WHATSAPP */
 function enviarWhatsApp(msg) {
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
   window.open(url, "_blank");
 }
 
+/* BOTONES */
 function opcionesHTML(lista) {
   let html = '<div class="opciones">';
   lista.forEach(o => {
@@ -421,6 +384,7 @@ function opcionesHTML(lista) {
   return html;
 }
 
+/* PASO 1 */
 function tipoCliente(t) {
   const chat = document.getElementById("chat-body");
   chat.innerHTML = "";
@@ -439,7 +403,7 @@ function tipoCliente(t) {
       { txt: "🌊 Puerto Mar Club", msg: "Info Puerto Mar Club" },
       { txt: "🏡 Monte Verde", msg: "Info Monte Verde" }
     ]);
-  }, 600);
+  }, 500);
 }
 </script>
     <body>
