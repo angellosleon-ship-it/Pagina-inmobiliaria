@@ -232,7 +232,7 @@
        
     </script>
     <!-- ===== CHATBOT PRO INMOBILIARIO ===== -->
-<div id="chatbot-btn">💬 Haz clic aquí</div>
+<div id="chatbot-texto">💬 ¡Te ayudo a elegir tu lote!</div>
 
 <div id="chatbot">
   <div class="chat-header">
@@ -254,46 +254,51 @@
 <style>
 #chatbot-btn {
   position: fixed;
-  bottom: 20px;   /* más abajo */
-  left: auto;
-  right: 20px;    /* a la derecha */
-  background: linear-gradient(45deg,#16a34a,#4ade80);
+  bottom: 90px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(45deg,#25d366,#128c7e);
   color: #fff;
-  padding: 12px 18px;
-  border-radius: 40px;
+  border-radius: 50%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 30px;
   cursor: pointer;
   z-index: 2000;
-  box-shadow: 0 0 20px rgba(74,222,128,0.6);
-  animation: pulso 2s infinite;
+  box-shadow: 0 0 20px rgba(37,211,102,0.7);
+  animation: pulso 1.5s infinite;
 }
 
+/* ANIMACIÓN PRO */
 @keyframes pulso {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-
+  0% { transform: scale(1); box-shadow: 0 0 15px rgba(37,211,102,0.6); }
+  50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(37,211,102,1); }
+  100% { transform: scale(1); box-shadow: 0 0 15px rgba(37,211,102,0.6); }
 
 }
 
-#chatbot {
+#chatbot-texto {
   position: fixed;
-  bottom: 110px;
-  left: 30px;
-  width: 320px;
-  background: #020617;
-  border-radius: 18px;
-  display: none;
-  flex-direction: column;
-  overflow: hidden;
+  bottom: 165px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: bold;
   z-index: 2000;
-  border: 1px solid #bfa046;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  animation: aparecer 1s ease;
 }
 
+/* efecto entrada */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .chat-header {
   background: linear-gradient(45deg,#bfa046,#ffcc33);
   color: #000;
@@ -442,6 +447,10 @@ function accion(a, proyecto) {
     window.open("https://wa.me/51985877256?text=" + encodeURIComponent(texto), "_blank");
   }, 1200);
 }
+    setTimeout(() => {
+  const aviso = document.getElementById("chatbot-texto");
+  if (aviso) aviso.style.display = "none";
+}, 6000);
 </script>
 </body>
 </html>
