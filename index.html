@@ -238,12 +238,13 @@
         }
        
     </script>
-    <!-- ===== CHATBOT PRO INMOBILIARIO ===== -->
-<div id="chatbot-texto">💬 ¡Te ayudo a elegir tu lote!</div>
+<!-- ===== BOTÓN FLOTANTE VERDE ===== -->
+<div id="chatbot-btn">💬</div>
 
+<!-- ===== CHATBOT ===== -->
 <div id="chatbot">
   <div class="chat-header">
-    Asesor Virtual
+    Asesor Virtual Inmobiliario
     <span onclick="cerrarChat()">✖</span>
   </div>
 
@@ -259,52 +260,56 @@
 </div>
 
 <style>
+/* ===== BOTÓN CENTRAL ANIMADO ===== */
 #chatbot-btn {
   position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 70px;
-  height: 70px;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95px;
+  height: 95px;
   background: linear-gradient(45deg,#25d366,#128c7e);
   color: #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 42px;
   cursor: pointer;
-  z-index: 2000;
-  box-shadow: 0 0 20px rgba(37,211,102,0.7);
-  animation: pulso 1.5s infinite;
+  z-index: 3000;
+  animation: pulso 1.2s infinite;
+  box-shadow: 0 0 25px rgba(37,211,102,0.8);
 }
 
-/* ANIMACIÓN PRO */
 @keyframes pulso {
-  0% { transform: scale(1); box-shadow: 0 0 15px rgba(37,211,102,0.6); }
-  50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(37,211,102,1); }
-  100% { transform: scale(1); box-shadow: 0 0 15px rgba(37,211,102,0.6); }
-
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -60%) scale(1.15); }
+  100% { transform: translate(-50%, -50%) scale(1); }
 }
 
+/* ===== CHAT ===== */
 #chatbot {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 320px;
-  background: #020617;
+  width: 340px;
+  background: #0b1220;
   border-radius: 18px;
   display: none;
   flex-direction: column;
   overflow: hidden;
   z-index: 2000;
   border: 1px solid #bfa046;
+  animation: aparecer 0.3s ease;
 }
-/* efecto entrada */
+
 @keyframes aparecer {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
 }
+
+/* HEADER */
 .chat-header {
   background: linear-gradient(45deg,#bfa046,#ffcc33);
   color: #000;
@@ -314,10 +319,11 @@
   justify-content: space-between;
 }
 
+/* BODY */
 #chat-body {
   padding: 15px;
   font-size: 14px;
-  max-height: 350px;
+  max-height: 380px;
   overflow-y: auto;
 }
 
@@ -328,9 +334,10 @@
 
 .bot { color: #fff; }
 
+/* BOTONES */
 .opciones button {
   width: 100%;
-  margin: 5px 0;
+  margin: 6px 0;
   padding: 10px;
   border-radius: 8px;
   border: none;
@@ -349,22 +356,35 @@
 <script>
 let tipo = "";
 
-/* Espera a que cargue todo */
-window.onload = function() {
+/* ABRIR CHAT */
+window.onload = function () {
   const btn = document.getElementById("chatbot-btn");
   const chat = document.getElementById("chatbot");
 
-  if (btn && chat) {
-    btn.onclick = () => {
-      chat.style.display = chat.style.display === "flex" ? "none" : "flex";
-    };
-  }
+  btn.onclick = () => {
+    chat.style.display = "flex";
+  };
 };
 
+/* CERRAR */
 function cerrarChat() {
   document.getElementById("chatbot").style.display = "none";
 }
 
+/* LIMPIAR CHAT */
+function limpiarChat() {
+  document.getElementById("chat-body").innerHTML = `
+    <div class="msg bot">Hola 👋 soy el asistente de Humberto León</div>
+    <div class="msg bot">¿Buscas invertir o comprar para vivir?</div>
+
+    <div class="opciones">
+      <button onclick="tipoCliente('invertir')">💰 Inversión</button>
+      <button onclick="tipoCliente('vivir')">🏡 Vivienda</button>
+    </div>
+  `;
+}
+
+/* AGREGAR MENSAJE */
 function agregar(texto) {
   const chat = document.getElementById("chat-body");
   const div = document.createElement("div");
@@ -374,6 +394,7 @@ function agregar(texto) {
   chat.scrollTop = chat.scrollHeight;
 }
 
+/* CREAR BOTONES */
 function opcionesHTML(lista) {
   let html = '<div class="opciones">';
   lista.forEach(o => {
@@ -385,84 +406,53 @@ function opcionesHTML(lista) {
 
 /* PASO 1 */
 function tipoCliente(t) {
+  limpiarChat();
   tipo = t;
 
   agregar(t === "invertir"
-    ? "Excelente 👌 invertir ahora es una gran decisión 📈"
-    : "Perfecto 🏡 te ayudaré a encontrar tu hogar ideal");
+    ? "Excelente 👌 Invertir hoy te dará alta valorización 📈"
+    : "Perfecto 🏡 Te ayudaré a encontrar tu hogar ideal");
 
   setTimeout(() => {
     agregar("¿En qué proyecto estás interesado?");
     document.getElementById("chat-body").innerHTML += opcionesHTML([
-      {txt:"🌿 Fundo Malabrigo", fn:"proyecto('fundo')"},
-      {txt:"🌊 Puerto Mar Club", fn:"proyecto('puerto')"},
-      {txt:"🏡 Monte Verde", fn:"proyecto('monte')"}
+      { txt: "🌿 Fundo Malabrigo", fn: "proyecto('fundo')" },
+      { txt: "🌊 Puerto Mar Club", fn: "proyecto('puerto')" },
+      { txt: "🏡 Monte Verde", fn: "proyecto('monte')" }
     ]);
-  }, 800);
+  }, 700);
 }
 
 /* PASO 2 */
 function proyecto(p) {
-  let mensaje = "";
+  limpiarChat();
 
-  if (p === "fundo") {
-    agregar("🌿 Fundo Malabrigo: alta valorización + naturaleza");
-    mensaje = "Fundo Malabrigo";
-  }
-
-  if (p === "puerto") {
-    agregar("🌊 Puerto Mar Club: vive frente al mar");
-    mensaje = "Puerto Mar Club";
-  }
-
-  if (p === "monte") {
-    agregar("🏡 Monte Verde: tranquilidad y crecimiento");
-    mensaje = "Monte Verde";
-  }
+  if (p === "fundo") agregar("🌿 Fundo Malabrigo: naturaleza + alta valorización");
+  if (p === "puerto") agregar("🌊 Puerto Mar Club: frente al mar exclusivo");
+  if (p === "monte") agregar("🏡 Monte Verde: tranquilidad y crecimiento seguro");
 
   setTimeout(() => {
     agregar("¿Qué deseas ahora?");
     document.getElementById("chat-body").innerHTML += opcionesHTML([
-      {txt:"📸 Ver fotos", fn:`accion('fotos','${mensaje}')`},
-      {txt:"📍 Ubicación", fn:`accion('ubicacion','${mensaje}')`},
-      {txt:"📅 Agendar visita", fn:`accion('cita','${mensaje}')`}
+      { txt: "📸 Ver fotos", fn: `accion('fotos','${p}')` },
+      { txt: "📍 Ubicación", fn: `accion('ubicacion','${p}')` },
+      { txt: "📅 Agendar visita", fn: `accion('cita','${p}')` }
     ]);
-  }, 800);
+  }, 700);
 }
 
 /* PASO 3 */
 function accion(a, proyecto) {
-  let texto = "";
+  limpiarChat();
 
-  if (a === "fotos") {
-    agregar("Te envío fotos 📸");
-    texto = `Hola Humberto, quiero ver fotos de ${proyecto}`;
-  }
+  if (a === "fotos") agregar("📸 Te enviaré fotos del proyecto");
+  if (a === "ubicacion") agregar("📍 Aquí tienes la ubicación");
+  if (a === "cita") agregar("📅 Vamos a agendar tu visita");
 
-  if (a === "ubicacion") {
-    agregar("Te envío ubicación 📍");
-    texto = `Hola Humberto, quiero la ubicación de ${proyecto}`;
-  }
-
-  if (a === "cita") {
-    agregar("Agendemos tu visita 👌");
-    texto = `Hola Humberto, quiero agendar visita para ${proyecto}`;
-  }
-
-setTimeout(() => {
-  const aviso = document.getElementById("mensaje-boton");
-  if (aviso) aviso.style.display = "none";
-}, 6000);
-
-document.getElementById("chatbot-btn").onclick = () => {
-  const msg = document.getElementById("mensaje-boton");
-
-  if (msg.style.display === "block") {
-    msg.style.display = "none";
-  } else {
-    msg.style.display = "block";
-  }
-};
+  setTimeout(() => {
+    agregar("¿Deseas algo más?");
+  }, 500);
+}
 </script>
-</body>
+    <body>
 </html>
