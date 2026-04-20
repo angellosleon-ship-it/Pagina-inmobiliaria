@@ -441,14 +441,20 @@ function accion(a, proyecto) {
     texto = `Hola Humberto, quiero agendar visita para ${proyecto}`;
   }
 
-  setTimeout(() => {
-    window.open("https://wa.me/51985877256?text=" + encodeURIComponent(texto), "_blank");
-  }, 1200);
-}
-    setTimeout(() => {
-  const aviso = document.getElementById("chatbot-texto");
+setTimeout(() => {
+  const aviso = document.getElementById("mensaje-boton");
   if (aviso) aviso.style.display = "none";
 }, 6000);
+
+document.getElementById("chatbot-btn").onclick = () => {
+  const msg = document.getElementById("mensaje-boton");
+
+  if (msg.style.display === "block") {
+    msg.style.display = "none";
+  } else {
+    msg.style.display = "block";
+  }
+};
 </script>
 </body>
 </html>
