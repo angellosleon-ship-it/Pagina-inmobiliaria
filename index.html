@@ -282,6 +282,30 @@
 </div>
 
 <style>
+<!-- ===== BOTÓN PRINCIPAL ===== -->
+<div id="chatbot-btn">
+  💬 <span>Te ayudo a elegir tu lote</span>
+</div>
+
+<!-- ===== CHATBOT ===== -->
+<div id="chatbot">
+  <div class="chat-header">
+    Asesor Virtual Inmobiliario
+    <span onclick="cerrarChat()">✖</span>
+  </div>
+
+  <div id="chat-body">
+    <div class="msg bot">Hola 👋 soy el asistente de Humberto León</div>
+    <div class="msg bot">¿Buscas invertir o comprar para vivir?</div>
+
+    <div class="opciones">
+      <button onclick="tipoCliente('invertir')">💰 Inversión</button>
+      <button onclick="tipoCliente('vivir')">🏡 Vivienda</button>
+    </div>
+  </div>
+</div>
+
+<style>
 /* ===== BOTÓN CENTRAL ===== */
 #chatbot-btn {
   position: fixed;
@@ -382,37 +406,24 @@
 <script>
 let numero = "51TU_NUMERO_AQUI"; // 👈 CAMBIA TU WHATSAPP
 
-/* ABRIR CHAT */
+/* ===== INICIO ===== */
 window.onload = function () {
   const btn = document.getElementById("chatbot-btn");
   const chat = document.getElementById("chatbot");
 
   btn.onclick = () => {
     chat.style.display = "flex";
-    btn.style.display = "none"; // 👈 OCULTA BOTÓN AL ABRIR
+    btn.style.display = "none"; // 👈 DESAPARECE DEFINITIVO
   };
 };
 
-/* CERRAR CHAT */
+/* ===== CERRAR CHAT ===== */
 function cerrarChat() {
   document.getElementById("chatbot").style.display = "none";
-  document.getElementById("chatbot-btn").style.display = "flex"; // 👈 VUELVE A APARECER
+  // ❌ NO regresamos el botón (como pediste)
 }
 
-/* LIMPIAR CHAT */
-function limpiarChat() {
-  document.getElementById("chat-body").innerHTML = `
-    <div class="msg bot">Hola 👋 soy el asistente de Humberto León</div>
-    <div class="msg bot">¿Buscas invertir o comprar para vivir?</div>
-
-    <div class="opciones">
-      <button onclick="tipoCliente('invertir')">💰 Inversión</button>
-      <button onclick="tipoCliente('vivir')">🏡 Vivienda</button>
-    </div>
-  `;
-}
-
-/* MENSAJES */
+/* ===== MENSAJES ===== */
 function agregar(texto) {
   const chat = document.getElementById("chat-body");
   const div = document.createElement("div");
@@ -422,7 +433,7 @@ function agregar(texto) {
   chat.scrollTop = chat.scrollHeight;
 }
 
-/* BOTONES WHATSAPP */
+/* ===== BOTONES WHATSAPP ===== */
 function opcionesHTML(lista) {
   let html = '<div class="opciones">';
   lista.forEach(o => {
@@ -432,15 +443,15 @@ function opcionesHTML(lista) {
   return html;
 }
 
-/* WHATSAPP */
+/* ===== WHATSAPP ===== */
 function enviarWhatsApp(mensaje) {
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
 }
 
-/* PASO 1 */
+/* ===== PASO 1 ===== */
 function tipoCliente(t) {
-  limpiarChat();
+  document.getElementById("chat-body").innerHTML = "";
 
   agregar(t === "invertir"
     ? "Excelente 👌 Invertir es una gran decisión 📈"
