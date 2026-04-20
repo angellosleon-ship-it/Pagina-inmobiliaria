@@ -306,7 +306,6 @@
 </div>
 
 <style>
-/* ===== BOTÓN CENTRAL ===== */
 #chatbot-btn {
   position: fixed;
   bottom: calc(50% - 3cm);
@@ -315,16 +314,16 @@
   width: 270px;
   height: 80px;
   background: linear-gradient(45deg,#25d366,#128c7e);
-  color: #fff;
+  color: white;
   border-radius: 50px;
-  display: flex;
+  display: flex !important; /* 🔥 FORZADO */
   justify-content: center;
   align-items: center;
   gap: 10px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 3000;
+  z-index: 99999; /* 🔥 encima de todo */
   animation: pulso 1.2s infinite;
   box-shadow: 0 0 25px rgba(37,211,102,0.8);
 }
@@ -333,14 +332,12 @@
   font-size: 13px;
 }
 
-/* ANIMACIÓN */
 @keyframes pulso {
   0% { transform: translate(-50%, -50%) scale(1); }
   50% { transform: translate(-50%, -60%) scale(1.05); }
   100% { transform: translate(-50%, -50%) scale(1); }
 }
 
-/* ===== CHAT ===== */
 #chatbot {
   position: fixed;
   top: 50%;
@@ -351,15 +348,8 @@
   border-radius: 18px;
   display: none;
   flex-direction: column;
-  overflow: hidden;
   z-index: 2000;
   border: 1px solid #bfa046;
-  animation: aparecer 0.3s ease;
-}
-
-@keyframes aparecer {
-  from { opacity: 0; transform: translate(-50%, -40%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
 .chat-header {
@@ -380,11 +370,9 @@
 
 .msg {
   margin-bottom: 10px;
-  line-height: 1.4;
   color: #fff;
 }
 
-/* BOTONES */
 .opciones button {
   width: 100%;
   margin: 6px 0;
@@ -395,45 +383,35 @@
   color: #000;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-.opciones button:hover {
-  transform: scale(1.05);
 }
 </style>
 
 <script>
-let numero = "51TU_NUMERO_AQUI"; // 👈 CAMBIA TU WHATSAPP
+let numero = "51TU_NUMERO_AQUI";
 
-/* ===== INICIO ===== */
 window.onload = function () {
   const btn = document.getElementById("chatbot-btn");
   const chat = document.getElementById("chatbot");
 
+  // 🔥 FORZAR VISIBILIDAD (CLAVE)
+  btn.style.display = "flex";
+
   btn.onclick = () => {
     chat.style.display = "flex";
-    btn.style.display = "none"; // 👈 DESAPARECE DEFINITIVO
+    btn.style.display = "none"; // desaparece al abrir
   };
 };
 
-/* ===== CERRAR CHAT ===== */
 function cerrarChat() {
   document.getElementById("chatbot").style.display = "none";
-  // ❌ NO regresamos el botón (como pediste)
+  // ❌ NO regresamos el botón
 }
 
-/* ===== MENSAJES ===== */
-function agregar(texto) {
-  const chat = document.getElementById("chat-body");
-  const div = document.createElement("div");
-  div.className = "msg bot";
-  div.innerHTML = texto;
-  chat.appendChild(div);
-  chat.scrollTop = chat.scrollHeight;
+function enviarWhatsApp(msg) {
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
+  window.open(url, "_blank");
 }
 
-/* ===== BOTONES WHATSAPP ===== */
 function opcionesHTML(lista) {
   let html = '<div class="opciones">';
   lista.forEach(o => {
@@ -443,28 +421,25 @@ function opcionesHTML(lista) {
   return html;
 }
 
-/* ===== WHATSAPP ===== */
-function enviarWhatsApp(mensaje) {
-  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, "_blank");
-}
-
-/* ===== PASO 1 ===== */
 function tipoCliente(t) {
-  document.getElementById("chat-body").innerHTML = "";
+  const chat = document.getElementById("chat-body");
+  chat.innerHTML = "";
 
-  agregar(t === "invertir"
-    ? "Excelente 👌 Invertir es una gran decisión 📈"
-    : "Perfecto 🏡 Te ayudo a encontrar tu hogar ideal");
+  chat.innerHTML += `<div class="msg bot">
+    ${t === "invertir"
+      ? "Excelente 👌 Invertir es una gran decisión 📈"
+      : "Perfecto 🏡 Te ayudo a encontrar tu hogar ideal"}
+  </div>`;
 
   setTimeout(() => {
-    agregar("¿En qué proyecto estás interesado?");
-    document.getElementById("chat-body").innerHTML += opcionesHTML([
-      { txt: "🌿 Fundo Malabrigo", msg: "Hola Humberto, quiero info de Fundo Malabrigo" },
-      { txt: "🌊 Puerto Mar Club", msg: "Hola Humberto, quiero info de Puerto Mar Club" },
-      { txt: "🏡 Monte Verde", msg: "Hola Humberto, quiero info de Monte Verde" }
+    chat.innerHTML += `<div class="msg bot">¿En qué proyecto estás interesado?</div>`;
+
+    chat.innerHTML += opcionesHTML([
+      { txt: "🌿 Fundo Malabrigo", msg: "Info Fundo Malabrigo" },
+      { txt: "🌊 Puerto Mar Club", msg: "Info Puerto Mar Club" },
+      { txt: "🏡 Monte Verde", msg: "Info Monte Verde" }
     ]);
-  }, 700);
+  }, 600);
 }
 </script>
     <body>
