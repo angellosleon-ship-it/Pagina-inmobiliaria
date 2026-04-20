@@ -282,172 +282,76 @@ function paso3(proyecto) {
         }
        
     </script>
-<!-- ===== BOTÓN PRINCIPAL ===== -->
-<div id="chatbot-btn">
-  💬 <span>Te ayudo a elegir tu lote</span>
-</div>
-
-<!-- ===== CHATBOT ===== -->
-<div id="chatbot">
-  <div class="chat-header">
-    Asesor Virtual Inmobiliario
-    <span onclick="cerrarChat()">✖</span>
-  </div>
-
-  <div id="chat-body">
-    <div class="msg bot">Hola 👋 soy el asistente de Humberto León</div>
-    <div class="msg bot">¿Buscas invertir o comprar para vivir?</div>
-
-    <div class="opciones">
-      <button onclick="tipoCliente('invertir')">💰 Inversión</button>
-      <button onclick="tipoCliente('vivir')">🏡 Vivienda</button>
+<div id="asistente-det" class="proyecto-detalle" style="display: none; background: #0b1220; border: 1px solid #bfa046; border-radius: 15px; overflow: hidden; max-width: 550px; margin: 20px auto;">
+    
+    <div class="chat-header" style="background: linear-gradient(45deg,#bfa046,#ffcc33); color: #000; padding: 15px; font-weight: bold; text-align: center; border-bottom: 1px solid #bfa046;">
+        Asesor Virtual Inmobiliario
     </div>
-  </div>
+
+    <div id="chat-body" style="padding: 20px; min-height: 320px; display: flex; flex-direction: column; gap: 10px;">
+        <div id="chat-contenido">
+            <div class="msg-bot" style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046; align-self: flex-start;">
+                Hola 👋 soy el asistente de Humberto León.
+            </div>
+            <div class="msg-bot" style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046; align-self: flex-start;">
+                ¿Buscas invertir o comprar para vivir?
+            </div>
+
+            <div class="opciones" style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                <button onclick="tipoCliente('Inversión')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;">💰 Inversión</button>
+                <button onclick="tipoCliente('Vivienda')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;">🏡 Vivienda</button>
+            </div>
+        </div>
+    </div>
 </div>
-
-<style>
-/* ===== BOTÓN ===== */
-#chatbot-btn {
-  position: fixed;
-  bottom: calc(50% - 3cm);
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 270px;
-  height: 80px;
-  background: linear-gradient(45deg,#25d366,#128c7e);
-  color: white;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 99999;
-  animation: pulso 1.2s infinite;
-  box-shadow: 0 0 25px rgba(37,211,102,0.8);
-}
-
-#chatbot-btn span {
-  font-size: 13px;
-}
-
-@keyframes pulso {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -60%) scale(1.05); }
-  100% { transform: translate(-50%, -50%) scale(1); }
-}
-
-/* ===== CHAT ===== */
-#chatbot {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 340px;
-  background: #0b1220;
-  border-radius: 18px;
-  display: none;
-  flex-direction: column;
-  z-index: 9999;
-  border: 1px solid #bfa046;
-}
-
-.chat-header {
-  background: linear-gradient(45deg,#bfa046,#ffcc33);
-  color: #000;
-  padding: 12px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-}
-
-#chat-body {
-  padding: 15px;
-  font-size: 14px;
-  max-height: 380px;
-  overflow-y: auto;
-}
-
-.msg {
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.opciones button {
-  width: 100%;
-  margin: 6px 0;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  background: #bfa046;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-}
-</style>
 
 <script>
-let numero = "51TU_NUMERO_AQUI";
+    // Variables para guardar la selección del cliente
+    let filtroUsuario = { objetivo: "", proyecto: "" };
 
-/* ===== INICIO SEGURO ===== */
-document.addEventListener("DOMContentLoaded", function () {
+    function tipoCliente(t) {
+        filtroUsuario.objetivo = t;
+        const pantalla = document.getElementById("chat-contenido");
+        
+        // Efecto de carga
+        pantalla.innerHTML = `<div style="color: #bfa046; font-style: italic; text-align: center; padding: 20px;">Analizando opciones de ${t}...</div>`;
 
-  const btn = document.getElementById("chatbot-btn");
-  const chat = document.getElementById("chatbot");
+        setTimeout(() => {
+            pantalla.innerHTML = `
+                <div class="msg-bot" style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                    Excelente decisión 👌. Para <strong>${t}</strong>, tengo estos proyectos exclusivos:
+                </div>
+                <div class="opciones" style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                    <button onclick="pasoFinal('Fundo Malabrigo')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">🌿 Fundo Malabrigo</button>
+                    <button onclick="pasoFinal('Puerto Mar Club')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">🌊 Puerto Mar Club</button>
+                    <button onclick="pasoFinal('Monte Verde')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">🏡 Monte Verde</button>
+                </div>
+            `;
+        }, 800);
+    }
 
-  if (!btn) return;
-
-  btn.addEventListener("click", function () {
-    chat.style.display = "flex";
-    btn.style.display = "none"; // 🔥 DESAPARECE CORRECTO
-  });
-
-});
-
-/* ===== CERRAR CHAT ===== */
-function cerrarChat() {
-  document.getElementById("chatbot").style.display = "none";
-}
-
-/* ===== WHATSAPP ===== */
-function enviarWhatsApp(msg) {
-  const url = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
-  window.open(url, "_blank");
-}
-
-/* ===== BOTONES ===== */
-function opcionesHTML(lista) {
-  let html = '<div class="opciones">';
-  lista.forEach(o => {
-    html += `<button onclick="enviarWhatsApp('${o.msg}')">${o.txt}</button>`;
-  });
-  html += '</div>';
-  return html;
-}
-
-/* ===== PASO 1 ===== */
-function tipoCliente(t) {
-  const chat = document.getElementById("chat-body");
-  chat.innerHTML = "";
-
-  chat.innerHTML += `<div class="msg bot">
-    ${t === "invertir"
-      ? "Excelente 👌 Invertir es una gran decisión 📈"
-      : "Perfecto 🏡 Te ayudo a encontrar tu hogar ideal"}
-  </div>`;
-
-  setTimeout(() => {
-    chat.innerHTML += `<div class="msg bot">¿En qué proyecto estás interesado?</div>`;
-
-    chat.innerHTML += opcionesHTML([
-      { txt: "🌿 Fundo Malabrigo", msg: "Info Fundo Malabrigo" },
-      { txt: "🌊 Puerto Mar Club", msg: "Info Puerto Mar Club" },
-      { txt: "🏡 Monte Verde", msg: "Info Monte Verde" }
-    ]);
-  }, 500);
-}
+    function pasoFinal(p) {
+        filtroUsuario.proyecto = p;
+        const nro = "51985877256";
+        const msg = `Hola Humberto León, usé tu Asistente Web. Mi perfil es *${filtroUsuario.objetivo}* y me interesa el proyecto *${p}*. ¿Me brindas más información?`;
+        
+        const pantalla = document.getElementById("chat-contenido");
+        pantalla.innerHTML = `
+            <div class="msg-bot" style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                ¡Perfecto! El proyecto <strong>${p}</strong> es ideal para lo que buscas. 
+            </div>
+            <div class="msg-bot" style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                Dale clic al botón de abajo para enviarme tu perfil y agendar una visita personalizada.
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button onclick="window.open('https://wa.me/${nro}?text=${encodeURIComponent(msg)}', '_blank')" 
+                    style="background: #25d366; color: white; border: none; padding: 18px; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 15px rgba(37,211,102,0.3);">
+                    📅 AGENDAR MI VISITA AHORA
+                </button>
+            </div>
+        `;
+    }
 </script>
-    <body>
+
+</body>
 </html>
