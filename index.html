@@ -286,7 +286,7 @@ function paso3(proyecto) {
     
     <div id="bienvenida-seccion" style="background: #0b1220; border: 1px solid #bfa046; border-radius: 15px; padding: 25px; text-align: center; color: white;">
         <h2 style="color: #bfa046;">¡Bienvenido, soy Humberto León!</h2>
-        <p>Tu asesor inmobiliario de confianza en La Libertad.</p>
+        <p>Asesor Comercial de Inmobiliaria Grupo PG.</p>
         <button onclick="activarAsistente()" style="background: linear-gradient(45deg,#bfa046,#ffcc33); color: black; border: none; padding: 15px 25px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1rem; width: 100%; margin-top: 15px;">
             💬 ASISTENTE VIRTUAL: ELIGE TU LOTE
         </button>
@@ -306,7 +306,6 @@ function paso3(proyecto) {
     let filtroUsuario = { objetivo: "", proyecto: "", pago: "", inicial: "" };
     const MiWhatsapp = "51985877256";
 
-    // FUNCIÓN PARA CAMBIAR DE BIENVENIDA A ASISTENTE
     function activarAsistente() {
         document.getElementById('bienvenida-seccion').style.display = 'none';
         document.getElementById('asistente-det').style.display = 'block';
@@ -317,10 +316,7 @@ function paso3(proyecto) {
         const pantalla = document.getElementById("chat-contenido");
         pantalla.innerHTML = `
             <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                Hola 👋 Te ayudaré a calificar para tu lote ideal hoy mismo.
-            </div>
-            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                ¿Cuál es tu objetivo?
+                Hola 👋 Te ayudaré a calificar para tu lote ideal. ¿Cuál es tu objetivo?
             </div>
             <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
                 <button onclick="paso2('Inversión')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💰 Inversión</button>
@@ -350,56 +346,95 @@ function paso3(proyecto) {
                 ¿Cómo piensas adquirir tu lote en <strong>${proy}</strong>?
             </div>
             <div style="display: flex; flex-direction: column; gap: 10px;">
-                <button onclick="pagoContado()" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💵 Contado</button>
-                <button onclick="pagoFinanciado()" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💳 Financiado</button>
+                <button onclick="pagoContado()" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💵 Contado (Bono Descuento)</button>
+                <button onclick="pagoFinanciado()" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💳 Financiado (En Cuotas)</button>
             </div>
         `;
     }
 
     function pagoContado() {
         const msg = `Hola Humberto León, usé tu Asistente. Proyecto: *${filtroUsuario.proyecto}*. Pago: *CONTADO*.`;
-        window.open(\`https://wa.me/\${MiWhatsapp}?text=\${encodeURIComponent(msg)}\`, '_blank');
+        window.open(`https://wa.me/${MiWhatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
     function pagoFinanciado() {
         let opcionesIni = "";
         const p = filtroUsuario.proyecto;
+        
         if (p === 'Fundo Malabrigo') {
-            opcionesIni = \`<button onclick="pasoInicial('5,000+')">S/ 5,000 a más</button><button onclick="pasoInicial('10,000+')">S/ 10,000 a más</button>\`;
+            opcionesIni = `
+                <button onclick="pasoInicial('5,000 a más')">S/ 5,000 a más</button>
+                <button onclick="pasoInicial('10,000 a más')">S/ 10,000 a más</button>
+                <button onclick="evaluacionEspecial('Menos de 5,000')" style="background: #334155 !important; color: white !important;">Tengo menos de S/ 5,000</button>`;
         } else if (p === 'Puerto Mar Club') {
-            opcionesIni = \`<button onclick="pasoInicial('3,000-4,000')">S/ 3,000 a 4,000</button><button onclick="pasoInicial('4,000+')">S/ 4,000 a más</button>\`;
-        } else {
-            opcionesIni = \`<button onclick="pasoInicial('2,500-4,000')">S/ 2,500 a 4,000</button><button onclick="pasoInicial('4,000+')">S/ 4,000 a más</button>\`;
+            opcionesIni = `
+                <button onclick="pasoInicial('3,000 a más')">S/ 3,000 a más</button>
+                <button onclick="pasoInicial('5,000 a más')">S/ 5,000 a más</button>
+                <button onclick="evaluacionEspecial('Menos de 3,000')" style="background: #334155 !important; color: white !important;">Tengo menos de S/ 3,000</button>`;
+        } else { // Monte Verde
+            opcionesIni = `
+                <button onclick="pasoInicial('2,500 a más')">S/ 2,500 a más</button>
+                <button onclick="pasoInicial('4,000 a más')">S/ 4,000 a más</button>
+                <button onclick="evaluacionEspecial('Menos de 2,500')" style="background: #334155 !important; color: white !important;">Tengo menos de S/ 2,500</button>`;
         }
-        document.getElementById("chat-contenido").innerHTML = \`
-            <div style="color:white; margin-bottom:10px;">¿De cuánto dispones para tu <strong>Inicial</strong>?</div>
-            <div style="display: flex; flex-direction: column; gap: 10px;">\${opcionesIni}</div>
-        \`.replace(/button/g, 'button style="background:#bfa046; border:none; padding:10px; border-radius:8px; font-weight:bold; cursor:pointer;"');
+
+        document.getElementById("chat-contenido").innerHTML = `
+            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                ¿De cuánto dispones para tu <strong>Inicial</strong> en ${p}?
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">${opcionesIni}</div>
+        `.replace(/button/g, 'button style="background:#bfa046; border:none; padding:10px; border-radius:8px; font-weight:bold; cursor:pointer;"');
     }
 
     function pasoInicial(ini) {
         filtroUsuario.inicial = ini;
         let opcionesCuo = "";
         const p = filtroUsuario.proyecto;
+
         if (p === 'Fundo Malabrigo') {
-            opcionesCuo = \`<button onclick="finalizar('700+')">S/ 700+</button><button onclick="finalizar('1,000+')">S/ 1,000+</button>\`;
+            opcionesCuo = `<button onclick="finalizar('700 a más')">S/ 700 a más</button>
+                           <button onclick="finalizar('1,000 a más')">S/ 1,000 a más</button>`;
         } else if (p === 'Puerto Mar Club') {
-            opcionesCuo = \`<button onclick="finalizar('500-700')">S/ 500-700</button><button onclick="finalizar('700+')">S/ 700+</button>\`;
-        } else {
-            opcionesCuo = \`<button onclick="finalizar('350-500')">S/ 350-500</button><button onclick="finalizar('500+')">S/ 500+</button>\`;
+            opcionesCuo = `<button onclick="finalizar('500 a 700')">S/ 500 a 700</button>
+                           <button onclick="finalizar('700 a más')">S/ 700 a más</button>`;
+        } else { // Monte Verde
+            opcionesCuo = `<button onclick="finalizar('350 a 500')">S/ 350 a 500</button>
+                           <button onclick="finalizar('500 a más')">S/ 500 a más</button>`;
         }
-        document.getElementById("chat-contenido").innerHTML = \`
-            <div style="color:white; margin-bottom:10px;">¿Cuota mensual ideal?</div>
-            <div style="display: flex; flex-direction: column; gap: 10px;">\${opcionesCuo}</div>
-        \`.replace(/button/g, 'button style="background:#bfa046; border:none; padding:10px; border-radius:8px; font-weight:bold; cursor:pointer;"');
+
+        document.getElementById("chat-contenido").innerHTML = `
+            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                Perfecto. ¿Qué <strong>cuota mensual</strong> se acomoda a tu presupuesto?
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">${opcionesCuo}</div>
+        `.replace(/button/g, 'button style="background:#bfa046; border:none; padding:10px; border-radius:8px; font-weight:bold; cursor:pointer;"');
+    }
+
+    // FUNCIÓN PARA ATENDER A LOS QUE TIENEN MENOS
+    function evaluacionEspecial(monto) {
+        const msg = `Hola Humberto León, usé tu Asistente. Estoy interesado en *${filtroUsuario.proyecto}* pero mi inicial es *${monto}*. ¿Podemos evaluar mi caso para un plan especial?`;
+        document.getElementById("chat-contenido").innerHTML = `
+            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                ¡No te preocupes! Podemos hacer una <strong>Evaluación Especial</strong> para ayudarte a cumplir tu sueño.
+            </div>
+            <button onclick="window.open('https://wa.me/${MiWhatsapp}?text=${encodeURIComponent(msg)}', '_blank')" 
+                style="background: #25d366; color: white; border: none; padding: 18px; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; margin-top: 15px;">
+                🚀 SOLICITAR EVALUACIÓN ESPECIAL
+            </button>
+        `;
     }
 
     function finalizar(cuota) {
-        const msg = \`Hola Humberto León. Proyecto: *\${filtroUsuario.proyecto}*. Inicial: *\${filtroUsuario.inicial}*. Cuota: *\${cuota}*.\`;
-        document.getElementById("chat-contenido").innerHTML = \`
-            <div style="color:white; margin-bottom:15px;">¡Perfecto! Tengo tu plan listo.</div>
-            <button onclick="window.open('https://wa.me/\${MiWhatsapp}?text=\${encodeURIComponent(msg)}', '_blank')" style="background:#25d366; color:white; border:none; padding:18px; border-radius:12px; font-weight:bold; width:100%; cursor:pointer;">📅 AGENDAR VISITA</button>
-        \`;
+        const msg = `Hola Humberto León. Proyecto: *${filtroUsuario.proyecto}*. Inicial: *S/ ${filtroUsuario.inicial}*. Cuota: *S/ ${cuota}*.`;
+        document.getElementById("chat-contenido").innerHTML = `
+            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                ¡Excelente! He recibido tus datos. Dale clic abajo para agendar tu visita.
+            </div>
+            <button onclick="window.open('https://wa.me/${MiWhatsapp}?text=${encodeURIComponent(msg)}', '_blank')" 
+                style="background: #25d366; color: white; border: none; padding: 18px; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; margin-top: 15px;">
+                📅 AGENDAR MI VISITA AHORA
+            </button>
+        `;
     }
 </script>
 </body>
