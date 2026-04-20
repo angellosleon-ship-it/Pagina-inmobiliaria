@@ -243,23 +243,61 @@ function paso2(objetivo) {
         <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
             <button class="btn-accion" onclick="paso3('Fundo Malabrigo')">🌿 Fundo Malabrigo</button>
             <button class="btn-accion" onclick="paso3('Puerto Mar Club')">🌊 Puerto Mar Club</button>
-            <button class="btn-accion" onclick="paso3('Monte Verde')">🏡 Monte Verde</button>
+            <button class="btn-accion" onclick="paso3('Residencial Monte Verde')">🏡 Monte Verde</button>
         </div>
     `;
 }
 
 function paso3(proyecto) {
     datosCliente.proyecto = proyecto;
-    const nro = "51985877256";
-    const msg = `Hola Humberto León, acabo de usar tu Asesor Virtual. Me interesa el proyecto *${datosCliente.proyecto}* con el objetivo de *${datosCliente.objetivo}*. Quisiera agendar una visita.`;
+    let opcionesIni = "";
     
-    const contenedor = document.getElementById('chat-texto');
-    contenedor.innerHTML = `
-        <p style="text-align: center;">¡Perfecto! Tengo los mejores lotes en <strong>${proyecto}</strong> para tu meta de <strong>${datosCliente.objetivo}</strong>.</p>
-        <br>
+    // Configuración de iniciales por proyecto
+    if (proyecto === 'Fundo Malabrigo') {
+        opcionesIni = `
+            <button class="btn-accion" onclick="pasoFinal('5,000 a más')">S/ 5,000 a más</button>
+            <button class="btn-accion" onclick="pasoFinal('10,000 a más')">S/ 10,000 a más</button>
+            <button class="btn-accion" style="background:#334155; color:white;" onclick="irEspecial('Menos de 5,000')">Tengo menos de S/ 5,000</button>`;
+    } else if (proyecto === 'Puerto Mar Club') {
+        opcionesIni = `
+            <button class="btn-accion" onclick="pasoFinal('3,000 a más')">S/ 3,000 a más</button>
+            <button class="btn-accion" onclick="pasoFinal('5,000 a más')">S/ 5,000 a más</button>
+            <button class="btn-accion" style="background:#334155; color:white;" onclick="irEspecial('Menos de 3,000')">Tengo menos de S/ 3,000</button>`;
+    } else { // Monte Verde
+        opcionesIni = `
+            <button class="btn-accion" onclick="pasoFinal('2,500 a más')">S/ 2,500 a más</button>
+            <button class="btn-accion" onclick="pasoFinal('4,000 a más')">S/ 4,000 a más</button>
+            <button class="btn-accion" style="background:#334155; color:white;" onclick="irEspecial('Menos de 2,500')">Tengo menos de S/ 2,500</button>`;
+    }
+
+    document.getElementById('chat-texto').innerHTML = `
+        <p style="text-align: center;">Elegiste <strong>${proyecto}</strong>.<br>¿De cuánto dispones para tu <strong>Inicial</strong>?</p>
+        <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
+            ${opcionesIni}
+        </div>
+    `;
+}
+
+function pasoFinal(inicial) {
+    datosCliente.inicial = inicial;
+    const nro = "51985877256";
+    const msg = `Hola Humberto León. Proyecto: *${datosCliente.proyecto}*. Objetivo: *${datosCliente.objetivo}*. Inicial: *S/ ${inicial}*.`;
+    
+    document.getElementById('chat-texto').innerHTML = `
+        <p style="text-align: center;">¡Perfecto! Tengo los mejores lotes listos para tu meta.</p>
         <div class="acciones" style="text-align: center;">
             <button class="btn-agendar" style="background: #25d366; color: white; border: none; padding: 20px 40px; font-size: 1.3rem;" onclick="window.open('https://wa.me/${nro}?text=${encodeURIComponent(msg)}', '_blank')">
                 📅 AGENDAR MI VISITA AHORA
+            </button>
+        </div>
+    `;
+}
+
+function irEspecial(monto) {
+    const nro = "51985877256";
+    const msg = `Hola Humberto León, me interesa ${datosCliente.proyecto} pero mi inicial es ${monto}. ¿Podemos evaluar mi caso para un plan especial?`;
+    window.open(`https://wa.me/${nro}?text=${encodeURIComponent(msg)}`, '_blank');
+}
             </button>
         </div>
     `;
@@ -282,116 +320,136 @@ function paso3(proyecto) {
         }
        
     </script>
-<div id="contenedor-estratigo" style="max-width: 550px; margin: 20px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    
-    <div id="bienvenida-seccion" style="background: #0b1220; border: 1px solid #bfa046; border-radius: 15px; padding: 25px; text-align: center; color: white;">
-        <h2 style="color: #bfa046; margin-bottom: 5px;">¡Bienvenido, soy Humberto León!</h2>
-        <p style="font-size: 0.9rem; opacity: 0.8;">Asesor Comercial de Inmobiliaria Grupo PG</p>
-        <button onclick="iniciarChat()" style="background: linear-gradient(45deg,#bfa046,#ffcc33); color: black; border: none; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 15px; font-size: 1rem;">
-            💬 ASISTENTE VIRTUAL: ELIGE TU LOTE
-        </button>
-    </div>
-
-    <div id="asistente-det" style="display: none; background: #0b1220; border: 1px solid #bfa046; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-        <div style="background: linear-gradient(45deg,#bfa046,#ffcc33); color: #000; padding: 15px; font-weight: bold; text-align: center;">
-            Asesor Virtual: Humberto León
-        </div>
-        <div style="padding: 20px; min-height: 350px;">
-            <div id="chat-contenido"></div>
-        </div>
-    </div>
-</div>
-
-<script>
-    let seleccion = { objetivo: "", proyecto: "", inicial: "" };
-    const MiWhatsapp = "51985877256";
-
-    function iniciarChat() {
-        document.getElementById('bienvenida-seccion').style.display = 'none';
-        document.getElementById('asistente-det').style.display = 'block';
-        paso1();
-    }
-
-    function paso1() {
-        render(`
-            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                Hola 👋 Para ayudarte mejor, cuéntame: ¿Cuál es tu objetivo principal?
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-                <button onclick="paso2('Inversión')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💰 Invertir para ganar valor</button>
-                <button onclick="paso2('Vivienda')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">🏡 Construir mi casa propia</button>
-            </div>
-        `);
-    }
-
-    function paso2(obj) {
-        seleccion.objetivo = obj;
-        render(`
-            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                Excelente. ¿En qué proyecto te gustaría recibir información?
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-                <button onclick="paso3('Fundo Malabrigo')" style="background: #bfa046; color: black; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;">🌿 Fundo Malabrigo</button>
-                <button onclick="paso3('Puerto Mar Club')" style="background: #bfa046; color: black; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;">🌊 Puerto Mar Club</button>
-                <button onclick="paso3('Residencial Monte Verde')" style="background: #bfa046; color: black; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer;">🏡 Residencial Monte Verde</button>
-            </div>
-        `);
-    }
-
-    function paso3(proy) {
-        seleccion.proyecto = proy;
-        render(`
-            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                ¡Perfecto! <strong>\${proy}</strong> es ideal para tu meta. ¿Cómo piensas adquirirlo?
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-                <button onclick="irWhatsapp('Contado')" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💵 Al Contado (Con Descuento)</button>
-                <button onclick="paso4()" style="background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">💳 Financiado (En Cuotas)</button>
-            </div>
-        `);
-    }
-
-    function paso4() {
-        let opc = "";
-        const p = seleccion.proyecto;
-        if(p === 'Fundo Malabrigo') {
-            opc = \`<button onclick="pasoFinal('5,000 a más')">S/ 5,000 a más</button>
-                   <button onclick="pasoFinal('10,000 a más')">S/ 10,000 a más</button>
-                   <button onclick="irWhatsapp('Especial')" style="background:#334155 !important; color:white;">Tengo menos de 5,000</button>\`;
-        } else if(p === 'Puerto Mar Club') {
-            opc = \`<button onclick="pasoFinal('3,000 a más')">S/ 3,000 a más</button>
-                   <button onclick="pasoFinal('5,000 a más')">S/ 5,000 a más</button>
-                   <button onclick="irWhatsapp('Especial')" style="background:#334155 !important; color:white;">Tengo menos de 3,000</button>\`;
-        } else {
-            opc = \`<button onclick="pasoFinal('2,500 a más')">S/ 2,500 a más</button>
-                   <button onclick="pasoFinal('4,000 a más')">S/ 4,000 a más</button>
-                   <button onclick="irWhatsapp('Especial')" style="background:#334155 !important; color:white;">Tengo menos de 2,500</button>\`;
-        }
-        render(\`<div style="color:white; margin-bottom:10px;">¿De cuánto dispones para tu inicial?</div><div style="display:flex; flex-direction:column; gap:10px;">\${opc}</div>\`.replace(/button/g, 'button style="background:#bfa046; border:none; padding:10px; border-radius:8px; font-weight:bold; cursor:pointer;"'));
-    }
-
-    function pasoFinal(ini) {
-        seleccion.inicial = ini;
-        render(\`
-            <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
-                ¡Excelente! Tengo los mejores lotes en <strong>\${seleccion.proyecto}</strong> para tu meta.
-            </div>
-            <button onclick="irWhatsapp('Final')" style="background: #25d366; color: white; border: none; padding: 18px; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; margin-top: 15px;">
-                📅 AGENDAR MI VISITA AHORA
+<div id="contenedor-estratigo" style="max-width: 550px; margin: 40px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 0 15px;">
+        <div id="bienvenida-seccion" style="background: #0b1220; border: 1px solid #bfa046; border-radius: 15px; padding: 25px; text-align: center; color: white;">
+            <h2 style="color: #bfa046; margin-bottom: 5px;">¡Bienvenido, soy Humberto León!</h2>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Asesor Comercial de Inmobiliaria Grupo PG</p>
+            <button onclick="iniciarChat()" style="background: linear-gradient(45deg,#bfa046,#ffcc33); color: black; border: none; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 15px; font-size: 1rem;">
+                💬 ASISTENTE VIRTUAL: ELIGE TU LOTE
             </button>
-        \`);
-    }
+        </div>
 
-    function irWhatsapp(tipo) {
-        let texto = "";
-        if(tipo === 'Contado') texto = \`Hola Humberto León, me interesa \${seleccion.proyecto} al CONTADO.\`;
-        else if(tipo === 'Especial') texto = \`Hola Humberto León, me interesa \${seleccion.proyecto} pero necesito una EVALUACIÓN ESPECIAL.\`;
-        else texto = \`Hola Humberto León. Proyecto: \${seleccion.proyecto}. Perfil: \${seleccion.objetivo}. Inicial: \${seleccion.inicial}.\`;
-        window.open(\`https://wa.me/\${MiWhatsapp}?text=\${encodeURIComponent(texto)}\`, '_blank');
-    }
+        <div id="asistente-det" style="display: none; background: #0b1220; border: 1px solid #bfa046; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <div style="background: linear-gradient(45deg,#bfa046,#ffcc33); color: #000; padding: 15px; font-weight: bold; text-align: center;">
+                Asesor Virtual: Humberto León
+            </div>
+            <div style="padding: 20px; min-height: 350px;">
+                <div id="chat-contenido"></div>
+            </div>
+        </div>
+    </div>
 
-    function render(html) { document.getElementById("chat-contenido").innerHTML = html; }
-</script>
+    <script>
+        // Variables de control
+        let seleccion = { objetivo: "", proyecto: "", inicial: "" };
+        const MiWhatsapp = "51985877256";
+
+        // Funciones de navegación de la web
+        function mostrarProyecto(id) {
+            document.getElementById('msg-inicio').style.display = 'none';
+            document.querySelectorAll('.proyecto-detalle').forEach(d => d.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        }
+
+        // Lógica del Asesor Virtual
+        function iniciarChat() {
+            document.getElementById('bienvenida-seccion').style.display = 'none';
+            document.getElementById('asistente-det').style.display = 'block';
+            paso1();
+        }
+
+        function paso1() {
+            render(`
+                <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                    Hola 👋 Para ayudarte mejor, cuéntame: ¿Cuál es tu objetivo principal?
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                    <button class="btn-chat" onclick="paso2('Inversión')">💰 Invertir para ganar valor</button>
+                    <button class="btn-chat" onclick="paso2('Vivienda')">🏡 Construir mi casa propia</button>
+                </div>
+            `);
+        }
+
+        function paso2(obj) {
+            seleccion.objetivo = obj;
+            render(`
+                <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                    Excelente. ¿En qué proyecto te gustaría recibir información?
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <button class="btn-chat" onclick="paso3('Fundo Malabrigo')">🌿 Fundo Malabrigo</button>
+                    <button class="btn-chat" onclick="paso3('Puerto Mar Club')">🌊 Puerto Mar Club</button>
+                    <button class="btn-chat" onclick="paso3('Residencial Monte Verde')">🏡 Residencial Monte Verde</button>
+                </div>
+            `);
+        }
+
+        function paso3(proy) {
+            seleccion.proyecto = proy;
+            render(`
+                <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                    ¡Perfecto! <strong>\${proy}</strong> es ideal para tu meta. ¿Cómo piensas adquirirlo?
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <button class="btn-chat" onclick="irWhatsapp('Contado')">💵 Al Contado (Con Descuento)</button>
+                    <button class="btn-chat" onclick="paso4()">💳 Financiado (En Cuotas)</button>
+                </div>
+            `);
+        }
+
+        function paso4() {
+            let opc = "";
+            const p = seleccion.proyecto;
+            if(p === 'Fundo Malabrigo') {
+                opc = \`<button class="btn-chat" onclick="pasoFinal('5,000 a más')">S/ 5,000 a más</button>
+                       <button class="btn-chat" onclick="pasoFinal('10,000 a más')">S/ 10,000 a más</button>
+                       <button class="btn-chat" style="background:#334155 !important; color:white;" onclick="irWhatsapp('Especial')">Tengo menos de 5,000</button>\`;
+            } else if(p === 'Puerto Mar Club') {
+                opc = \`<button class="btn-chat" onclick="pasoFinal('3,000 a más')">S/ 3,000 a más</button>
+                       <button class="btn-chat" onclick="pasoFinal('5,000 a más')">S/ 5,000 a más</button>
+                       <button class="btn-chat" style="background:#334155 !important; color:white;" onclick="irWhatsapp('Especial')">Tengo menos de 3,000</button>\`;
+            } else {
+                opc = \`<button class="btn-chat" onclick="pasoFinal('2,500 a más')">S/ 2,500 a más</button>
+                       <button class="btn-chat" onclick="pasoFinal('4,000 a más')">S/ 4,000 a más</button>
+                       <button class="btn-chat" style="background:#334155 !important; color:white;" onclick="irWhatsapp('Especial')">Tengo menos de 2,500</button>\`;
+            }
+            render(\`<div style="color:white; margin-bottom:10px;">¿De cuánto dispones para tu inicial?</div><div style="display:flex; flex-direction:column; gap:10px;">\${opc}</div>\`);
+        }
+
+        function pasoFinal(ini) {
+            seleccion.inicial = ini;
+            render(`
+                <div style="background: #1e293b; color: white; padding: 12px; border-radius: 10px 10px 10px 0; margin-bottom: 10px; border-left: 3px solid #bfa046;">
+                    ¡Excelente! Tengo los mejores lotes en <strong>\${seleccion.proyecto}</strong> para tu meta.
+                </div>
+                <button onclick="irWhatsapp('Final')" style="background: #25d366; color: white; border: none; padding: 18px; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; width: 100%; margin-top: 15px;">
+                    📅 AGENDAR MI VISITA AHORA
+                </button>
+            `);
+        }
+
+        function irWhatsapp(tipo) {
+            let texto = "";
+            if(tipo === 'Contado') texto = \`Hola Humberto León, me interesa \${seleccion.proyecto} al CONTADO.\`;
+            else if(tipo === 'Especial') texto = \`Hola Humberto León, me interesa \${seleccion.proyecto} pero necesito una EVALUACIÓN ESPECIAL.\`;
+            else texto = \`Hola Humberto León. Proyecto: \${seleccion.proyecto}. Perfil: \${seleccion.objetivo}. Inicial: \${seleccion.inicial}.\`;
+            window.open(\`https://wa.me/\${MiWhatsapp}?text=\${encodeURIComponent(texto)}\`, '_blank');
+        }
+
+        function render(html) { document.getElementById("chat-contenido").innerHTML = html; }
+    </script>
+    
+    <style>
+        .btn-chat { background: #bfa046; color: black; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; }
+        .btn-chat:hover { background: #ffcc33; transform: scale(1.02); }
+    </style>
+</body>
+</html>
 </body>
 </html>
 
