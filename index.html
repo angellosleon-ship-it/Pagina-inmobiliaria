@@ -47,10 +47,6 @@
                 </p>
                 <p class="instruccion-dorada">✨ ELIGE UN PROYECTO PARA COMENZAR ✨</p>
 
-
-<!-- 🔥 AQUÍ VA TU MENSAJE -->
-    <div id="chatbot-texto">
-        💬 ¡Te ayudo a elegir tu lote!
     </div>
 
             </div>
@@ -238,8 +234,10 @@
         }
        
     </script>
-<!-- ===== BOTÓN FLOTANTE VERDE ===== -->
-<div id="chatbot-btn">💬</div>
+<!-- ===== BOTÓN PRINCIPAL ===== -->
+<div id="chatbot-btn">
+  💬 <span>Te ayudo a elegir tu lote</span>
+</div>
 
 <!-- ===== CHATBOT ===== -->
 <div id="chatbot">
@@ -260,30 +258,36 @@
 </div>
 
 <style>
-/* ===== BOTÓN CENTRAL ANIMADO ===== */
+/* ===== BOTÓN CENTRAL ===== */
 #chatbot-btn {
   position: fixed;
-  bottom: 50%;
+  bottom: calc(50% - 3cm);
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 95px;
-  height: 95px;
+  width: 270px;
+  height: 80px;
   background: linear-gradient(45deg,#25d366,#128c7e);
   color: #fff;
-  border-radius: 50%;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 42px;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   z-index: 3000;
   animation: pulso 1.2s infinite;
   box-shadow: 0 0 25px rgba(37,211,102,0.8);
 }
 
+#chatbot-btn span {
+  font-size: 13px;
+}
+
 @keyframes pulso {
   0% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -60%) scale(1.15); }
+  50% { transform: translate(-50%, -60%) scale(1.05); }
   100% { transform: translate(-50%, -50%) scale(1); }
 }
 
@@ -309,7 +313,6 @@
   to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-/* HEADER */
 .chat-header {
   background: linear-gradient(45deg,#bfa046,#ffcc33);
   color: #000;
@@ -319,7 +322,6 @@
   justify-content: space-between;
 }
 
-/* BODY */
 #chat-body {
   padding: 15px;
   font-size: 14px;
@@ -330,11 +332,9 @@
 .msg {
   margin-bottom: 10px;
   line-height: 1.4;
+  color: #fff;
 }
 
-.bot { color: #fff; }
-
-/* BOTONES */
 .opciones button {
   width: 100%;
   margin: 6px 0;
@@ -355,6 +355,7 @@
 
 <script>
 let tipo = "";
+let numero = "51TU_NUMERO_AQUI"; // 👈 CAMBIA TU WHATSAPP
 
 /* ABRIR CHAT */
 window.onload = function () {
@@ -371,7 +372,7 @@ function cerrarChat() {
   document.getElementById("chatbot").style.display = "none";
 }
 
-/* LIMPIAR CHAT */
+/* LIMPIAR */
 function limpiarChat() {
   document.getElementById("chat-body").innerHTML = `
     <div class="msg bot">Hola 👋 soy el asistente de Humberto León</div>
@@ -384,7 +385,7 @@ function limpiarChat() {
   `;
 }
 
-/* AGREGAR MENSAJE */
+/* MENSAJE */
 function agregar(texto) {
   const chat = document.getElementById("chat-body");
   const div = document.createElement("div");
@@ -394,14 +395,20 @@ function agregar(texto) {
   chat.scrollTop = chat.scrollHeight;
 }
 
-/* CREAR BOTONES */
+/* BOTONES WHATSAPP */
 function opcionesHTML(lista) {
   let html = '<div class="opciones">';
   lista.forEach(o => {
-    html += `<button onclick="${o.fn}">${o.txt}</button>`;
+    html += `<button onclick="enviarWhatsApp('${o.msg}')">${o.txt}</button>`;
   });
   html += '</div>';
   return html;
+}
+
+/* WHATSAPP */
+function enviarWhatsApp(mensaje) {
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, "_blank");
 }
 
 /* PASO 1 */
@@ -410,15 +417,15 @@ function tipoCliente(t) {
   tipo = t;
 
   agregar(t === "invertir"
-    ? "Excelente 👌 Invertir hoy te dará alta valorización 📈"
-    : "Perfecto 🏡 Te ayudaré a encontrar tu hogar ideal");
+    ? "Excelente 👌 Invertir es una gran decisión 📈"
+    : "Perfecto 🏡 Te ayudo a encontrar tu hogar ideal");
 
   setTimeout(() => {
     agregar("¿En qué proyecto estás interesado?");
     document.getElementById("chat-body").innerHTML += opcionesHTML([
-      { txt: "🌿 Fundo Malabrigo", fn: "proyecto('fundo')" },
-      { txt: "🌊 Puerto Mar Club", fn: "proyecto('puerto')" },
-      { txt: "🏡 Monte Verde", fn: "proyecto('monte')" }
+      { txt: "🌿 Fundo Malabrigo", msg: "Hola Humberto, quiero info de Fundo Malabrigo" },
+      { txt: "🌊 Puerto Mar Club", msg: "Hola Humberto, quiero info de Puerto Mar Club" },
+      { txt: "🏡 Monte Verde", msg: "Hola Humberto, quiero info de Monte Verde" }
     ]);
   }, 700);
 }
@@ -427,31 +434,18 @@ function tipoCliente(t) {
 function proyecto(p) {
   limpiarChat();
 
-  if (p === "fundo") agregar("🌿 Fundo Malabrigo: naturaleza + alta valorización");
-  if (p === "puerto") agregar("🌊 Puerto Mar Club: frente al mar exclusivo");
-  if (p === "monte") agregar("🏡 Monte Verde: tranquilidad y crecimiento seguro");
+  if (p === "fundo") agregar("🌿 Fundo Malabrigo: naturaleza + valorización");
+  if (p === "puerto") agregar("🌊 Puerto Mar Club: frente al mar");
+  if (p === "monte") agregar("🏡 Monte Verde: zona tranquila y segura");
 
   setTimeout(() => {
     agregar("¿Qué deseas ahora?");
     document.getElementById("chat-body").innerHTML += opcionesHTML([
-      { txt: "📸 Ver fotos", fn: `accion('fotos','${p}')` },
-      { txt: "📍 Ubicación", fn: `accion('ubicacion','${p}')` },
-      { txt: "📅 Agendar visita", fn: `accion('cita','${p}')` }
+      { txt: "📸 Ver fotos", msg: `Hola Humberto, quiero fotos de ${p}` },
+      { txt: "📍 Ubicación", msg: `Hola Humberto, quiero ubicación de ${p}` },
+      { txt: "📅 Agendar visita", msg: `Hola Humberto, quiero agendar visita de ${p}` }
     ]);
   }, 700);
-}
-
-/* PASO 3 */
-function accion(a, proyecto) {
-  limpiarChat();
-
-  if (a === "fotos") agregar("📸 Te enviaré fotos del proyecto");
-  if (a === "ubicacion") agregar("📍 Aquí tienes la ubicación");
-  if (a === "cita") agregar("📅 Vamos a agendar tu visita");
-
-  setTimeout(() => {
-    agregar("¿Deseas algo más?");
-  }, 500);
 }
 </script>
     <body>
