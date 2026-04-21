@@ -213,7 +213,7 @@
             });
         }
 
-       // Asistente Virtual - FLUJO ACTUALIZADO
+      // Asistente Virtual - FLUJO COMPLETO CON RETORNO
         function reiniciarAsistente() {
             document.getElementById('chat-texto').innerHTML = `
                 <p style="text-align: center; font-size: 1.2rem;"><strong>Hola 👋 Soy tu asistente.</strong><br>¿Cuál es tu objetivo?</p>
@@ -230,6 +230,7 @@
                 <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
                     <button class="btn-accion" onclick="pasoProyecto('Al Contado')">💵 Al Contado (Dcto. Especial)</button>
                     <button class="btn-accion" onclick="pasoProyecto('Financiado')">💳 Financiado Directo</button>
+                    <button class="btn-regresar" onclick="reiniciarAsistente()">⬅️ Regresar</button>
                 </div>`;
         }
 
@@ -241,19 +242,18 @@
                     <button class="btn-accion" onclick="pasoFiltros('Fundo Malabrigo')">🌿 Fundo Malabrigo</button>
                     <button class="btn-accion" onclick="pasoFiltros('Puerto Mar Club')">🌊 Puerto Mar Club</button>
                     <button class="btn-accion" onclick="pasoFiltros('Monte Verde')">🏡 Monte Verde</button>
+                    <button class="btn-regresar" onclick="pasoTipoPago(datosCliente.objetivo)">⬅️ Regresar</button>
                 </div>`;
         }
 
         function pasoFiltros(proy) {
             datosCliente.proyecto = proy;
             
-            // Si es al contado, vamos directo al botón de WhatsApp
             if (datosCliente.pago === 'Al Contado') {
                 finalizarAsistente("Contado", "N/A");
                 return;
             }
 
-            // Configuración de iniciales según tu instrucción
             let montoIni = '5,000'; 
             if (proy === 'Puerto Mar Club') montoIni = '3,000';
             if (proy === 'Monte Verde') montoIni = '2,500';
@@ -263,13 +263,13 @@
                 <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
                     <button class="btn-accion" onclick="pasoCuotas('${montoIni}')">Sí, cuento con la inicial</button>
                     <button class="btn-accion" onclick="irEspecial()">Tengo un monto diferente</button>
+                    <button class="btn-regresar" onclick="pasoProyecto(datosCliente.pago)">⬅️ Regresar</button>
                 </div>`;
         }
 
         function pasoCuotas(ini) {
             datosCliente.inicial = ini;
-            // Configuración de cuotas según el proyecto
-            let cuotaMin = 700; // Fundo
+            let cuotaMin = 700; 
             if (datosCliente.proyecto === 'Puerto Mar Club') cuotaMin = 500;
             if (datosCliente.proyecto === 'Monte Verde') cuotaMin = 350;
 
@@ -278,15 +278,17 @@
                 <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
                     <button class="btn-accion" onclick="finalizarAsistente('${ini}', 'S/ ${cuotaMin} a 900')">S/ ${cuotaMin} - S/ 900</button>
                     <button class="btn-accion" onclick="finalizarAsistente('${ini}', 'Más de 1,000')">Más de S/ 1,000</button>
+                    <button class="btn-regresar" onclick="pasoFiltros(datosCliente.proyecto)">⬅️ Regresar</button>
                 </div>`;
         }
 
         function finalizarAsistente(ini, cuota) {
-            const msg = `Hola Humberto León. Interés: ${datosCliente.proyecto}. Tipo: ${datosCliente.pago}. Inicial: S/ ${ini}. Cuota: ${cuota}.`;
+            const msg = `Hola Humberto León. Interés: ${datosCliente.proyecto}. Pago: ${datosCliente.pago}. Inicial: S/ ${ini}. Cuota: ${cuota}.`;
             document.getElementById('chat-texto').innerHTML = `
                 <p style="text-align: center;">¡Excelente! Pulsa el botón para coordinar:</p>
                 <button class="btn-agendar" style="background:#25d366; color:white; border:none; width:100%; cursor:pointer;" 
-                onclick="window.open('https://wa.me/51985877256?text=${encodeURIComponent(msg)}')">📅 AGENDAR MI VISITA</button>`;
+                onclick="window.open('https://wa.me/51985877256?text=${encodeURIComponent(msg)}')">📅 AGENDAR MI VISITA</button>
+                <button class="btn-regresar" style="margin-top:10px" onclick="reiniciarAsistente()">🔄 Empezar de nuevo</button>`;
         }
 
         function irEspecial() {
