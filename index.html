@@ -213,42 +213,84 @@
             });
         }
 
-        // Asistente Virtual
+       // Asistente Virtual - FLUJO ACTUALIZADO
         function reiniciarAsistente() {
             document.getElementById('chat-texto').innerHTML = `
                 <p style="text-align: center; font-size: 1.2rem;"><strong>Hola 👋 Soy tu asistente.</strong><br>¿Cuál es tu objetivo?</p>
                 <div class="acciones" style="display: flex; flex-direction: column; align-items: center; margin-top:15px;">
-                    <button class="btn-accion" onclick="paso2('Inversión')">💰 Invertir</button>
-                    <button class="btn-accion" onclick="paso2('Vivienda')">🏡 Vivienda</button>
+                    <button class="btn-accion" onclick="pasoTipoPago('Inversión')">💰 Invertir</button>
+                    <button class="btn-accion" onclick="pasoTipoPago('Vivienda')">🏡 Vivienda</button>
                 </div>`;
         }
 
-        function paso2(obj) {
+        function pasoTipoPago(obj) {
             datosCliente.objetivo = obj;
             document.getElementById('chat-texto').innerHTML = `
-                <p style="text-align: center;">¿En qué proyecto te gustaría invertir?</p>
+                <p style="text-align: center;">¿Cómo te gustaría adquirirlo?</p>
                 <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
-                    <button class="btn-accion" onclick="paso3('Fundo Malabrigo')">🌿 Fundo Malabrigo</button>
-                    <button class="btn-accion" onclick="paso3('Puerto Mar Club')">🌊 Puerto Mar Club</button>
-                    <button class="btn-accion" onclick="paso3('Monte Verde')">🏡 Monte Verde</button>
+                    <button class="btn-accion" onclick="pasoProyecto('Al Contado')">💵 Al Contado (Dcto. Especial)</button>
+                    <button class="btn-accion" onclick="pasoProyecto('Financiado')">💳 Financiado Directo</button>
                 </div>`;
         }
 
-        function paso3(proy) {
-            datosCliente.proyecto = proy;
-            let opc = proy === 'Fundo Malabrigo' ? 
-                `<button class="btn-accion" onclick="pasoFinal('5,000')">S/ 5,000 a más</button><button class="btn-accion" onclick="irEspecial()">Menos de 5,000</button>` :
-                `<button class="btn-accion" onclick="pasoFinal('2,500')">S/ 2,500 a más</button><button class="btn-accion" onclick="irEspecial()">Menos de 2,500</button>`;
-            document.getElementById('chat-texto').innerHTML = `<p style="text-align: center;">¿Con qué inicial cuentas?</p><div class="acciones" style="display: flex; flex-direction: column; align-items: center;">${opc}</div>`;
+        function pasoProyecto(pago) {
+            datosCliente.pago = pago;
+            document.getElementById('chat-texto').innerHTML = `
+                <p style="text-align: center;">¿Qué proyecto te interesa?</p>
+                <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
+                    <button class="btn-accion" onclick="pasoFiltros('Fundo Malabrigo')">🌿 Fundo Malabrigo</button>
+                    <button class="btn-accion" onclick="pasoFiltros('Puerto Mar Club')">🌊 Puerto Mar Club</button>
+                    <button class="btn-accion" onclick="pasoFiltros('Monte Verde')">🏡 Monte Verde</button>
+                </div>`;
         }
 
-        function pasoFinal(ini) {
-            const msg = `Hola Humberto León. Proyecto: ${datosCliente.proyecto}. Perfil: ${datosCliente.objetivo}. Inicial: S/ ${ini}.`;
-            document.getElementById('chat-texto').innerHTML = `<button class="btn-agendar" style="background:#25d366; color:white; border:none; width:100%;" onclick="window.open('https://wa.me/51985877256?text=${encodeURIComponent(msg)}')">📅 AGENDAR MI VISITA</button>`;
+        function pasoFiltros(proy) {
+            datosCliente.proyecto = proy;
+            
+            // Si es al contado, vamos directo al botón de WhatsApp
+            if (datosCliente.pago === 'Al Contado') {
+                finalizarAsistente("Contado", "N/A");
+                return;
+            }
+
+            // Configuración de iniciales según tu instrucción
+            let montoIni = '5,000'; 
+            if (proy === 'Puerto Mar Club') montoIni = '3,000';
+            if (proy === 'Monte Verde') montoIni = '2,500';
+
+            document.getElementById('chat-texto').innerHTML = `
+                <p style="text-align: center;">¿Cuentas con la inicial de <strong>S/ ${montoIni}</strong>?</p>
+                <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
+                    <button class="btn-accion" onclick="pasoCuotas('${montoIni}')">Sí, cuento con la inicial</button>
+                    <button class="btn-accion" onclick="irEspecial()">Tengo un monto diferente</button>
+                </div>`;
+        }
+
+        function pasoCuotas(ini) {
+            datosCliente.inicial = ini;
+            // Configuración de cuotas según el proyecto
+            let cuotaMin = 700; // Fundo
+            if (datosCliente.proyecto === 'Puerto Mar Club') cuotaMin = 500;
+            if (datosCliente.proyecto === 'Monte Verde') cuotaMin = 350;
+
+            document.getElementById('chat-texto').innerHTML = `
+                <p style="text-align: center;">¿Qué cuota mensual podrías pagar?</p>
+                <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
+                    <button class="btn-accion" onclick="finalizarAsistente('${ini}', 'S/ ${cuotaMin} a 900')">S/ ${cuotaMin} - S/ 900</button>
+                    <button class="btn-accion" onclick="finalizarAsistente('${ini}', 'Más de 1,000')">Más de S/ 1,000</button>
+                </div>`;
+        }
+
+        function finalizarAsistente(ini, cuota) {
+            const msg = `Hola Humberto León. Interés: ${datosCliente.proyecto}. Tipo: ${datosCliente.pago}. Inicial: S/ ${ini}. Cuota: ${cuota}.`;
+            document.getElementById('chat-texto').innerHTML = `
+                <p style="text-align: center;">¡Excelente! Pulsa el botón para coordinar:</p>
+                <button class="btn-agendar" style="background:#25d366; color:white; border:none; width:100%; cursor:pointer;" 
+                onclick="window.open('https://wa.me/51985877256?text=${encodeURIComponent(msg)}')">📅 AGENDAR MI VISITA</button>`;
         }
 
         function irEspecial() {
-            const msg = `Hola Humberto León, me interesa ${datosCliente.proyecto} pero tengo una inicial diferente. ¿Podemos evaluar mi caso?`;
+            const msg = `Hola Humberto León, me interesa ${datosCliente.proyecto}. Quisiera consultar facilidades de pago e inicial.`;
             window.open(`https://wa.me/51985877256?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
