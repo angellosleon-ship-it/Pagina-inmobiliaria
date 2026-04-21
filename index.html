@@ -27,14 +27,16 @@
         </div>
     </header>
 
-    <section class="proyectos-container">
-        <div class="menu-proyectos">
-            <h2 class="menu-titulo">PORTAFOLIO</h2>
-            <button class="btn-palpitar" onclick="mostrarProyecto('fundo-det')">Fundo Malabrigo</button>
-            <button class="btn-palpitar" onclick="mostrarProyecto('puerto-det')">Puerto Mar Club</button>
-            <button class="btn-palpitar" onclick="mostrarProyecto('monte-det')">Residencial Monte Verde</button>
-            <button class="btn-palpitar btn-white" onclick="mostrarProyecto('clientes-det')">🤝 Clientes Felices</button>
-        </div>
+   <section class="proyectos-container">
+    <div class="menu-proyectos">
+        <h2 class="menu-titulo">PORTAFOLIO</h2>
+        <button class="btn-palpitar" style="background: #1a1a1a; color: gold; border: 1px solid gold;" onclick="volverAlInicio()">🏠 INICIO / ASISTENTE</button>
+        
+        <button class="btn-palpitar" onclick="mostrarProyecto('fundo-det')">Fundo Malabrigo</button>
+        <button class="btn-palpitar" onclick="mostrarProyecto('puerto-det')">Puerto Mar Club</button>
+        <button class="btn-palpitar" onclick="mostrarProyecto('monte-det')">Residencial Monte Verde</button>
+        <button class="btn-palpitar btn-white" onclick="mostrarProyecto('clientes-det')">🤝 Clientes Felices</button>
+    </div>
 
         <div class="ventana-visor" id="visor">
             
@@ -173,15 +175,29 @@
         let datosCliente = { objetivo: "", proyecto: "", inicial: "" };
 
         // Navegación General
-        function mostrarProyecto(id) {
+    function mostrarProyecto(id) {
+            // Oculta el mensaje de bienvenida
             document.getElementById('msg-inicio').style.display = 'none';
+            // Oculta todos los detalles de proyectos abiertos
             document.querySelectorAll('.proyecto-detalle').forEach(d => d.style.display = 'none');
+            // Asegura que las descripciones se vean y limpia videos anteriores
             document.querySelectorAll('.desc-proyecto').forEach(d => d.style.display = 'block');
             document.querySelectorAll('.video-grid').forEach(v => v.innerHTML = ''); 
+            
+            // Muestra el proyecto o asistente seleccionado
             document.getElementById(id).style.display = 'block';
             if(id === 'asistente-det') reiniciarAsistente();
         }
 
+        // Esta es la nueva función que permite regresar al botón del asistente
+        function volverAlInicio() {
+            // Oculta cualquier proyecto que esté abierto actualmente
+            document.querySelectorAll('.proyecto-detalle').forEach(d => d.style.display = 'none');
+            // Vuelve a mostrar el mensaje de bienvenida con el asistente virtual
+            document.getElementById('msg-inicio').style.display = 'block';
+            // Limpia videos para que no sigan cargando en segundo plano
+            document.querySelectorAll('.video-grid').forEach(v => v.innerHTML = '');
+        }
         // Galería
         function abrirGaleria(lista) {
             imgs = lista; i = 0;
