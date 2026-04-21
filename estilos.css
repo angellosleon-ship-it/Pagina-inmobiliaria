@@ -66,6 +66,29 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
     transition: 0.3s;
 }
 .btn-agendar:hover { background: var(--dorado-brillante); }
+/* BOTÓN REGRESAR - ESTILO PRO DORADO */
+.btn-regresar {
+    background: transparent;
+    color: var(--dorado-brillante);
+    border: 2px solid var(--dorado);
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    width: 280px; /* Tamaño fijo para que se vea uniforme */
+}
+
+.btn-regresar:hover {
+    background: var(--dorado);
+    color: black;
+    box-shadow: 0 0 20px rgba(191, 160, 70, 0.4);
+    transform: translateY(-2px);
+}
 
 /* CAJA DE DESCRIPCIÓN ACTUALIZADA */
 .desc-proyecto {
