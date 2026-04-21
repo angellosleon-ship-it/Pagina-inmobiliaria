@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humberto León | Asesor Inmobiliario Profesional</title>
+    <title>Humberto León | Jefe Comercial</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
         <div id="contenedor-principal">
             <img src="hl_logo.png" class="logo-top" alt="Humberto León">
             <h1>Humberto León</h1>
-            <p class="tagline">ASESOR INMOBILIARIO PROFESIONAL</p>
+            <p class="tagline">JEFE COMERCIAL - INMOBILIARIA GRUPO PG</p>
         </div>
     </header>
 
@@ -42,31 +42,27 @@
                 <h2>¡BIENVENIDO!</h2>
                 <div class="divisor"></div>
                 <p style="line-height: 1.6; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
-                    Construye un <strong>legado de valor</strong>. <br> 
-                    Propiedades exclusivas con respaldo legal absoluto.
+                    Asegura tu inversión en las mejores zonas de <strong>La Libertad</strong>.
                 </p>
-                <p class="instruccion-dorada">✨ ELIGE UN PROYECTO PARA COMENZAR ✨</p>
+                <p class="instruccion-dorada">✨ ELIGE UN PROYECTO O USA EL ASISTENTE ✨</p>
                 <button class="btn-palpitar" style="margin-top:25px; background: #25d366; color: white;" onclick="mostrarProyecto('asistente-det')">
-                    💬 ASISTENTE VIRTUAL: ELIGE TU LOTE
+                    💬 ASISTENTE: CONSULTAR INICIAL
                 </button>
             </div>
 
             <div id="fundo-det" class="proyecto-detalle">
                 <img src="logo-fundo.png" class="logo-v">
                 <h2 class="titulo-p">FUNDO MALABRIGO</h2>
-                <p class="sub-ubicacion">📍 PUERTO MALABRIGO</p>
                 <div class="acciones">
                     <button class="btn-accion" onclick="abrirGaleriaYocultar('fundo-desc', ['fundo1.jpg','fundo2.jpg','fundo3.jpg','fundo4.jpg','fundo5.jpg'])">📸 FOTOS</button>
                     <button class="btn-accion" onclick="cargarVideosYocultar('fundo-desc', 'v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU'])">🎥 VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/9ZpZJ" target="_blank" class="btn-accion bg-mapa">📍 VER MAPA</a>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20FUNDO%20MALABRIGO" target="_blank" class="btn-agendar">📅 AGENDAR</a>
+                    <a href="https://maps.app.goo.gl/FundoMalabrigoEjemplo" target="_blank" class="btn-accion bg-mapa">📍 GOOGLE MAPS</a>
                 </div>
                 <div id="fundo-desc" class="desc-proyecto">
-                    <strong>Condominio Ecológico:</strong>
+                    <strong>Proyecto Ecológico en Puerto Malabrigo:</strong>
                     <ul>
-                        <li>Título de propiedad independizado.</li>
-                        <li>Pórtico de ingreso y seguridad.</li>
-                        <li>Factibilidad de luz y agua.</li>
+                        <li>Lotes desde 160m².</li>
+                        <li>Inversión segura con Título.</li>
                     </ul>
                 </div>
                 <div id="v-fundo" class="video-grid"></div>
@@ -75,49 +71,35 @@
             <div id="puerto-det" class="proyecto-detalle">
                 <img src="logo-puerto.png" class="logo-v">
                 <h2 class="titulo-p">PUERTO MAR CLUB</h2>
-                <p class="sub-ubicacion">📍 PUERTO MALABRIGO</p>
                 <div class="acciones">
                     <button class="btn-accion" onclick="abrirGaleriaYocultar('puerto-desc', ['puerto1.jpg','puerto2.jpg','puerto3.jpg'])">📸 FOTOS</button>
-                    <button class="btn-accion" onclick="cargarVideosYocultar('puerto-desc', 'v-puerto', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE'])">🎥 VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/XvH7A" target="_blank" class="btn-accion bg-mapa">📍 VER MAPA</a>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20PUERTO%20MAR%20CLUB" target="_blank" class="btn-agendar">📅 AGENDAR</a>
+                    <a href="https://maps.app.goo.gl/PuertoMarEjemplo" target="_blank" class="btn-accion bg-mapa">📍 GOOGLE MAPS</a>
                 </div>
                 <div id="puerto-desc" class="desc-proyecto">
-                    <strong>Lotes de Playa:</strong>
+                    <strong>Lotes de Playa - 200m del Mar:</strong>
                     <ul>
-                        <li>A solo 200 metros del mar.</li>
-                        <li>Casa Club con piscina.</li>
-                        <li>Alta revalorización turística.</li>
+                        <li>Club Privado con Piscina.</li>
+                        <li>Zona de alta plusvalía.</li>
                     </ul>
                 </div>
-                <div id="v-puerto" class="video-grid"></div>
             </div>
 
-            <div id="monte-det" class="proyecto-detalle">
-                <img src="logo-monte.png" class="logo-v">
-                <h2 class="titulo-p">MONTE VERDE</h2>
-                <p class="sub-ubicacion">📍 CHEPÉN (CHAPARRAL)</p>
-                <div class="acciones">
-                    <button class="btn-accion" onclick="abrirGaleriaYocultar('monte-desc', ['monte1.jpg','monte2.jpg'])">📸 FOTOS</button>
-                    <button class="btn-accion" onclick="cargarVideosYocultar('monte-desc', 'v-monte', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m'])">🎥 VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/3JkLm" target="_blank" class="btn-accion bg-mapa">📍 VER MAPA</a>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20MONTE%20VERDE" target="_blank" class="btn-agendar">📅 AGENDAR</a>
+            <div id="clientes-det" class="proyecto-detalle">
+                <h2 class="titulo-p">🤝 NUESTROS CLIENTES</h2>
+                <div class="desc-proyecto" style="text-align:center;">
+                    <p>Entregas de lotes y firmas de minutas exitosas.</p>
+                    <div class="video-grid">
+                        <img src="cliente1.jpg" class="img-preview" onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg'])">
+                        <img src="cliente2.jpg" class="img-preview" onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg'])">
+                    </div>
+                    <button class="btn-palpitar" style="margin-top:20px;" onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg'])">VER TODAS LAS FOTOS</button>
                 </div>
-                <div id="monte-desc" class="desc-proyecto">
-                    <strong>Residencial Monte Verde:</strong>
-                    <ul>
-                        <li>Ubicación estratégica en el Chaparral.</li>
-                        <li>Lotes listos para construir.</li>
-                        <li>Facilidades de pago directo.</li>
-                    </ul>
-                </div>
-                <div id="v-monte" class="video-grid"></div>
             </div>
 
             <div id="asistente-det" class="proyecto-detalle">
                 <h2 class="titulo-p">ASISTENTE VIRTUAL</h2>
-                <div id="chat-flujo" class="desc-proyecto" style="min-height: 350px;">
-                    <div id="chat-texto" style="text-align: center;"></div>
+                <div id="chat-flujo" class="desc-proyecto" style="min-height: 400px; text-align: center;">
+                    <div id="chat-texto"></div>
                 </div>
             </div>
 
@@ -127,96 +109,76 @@
     <section class="faq-section">
         <h2 class="menu-titulo">PREGUNTAS FRECUENTES</h2>
         <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">¿Cuál es el monto de la cuota inicial? <span>▾</span></div>
-            <div class="faq-answer">Contamos con cuotas iniciales desde S/ 500 o S/ 1,000 soles, dependiendo del proyecto y la ubicación del lote.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">¿Tienen financiamiento directo? <span>▾</span></div>
-            <div class="faq-answer">Sí, ofrecemos financiamiento directo sin intereses y sin evaluación crediticia por hasta 36 meses.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">¿Los lotes tienen título de propiedad? <span>▾</span></div>
-            <div class="faq-answer">Todos nuestros proyectos cuentan con respaldo legal y títulos de propiedad registrados en SUNARP.</div>
+            <div class="faq-question" onclick="toggleFaq(this)">¿Hay facilidades para la inicial? <span>▾</span></div>
+            <div class="faq-answer">Sí, puedes separar tu lote desde S/ 500 y completar tu inicial en cuotas según el proyecto elegido.</div>
         </div>
     </section>
 
     <footer>
         <div class="social-links">
-            <a href="https://www.facebook.com/humberto.leondiaz.5" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+            <a href="https://www.facebook.com/share/1G7kjoWFoH/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
             <a href="https://www.instagram.com/humbertoleondiaz/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
             <a href="https://www.tiktok.com/@humbertoleonasesor" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
-            <a href="https://pagina-inmobiliaria-one.vercel.app/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" alt="Web"></a>
         </div>
-        <p style="color:#cbd5e1; margin-top:20px;">© 2026 Humberto León | Trujillo - Chepén - Paiján</p>
+        <p>© 2026 Humberto León | Trujillo, Perú</p>
     </footer>
 
     <script>
         let imgs = []; let i = 0;
-        let datos = { objetivo: "", proyecto: "", inicial: "" };
+        let pSel = ""; 
 
         function mostrarProyecto(id) {
             document.getElementById('msg-inicio').style.display = 'none';
             document.querySelectorAll('.proyecto-detalle').forEach(d => d.style.display = 'none');
-            const target = document.getElementById(id);
-            if(target) {
-                target.style.display = 'block';
-                if(id === 'asistente-det') paso1();
+            document.getElementById(id).style.display = 'block';
+            if(id === 'asistente-det') flow1();
+        }
+
+        // --- FLUJO AGENTE VIRTUAL ---
+        function flow1() {
+            renderChat(`
+                <p>¿Qué proyecto deseas consultar hoy?</p><br>
+                <button class="btn-accion" onclick="flow2('Fundo Malabrigo')">🌿 Fundo Malabrigo</button>
+                <button class="btn-accion" onclick="flow2('Puerto Mar Club')">🌊 Puerto Mar Club</button>
+                <button class="btn-accion" onclick="flow2('Residencial Monte Verde')">🏡 Monte Verde</button>
+            `);
+        }
+
+        function flow2(proy) {
+            pSel = proy;
+            let opciones = "";
+            if(proy === 'Fundo Malabrigo') {
+                opciones = `<button class="btn-accion" onclick="final('S/ 1,000')">S/ 1,000 (Económica)</button>
+                            <button class="btn-accion" onclick="final('S/ 2,000')">S/ 2,000 (Preferencial)</button>`;
+            } else {
+                opciones = `<button class="btn-accion" onclick="final('S/ 500')">S/ 500 (Separación)</button>
+                            <button class="btn-accion" onclick="final('S/ 1,500')">S/ 1,500 (Inicial)</button>`;
             }
+            renderChat(`<p>Para <strong>${proy}</strong>, ¿qué inicial prefieres?</p><br>\${opciones}`);
         }
 
-        // --- ASISTENTE: PASO 1 (Objetivo) ---
-        function paso1() {
+        function final(ini) {
+            let msg = `Hola Humberto León, quiero información de ${pSel}. Mi inicial es de ${ini}.`;
             renderChat(`
-                <p><strong>¿Cuál es tu objetivo?</strong></p><br>
-                <button class="btn-accion" onclick="paso2('Inversión')">💰 Invertir</button>
-                <button class="btn-accion" onclick="paso2('Vivienda')">🏡 Vivir</button>
+                <p>Excelente. Haz clic abajo para enviarme los datos y agendar tu visita.</p><br>
+                <button class="btn-agendar" style="background:#25d366; color:white; border:none;" 
+                onclick="window.open('https://wa.me/51985877256?text=${encodeURIComponent(msg)}')">ENVIAR A WHATSAPP</button>
             `);
         }
 
-        // --- ASISTENTE: PASO 2 (Proyecto) ---
-        function paso2(obj) {
-            datos.objetivo = obj;
-            renderChat(`
-                <p><strong>¿Qué proyecto te interesa?</strong></p><br>
-                <button class="btn-accion" onclick="paso3('Fundo Malabrigo')">🌿 Fundo Malabrigo</button>
-                <button class="btn-accion" onclick="paso3('Puerto Mar Club')">🌊 Puerto Mar Club</button>
-            `);
-        }
+        function renderChat(h) { document.getElementById('chat-texto').innerHTML = h; }
 
-        // --- ASISTENTE: PASO 3 (Inicial) ---
-        function paso3(proy) {
-            datos.proyecto = proy;
-            renderChat(`
-                <p><strong>¿Con cuánto cuentas para tu inicial?</strong></p><br>
-                <button class="btn-accion" onclick="finalizar('S/ 500')">S/ 500</button>
-                <button class="btn-accion" onclick="finalizar('S/ 1,000')">S/ 1,000</button>
-                <button class="btn-accion" onclick="finalizar('Más de S/ 1,000')">Más de S/ 1,000</button>
-            `);
-        }
-
-        function finalizar(ini) {
-            datos.inicial = ini;
-            let msg = `Hola Humberto León, me interesa ${datos.proyecto} para ${datos.objetivo}. Cuento con una inicial de ${ini}.`;
-            renderChat(`
-                <p>¡Listo! Te enviaré los lotes disponibles.</p><br>
-                <button class="btn-agendar" style="background:#25d366; color:white;" onclick="window.open('https://wa.me/51985877256?text=${encodeURIComponent(msg)}')">ENVIAR A WHATSAPP</button>
-            `);
-        }
-
-        function renderChat(html) { document.getElementById('chat-texto').innerHTML = html; }
-
-        // --- FUNCIONES EXTRA ---
-        function toggleFaq(e) { 
-            let a = e.nextElementSibling; 
-            a.style.display = a.style.display === "block" ? "none" : "block"; 
-        }
-        function abrirGaleriaYocultar(d, l) { document.getElementById(d).style.display='none'; imgs=l; i=0; document.getElementById("lightbox-img").src=imgs[i]; document.getElementById("lightbox").style.display="flex"; }
+        // --- LÓGICA DE GALERÍA Y VIDEOS ---
+        function abrirGaleria(l) { imgs=l; i=0; document.getElementById("lightbox-img").src=imgs[i]; document.getElementById("lightbox").style.display="flex"; }
+        function abrirGaleriaYocultar(d, l) { document.getElementById(d).style.display='none'; abrirGaleria(l); }
         function cerrarGaleria() { document.getElementById("lightbox").style.display="none"; }
+        function cambiarFoto(d) { i+=d; if(i<0) i=imgs.length-1; if(i>=imgs.length) i=0; document.getElementById("lightbox-img").src=imgs[i]; }
         function cargarVideosYocultar(d, c, ids) {
             document.getElementById(d).style.display='none';
             let cont = document.getElementById(c); cont.innerHTML="";
             ids.forEach(id => { cont.innerHTML += `<iframe src="https://drive.google.com/file/d/${id}/preview" frameborder="0" allowfullscreen></iframe>`; });
         }
+        function toggleFaq(e) { let a = e.nextElementSibling; a.style.display = a.style.display === "block" ? "none" : "block"; }
     </script>
 </body>
 </html>
