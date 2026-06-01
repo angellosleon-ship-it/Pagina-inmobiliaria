@@ -22,20 +22,20 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
 .proyectos-container {
     display: flex; flex-wrap: wrap; max-width: 1350px; margin: 30px auto; gap: 20px; padding: 10px; align-items: flex-start;
 }
-/* --- CONFIGURACIÓN DE MENÚ Y VISOR (Optimizado) --- */
+/* --- CONFIGURACIÓN DE MENÚ Y VISOR (Optimizado y Compacto) --- */
 .menu-proyectos { 
     flex: 1; 
     min-width: 280px; 
     display: flex; 
     flex-direction: column; 
-    gap: 8px; /* Reduje de 15px a 8px para que los botones estén más cerca */
+    gap: 4px; /* Reducido al mínimo para que los botones estén juntos */
 }
 
 .menu-titulo { 
     color: var(--dorado); 
     text-align: center; 
-    margin-bottom: 15px; 
-    font-size: 1.8rem; 
+    margin-bottom: 8px; /* Reducido para acercar el título a los botones */
+    font-size: 1.5rem;  /* Tamaño ajustado para pantallas pequeñas */
     text-transform: uppercase; 
 }
 
@@ -43,23 +43,24 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
     flex: 2.5; 
     width: 100%; 
     background: var(--oscuro-card); 
-    border-radius: 30px; 
+    border-radius: 20px; /* Bordes un poco más compactos */
     border: 2px solid rgba(191,160,70,0.4); 
-    padding: 30px; 
-    min-height: 700px; 
+    padding: 15px; /* Reducido para que el contenido ocupe más espacio real */
+    min-height: 400px; /* Reducido de 700px a 400px para eliminar espacio vacío */
     position: relative;
 }
 
 /* Ajuste para que se vea bien en celulares */
 @media (max-width: 768px) {
     .menu-proyectos {
-        gap: 6px; /* Aún más compacto en móviles */
-        padding: 0 10px;
+        gap: 4px; 
+        padding: 0 5px;
     }
     .ventana-visor {
-        min-height: 500px; /* Menor altura en móvil para no hacer tanto scroll */
-        padding: 20px;
+        min-height: 300px; /* Mucho más compacto en móvil */
+        padding: 10px;
     }
+}
 }
 #msg-inicio { text-align: center; padding-top: 50px; width: 100%; }
 #msg-inicio h2 { font-size: 2.2rem; color: var(--dorado-brillante); margin-bottom: 10px; }
