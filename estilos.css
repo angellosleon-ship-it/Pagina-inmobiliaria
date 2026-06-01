@@ -22,14 +22,45 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
 .proyectos-container {
     display: flex; flex-wrap: wrap; max-width: 1350px; margin: 30px auto; gap: 20px; padding: 10px; align-items: flex-start;
 }
-.menu-proyectos { flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 15px; }
-.menu-titulo { color: var(--dorado); text-align: center; margin-bottom: 15px; font-size: 1.8rem; text-transform: uppercase; }
-
-.ventana-visor {
-    flex: 2.5; width: 100%; background: var(--oscuro-card); border-radius: 30px; 
-    border: 2px solid rgba(191,160,70,0.4); padding: 30px; min-height: 700px; position: relative;
+/* --- CONFIGURACIÓN DE MENÚ Y VISOR (Optimizado) --- */
+.menu-proyectos { 
+    flex: 1; 
+    min-width: 280px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; /* Reduje de 15px a 8px para que los botones estén más cerca */
 }
 
+.menu-titulo { 
+    color: var(--dorado); 
+    text-align: center; 
+    margin-bottom: 15px; 
+    font-size: 1.8rem; 
+    text-transform: uppercase; 
+}
+
+.ventana-visor {
+    flex: 2.5; 
+    width: 100%; 
+    background: var(--oscuro-card); 
+    border-radius: 30px; 
+    border: 2px solid rgba(191,160,70,0.4); 
+    padding: 30px; 
+    min-height: 700px; 
+    position: relative;
+}
+
+/* Ajuste para que se vea bien en celulares */
+@media (max-width: 768px) {
+    .menu-proyectos {
+        gap: 6px; /* Aún más compacto en móviles */
+        padding: 0 10px;
+    }
+    .ventana-visor {
+        min-height: 500px; /* Menor altura en móvil para no hacer tanto scroll */
+        padding: 20px;
+    }
+}
 #msg-inicio { text-align: center; padding-top: 50px; width: 100%; }
 #msg-inicio h2 { font-size: 2.2rem; color: var(--dorado-brillante); margin-bottom: 10px; }
 .divisor { width: 80px; height: 3px; background: var(--dorado); margin: 15px auto; }
