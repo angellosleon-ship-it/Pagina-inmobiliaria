@@ -26,11 +26,14 @@
     </a>
 
     <div id="lightbox">
-        <button class="btn-galeria close" onclick="cerrarGaleria()">CERRAR [X]</button>
-        <button class="btn-galeria prev" onclick="cambiarFoto(-1)">❮</button>
-        <img id="lightbox-img" src="">
-        <button class="btn-galeria next" onclick="cambiarFoto(1)">❯</button>
-    </div>
+    <button class="btn-galeria close" onclick="cerrarGaleria()">CERRAR [X]</button>
+    
+    <div class="lightbox-controles">
+        <button class="btn-galeria" onclick="cambiarFoto(-1)">❮</button>
+        <img id="lightbox-img" src="">
+        <button class="btn-galeria" onclick="cambiarFoto(1)">❯</button>
+    </div>
+</div>
 
     <header>
         <div id="contenedor-principal">
