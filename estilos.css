@@ -98,9 +98,25 @@ iframe { width: 100%; height: 220px; border-radius: 15px; border: 2px solid var(
     .ventana-visor { padding: 20px; min-height: 500px; }
 }
 
-#lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; justify-content: center; align-items: center; }
-#lightbox-img { max-width: 90%; max-height: 80%; border: 3px solid var(--dorado); }
-.btn-galeria { position: absolute; background: var(--dorado); color: white; border: none; padding: 12px 20px; cursor: pointer; }
+/* LIGHTBOX CORREGIDO */
+#lightbox { 
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.95); z-index: 10000; flex-direction: column;
+    justify-content: center; align-items: center;
+}
+.lightbox-controles { 
+    display: flex; align-items: center; justify-content: center; width: 100%; gap: 30px;
+}
+#lightbox-img { 
+    max-width: 70%; max-height: 80vh; border: 3px solid var(--dorado); border-radius: 10px;
+}
+.btn-galeria { 
+    background: var(--dorado); color: white; border: none; padding: 20px; 
+    cursor: pointer; font-size: 1.5rem; font-weight: bold; border-radius: 50%;
+}
+.close { 
+    position: absolute; top: 20px; right: 20px; background: #ff4444; border-radius: 5px; padding: 10px 20px;
+}
 
 footer { text-align: center; padding: 50px 20px; background: #000; }
 .social-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
