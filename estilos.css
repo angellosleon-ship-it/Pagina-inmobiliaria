@@ -92,13 +92,38 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
     }
 }
 }
-#msg-inicio { text-align: center; padding-top: 50px; width: 100%; }
-#msg-inicio h2 { font-size: 2.2rem; color: var(--dorado-brillante); margin-bottom: 10px; }
-.divisor { width: 80px; height: 3px; background: var(--dorado); margin: 15px auto; }
+#msg-inicio { 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center;
+    text-align: center; 
+    padding-top: 50px; 
+    width: 100%; 
+}
+
+#msg-inicio h2 { 
+    font-size: 2.2rem; 
+    color: var(--dorado-brillante); 
+    margin-bottom: 10px; 
+}
+
+.divisor { 
+    width: 80px; 
+    height: 3px; 
+    background: var(--dorado); 
+    margin: 15px 0; /* Quitamos el auto para que el flex lo centre */
+}
 
 .instruccion-dorada {
-    font-size: 1.2rem; font-weight: 800; color: var(--dorado-brillante); margin-top: 30px;
-    text-shadow: 0 0 10px rgba(255, 204, 51, 0.5); animation: palpitar-dorado 2s infinite; text-align: center;
+    font-size: 1.2rem; 
+    font-weight: 800; 
+    color: var(--dorado-brillante); 
+    margin-top: 30px;
+    text-shadow: 0 0 10px rgba(255, 204, 51, 0.5); 
+    animation: palpitar-dorado 2s infinite; 
+    text-align: center;
+    width: 100%; /* Asegura que ocupe el ancho para centrarse */
 }
 
 @keyframes palpitar-dorado {
