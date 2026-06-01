@@ -1,345 +1,335 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-21DPFMZRS8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-21DPFMZRS8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-      gtag('config', 'G-21DPFMZRS8');
-    </script>
+      gtag('config', 'G-21DPFMZRS8');
+    </script>
 
-   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-  <title>Humberto León | Proyectos Inmobiliarios: Lotes en Malabrigo, Chepén y Trujillo</title>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <title>Humberto León | Proyectos Inmobiliarios: Lotes en Malabrigo, Chepén y Trujillo</title>
 
 <meta name="description" content="Humberto León, Jefe Comercial. Invierte en proyectos inmobiliarios con respaldo legal: Fundo Malabrigo, Residencial Monte Verde y Puerto Mar Club. Asesoría experta en terrenos y lotes.">
-    <meta name="keywords" content="lotes en chepen, terrenos en chepen, venta de lotes puerto malabrigo, humberto leon inmobiliaria, lotes en trujillo, residencial monte verde">
-    <link rel="stylesheet" href="estilos.css">
-    <!-- Favicon para profesionalismo -->
-<link rel="icon" type="image/png" href="hl_logo.png">
+    <meta name="keywords" content="lotes en chepen, terrenos en chepen, venta de lotes puerto malabrigo, humberto leon inmobiliaria, lotes en trujillo, residencial monte verde">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <a href="https://wa.me/51985877256" class="wa-flotante" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-    </a>
+    <a href="https://wa.me/51985877256" class="wa-flotante" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
 
-    <div id="lightbox">
-        <button class="btn-galeria close" onclick="cerrarGaleria()">CERRAR [X]</button>
-        <button class="btn-galeria prev" onclick="cambiarFoto(-1)">❮</button>
-        <img id="lightbox-img" src="">
-        <button class="btn-galeria next" onclick="cambiarFoto(1)">❯</button>
-    </div>
+    <div id="lightbox">
+        <button class="btn-galeria close" onclick="cerrarGaleria()">CERRAR [X]</button>
+        <button class="btn-galeria prev" onclick="cambiarFoto(-1)">❮</button>
+        <img id="lightbox-img" src="">
+        <button class="btn-galeria next" onclick="cambiarFoto(1)">❯</button>
+    </div>
 
-    <header>
-        <header>
-    <div id="contenedor-principal">
-        <img src="hl_logo.png" class="logo-top" alt="Logo personal de Humberto León">
-        <h1>Humberto León</h1>
-        <p class="tagline">JEFE COMERCIAL</p>
-        <p style="font-size: 0.9rem; color: #ccc; max-width: 500px; margin: 10px auto;">
-            Más de 5 años asesorando familias y empresas en inversiones inmobiliarias seguras en La Libertad.
-        </p>
-    </div>
-</header>
-    
+    <header>
+        <div id="contenedor-principal">
+            <img src="hl_logo.png" class="logo-top" alt="Humberto León">
+            <h1>Humberto León</h1>
+            <p class="tagline">JEFE COMERCIAL</p>
+        </div>
+    </header>
 
-   <section class="proyectos-container">
-    <div class="menu-proyectos">
-        <h2 class="menu-titulo">PORTAFOLIO</h2>
-        <button class="btn-palpitar" style="background: #1a1a1a; color: gold; border: 1px solid gold;" onclick="volverAlInicio()">🏠 INICIO </button>
-        
-        <button class="btn-palpitar" onclick="mostrarProyecto('fundo-det')">Fundo Malabrigo</button>
-        <button class="btn-palpitar" onclick="mostrarProyecto('puerto-det')">Puerto Mar Club</button>
-        <button class="btn-palpitar" onclick="mostrarProyecto('monte-det')">Residencial Monte Verde</button>
-        <button class="btn-palpitar btn-white" onclick="mostrarProyecto('clientes-det')">🤝 Clientes Felices</button>
-    </div>
+   <section class="proyectos-container">
+    <div class="menu-proyectos">
+        <h2 class="menu-titulo">PORTAFOLIO</h2>
+        <button class="btn-palpitar" style="background: #1a1a1a; color: gold; border: 1px solid gold;" onclick="volverAlInicio()">🏠 INICIO </button>
+        
+        <button class="btn-palpitar" onclick="mostrarProyecto('fundo-det')">Fundo Malabrigo</button>
+        <button class="btn-palpitar" onclick="mostrarProyecto('puerto-det')">Puerto Mar Club</button>
+        <button class="btn-palpitar" onclick="mostrarProyecto('monte-det')">Residencial Monte Verde</button>
+        <button class="btn-palpitar btn-white" onclick="mostrarProyecto('clientes-det')">🤝 Clientes Felices</button>
+    </div>
 
-        <div class="ventana-visor" id="visor">
-            
-            <div id="msg-inicio">
-                <h2>¡BIENVENIDO!</h2>
-                <div class="divisor"></div>
-                <p style="line-height: 1.6; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
-                    Asegura tu patrimonio hoy <strong>. Lotes con título de propiedad </strong>. <br> 
-                     En las mejores zonas de crecimiento de La Libertad. 🏡✨
-                </p>
-                <p class="instruccion-dorada">✨ ELIGE UN PROYECTO PARA COMENZAR ✨</p>
-                <button class="btn-palpitar" style="margin-top:25px; background: #25d366; color: white;" onclick="mostrarProyecto('asistente-det')">
-                    💬 ELIGE TU LOTE
-                </button>
-            </div>
+        <div class="ventana-visor" id="visor">
+            
+            <div id="msg-inicio">
+                <h2>¡BIENVENIDO!</h2>
+                <div class="divisor"></div>
+                <p style="line-height: 1.6; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                    Asegura tu patrimonio hoy <strong>. Lotes con título de propiedad </strong>. <br> 
+                     En las mejores zonas de crecimiento de La Libertad. 🏡✨
+                </p>
+                <p class="instruccion-dorada">✨ ELIGE UN PROYECTO PARA COMENZAR ✨</p>
+                <button class="btn-palpitar" style="margin-top:25px; background: #25d366; color: white;" onclick="mostrarProyecto('asistente-det')">
+                    💬 ELIGE TU LOTE
+                </button>
+            </div>
 
-            <div id="asistente-det" class="proyecto-detalle">
-                <h2 class="titulo-p">ASISTENTE VIRTUAL</h2>
-                <div id="chat-flujo" class="desc-proyecto" style="min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
-                    <div id="chat-texto">
-                        <p style="text-align: center; font-size: 1.2rem;"><strong>Hola 👋 Soy el asistente de Humberto León.</strong><br>¿Cuál es tu objetivo principal?</p>
-                        <div class="acciones" style="display: flex; flex-direction: column; align-items: center; margin-top:15px;">
-                            <button class="btn-accion" onclick="paso2('Inversión')">💰 Invertir para ganar valor</button>
-                            <button class="btn-accion" onclick="paso2('Vivienda')">🏡 Construir mi casa propia</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div id="asistente-det" class="proyecto-detalle">
+                <h2 class="titulo-p">ASISTENTE VIRTUAL</h2>
+                <div id="chat-flujo" class="desc-proyecto" style="min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
+                    <div id="chat-texto">
+                        <p style="text-align: center; font-size: 1.2rem;"><strong>Hola 👋 Soy el asistente de Humberto León.</strong><br>¿Cuál es tu objetivo principal?</p>
+                        <div class="acciones" style="display: flex; flex-direction: column; align-items: center; margin-top:15px;">
+                            <button class="btn-accion" onclick="paso2('Inversión')">💰 Invertir para ganar valor</button>
+                            <button class="btn-accion" onclick="paso2('Vivienda')">🏡 Construir mi casa propia</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <div id="fundo-det" class="proyecto-detalle">
-                <img src="logo-fundo.png" class="logo-v">
-                <h2 class="titulo-p">FUNDO MALABRIGO: VIVE CERCA AL MAR 🌊</h2>
-                <p class="sub-ubicacion">📍 PUERTO MALABRIGO</p>
-                <div class="acciones">
-                    <button class="btn-accion" onclick="abrirGaleriaYocultar('fundo-desc', ['fundo1.jpg','fundo2.jpg','fundo3.jpg','fundo4.jpg','fundo5.jpg','fundo6.jpg','fundo7.jpg','fundo8.jpg','fundo9.jpg','fundo10.jpg'])">📸 FOTOS</button>
-                   <button class="btn-accion" onclick="cargarVideosYocultar('fundo-desc', 'v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU','1oeEIEEQYXrBqvIyRFFM1iFbdsrXrFyNc','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns','1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','1Y1JVVjTuPV6aVP8grYzETyIT5-xH024C'])">🎥 VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/1tzVzVUCtdPb5cAG7" target="_blank" class="btn-accion bg-mapa">📍 VER MAPA</a>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20FUNDO%20MALABRIGO" target="_blank" class="btn-agendar">📅 AGENDAR</a>
-                </div>
-                <div id="fundo-desc" class="desc-proyecto">
-                    <strong>Condominio con temática ecológica:</strong>
-                    <ul>
-                        <li>Título de propiedad independizado.</li>
-                        <li>Seguridad con pórtico de ingreso y cerco perimétrico de concreto.</li>
-                        <li>Servicios básicos y áreas verdes.</li>
-                    </ul>
-                </div>
-                <div id="v-fundo" class="video-grid"></div>
-            </div>
+            <div id="fundo-det" class="proyecto-detalle">
+                <img src="logo-fundo.png" class="logo-v">
+                <h2 class="titulo-p">FUNDO MALABRIGO: VIVE CERCA AL MAR 🌊</h2>
+                <p class="sub-ubicacion">📍 PUERTO MALABRIGO</p>
+                <div class="acciones">
+                    <button class="btn-accion" onclick="abrirGaleriaYocultar('fundo-desc', ['fundo1.jpg','fundo2.jpg','fundo3.jpg','fundo4.jpg','fundo5.jpg','fundo6.jpg','fundo7.jpg','fundo8.jpg','fundo9.jpg','fundo10.jpg'])">📸 FOTOS</button>
+                   <button class="btn-accion" onclick="cargarVideosYocultar('fundo-desc', 'v-fundo', ['1UrsaiKqm_dyl1F8qtVkwD9UH7_QnxfoU','1oeEIEEQYXrBqvIyRFFM1iFbdsrXrFyNc','1p4VXGfuK9l5KFbIdDvBJT25GKtT6kEns','1ag0ZNVmKD6VA_TBOrhmOCrKsdaAqb9Vj','1Y1JVVjTuPV6aVP8grYzETyIT5-xH024C'])">🎥 VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/1tzVzVUCtdPb5cAG7" target="_blank" class="btn-accion bg-mapa">📍 VER MAPA</a>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20FUNDO%20MALABRIGO" target="_blank" class="btn-agendar">📅 AGENDAR</a>
+                </div>
+                <div id="fundo-desc" class="desc-proyecto">
+                    <strong>Condominio con temática ecológica:</strong>
+                    <ul>
+                        <li>Título de propiedad independizado.</li>
+                        <li>Seguridad con pórtico de ingreso y cerco perimétrico de concreto.</li>
+                        <li>Servicios básicos y áreas verdes.</li>
+                    </ul>
+                </div>
+                <div id="v-fundo" class="video-grid"></div>
+            </div>
 
-            <div id="puerto-det" class="proyecto-detalle">
-                <img src="logo-puerto.png" class="logo-v">
-                <h2 class="titulo-p">PUERTO MAR CLUB: INVERSIÓN EXCLUSIVA⚓</h2>
-                <p class="sub-ubicacion">📍 PUERTO MALABRIGO</p>
-                <div class="acciones">
-                    <button class="btn-accion" onclick="abrirGaleriaYocultar('puerto-desc', ['puerto1.jpg','puerto2.jpg','puerto3.jpg','puerto4.jpg','puerto5.jpg'])">📸 FOTOS</button>
-                    <button class="btn-accion" onclick="cargarVideosYocultar('puerto-desc', 'v-puerto', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'])">🎥 VIDEOS</button>
-                    <a href="https://maps.app.goo.gl/hE6dmwZefKikUJfd9" target="_blank" class="btn-accion bg-mapa">📍 VER MAPA</a>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20PUERTO%20MAR%20CLUB" target="_blank" class="btn-agendar">📅 AGENDAR</a>
-                </div>
-                <div id="puerto-desc" class="desc-proyecto">
-                    <strong>Exclusividad frente al mar:</strong>
-                    <ul>
-                        <li>Casa Club con piscina y juegos para niños.</li>
-                        <li>Título independizado.</li>
-                    </ul>
-                </div>
-                <div id="v-puerto" class="video-grid"></div>
-            </div>
+            <div id="puerto-det" class="proyecto-detalle">
+                <img src="logo-puerto.png" class="logo-v">
+                <h2 class="titulo-p">PUERTO MAR CLUB: INVERSIÓN EXCLUSIVA⚓</h2>
+                <p class="sub-ubicacion">📍 PUERTO MALABRIGO</p>
+                <div class="acciones">
+                    <button class="btn-accion" onclick="abrirGaleriaYocultar('puerto-desc', ['puerto1.jpg','puerto2.jpg','puerto3.jpg','puerto4.jpg','puerto5.jpg'])">📸 FOTOS</button>
+                    <button class="btn-accion" onclick="cargarVideosYocultar('puerto-desc', 'v-puerto', ['1KmYsCcxL0D57Nb_zq9yJ1OWgnL0RL9uE','1HiHIaoH9J6wVaNGbwDTtH3QdhsCARlBc'])">🎥 VIDEOS</button>
+                    <a href="https://maps.app.goo.gl/hE6dmwZefKikUJfd9" target="_blank" class="btn-accion bg-mapa">📍 VER MAPA</a>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20PUERTO%20MAR%20CLUB" target="_blank" class="btn-agendar">📅 AGENDAR</a>
+                </div>
+                <div id="puerto-desc" class="desc-proyecto">
+                    <strong>Exclusividad frente al mar:</strong>
+                    <ul>
+                        <li>Casa Club con piscina y juegos para niños.</li>
+                        <li>Título independizado.</li>
+                    </ul>
+                </div>
+                <div id="v-puerto" class="video-grid"></div>
+            </div>
 
-            <div id="monte-det" class="proyecto-detalle">
-                <img src="logo-monte.png" class="logo-v">
-                <h2 class="titulo-p">RESIDENCIAL MONTE VERDE🌿</h2>
-                <p class="sub-ubicacion">📍 CHEPÉN (CHAPARRAL)</p>
-                <div class="acciones">
-                    <button class="btn-accion" onclick="abrirGaleriaYocultar('monte-desc', ['monte1.jpg','monte2.jpg','monte3.jpg','monte4.jpg','monte5.jpg'])">📸 FOTOS</button>
-                    <button class="btn-accion" onclick="cargarVideosYocultar('monte-desc', 'v-monte', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m','1S4UhuSAtBd9uYiM3_EJ-IjNVk8ByFKDN','1QV-B3-IxhVri9tndjJQ2mN9hpN8SRmZ8'])">🎥 VIDEOS</button>
-                   <a href="https://maps.app.goo.gl/KRKjHQ8mmgH1vs4b6" target="_blank" class="btn-accion bg-mapa">📍 VER MAPA</a>
-                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20MONTE%20VERDE" target="_blank" class="btn-agendar">📅 AGENDAR</a>
-                </div>
-                <div id="monte-desc" class="desc-proyecto">
-                    <strong>Inversión en Chepén:</strong>
-                    <ul>
-                        <li>Entrega de Minuta Inmediata por compra al contado.</li>
-                        <li>Agua en cada lote.</li>
-                          <li>Portico de ingreso y parques habilitados .</li>
-                    </ul>
-                </div>
-                <div id="v-monte" class="video-grid"></div>
-            </div>
+            <div id="monte-det" class="proyecto-detalle">
+                <img src="logo-monte.png" class="logo-v">
+                <h2 class="titulo-p">RESIDENCIAL MONTE VERDE🌿</h2>
+                <p class="sub-ubicacion">📍 CHEPÉN (CHAPARRAL)</p>
+                <div class="acciones">
+                    <button class="btn-accion" onclick="abrirGaleriaYocultar('monte-desc', ['monte1.jpg','monte2.jpg','monte3.jpg','monte4.jpg','monte5.jpg'])">📸 FOTOS</button>
+                    <button class="btn-accion" onclick="cargarVideosYocultar('monte-desc', 'v-monte', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m','1S4UhuSAtBd9uYiM3_EJ-IjNVk8ByFKDN','1QV-B3-IxhVri9tndjJQ2mN9hpN8SRmZ8'])">🎥 VIDEOS</button>
+                   <a href="https://maps.app.goo.gl/KRKjHQ8mmgH1vs4b6" target="_blank" class="btn-accion bg-mapa">📍 VER MAPA</a>
+                    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20MONTE%20VERDE" target="_blank" class="btn-agendar">📅 AGENDAR</a>
+                </div>
+                <div id="monte-desc" class="desc-proyecto">
+                    <strong>Inversión en Chepén:</strong>
+                    <ul>
+                        <li>Entrega de Minuta Inmediata por compra al contado.</li>
+                        <li>Agua en cada lote.</li>
+                          <li>Portico de ingreso y parques habilitados .</li>
+                    </ul>
+                </div>
+                <div id="v-monte" class="video-grid"></div>
+            </div>
 
-            <div id="clientes-det" class="proyecto-detalle">
-    <h2 class="titulo-p">🤝 CLIENTES FELICES</h2>
-    <div style="text-align: center;">
-        <p style="font-style: italic; color: gold; margin-bottom: 15px;">
-            "Gracias a Humberto, mi inversión en Malabrigo fue rápida y segura." - Familia Pérez
-        </p>
-        <img src="cliente1.jpg" class="img-preview" alt="Entrega de terreno a cliente satisfecho" style="margin-top:20px; cursor:pointer;" onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg'])">
-        <br>
-        <button class="btn-palpitar" style="margin-top:20px;" onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg'])">VER GALERÍA DE ENTREGAS</button>
-    </div>
-</div>
-        </div>
-    </section>
+            <div id="clientes-det" class="proyecto-detalle">
+                <h2 class="titulo-p">🤝 CLIENTES FELICES</h2>
+                <div style="text-align: center;">
+                    <img src="cliente1.jpg" class="img-preview" style="margin-top:20px; cursor:pointer;" onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg'])">
+                    <br>
+                    <button class="btn-palpitar" style="margin-top:20px;" onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg'])">VER GALERÍA DE ENTREGAS</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section class="faq-section">
-        <h2 class="menu-titulo">PREGUNTAS FRECUENTES</h2>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">¿Los proyectos cuentan con Título? <span>▾</span></div>
-            <div class="faq-answer">Sí, todos inscritos en SUNARP y con firma ante notario.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">¿Hay movilidad gratuita? <span>▾</span></div>
-            <div class="faq-answer">Sí, todos los fines de semana para visitas guiadas.</div>
-        </div>
-        <div class="faq-item">
-    <div class="faq-question" onclick="toggleFaq(this)">¿Qué facilidades de pago ofrecen actualmente? <span>▾</span></div>
-    <div class="faq-answer">Ofrecemos financiamiento directo sin evaluación crediticia bancaria. Puedes separar tu lote con una inicial mínima y pagar el saldo en cuotas fijas.</div>
+    <section class="faq-section">
+        <h2 class="menu-titulo">PREGUNTAS FRECUENTES</h2>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">¿Los proyectos cuentan con Título? <span>▾</span></div>
+            <div class="faq-answer">Sí, todos inscritos en SUNARP y con firma ante notario.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">¿Hay movilidad gratuita? <span>▾</span></div>
+            <div class="faq-answer">Sí, todos los fines de semana para visitas guiadas.</div>
+        </div>
+        <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">¿Qué facilidades de pago ofrecen actualmente? <span>▾</span></div>
+    <div class="faq-answer">Ofrecemos financiamiento directo sin evaluación crediticia bancaria. Puedes separar tu lote con una inicial mínima y pagar el saldo en cuotas fijas.</div>
 </div>
 
 <div class="faq-item">
-    <div class="faq-question" onclick="toggleFaq(this)">¿En cuánto tiempo se revaloriza mi inversión? <span>▾</span></div>
-    <div class="faq-answer">Nuestros proyectos se ubican en zonas de alto crecimiento, lo que garantiza una revalorización estimada de entre el 20% y 40% anual.</div>
+    <div class="faq-question" onclick="toggleFaq(this)">¿En cuánto tiempo se revaloriza mi inversión? <span>▾</span></div>
+    <div class="faq-answer">Nuestros proyectos se ubican en zonas de alto crecimiento, lo que garantiza una revalorización estimada de entre el 20% y 40% anual.</div>
 </div>
-    </section>
+    </section>
 
-    <footer>
-        <div class="social-links">
-            <a href="https://www.facebook.com/share/1G7kjoWFoH/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
-            <a href="https://www.instagram.com/humbertoleondiaz/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@humberto.bienesraices" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
-            <a href="https://www.youtube.com/@HumbertoLeon-rx6rx" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
-            <a href="https://pe.linkedin.com/in/humberto-leon-inmobiliaria" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
-        </div>
-        <p style="color:#666; margin-top:20px;">© 2026 Humberto León | Trujillo, Perú</p>
-    </footer>
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1G7kjoWFoH/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/humbertoleondiaz/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@humberto.bienesraices" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+            <a href="https://www.youtube.com/@HumbertoLeon-rx6rx" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+            <a href="https://pe.linkedin.com/in/humberto-leon-inmobiliaria" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+        </div>
+        <p style="color:#666; margin-top:20px;">© 2026 Humberto León | Trujillo, Perú</p>
+    </footer>
 
-    <script>
-        let imgs = []; let i = 0;
-        let datosCliente = { objetivo: "", proyecto: "", inicial: "" };
+    <script>
+        let imgs = []; let i = 0;
+        let datosCliente = { objetivo: "", proyecto: "", inicial: "" };
 
-        // Navegación General
-    function mostrarProyecto(id) {
-            // Oculta el mensaje de bienvenida
-            document.getElementById('msg-inicio').style.display = 'none';
-            // Oculta todos los detalles de proyectos abiertos
-            document.querySelectorAll('.proyecto-detalle').forEach(d => d.style.display = 'none');
-            // Asegura que las descripciones se vean y limpia videos anteriores
-            document.querySelectorAll('.desc-proyecto').forEach(d => d.style.display = 'block');
-            document.querySelectorAll('.video-grid').forEach(v => v.innerHTML = ''); 
-            
-            // Muestra el proyecto o asistente seleccionado
-            document.getElementById(id).style.display = 'block';
-            if(id === 'asistente-det') reiniciarAsistente();
-        }
+        // Navegación General
+    function mostrarProyecto(id) {
+            // Oculta el mensaje de bienvenida
+            document.getElementById('msg-inicio').style.display = 'none';
+            // Oculta todos los detalles de proyectos abiertos
+            document.querySelectorAll('.proyecto-detalle').forEach(d => d.style.display = 'none');
+            // Asegura que las descripciones se vean y limpia videos anteriores
+            document.querySelectorAll('.desc-proyecto').forEach(d => d.style.display = 'block');
+            document.querySelectorAll('.video-grid').forEach(v => v.innerHTML = ''); 
+            
+            // Muestra el proyecto o asistente seleccionado
+            document.getElementById(id).style.display = 'block';
+            if(id === 'asistente-det') reiniciarAsistente();
+        }
 
-        // Esta es la nueva función que permite regresar al botón del asistente
-        function volverAlInicio() {
-            // Oculta cualquier proyecto que esté abierto actualmente
-            document.querySelectorAll('.proyecto-detalle').forEach(d => d.style.display = 'none');
-            // Vuelve a mostrar el mensaje de bienvenida con el asistente virtual
-            document.getElementById('msg-inicio').style.display = 'block';
-            // Limpia videos para que no sigan cargando en segundo plano
-            document.querySelectorAll('.video-grid').forEach(v => v.innerHTML = '');
-        }
-        // Galería
-        function abrirGaleria(lista) {
-            imgs = lista; i = 0;
-            document.getElementById("lightbox-img").src = imgs[i];
-            document.getElementById("lightbox").style.display = "flex";
-        }
-        function abrirGaleriaYocultar(descId, lista) {
-            document.getElementById(descId).style.display = 'none';
-            abrirGaleria(lista);
-        }
-        function cerrarGaleria() { document.getElementById("lightbox").style.display = "none"; }
-        function cambiarFoto(dir) {
-            i += dir;
-            if (i < 0) i = imgs.length - 1;
-            if (i >= imgs.length) i = 0;
-            document.getElementById("lightbox-img").src = imgs[i];
-        }
+        // Esta es la nueva función que permite regresar al botón del asistente
+        function volverAlInicio() {
+            // Oculta cualquier proyecto que esté abierto actualmente
+            document.querySelectorAll('.proyecto-detalle').forEach(d => d.style.display = 'none');
+            // Vuelve a mostrar el mensaje de bienvenida con el asistente virtual
+            document.getElementById('msg-inicio').style.display = 'block';
+            // Limpia videos para que no sigan cargando en segundo plano
+            document.querySelectorAll('.video-grid').forEach(v => v.innerHTML = '');
+        }
+        // Galería
+        function abrirGaleria(lista) {
+            imgs = lista; i = 0;
+            document.getElementById("lightbox-img").src = imgs[i];
+            document.getElementById("lightbox").style.display = "flex";
+        }
+        function abrirGaleriaYocultar(descId, lista) {
+            document.getElementById(descId).style.display = 'none';
+            abrirGaleria(lista);
+        }
+        function cerrarGaleria() { document.getElementById("lightbox").style.display = "none"; }
+        function cambiarFoto(dir) {
+            i += dir;
+            if (i < 0) i = imgs.length - 1;
+            if (i >= imgs.length) i = 0;
+            document.getElementById("lightbox-img").src = imgs[i];
+        }
 
-        // Videos
-        function cargarVideosYocultar(descId, contId, ids) {
-            document.getElementById(descId).style.display = 'none';
-            const c = document.getElementById(contId);
-            c.innerHTML = "";
-            ids.forEach(id => {
-                let f = document.createElement("iframe");
-                f.src = `https://drive.google.com/file/d/${id}/preview`;
-                f.frameBorder = "0"; f.allowFullscreen = true;
-                c.appendChild(f);
-            });
-        }
+        // Videos
+        function cargarVideosYocultar(descId, contId, ids) {
+            document.getElementById(descId).style.display = 'none';
+            const c = document.getElementById(contId);
+            c.innerHTML = "";
+            ids.forEach(id => {
+                let f = document.createElement("iframe");
+                f.src = `https://drive.google.com/file/d/${id}/preview`;
+                f.frameBorder = "0"; f.allowFullscreen = true;
+                c.appendChild(f);
+            });
+        }
 
-      // Asistente Virtual - FLUJO COMPLETO CON RETORNO
-        function reiniciarAsistente() {
-            document.getElementById('chat-texto').innerHTML = `
-                <p style="text-align: center; font-size: 1.2rem;"><strong>Hola 👋 Soy tu asistente.</strong><br>¿Cuál es tu objetivo?</p>
-                <div class="acciones" style="display: flex; flex-direction: column; align-items: center; margin-top:15px;">
-                    <button class="btn-accion" onclick="pasoTipoPago('Inversión')">💰 Invertir</button>
-                    <button class="btn-accion" onclick="pasoTipoPago('Vivienda')">🏡 Vivienda</button>
-                </div>`;
-        }
+      // Asistente Virtual - FLUJO COMPLETO CON RETORNO
+        function reiniciarAsistente() {
+            document.getElementById('chat-texto').innerHTML = `
+                <p style="text-align: center; font-size: 1.2rem;"><strong>Hola 👋 Soy tu asistente.</strong><br>¿Cuál es tu objetivo?</p>
+                <div class="acciones" style="display: flex; flex-direction: column; align-items: center; margin-top:15px;">
+                    <button class="btn-accion" onclick="pasoTipoPago('Inversión')">💰 Invertir</button>
+                    <button class="btn-accion" onclick="pasoTipoPago('Vivienda')">🏡 Vivienda</button>
+                </div>`;
+        }
 
-        function pasoTipoPago(obj) {
-            datosCliente.objetivo = obj;
-            document.getElementById('chat-texto').innerHTML = `
-                <p style="text-align: center;">¿Cómo te gustaría adquirirlo?</p>
-                <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
-                    <button class="btn-accion" onclick="pasoProyecto('Al Contado')">💵 Al Contado (Dcto. Especial)</button>
-                    <button class="btn-accion" onclick="pasoProyecto('Financiado')">💳 Financiado Directo</button>
-                    <button class="btn-regresar" onclick="reiniciarAsistente()">⬅️ Regresar</button>
-                </div>`;
-        }
+        function pasoTipoPago(obj) {
+            datosCliente.objetivo = obj;
+            document.getElementById('chat-texto').innerHTML = `
+                <p style="text-align: center;">¿Cómo te gustaría adquirirlo?</p>
+                <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
+                    <button class="btn-accion" onclick="pasoProyecto('Al Contado')">💵 Al Contado (Dcto. Especial)</button>
+                    <button class="btn-accion" onclick="pasoProyecto('Financiado')">💳 Financiado Directo</button>
+                    <button class="btn-regresar" onclick="reiniciarAsistente()">⬅️ Regresar</button>
+                </div>`;
+        }
 
-        function pasoProyecto(pago) {
-            datosCliente.pago = pago;
-            document.getElementById('chat-texto').innerHTML = `
-                <p style="text-align: center;">¿Qué proyecto te interesa?</p>
-                <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
-                    <button class="btn-accion" onclick="pasoFiltros('Fundo Malabrigo')">🌿 Fundo Malabrigo</button>
-                    <button class="btn-accion" onclick="pasoFiltros('Puerto Mar Club')">🌊 Puerto Mar Club</button>
-                    <button class="btn-accion" onclick="pasoFiltros('Monte Verde')">🏡 Monte Verde</button>
-                    <button class="btn-regresar" onclick="pasoTipoPago(datosCliente.objetivo)">⬅️ Regresar</button>
-                </div>`;
-        }
+        function pasoProyecto(pago) {
+            datosCliente.pago = pago;
+            document.getElementById('chat-texto').innerHTML = `
+                <p style="text-align: center;">¿Qué proyecto te interesa?</p>
+                <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
+                    <button class="btn-accion" onclick="pasoFiltros('Fundo Malabrigo')">🌿 Fundo Malabrigo</button>
+                    <button class="btn-accion" onclick="pasoFiltros('Puerto Mar Club')">🌊 Puerto Mar Club</button>
+                    <button class="btn-accion" onclick="pasoFiltros('Monte Verde')">🏡 Monte Verde</button>
+                    <button class="btn-regresar" onclick="pasoTipoPago(datosCliente.objetivo)">⬅️ Regresar</button>
+                </div>`;
+        }
 
-        function pasoFiltros(proy) {
-            datosCliente.proyecto = proy;
-            
-            if (datosCliente.pago === 'Al Contado') {
-                finalizarAsistente("Contado", "N/A");
-                return;
-            }
+        function pasoFiltros(proy) {
+            datosCliente.proyecto = proy;
+            
+            if (datosCliente.pago === 'Al Contado') {
+                finalizarAsistente("Contado", "N/A");
+                return;
+            }
 
-            let montoIni = '5,000'; 
-            if (proy === 'Puerto Mar Club') montoIni = '3,000';
-            if (proy === 'Monte Verde') montoIni = '2,500';
+            let montoIni = '5,000'; 
+            if (proy === 'Puerto Mar Club') montoIni = '3,000';
+            if (proy === 'Monte Verde') montoIni = '2,500';
 
-            document.getElementById('chat-texto').innerHTML = `
-                <p style="text-align: center;">¿Cuentas con la inicial de <strong>S/ ${montoIni}</strong>?</p>
-                <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
-                    <button class="btn-accion" onclick="pasoCuotas('${montoIni}')">Sí, cuento con la inicial</button>
-                    <button class="btn-accion" onclick="irEspecial()">Tengo un monto diferente</button>
-                    <button class="btn-regresar" onclick="pasoProyecto(datosCliente.pago)">⬅️ Regresar</button>
-                </div>`;
-        }
+            document.getElementById('chat-texto').innerHTML = `
+                <p style="text-align: center;">¿Cuentas con la inicial de <strong>S/ ${montoIni}</strong>?</p>
+                <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
+                    <button class="btn-accion" onclick="pasoCuotas('${montoIni}')">Sí, cuento con la inicial</button>
+                    <button class="btn-accion" onclick="irEspecial()">Tengo un monto diferente</button>
+                    <button class="btn-regresar" onclick="pasoProyecto(datosCliente.pago)">⬅️ Regresar</button>
+                </div>`;
+        }
 
-        function pasoCuotas(ini) {
-            datosCliente.inicial = ini;
-            let cuotaMin = 700; 
-            if (datosCliente.proyecto === 'Puerto Mar Club') cuotaMin = 500;
-            if (datosCliente.proyecto === 'Monte Verde') cuotaMin = 350;
+        function pasoCuotas(ini) {
+            datosCliente.inicial = ini;
+            let cuotaMin = 700; 
+            if (datosCliente.proyecto === 'Puerto Mar Club') cuotaMin = 500;
+            if (datosCliente.proyecto === 'Monte Verde') cuotaMin = 350;
 
-            document.getElementById('chat-texto').innerHTML = `
-                <p style="text-align: center;">¿Qué cuota mensual podrías pagar?</p>
-                <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
-                    <button class="btn-accion" onclick="finalizarAsistente('${ini}', 'S/ ${cuotaMin} a 900')">S/ ${cuotaMin} - S/ 900</button>
-                    <button class="btn-accion" onclick="finalizarAsistente('${ini}', 'Más de 1,000')">Más de S/ 1,000</button>
-                    <button class="btn-regresar" onclick="pasoFiltros(datosCliente.proyecto)">⬅️ Regresar</button>
-                </div>`;
-        }
+            document.getElementById('chat-texto').innerHTML = `
+                <p style="text-align: center;">¿Qué cuota mensual podrías pagar?</p>
+                <div class="acciones" style="display: flex; flex-direction: column; align-items: center;">
+                    <button class="btn-accion" onclick="finalizarAsistente('${ini}', 'S/ ${cuotaMin} a 900')">S/ ${cuotaMin} - S/ 900</button>
+                    <button class="btn-accion" onclick="finalizarAsistente('${ini}', 'Más de 1,000')">Más de S/ 1,000</button>
+                    <button class="btn-regresar" onclick="pasoFiltros(datosCliente.proyecto)">⬅️ Regresar</button>
+                </div>`;
+        }
 
-        function finalizarAsistente(ini, cuota) {
-            const msg = `Hola Humberto León. Interés: ${datosCliente.proyecto}. Pago: ${datosCliente.pago}. Inicial: S/ ${ini}. Cuota: ${cuota}.`;
-            document.getElementById('chat-texto').innerHTML = `
-                <p style="text-align: center;">¡Excelente! Pulsa el botón para coordinar:</p>
-                <button class="btn-agendar" style="background:#25d366; color:white; border:none; width:100%; cursor:pointer;" 
-                onclick="window.open('https://wa.me/51985877256?text=${encodeURIComponent(msg)}')">📅 AGENDAR  VISITA</button>
-                <button class="btn-regresar" style="margin-top:10px" onclick="reiniciarAsistente()">🔄 Empezar de nuevo</button>`;
-        }
+        function finalizarAsistente(ini, cuota) {
+            const msg = `Hola Humberto León. Interés: ${datosCliente.proyecto}. Pago: ${datosCliente.pago}. Inicial: S/ ${ini}. Cuota: ${cuota}.`;
+            document.getElementById('chat-texto').innerHTML = `
+                <p style="text-align: center;">¡Excelente! Pulsa el botón para coordinar:</p>
+                <button class="btn-agendar" style="background:#25d366; color:white; border:none; width:100%; cursor:pointer;" 
+                onclick="window.open('https://wa.me/51985877256?text=${encodeURIComponent(msg)}')">📅 AGENDAR  VISITA</button>
+                <button class="btn-regresar" style="margin-top:10px" onclick="reiniciarAsistente()">🔄 Empezar de nuevo</button>`;
+        }
 
-        function irEspecial() {
-            const msg = `Hola Humberto León, me interesa ${datosCliente.proyecto}. Quisiera consultar facilidades de pago e inicial.`;
-            window.open(`https://wa.me/51985877256?text=${encodeURIComponent(msg)}`, '_blank');
-        }
+        function irEspecial() {
+            const msg = `Hola Humberto León, me interesa ${datosCliente.proyecto}. Quisiera consultar facilidades de pago e inicial.`;
+            window.open(`https://wa.me/51985877256?text=${encodeURIComponent(msg)}`, '_blank');
+        }
 
-        function toggleFaq(el) {
-            const a = el.nextElementSibling;
-            a.style.display = a.style.display === "block" ? "none" : "block";
-        }
-    </script>
+        function toggleFaq(el) {
+            const a = el.nextElementSibling;
+            a.style.display = a.style.display === "block" ? "none" : "block";
+        }
+    </script>
 </body>
 </html>
