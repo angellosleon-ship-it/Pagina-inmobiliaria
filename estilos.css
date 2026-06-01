@@ -69,17 +69,33 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
     text-transform: uppercase; 
 }
 
+/* --- ESTE ES EL BLOQUE DEFINITIVO PARA CENTRAR --- */
 .ventana-visor {
     flex: 2.5; 
     width: 100%; 
     background: var(--oscuro-card); 
-    border-radius: 20px; /* Bordes un poco más compactos */
+    border-radius: 20px; 
     border: 2px solid rgba(191,160,70,0.4); 
-    padding: 15px; /* Reducido para que el contenido ocupe más espacio real */
-    min-height: 400px; /* Reducido de 700px a 400px para eliminar espacio vacío */
+    padding: 15px; 
+    min-height: 400px; 
     position: relative;
+    
+    /* ESTO ES LO QUE OBLIGA A CENTRAR TODO EL CONTENIDO */
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center;      /* Asegura que el texto interior se alinee al centro */
 }
 
+/* Ajuste específico para que los mensajes no se expandan a la izquierda */
+#msg-inicio, .proyecto-detalle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 /* Ajuste para que se vea bien en celulares */
 @media (max-width: 768px) {
     .menu-proyectos {
