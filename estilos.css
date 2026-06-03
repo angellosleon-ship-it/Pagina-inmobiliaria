@@ -22,14 +22,13 @@ h1 { font-size: 2.8rem; color: var(--dorado-brillante); text-transform: uppercas
 .tagline {
     display: flex;
     justify-content: center;
-    gap: 5px;
-    font-size: 1.4rem;        /* Un poco más grande */
-    font-weight: 800;         /* ¡Más grueso y marcado! */
+    gap: 3px;
+    font-size: 1.6rem;        /* Un poco más grande para que se lea bien */
+    font-family: 'Segoe Script', 'Brush Script MT', cursive; /* Fuente cursiva */
+    font-style: italic;
     color: var(--dorado-brillante); 
-    text-shadow: 0 0 10px rgba(191,160,70,0.8);
-    letter-spacing: 4px;      /* Espaciado elegante */
+    text-shadow: 0 0 8px rgba(191,160,70,0.5);
     margin-top: 10px;
-    text-transform: uppercase; /* Asegura que todo esté en mayúsculas */
     overflow: hidden;
 }
 .letra-animada {
