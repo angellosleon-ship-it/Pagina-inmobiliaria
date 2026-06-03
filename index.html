@@ -168,10 +168,10 @@
                 <div id="v-monte" class="video-grid"></div>
             </div>
 
-          <div id="clientes-det" class="proyecto-detalle">
+         <div id="clientes-det" class="proyecto-detalle">
     <h2 class="titulo-p">🤝 CLIENTES FELICES</h2>
     
-    <div id="contenedor-testimonio" class="desc-proyecto" style="text-align: center; margin: 20px auto; max-width: 500px; min-height: 150px; display: flex; flex-direction: column; justify-content: center;">
+    <div class="desc-proyecto" style="text-align: center; margin: 20px auto; max-width: 500px; min-height: 120px;">
         <p id="texto-testimonio" style="font-style: italic; font-size: 1.1rem; color: #fff; line-height: 1.5;">
             "La asesoría de Humberto fue fundamental. Seguridad jurídica y una inversión que hoy ya vale mucho más."
         </p>
@@ -186,6 +186,7 @@
             📸 VER GALERÍA DE ENTREGAS
         </button>
     </div>
+</div>
 </div>
     </section>
 
@@ -367,22 +368,33 @@
             const a = el.nextElementSibling;
             a.style.display = a.style.display === "block" ? "none" : "block";
         }
-        // Array de testimonios
-const testimonios = [
-    { texto: "La asesoría de Humberto fue fundamental. Seguridad jurídica y una inversión que hoy ya vale mucho más.", autor: "— Familia Rivas, Fundo Malabrigo" },
-    { texto: "Increíble la rapidez con la que obtuve mi minuta. Totalmente confiable para invertir en Trujillo.", autor: "— Carlos M., Residencial Monte Verde" },
-    { texto: "Buscaba un lugar cerca al mar para mi familia y encontré mucho más que un lote, encontré calidad de vida.", autor: "— Elena G., Puerto Mar Club" }
-];
+        <script>
+    const testimonios = [
+        { texto: "La asesoría de Humberto fue fundamental. Seguridad jurídica y una inversión que hoy ya vale mucho más.", autor: "— Familia Rivas, Fundo Malabrigo" },
+        { texto: "Increíble la rapidez con la que obtuve mi minuta. Totalmente confiable para invertir en Trujillo.", autor: "— Carlos M., Residencial Monte Verde" },
+        { texto: "Buscaba un lugar cerca al mar para mi familia y encontré mucho más que un lote, encontré calidad de vida.", autor: "— Elena G., Puerto Mar Club" }
+    ];
 
-// Función para cambiar testimonio aleatorio
-function cambiarTestimonio() {
-    const aleatorio = testimonios[Math.floor(Math.random() * testimonios.length)];
-    document.getElementById('texto-testimonio').innerText = `"${aleatorio.texto}"`;
-    document.getElementById('autor-testimonio').innerText = aleatorio.autor;
-}
+    let indice = 0;
 
-// Opcional: Cada vez que el usuario entre a esta sección, el testimonio cambia
-document.querySelector('[onclick="mostrarProyecto(\'clientes-det\')"]').addEventListener('click', cambiarTestimonio);
+    function rotarTestimonio() {
+        indice = (indice + 1) % testimonios.length;
+        const nuevo = testimonios[indice];
+        
+        // Efecto visual suave
+        const cont = document.getElementById('texto-testimonio');
+        cont.style.opacity = 0;
+        
+        setTimeout(() => {
+            cont.innerText = `"${nuevo.texto}"`;
+            document.getElementById('autor-testimonio').innerText = nuevo.autor;
+            cont.style.opacity = 1;
+        }, 300);
+    }
+
+    // Cambiar automáticamente cada 5 segundos
+    setInterval(rotarTestimonio, 5000);
+</script>
     </script>
 </body>
 </html>
