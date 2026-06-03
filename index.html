@@ -168,26 +168,25 @@
                 <div id="v-monte" class="video-grid"></div>
             </div>
 
-           <div id="clientes-det" class="proyecto-detalle">
-                <h2 class="titulo-p">🤝 CLIENTES FELICES</h2>
-                
-                <div class="desc-proyecto" style="text-align: center; margin: 20px auto; max-width: 500px;">
-                    <p style="font-style: italic; font-size: 1.1rem; color: #fff; line-height: 1.5;">
-                        "Excelente asesoría y total transparencia. Ya contamos con nuestro título de propiedad, ¡un sueño hecho realidad!"
-                    </p>
-                    <p style="margin-top: 15px; color: var(--dorado-brillante); font-weight: bold;">
-                        — Familia Inversionista, Proyecto Fundo Malabrigo
-                    </p>
-                </div>
+          <div id="clientes-det" class="proyecto-detalle">
+    <h2 class="titulo-p">🤝 CLIENTES FELICES</h2>
+    
+    <div id="contenedor-testimonio" class="desc-proyecto" style="text-align: center; margin: 20px auto; max-width: 500px; min-height: 150px; display: flex; flex-direction: column; justify-content: center;">
+        <p id="texto-testimonio" style="font-style: italic; font-size: 1.1rem; color: #fff; line-height: 1.5;">
+            "La asesoría de Humberto fue fundamental. Seguridad jurídica y una inversión que hoy ya vale mucho más."
+        </p>
+        <p id="autor-testimonio" style="margin-top: 15px; color: var(--dorado-brillante); font-weight: bold;">
+            — Familia Rivas, Fundo Malabrigo
+        </p>
+    </div>
 
-                <div style="text-align: center;">
-                    <button class="btn-palpitar" style="margin-top:10px; padding: 15px 30px; font-size: 1rem;" 
-                            onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg'])">
-                        📸 VER GALERÍA DE ENTREGAS
-                    </button>
-                </div>
-            </div>
-        </div>
+    <div style="text-align: center;">
+        <button class="btn-palpitar" style="margin-top:10px; padding: 15px 30px; font-size: 1rem;" 
+                onclick="abrirGaleria(['cliente1.jpg','cliente2.jpg','cliente3.jpg','cliente4.jpg','cliente5.jpg'])">
+            📸 VER GALERÍA DE ENTREGAS
+        </button>
+    </div>
+</div>
     </section>
 
     <section class="faq-section">
@@ -368,6 +367,22 @@
             const a = el.nextElementSibling;
             a.style.display = a.style.display === "block" ? "none" : "block";
         }
+        // Array de testimonios
+const testimonios = [
+    { texto: "La asesoría de Humberto fue fundamental. Seguridad jurídica y una inversión que hoy ya vale mucho más.", autor: "— Familia Rivas, Fundo Malabrigo" },
+    { texto: "Increíble la rapidez con la que obtuve mi minuta. Totalmente confiable para invertir en Trujillo.", autor: "— Carlos M., Residencial Monte Verde" },
+    { texto: "Buscaba un lugar cerca al mar para mi familia y encontré mucho más que un lote, encontré calidad de vida.", autor: "— Elena G., Puerto Mar Club" }
+];
+
+// Función para cambiar testimonio aleatorio
+function cambiarTestimonio() {
+    const aleatorio = testimonios[Math.floor(Math.random() * testimonios.length)];
+    document.getElementById('texto-testimonio').innerText = `"${aleatorio.texto}"`;
+    document.getElementById('autor-testimonio').innerText = aleatorio.autor;
+}
+
+// Opcional: Cada vez que el usuario entre a esta sección, el testimonio cambia
+document.querySelector('[onclick="mostrarProyecto(\'clientes-det\')"]').addEventListener('click', cambiarTestimonio);
     </script>
 </body>
 </html>
