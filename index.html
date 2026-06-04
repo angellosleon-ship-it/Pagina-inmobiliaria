@@ -461,5 +461,25 @@ function iniciarCarruselMonte() {
     }
 }
 </script>
+             <script>
+function iniciarCarrusel(idContenedor, idImagen, listaFotos) {
+    var contenedor = document.getElementById(idContenedor);
+    var imagen = document.getElementById(idImagen);
+    var indice = 0;
+
+    // 1. Mostrar el carrusel
+    contenedor.style.display = 'block';
+
+    // 2. Iniciar cambio de fotos solo si no se ha iniciado antes
+    if (!imagen.dataset.iniciado) {
+        imagen.dataset.iniciado = "true";
+        setInterval(function() {
+            indice++;
+            if (indice >= listaFotos.length) indice = 0;
+            imagen.src = listaFotos[indice];
+        }, 3000);
+    }
+}
+</script>
 </body>
 </html>
