@@ -123,31 +123,7 @@
                     </ul>
                 </div>
                 <div id="v-fundo" class="video-grid"></div>
-                <!-- Carrusel automático Fundo Malabrigo -->
-<div class="carrusel-contenedor" style="margin-top: 20px; border-radius: 15px; overflow: hidden; border: 2px solid #ffcc33;">
-    <img id="img-carrusel-fundo" src="fundo1.jpg" style="width: 100%; height: auto; display: block; transition: opacity 0.8s ease-in-out;">
-</div>
-
-<script>
-    // Lista de tus fotos (puedes agregar todas las que tengas)
-    const misFotosFundo = ['fundo1.jpg', 'fundo2.jpg', 'fundo3.jpg', 'fundo4.jpg', 'fundo5.jpg'];
-    let indiceFundo = 0;
-
-    function cambiarImagenAutomatica() {
-        const imagen = document.getElementById('img-carrusel-fundo');
-        if (imagen) {
-            indiceFundo = (indiceFundo + 1) % misFotosFundo.length;
-            imagen.style.opacity = 0; // Efecto de desvanecimiento
-            setTimeout(() => {
-                imagen.src = misFotosFundo[indiceFundo];
-                imagen.style.opacity = 1;
-            }, 500);
-        }
-    }
-
-    // Cambia la foto cada 3 segundos (3000 milisegundos)
-    setInterval(cambiarImagenAutomatica, 3000);
-</script>
+                
             </div>
 
             <div id="puerto-det" class="proyecto-detalle">
@@ -170,20 +146,7 @@
                     </ul>
                 </div>
                 <div id="v-puerto" class="video-grid"></div>
-                <div class="carrusel-contenedor" style="margin-top: 20px; border-radius: 15px; overflow: hidden; border: 2px solid #ffcc33;">
-    <img id="img-carrusel-puerto" src="puerto1.jpg" style="width: 100%; height: auto; display: block; transition: opacity 0.8s ease-in-out;">
-</div>
-
-<script>
-    const fotosPuerto = ['puerto1.jpg', 'puerto2.jpg', 'puerto3.jpg', 'puerto4.jpg', 'puerto5.jpg'];
-    let idxPuerto = 0;
-    setInterval(() => {
-        const img = document.getElementById('img-carrusel-puerto');
-        idxPuerto = (idxPuerto + 1) % fotosPuerto.length;
-        img.style.opacity = 0;
-        setTimeout(() => { img.src = fotosPuerto[idxPuerto]; img.style.opacity = 1; }, 500);
-    }, 3000);
-</script>
+                
             </div>
 
             <div id="monte-det" class="proyecto-detalle">
@@ -211,20 +174,7 @@
                     </ul>
                 </div>
                 <div id="v-monte" class="video-grid"></div>
-                <div class="carrusel-contenedor" style="margin-top: 20px; border-radius: 15px; overflow: hidden; border: 2px solid #ffcc33;">
-    <img id="img-carrusel-monte" src="monte1.jpg" style="width: 100%; height: auto; display: block; transition: opacity 0.8s ease-in-out;">
-</div>
-
-<script>
-    const fotosMonte = ['monte1.jpg', 'monte2.jpg', 'monte3.jpg', 'monte4.jpg', 'monte5.jpg'];
-    let idxMonte = 0;
-    setInterval(() => {
-        const img = document.getElementById('img-carrusel-monte');
-        idxMonte = (idxMonte + 1) % fotosMonte.length;
-        img.style.opacity = 0;
-        setTimeout(() => { img.src = fotosMonte[idxMonte]; img.style.opacity = 1; }, 500);
-    }, 3000);
-</script>
+              
             </div>
 
          <div id="clientes-det" class="proyecto-detalle">
@@ -246,13 +196,7 @@
         </button>
     </div>
 
-    <!-- PEGA EL CARRUSEL AQUÍ ABAJO -->
-    <div class="carrusel-contenedor" style="margin-top: 20px; border-radius: 15px; overflow: hidden; border: 2px solid #ffcc33;">
-        <img id="img-carrusel-clientes" src="cliente1.jpg" style="width: 100%; height: auto; display: block; transition: opacity 0.8s ease-in-out;">
-    </div>
-    <!-- FIN DEL CARRUSEL -->
-
-</div> <!-- Este es el cierre de clientes-det -->
+  
     </section>
 
     <section class="faq-section">
