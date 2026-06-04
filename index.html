@@ -455,5 +455,41 @@
     setInterval(rotarTestimonio, 5000);
 </script>
     </script>
+    <script>
+    // 1. Configuración de imágenes para cada sección
+    const galerias = {
+        'img-carrusel-fundo': ['fundo1.jpg', 'fundo2.jpg', 'fundo3.jpg', 'fundo4.jpg', 'fundo5.jpg'],
+        'img-carrusel-puerto': ['puerto1.jpg', 'puerto2.jpg', 'puerto3.jpg', 'puerto4.jpg', 'puerto5.jpg'],
+        'img-carrusel-monte': ['monte1.jpg', 'monte2.jpg', 'monte3.jpg', 'monte4.jpg', 'monte5.jpg'],
+        'img-carrusel-clientes': ['cliente1.jpg', 'cliente2.jpg', 'cliente3.jpg', 'cliente4.jpg', 'cliente5.jpg']
+    };
+
+    // 2. Lógica para rotar las imágenes
+    function iniciarCarruseles() {
+        for (let id in galerias) {
+            let indice = 0;
+            const imgElement = document.getElementById(id);
+            if (!imgElement) continue;
+
+            setInterval(() => {
+                indice = (indice + 1) % galerias[id].length;
+                imgElement.style.opacity = 0;
+                setTimeout(() => {
+                    imgElement.src = galerias[id][indice];
+                    imgElement.style.opacity = 1;
+                }, 500);
+            }, 3500); // Cambia cada 3.5 segundos
+        }
+    }
+
+    // Ejecutar al cargar la página
+    window.onload = iniciarCarruseles;
+
+    // --- TU CÓDIGO ORIGINAL SE MANTIENE AQUÍ ABAJO ---
+    // (Asegúrate de dejar las funciones que ya tenías: abrirGaleria, cambiarFoto, etc.)
+    
+    let imgs = []; let i = 0;
+    // ... [Aquí va el resto de tu código original de funciones] ...
+</script>
 </body>
 </html>
