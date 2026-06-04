@@ -158,9 +158,7 @@
     📸 FOTOS
 </button>
 
-<div id="contenedor-carrusel-monte" style="display: none; margin-top: 15px;">
-    <img id="img-monte-carrusel" src="monte1.jpg" style="width: 100%; border-radius: 10px;">
-</div>
+
                     <button class="btn-accion" onclick="cargarVideosYocultar('monte-desc', 'v-monte', ['1qeaVYg-cUkWm--rvrc8dw4cMtquGX02m','1S4UhuSAtBd9uYiM3_EJ-IjNVk8ByFKDN','1QV-B3-IxhVri9tndjJQ2mN9hpN8SRmZ8'])">🎥 VIDEOS</button>
                    <a href="https://maps.app.goo.gl/KRKjHQ8mmgH1vs4b6" target="_blank" class="btn-accion bg-mapa">📍 VER MAPA</a>
                     <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20MONTE%20VERDE" target="_blank" class="btn-agendar">📅 AGENDAR</a>
@@ -406,80 +404,6 @@
 </script>
     </script>
     <script>
-    // 1. Configuración de imágenes para cada sección
-    const galerias = {
-        'img-carrusel-fundo': ['fundo1.jpg', 'fundo2.jpg', 'fundo3.jpg', 'fundo4.jpg', 'fundo5.jpg'],
-        'img-carrusel-puerto': ['puerto1.jpg', 'puerto2.jpg', 'puerto3.jpg', 'puerto4.jpg', 'puerto5.jpg'],
-        'img-carrusel-monte': ['monte1.jpg', 'monte2.jpg', 'monte3.jpg', 'monte4.jpg', 'monte5.jpg'],
-        'img-carrusel-clientes': ['cliente1.jpg', 'cliente2.jpg', 'cliente3.jpg', 'cliente4.jpg', 'cliente5.jpg']
-    };
-
-    // 2. Lógica para rotar las imágenes
-    function iniciarCarruseles() {
-        for (let id in galerias) {
-            let indice = 0;
-            const imgElement = document.getElementById(id);
-            if (!imgElement) continue;
-
-            setInterval(() => {
-                indice = (indice + 1) % galerias[id].length;
-                imgElement.style.opacity = 0;
-                setTimeout(() => {
-                    imgElement.src = galerias[id][indice];
-                    imgElement.style.opacity = 1;
-                }, 500);
-            }, 3500); // Cambia cada 3.5 segundos
-        }
-    }
-
-    // Ejecutar al cargar la página
-    window.onload = iniciarCarruseles;
-
-    // --- TU CÓDIGO ORIGINAL SE MANTIENE AQUÍ ABAJO ---
-    // (Asegúrate de dejar las funciones que ya tenías: abrirGaleria, cambiarFoto, etc.)
-    
-    let imgs = []; let i = 0;
-    // ... [Aquí va el resto de tu código original de funciones] ...
-<script>
-function iniciarCarruselMonte() {
-    const contenedor = document.getElementById('contenedor-carrusel-monte');
-    const imagen = document.getElementById('img-monte-carrusel');
-    const fotos = ['monte1.jpg','monte2.jpg','monte3.jpg','monte4.jpg','monte5.jpg','monte6.jpg','monte7.jpg','monte8.jpg','monte9.jpg','monte10.jpg','monte11.jpg'];
-    let idx = 0;
-
-    // Mostrar el contenedor
-    contenedor.style.display = 'block';
-
-    // Iniciar cambio de fotos si no se ha iniciado ya
-    if (!imagen.dataset.iniciado) {
-        imagen.dataset.iniciado = "true";
-        setInterval(() => {
-            idx++;
-            if (idx >= fotos.length) idx = 0;
-            imagen.src = fotos[idx];
-        }, 3000);
-    }
-}
-</script>
-             <script>
-function iniciarCarrusel(idContenedor, idImagen, listaFotos) {
-    var contenedor = document.getElementById(idContenedor);
-    var imagen = document.getElementById(idImagen);
-    var indice = 0;
-
-    // 1. Mostrar el carrusel
-    contenedor.style.display = 'block';
-
-    // 2. Iniciar cambio de fotos solo si no se ha iniciado antes
-    if (!imagen.dataset.iniciado) {
-        imagen.dataset.iniciado = "true";
-        setInterval(function() {
-            indice++;
-            if (indice >= listaFotos.length) indice = 0;
-            imagen.src = listaFotos[indice];
-        }, 3000);
-    }
-}
-</script>
+   
 </body>
 </html>
