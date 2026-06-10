@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager (Tu Analytics) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-21DPFMZRS8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-21DPFMZRS8');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundo Malabrigo | Condominio Ecológico cerca al Mar</title>
+    
+    <meta name="description" content="Invierte en Fundo Malabrigo con Humberto León. Lotes de campo ecológicos cerca al mar en Puerto Malabrigo con título de propiedad inscrito en SUNARP.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        eco: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#00c000', /* Verde Fundo Malabrigo */
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        mar: {
+                            50: '#f0f9ff',
+                            500: '#0070f0', /* Azul Fundo Malabrigo */
+                            600: '#0250c5',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            400: '#facc15',
+                            500: '#eab308',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .font-serif-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        .hero-pattern {
+            background-image: radial-gradient(rgba(0, 192, 0, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans selection:bg-eco-500 selection:text-white overflow-x-hidden">
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20información%20sobre%20los%20lotes%20de%20Fundo%20Malabrigo" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 flex items-center justify-center" target="_blank">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.324 5.328 0 11.859 0c3.161.001 6.132 1.233 8.37 3.473 2.238 2.24 3.466 5.214 3.464 8.379-.004 6.535-5.33 11.859-11.861 11.859-2.002-.001-3.973-.507-5.729-1.474L0 24zm6.11-3.649c1.662.986 3.324 1.503 5.733 1.504 5.341 0 9.689-4.347 9.692-9.688.002-2.587-1.002-5.02-2.827-6.848-1.825-1.827-4.258-2.83-6.85-2.832-5.344 0-9.69 4.348-9.693 9.689-.001 2.164.564 4.279 1.637 6.147l-.993 3.633 3.731-.979zm11.171-6.115c-.302-.15-1.785-.882-2.057-.981-.273-.099-.471-.15-.67.15-.198.3-.769.981-.942 1.18-.173.201-.347.225-.649.075-.302-.15-1.274-.469-2.427-1.496-.897-.8-1.502-1.789-1.678-2.09-.176-.3-.019-.462.131-.611.135-.134.302-.35.454-.525.151-.175.202-.3.302-.5.101-.2.05-.375-.025-.525-.075-.15-.67-1.614-.919-2.213-.242-.584-.489-.505-.67-.514-.173-.008-.371-.01-.57-.01-.198 0-.52.075-.792.375-.272.3-.1.981-.1 2.115 0 1.13.824 2.22 1.146 2.656.322.435 1.621 2.474 3.927 3.469 1.833.791 2.502.824 3.391.691.623-.094 1.785-.73 2.034-1.432.249-.702.249-1.305.174-1.432-.075-.125-.272-.2-.574-.35z"/>
+        </svg>
+    </a>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logotipo Inteligente con Fallbacks -->
+            <div class="flex items-center">
+                <!-- Intenta cargar .png primero. Si falla, intenta .jpg. Si falla, muestra el logo en texto -->
+                <img id="logo-inmobiliaria" src="logo-fundo.png" 
+                     onerror="corregirExtensionLogo(this)" 
+                     alt="Fundo Malabrigo Condominio Ecológico" 
+                     class="h-14 sm:h-16 w-auto object-contain">
+                
+                <!-- Logo de Texto de Emergencia (Se activa solo si no existen las fotos en tu GitHub) -->
+                <div id="logo-texto" class="hidden flex items-center space-x-2.5">
+                    <div class="bg-gradient-to-br from-eco-500 to-mar-500 p-2.5 rounded-xl text-white shadow-md">
+                        <i data-lucide="trees" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="block font-black text-lg tracking-tight text-eco-600 leading-none">Fundo</span>
+                        <span class="block font-black text-lg tracking-tight text-mar-500 leading-none">Malabrigo</span>
+                        <span class="block text-[7px] uppercase tracking-[0.2em] text-slate-400 font-bold mt-0.5">Condominio Ecológico</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones de Contacto -->
+            <div class="flex items-center space-x-4">
+                <a href="#cotizador" class="hidden md:inline-flex bg-eco-500 hover:bg-eco-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition shadow-md shadow-eco-500/10">
+                    <i data-lucide="calculator" class="w-4 h-4 mr-2"></i> Cotizar Lote
+                </a>
+                <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20agendar%20una%20visita%20guiada%20a%20Fundo%20Malabrigo" target="_blank" class="bg-mar-500 hover:bg-mar-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition shadow-md shadow-mar-500/10 flex items-center gap-1.5">
+                    <i data-lucide="calendar" class="w-4 h-4"></i> Agendar Visita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: Vive Cerca al Mar -->
+    <section class="relative bg-gradient-to-b from-eco-50 via-white to-slate-50 pt-8 pb-20 md:py-24 overflow-hidden hero-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Textos Principales -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-eco-100 border border-eco-200 text-eco-800 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider animate-pulse">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-eco-600"></i>
+                        <span>Condominio Ecológico con Título en SUNARP</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-none">
+                        Vive cerca al mar en un <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-eco-500 to-mar-500 font-serif-brand italic font-normal">entorno ecológico</span>
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        ¡Descubre **Fundo Malabrigo**! Lotes de campo con pórtico de seguridad, servicios básicos habilitados y áreas recreativas exclusivas a minutos de la playa.
+                    </p>
+
+                    <!-- CTAs Rápidos -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#cotizador" class="w-full sm:w-auto bg-eco-500 hover:bg-eco-600 text-white px-8 py-4 rounded-xl font-extrabold text-base transition-all text-center shadow-lg shadow-eco-500/20 hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+                            <i data-lucide="calculator" class="w-5 h-5 text-accent-400"></i>
+                            <span>Calcular financiamiento</span>
+                        </a>
+                        <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20me%20interesa%20Fundo%20Malabrigo.%20Quiero%20conocer%20los%20precios." target="_blank" class="w-full sm:w-auto bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-bold text-base hover:bg-slate-50 transition-all text-center flex items-center justify-center space-x-2 shadow-sm">
+                            <i data-lucide="phone-call" class="w-5 h-5 text-mar-500"></i>
+                            <span>Consultar Lista de Precios</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Imagen Representativa del Proyecto -->
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-eco-500/20 to-mar-500/20 rounded-3xl blur-2xl transform scale-105"></div>
+                    <div class="relative bg-white p-3 rounded-3xl shadow-2xl border border-slate-100 overflow-hidden transform transition hover:scale-[1.01] duration-300">
+                        <div class="relative h-96 w-full rounded-2xl overflow-hidden bg-slate-900">
+                            <!-- Imagen de la Playa de Puerto Malabrigo -->
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Playa de Puerto Malabrigo" class="w-full h-full object-cover opacity-85">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 text-white space-y-1">
+                                <span class="bg-mar-500 text-[9px] uppercase px-2 py-0.5 rounded font-black tracking-widest inline-block">Ubicación Privilegiada</span>
+                                <h3 class="text-lg font-bold">A minutos de la ola más larga del mundo 🌊</h3>
+                                <p class="text-xs text-slate-300">Combina la tranquilidad del campo con la brisa del mar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Características del Condominio (Estructura Premium) -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-eco-500 uppercase font-black tracking-widest text-xs">Atributos del Proyecto</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-serif-brand">Un concepto verde y seguro</h2>
+                <div class="w-16 h-1 bg-eco-500 mx-auto mt-3 rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Característica 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="bg-eco-100 text-eco-700 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Seguridad y Privacidad</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Pórtico de ingreso controlado las 24 horas y cerco perimétrico de concreto para garantizar la total privacidad de tu familia.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Característica 2 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="bg-eco-100 text-eco-700 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="trees" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Condominio Ecológico</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Diseño sostenible con amplias áreas verdes, parques recreativos para niños, árboles frutales y un entorno que promueve la paz y el aire puro.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Característica 3 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="bg-eco-100 text-eco-700 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="file-text" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Título Independizado</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Inversión respaldada legalmente. Cada lote cuenta con título de propiedad independizado listo para inscribir en Registros Públicos (SUNARP).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COTIZADOR INTERACTIVO INTELIGENTE (Exclusivo para captar leads) -->
+    <section id="cotizador" class="py-16 bg-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200/60 grid grid-cols-1 md:grid-cols-12">
+                
+                <!-- Info Lateral de la Calculadora -->
+                <div class="p-8 md:col-span-5 bg-gradient-to-br from-mar-900 to-mar-800 text-white flex flex-col justify-between">
+                    <div>
+                        <span class="text-accent-400 uppercase tracking-widest text-xs font-bold">Simulación en Vivo</span>
+                        <h3 class="text-2xl font-bold font-serif-brand mt-1 mb-4 text-white">Calculadora de Lote</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">
+                            Configura el tamaño de tu terreno ecológico y tu modalidad de pago favorita. Obtén una estimación rápida del costo al instante.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 text-xs pt-6 border-t border-white/10">
+                        <div class="flex items-center space-x-3 text-slate-300">
+                            <i data-lucide="check" class="w-4 h-4 text-accent-400"></i>
+                            <span>Financiamiento directo sin bancos</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-slate-300">
+                            <i data-lucide="check" class="w-4 h-4 text-accent-400"></i>
+                            <span>Descuentos especiales al contado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario de Configuración de Lote -->
+                <div class="p-8 md:col-span-7 space-y-6">
+                    <h4 class="text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Simular mi financiamiento:</h4>
+                    
+                    <!-- 1. Selección de Tamaño -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-wide">1. Tamaño del Terreno</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="setLoteSize(120, 36000)" id="size-120" class="py-2.5 rounded-xl border-2 border-eco-500 bg-eco-500/10 text-eco-800 font-bold text-xs transition">120 m²</button>
+                            <button onclick="setLoteSize(160, 48000)" id="size-160" class="py-2.5 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-xs transition hover:border-eco-500/50">160 m²</button>
+                            <button onclick="setLoteSize(200, 60000)" id="size-200" class="py-2.5 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-xs transition hover:border-eco-500/50">200 m²</button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Modalidad de Pago -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-500 uppercase tracking-wide">2. Modalidad de Pago</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="setMetodo('Contado')" id="pay-contado" class="py-2.5 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-xs transition hover:border-eco-500/50">Al Contado (Descuento)</button>
+                            <button onclick="setMetodo('Financiado')" id="pay-financiado" class="py-2.5 rounded-xl border-2 border-eco-500 bg-eco-500/10 text-eco-800 font-bold text-xs transition">Financiado Directo</button>
+                        </div>
+                    </div>
+
+                    <!-- Resultados visuales -->
+                    <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl space-y-3">
+                        <div class="flex items-center justify-between text-xs text-slate-600">
+                            <span>Precio de Lista:</span>
+                            <span id="calc-price-list" class="font-bold text-slate-900">S/ 36,000</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-slate-600">
+                            <span>Inicial Requerida:</span>
+                            <span id="calc-downpayment" class="font-bold text-eco-700">S/ 5,000</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-slate-800 border-t border-slate-200 pt-2 font-bold">
+                            <span>Cuota Mensual Estimada:</span>
+                            <span id="calc-monthly" class="text-base text-mar-600">S/ 645 / mes</span>
+                        </div>
+                    </div>
+
+                    <!-- Botón de Solicitud vía WhatsApp -->
+                    <button onclick="enviarSimulacion()" class="w-full bg-eco-500 hover:bg-eco-600 text-white font-extrabold py-4 rounded-xl transition shadow-lg shadow-eco-500/10 flex items-center justify-center space-x-2">
+                        <i data-lucide="message-square" class="w-5 h-5 text-accent-400 fill-current"></i>
+                        <span>Solicitar esta Cotización en WhatsApp</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas Frecuentes Relacionadas a Malabrigo -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <span class="text-mar-500 font-bold tracking-widest text-xs uppercase">Resolviendo tus dudas</span>
+                <h2 class="text-2xl sm:text-3xl font-serif-brand text-slate-900 mt-1">Preguntas Frecuentes</h2>
+                <div class="w-12 h-0.5 bg-mar-500 mx-auto mt-3"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-slate-900 flex items-center justify-between hover:text-eco-600 transition">
+                        <span>¿A qué distancia de la playa se encuentra Fundo Malabrigo?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-eco-500 transition-transform"></i>
+                    </button>
+                    <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed hidden">
+                        El condominio ecológico está ubicado estratégicamente a pocos minutos de la playa principal de Puerto Malabrigo, permitiendo disfrutar de la brisa marina y las olas de surf en un ambiente tranquilo de campo.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-slate-900 flex items-center justify-between hover:text-eco-600 transition">
+                        <span>¿Qué servicios básicos incluye el proyecto ecológico?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-eco-500 transition-transform"></i>
+                    </button>
+                    <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed hidden">
+                        El proyecto cuenta con habilitación de agua para uso residencial, alumbrado en áreas comunes, vías afirmadas y pórtico de seguridad.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-slate-900 flex items-center justify-between hover:text-eco-600 transition">
+                        <span>¿Cómo es el financiamiento directo?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-eco-500 transition-transform"></i>
+                    </button>
+                    <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed hidden">
+                        Ofrecemos un financiamiento directo directamente con el proyecto, sin pasar por filtros de bancos ni historial crediticio. Puedes separar tu lote con una inicial flexible y fraccionar el saldo en cuotas mensuales fijas.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Corporativo de Humberto -->
+    <footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="flex justify-center items-center">
+                <!-- Logotipo Inteligente en el Footer también (Inicializado en .png por defecto) -->
+                <img id="logo-inmobiliaria-footer" src="logo-fundo.png" 
+                     onerror="corregirExtensionLogoFooter(this)" 
+                     alt="Fundo Malabrigo Logo" 
+                     class="h-16 w-auto object-contain bg-white p-2 rounded-xl">
+                
+                <!-- Logo de Texto de Emergencia para el Footer -->
+                <div id="logo-texto-footer" class="hidden flex items-center space-x-2.5 bg-white p-2 rounded-xl text-slate-900">
+                    <div class="bg-gradient-to-br from-eco-500 to-mar-500 p-1.5 rounded-lg text-white">
+                        <i data-lucide="trees" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block font-black text-sm tracking-tight text-eco-600 leading-none">Fundo</span>
+                        <span class="block font-black text-sm tracking-tight text-mar-500 leading-none">Malabrigo</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-sm text-slate-400 max-w-md mx-auto">
+                Promovido con orgullo por **Humberto León**, Jefe Comercial. Tu inversión inmobiliaria segura en Trujillo, Chepén y Puerto Malabrigo.
+            </p>
+
+            <!-- Links de redes del Footer (Tus enlaces originales) -->
+            <div class="flex justify-center items-center space-x-4">
+                <a href="https://www.facebook.com/share/1G7kjoWFoH/" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-eco-500 hover:text-white flex items-center justify-center transition">
+                    <i data-lucide="facebook" class="w-4 h-4"></i>
+                </a>
+                <a href="https://www.instagram.com/humbertoleondiaz/" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-eco-500 hover:text-white flex items-center justify-center transition">
+                    <i data-lucide="instagram" class="w-4 h-4"></i>
+                </a>
+                <a href="https://pe.linkedin.com/in/humberto-leon-inmobiliaria" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-eco-500 hover:text-white flex items-center justify-center transition">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="text-xs text-slate-500 pt-4 border-t border-slate-800">
+                <p>© 2026 Fundo Malabrigo Condominio Ecológico. Todos los derechos reservados. Asesoría autorizada por Humberto León.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica de la calculadora interactiva y Fallbacks de Logotipo -->
+    <script>
+        // Inicializar Iconos Lucide
+        lucide.createIcons();
+
+        // Función Inteligente para corregir el formato de imagen del Logo en el Header (Prueba .png y cae en .jpg)
+        function corregirExtensionLogo(imgElement) {
+            // Si falló al cargar logo-fundo.png, intentará buscar logo-fundo.jpg
+            if (imgElement.src.endsWith('logo-fundo.png')) {
+                imgElement.src = 'logo-fundo.jpg';
+            } 
+            // Si también falla el .jpg (o ya se probó), ocultamos la imagen rota y mostramos el logo en texto limpio CSS
+            else {
+                imgElement.classList.add('hidden');
+                document.getElementById('logo-texto').classList.remove('hidden');
+            }
+        }
+
+        // Función Inteligente para corregir el formato de imagen del Logo en el Footer (Prueba .png y cae en .jpg)
+        function corregirExtensionLogoFooter(imgElement) {
+            if (imgElement.src.endsWith('logo-fundo.png')) {
+                imgElement.src = 'logo-fundo.jpg';
+            } else {
+                imgElement.classList.add('hidden');
+                document.getElementById('logo-texto-footer').classList.remove('hidden');
+            }
+        }
+
+        // Variables de Estado de la Calculadora
+        let loteSizeSelected = 120;
+        let lotePrice = 36000;
+        let metodoPago = 'Financiado';
+
+        // Lógica del Cotizador
+        function setLoteSize(size, price) {
+            loteSizeSelected = size;
+            lotePrice = price;
+
+            // Cambiar estilos de los botones
+            document.getElementById('size-120').className = "py-2.5 rounded-xl border-2 text-xs font-bold transition " + (size === 120 ? "border-eco-500 bg-eco-500/10 text-eco-800" : "border-slate-200 text-slate-600 hover:border-eco-500/50");
+            document.getElementById('size-160').className = "py-2.5 rounded-xl border-2 text-xs font-bold transition " + (size === 160 ? "border-eco-500 bg-eco-500/10 text-eco-800" : "border-slate-200 text-slate-600 hover:border-eco-500/50");
+            document.getElementById('size-200').className = "py-2.5 rounded-xl border-2 text-xs font-bold transition " + (size === 200 ? "border-eco-500 bg-eco-500/10 text-eco-800" : "border-slate-200 text-slate-600 hover:border-eco-500/50");
+
+            calcularTotales();
+        }
+
+        function setMetodo(metodo) {
+            metodoPago = metodo;
+
+            // Cambiar estilos de los botones
+            document.getElementById('pay-contado').className = "py-2.5 rounded-xl border-2 text-xs font-bold transition " + (metodo === 'Contado' ? "border-eco-500 bg-eco-500/10 text-eco-800" : "border-slate-200 text-slate-600 hover:border-eco-500/50");
+            document.getElementById('pay-financiado').className = "py-2.5 rounded-xl border-2 text-xs font-bold transition " + (metodo === 'Financiado' ? "border-eco-500 bg-eco-500/10 text-eco-800" : "border-slate-200 text-slate-600 hover:border-eco-500/50");
+
+            calcularTotales();
+        }
+
+        function calcularTotales() {
+            let finalPrice = lotePrice;
+            let downpayment = 5000;
+            let monthly = 0;
+
+            if (loteSizeSelected === 160) downpayment = 6500;
+            if (loteSizeSelected === 200) downpayment = 8000;
+
+            if (metodoPago === 'Contado') {
+                // Descuento del 10% por pago al contado
+                finalPrice = lotePrice * 0.90;
+                downpayment = finalPrice;
+                monthly = 0;
+            } else {
+                // Financiado a 48 meses
+                monthly = Math.round((lotePrice - downpayment) / 48);
+            }
+
+            // Actualizar interfaz
+            document.getElementById('calc-price-list').innerText = "S/ " + finalPrice.toLocaleString('es-PE');
+            document.getElementById('calc-downpayment').innerText = "S/ " + downpayment.toLocaleString('es-PE');
+            document.getElementById('calc-monthly').innerText = metodoPago === 'Contado' ? "¡Sin cuotas mensuales!" : "S/ " + monthly.toLocaleString('es-PE') + " / mes";
+        }
+
+        function enviarSimulacion() {
+            let finalPrice = lotePrice;
+            let downpayment = 5000;
+            let monthly = 0;
+
+            if (loteSizeSelected === 160) downpayment = 6500;
+            if (loteSizeSelected === 200) downpayment = 8000;
+
+            if (metodoPago === 'Contado') {
+                finalPrice = lotePrice * 0.90;
+                downpayment = finalPrice;
+            } else {
+                monthly = Math.round((lotePrice - downpayment) / 48);
+            }
+
+            const mensaje = `Hola Humberto León. Vengo de la web y he cotizado un lote en Fundo Malabrigo. Detalles: Terreno de ${loteSizeSelected}m² | Modalidad: Pago ${metodoPago} | Inicial: S/ ${downpayment.toLocaleString('es-PE')} ${metodoPago === 'Financiado' ? '| Cuotas mensuales de S/ ' + monthly : ''}. Deseo agendar una reunión o llamada.`;
+            const encoded = encodeURIComponent(mensaje);
+            
+            window.open(`https://wa.me/51985877256?text=${encoded}`, '_blank');
+        }
+
+        // FAQs Toggles
+        function toggleFaq(el) {
+            const answer = el.nextElementSibling;
+            const icon = el.querySelector('i');
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                if (icon) icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.classList.add('hidden');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Inicializar primera cotización
+        calcularTotales();
+    </script>
+</body>
+</html>
