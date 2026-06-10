@@ -63,7 +63,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="bg-brand-100 p-1.5 rounded-xl text-brand-700 flex items-center justify-center w-12 h-12 overflow-hidden">
-                    <img src="logo-monte-verde.png" alt="Logo Residencial Monte Verde" class="w-full h-full object-contain">
+                    <img src="./logo.png" alt="Logo Residencial Monte Verde" class="w-full h-full object-contain">
                 </div>
                 <div>
                     <span class="block font-bold text-xl tracking-tight text-brand-900">MONTE VERDE</span>
@@ -132,4 +132,135 @@
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-brand-600 uppercase font-bold tracking-
+                <span class="text-brand-600 uppercase font-bold tracking-widest text-xs">Características del Proyecto</span>
+                <h2 class="text-3xl font-bold text-brand-900 mt-2 font-serif-brand">Beneficios de tu Inversión</h2>
+                <div class="w-12 h-1 bg-brand-500 mx-auto mt-3 rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition">
+                    <div class="bg-brand-100 text-brand-700 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="map" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Proyecto en Desarrollo</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Maquinarias trabajando activamente en el terreno. Pórtico de ingreso moderno y habilitación urbana en marcha constante.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition">
+                    <div class="bg-brand-100 text-brand-700 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Zona con Gran Proyección</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Ubicado estratégicamente en una zona de expansión con un retorno y plusvalía estimado entre un 20% y 40% anual.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition">
+                    <div class="bg-brand-100 text-brand-700 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Inversión Segura</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Documentación inscrita en SUNARP, lista para firma de minuta y entrega inmediata de tu lote para mayor tranquilidad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-brand-900 rounded-3xl text-white shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-12">
+                
+                <div class="p-10 md:col-span-5 bg-gradient-to-br from-brand-800 to-brand-950 flex flex-col justify-between">
+                    <div>
+                        <span class="text-accent-500 uppercase tracking-widest text-xs font-bold">Asesoría Directa</span>
+                        <h3 class="text-2xl font-bold font-serif-brand mt-1 mb-4">Humberto León</h3>
+                        <p class="text-brand-100 text-xs leading-relaxed mb-6">
+                            Jefe Comercial con amplia experiencia ayudando a cientos de familias a asegurar su terreno propio en La Libertad.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3.5 text-xs text-brand-100">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-4 h-4 text-accent-500"></i>
+                            <span>+51 985 877 256</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-accent-500"></i>
+                            <span>Trujillo - Chepén, Perú</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-10 md:col-span-7 bg-white text-gray-800">
+                    <h4 class="text-lg font-bold text-gray-900 mb-4">Cotiza tu Lote de Forma Gratuita</h4>
+                    
+                    <form id="leadForm" onsubmit="enviarLeadWhatsApp(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Nombre Completo</label>
+                            <input type="text" id="leadName" required placeholder="Ej. Carlos M." class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">¿Cómo deseas adquirir tu lote?</label>
+                            <select id="leadType" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition">
+                                <option value="Al Contado">Al Contado (Descuento Especial)</option>
+                                <option value="Financiado">Financiado Directo (En Cuotas)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Mensaje o Pregunta</label>
+                            <textarea id="leadMsg" rows="2" placeholder="Quiero agendar una visita este fin de semana..." class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-3.5 rounded-xl transition shadow-md flex items-center justify-center space-x-2">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            <span>Enviar Solicitud a WhatsApp</span>
+                        </button>
+                    </form>
+
+                    <div id="statusAlert" class="hidden mt-4 bg-brand-50 border border-brand-200 p-4 rounded-xl text-center">
+                        <p class="text-sm text-brand-800 font-semibold">¡Redirigiendo a tu WhatsApp con Humberto León!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-950 text-white/85 py-10 text-center text-xs">
+        <p class="font-bold uppercase tracking-wider text-white mb-2">Residencial Monte Verde</p>
+        <p class="text-brand-300">Asesoría autorizada por Humberto León</p>
+        <p class="text-brand-400/50 mt-4">© 2026 Todos los derechos reservados. Trujillo, Perú.</p>
+    </footer>
+
+    <script>
+        // Inicializar Iconos
+        lucide.createIcons();
+
+        // Enviar Lead a WhatsApp
+        function enviarLeadWhatsApp(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('leadName').value;
+            const type = document.getElementById('leadType').value;
+            const textMsg = document.getElementById('leadMsg').value;
+
+            const baseMsg = `Hola Humberto León, estoy muy interesado en Residencial Monte Verde. Mi nombre es ${name}. Me interesa comprar ${type}. ${textMsg ? 'Consulta adicional: ' + textMsg : ''}`;
+            const encoded = encodeURIComponent(baseMsg);
+            
+            const waUrl = `https://wa.me/51985877256?text=${encoded}`;
+            
+            // Mostrar mensaje de éxito
+            document.getElementById('statusAlert').classList.remove('hidden');
+
+            setTimeout(() => {
+                window.open(waUrl, '_blank');
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
