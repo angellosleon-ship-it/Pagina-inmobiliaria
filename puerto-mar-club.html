@@ -97,7 +97,7 @@
             </div>
 
             <div class="flex items-center space-x-4">
-                <a href="#cotizador" class="hidden md:inline-flex bg-mar-500 hover:bg-mar-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition shadow-md shadow-mar-500/10">
+                <a href="#cotizador" class="hidden md:inline-flex bg-mar-500 hover:bg-mar-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition shadow-md shadow-mar-500/10 items-center">
                     <i data-lucide="calculator" class="w-4 h-4 mr-2"></i> Cotizar Lote
                 </a>
                 <a href="https://wa.me/51985877256?text=Hola%20Humberto,%20quiero%20agendar%20una%20visita%20guiada%20a%20Puerto%20Mar%20Club" target="_blank" class="bg-club-600 hover:bg-club-700 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition shadow-md shadow-club-600/10 flex items-center gap-1.5">
@@ -128,14 +128,14 @@
                     </p>
 
                     <div class="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
-                        <div class="text-center lg:text-left border-r border-slate-100 last:border-0 pr-2">
-                            <span class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Al Contado</span>
+                        <div class="text-center lg:text-left border-r border-slate-100 pr-2">
+                            <span class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Al Contado desde</span>
                             <span class="block text-xl sm:text-2xl font-black text-mar-600">S/ 19,000</span>
                         </div>
                         <div class="text-center lg:text-left pl-2">
-                            <span class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Financiado</span>
+                            <span class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Financiado Directo</span>
                             <span class="block text-xl sm:text-2xl font-black text-club-600">S/ 900 / mes</span>
-                            <span class="block text-[10px] text-slate-400 font-bold">(Solo 18 cuotas)</span>
+                            <span class="block text-[10px] text-slate-400 font-bold">(Cuotas fijas mensuales)</span>
                         </div>
                     </div>
 
@@ -187,7 +187,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Casa Club y Piscina</h3>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            Disfruta de instalaciones exclusivas, una espectacular piscina frente al mar, áreas de esparcimiento familiares y espacios deportivos pensados para ti.
+                            Disfruta de instalaciones exclusives, una espectacular piscina frente al mar, áreas de esparcimiento familiares y espacios deportivos pensados para ti.
                         </p>
                     </div>
                 </div>
@@ -236,7 +236,7 @@
                     <div class="space-y-4 text-xs pt-6 border-t border-white/10">
                         <div class="flex items-center space-x-3 text-slate-300">
                             <i data-lucide="check" class="w-4 h-4 text-accent-400"></i>
-                            <span>Financiamiento directo en solo 18 cuotas fijas</span>
+                            <span>Financiamiento directo a sola firma</span>
                         </div>
                         <div class="flex items-center space-x-3 text-slate-300">
                             <i data-lucide="check" class="w-4 h-4 text-accent-400"></i>
@@ -260,8 +260,8 @@
                     <div class="space-y-2">
                         <label class="text-xs font-bold text-slate-500 uppercase tracking-wide">2. Modalidad de Pago</label>
                         <div class="grid grid-cols-2 gap-2">
-                            <button onclick="setMetodo('Contado')" id="pay-contado" class="py-2.5 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-xs transition hover:border-mar-500/50">Al Contado</button>
-                            <button onclick="setMetodo('Financiado')" id="pay-financiado" class="py-2.5 rounded-xl border-2 border-mar-500 bg-mar-500/10 text-mar-950 font-bold text-xs transition">Financiado Directo</button>
+                            <button onclick="setMetodo('Contado')" id="pay-contado" class="py-2.5 rounded-xl border-2 border-mar-500 bg-mar-500/10 text-mar-950 font-bold text-xs transition">Al Contado</button>
+                            <button onclick="setMetodo('Financiado')" id="pay-financiado" class="py-2.5 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-xs transition hover:border-mar-500/50">Financiado Directo</button>
                         </div>
                     </div>
 
@@ -272,11 +272,11 @@
                         </div>
                         <div class="flex items-center justify-between text-xs text-slate-600">
                             <span>Plazo de Financiamiento:</span>
-                            <span id="calc-duration" class="font-bold text-slate-900">18 meses</span>
+                            <span id="calc-duration" class="font-bold text-slate-900">Pago Único</span>
                         </div>
                         <div class="flex items-center justify-between text-sm text-slate-800 border-t border-slate-200 pt-2 font-bold">
                             <span>Importe Mensual / Pago:</span>
-                            <span id="calc-monthly" class="text-base text-mar-600">S/ 900 / mes</span>
+                            <span id="calc-monthly" class="text-base text-mar-600">¡Sin cuotas mensuales!</span>
                         </div>
                     </div>
 
@@ -303,7 +303,7 @@
                 <div class="bg-slate-50 border border-slate-100 rounded-xl overflow-hidden">
                     <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-slate-900 flex items-center justify-between hover:text-mar-600 transition">
                         <span>¿Cuál es la ubicación exacta de Puerto Mar Club?</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-mar-500 transition-transform"></i>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-mar-500 transition-transform duration-200"></i>
                     </button>
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed hidden">
                         El condominio residencial está estratégicamente situado frente a la playa en Puerto Malabrigo, permitiéndote disfrutar del mar de manera directa, continua y en un entorno totalmente seguro y privado.
@@ -313,7 +313,7 @@
                 <div class="bg-slate-50 border border-slate-100 rounded-xl overflow-hidden">
                     <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-slate-900 flex items-center justify-between hover:text-mar-600 transition">
                         <span>¿Qué áreas comunes incluye el proyecto?</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-mar-500 transition-transform"></i>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-mar-500 transition-transform duration-200"></i>
                     </button>
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed hidden">
                         El proyecto cuenta con un pórtico exclusivo de acceso controlado, una hermosa Casa Club equipada, piscina frente al mar, áreas verdes integradas y habilitación urbana completa.
@@ -322,11 +322,11 @@
 
                 <div class="bg-slate-50 border border-slate-100 rounded-xl overflow-hidden">
                     <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-slate-900 flex items-center justify-between hover:text-mar-600 transition">
-                        <span>¿Cómo funciona el financiamiento directo de 18 cuotas?</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-mar-500 transition-transform"></i>
+                        <span>¿Cómo funciona el financiamiento directo?</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-mar-500 transition-transform duration-200"></i>
                     </button>
                     <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed hidden">
-                        Ofrecemos crédito directo sin la necesidad de aprobación de entidades bancarias. Puedes financiar tu terreno pagando cuotas fijas mensuales de S/ 900 durante un periodo corto de solo 18 meses.
+                        Ofrecemos crédito directo flexible sin la necesidad de aprobación de entidades bancarias. Puedes financiar tu terreno pagando cómodas cuotas fijas de S/ 900 adaptando los plazos según el metraje seleccionado.
                     </div>
                 </div>
             </div>
@@ -398,7 +398,7 @@
             }
         }
 
-        // Variables de Estado de la Calculadora Actualizada
+        // Variables de Estado de la Calculadora
         let loteSizeSelected = 112;
         let metodoPago = 'Contado';
 
@@ -425,9 +425,8 @@
         function calcularTotales() {
             let finalPrice = "S/ 19,000";
             let duration = "Pago Único";
-            let monthly = "S/ 0 (Al contado)";
+            let monthly = "¡Sin cuotas mensuales!";
 
-            // Variaciones estimadas de escala según el metraje provisto
             if (metodoPago === 'Contado') {
                 duration = "Pago Único";
                 monthly = "¡Sin cuotas mensuales!";
@@ -435,13 +434,6 @@
                 if (loteSizeSelected === 150) finalPrice = "S/ 24,500";
                 if (loteSizeSelected === 200) finalPrice = "S/ 31,000";
             } else {
-                duration = "18 meses";
-                monthly = "S/ 900 / mes";
-                if (loteSizeSelected === 112) finalPrice = "S/ 16,200 (Financiado base)"; 
-                if (loteSizeSelected === 150) { finalPrice = "S/ 21,000"; monthly = "S/ 1,160 / mes"; }
-                if (loteSizeSelected === 200) { finalPrice = "S/ 27,000"; monthly = "S/ 1,500 / mes"; }
-                
-                // Si deseas mantener la cuota fija base en S/ 900 y variar el plazo:
                 if (loteSizeSelected === 112) { duration = "18 meses"; monthly = "S/ 900 / mes"; finalPrice = "S/ 16,200"; }
                 if (loteSizeSelected === 150) { duration = "24 meses"; monthly = "S/ 900 / mes"; finalPrice = "S/ 21,600"; }
                 if (loteSizeSelected === 200) { duration = "32 meses"; monthly = "S/ 900 / mes"; finalPrice = "S/ 28,800"; }
