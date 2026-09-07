@@ -378,9 +378,9 @@
             }
         }
 
-        // Variables de Estado de la Calculadora (Precio Base Único de 41,000)
+        // Variables de Estado de la Calculadora (Precio Base Único de 33,000)
         let loteSizeSelected = 150;
-        const BASE_PRICE = 41000;
+        const BASE_PRICE = 33,000;
         let metodoPago = 'Financiado';
 
         function setLoteSize(size) {
@@ -413,13 +413,13 @@
             if (loteSizeSelected === 305) downpayment = 5000;
 
             if (metodoPago === 'Contado') {
-                // Descuento del 10% neto sobre los 41 mil soles
+                // Descuento del 5% neto sobre los 33 mil soles
                 finalPrice = BASE_PRICE * 0.90;
                 downpayment = finalPrice;
                 monthly = 0;
             } else {
-                // Financiado estándar a 48 meses aproximados sobre saldo
-                monthly = Math.round((BASE_PRICE - downpayment) / 48);
+                // Financiado estándar a 30 meses aproximados sobre saldo
+                monthly = Math.round((BASE_PRICE - downpayment) / 30);
             }
 
             // Actualizar textos en la interfaz
@@ -440,7 +440,7 @@
                 finalPrice = BASE_PRICE * 0.90;
                 downpayment = finalPrice;
             } else {
-                monthly = Math.round((BASE_PRICE - downpayment) / 48);
+                monthly = Math.round((BASE_PRICE - downpayment) / 30);
             }
 
             // Texto dinámico con la marca comercial Humberto León y Fundo Malabrigo
